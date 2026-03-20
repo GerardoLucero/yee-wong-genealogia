@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Investigación genealógica 2026 · Familia Yee Wong · 龍陽村, Taishan, Guangdong. Aldea confirmada en campo, altar 余礼廉, transcripciones de video.">
+<meta name="description" content="Investigación genealógica 2026 · Familia Yee Wong · De México a 龍陽村, Taishan, Guangdong. La historia del descubrimiento en cuatro actos.">
 <title>Investigación 2026 · Research · 研究 · Familia Yee Wong 余黄氏</title>
 <link rel="stylesheet" href="shared/styles.css">
 <style>
@@ -32,6 +32,19 @@
   .inv-hero .sub { font-size: 1.05rem; color: #a8d5ea; font-style: italic; margin: 0; }
   .inv-hero .loc { font-size: 0.85rem; color: #7eb8d4; margin-top: 10px; letter-spacing: 1px; }
 
+  /* ── ACT BAND ── */
+  .act-band {
+    background: #0f2744;
+    color: #fff;
+    padding: 12px 40px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-left: 6px solid #4fa3c8;
+  }
+  .act-band .act-num { color: #86efac; margin-right: 10px; }
+
   /* ── SECTION WRAPPER ── */
   .inv-section {
     max-width: 900px; margin: 0 auto; padding: 40px 40px 16px;
@@ -42,7 +55,6 @@
     border-bottom: 3px solid #4fa3c8; padding-bottom: 8px; margin-bottom: 20px;
   }
   .section-title .zh { font-size: 1rem; color: #7c3aed; font-weight: 700; margin-left: 8px; }
-  .section-title .en { font-size: 0.9rem; color: #6b7280; font-weight: 600; margin-left: 8px; }
 
   /* ── EVIDENCE LIST ── */
   .evidence-list { list-style: none; margin: 0 0 16px; padding: 0; }
@@ -54,16 +66,6 @@
   .evidence-list li:last-child { border-bottom: none; }
   .evidence-list li:nth-child(even) { background: #f8fafc; }
   .ev-badge { flex-shrink: 0; margin-top: 2px; }
-
-  /* ── QUOTE TABLE ── */
-  .quote-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
-  .quote-table thead tr { background: #0f2744; color: #fff; }
-  .quote-table thead th { padding: 9px 12px; text-align: left; }
-  .quote-table tbody tr:nth-child(odd) { background: #ecfdf5; }
-  .quote-table tbody tr:nth-child(even) { background: #f0f4f8; }
-  .quote-table td { padding: 9px 12px; border-bottom: 1px solid #dde; vertical-align: top; }
-  .quote-table .chinese { font-size: 1rem; font-weight: 700; color: #0f2744; }
-  .quote-table .critical { background: #d1fae5 !important; font-weight: 700; }
 
   /* ── CALLOUT CENTRAL HYPOTHESIS ── */
   .callout-hyp-central {
@@ -112,9 +114,6 @@
   .oq-table thead th { padding: 9px 12px; text-align: left; }
   .oq-table td { padding: 9px 12px; border-bottom: 1px solid #dde; vertical-align: top; }
   .oq-table tr:nth-child(even) td { background: #f8fafc; }
-  .badge-crit { display: inline-block; background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; border-radius: 12px; padding: 2px 10px; font-size: 0.72rem; font-weight: 700; }
-  .badge-hi { display: inline-block; background: #fef9c3; color: #92400e; border: 1px solid #f59e0b; border-radius: 12px; padding: 2px 10px; font-size: 0.72rem; font-weight: 700; }
-  .badge-med { display: inline-block; background: #f0f9ff; color: #1e40af; border: 1px solid #60a5fa; border-radius: 12px; padding: 2px 10px; font-size: 0.72rem; font-weight: 700; }
 
   /* ── TIMELINE ── */
   .timeline { border-left: 4px solid #7c3aed; padding: 0 0 0 20px; margin: 16px 0; }
@@ -148,12 +147,32 @@
   }
   .geo-arrow { color: #94a3b8; font-size: 0.85rem; font-weight: 400; }
 
-  /* ── WARNING METHODOLOGICAL ── */
-  .warn-method {
-    background: #fffbeb; border-left: 4px solid #f59e0b;
-    padding: 10px 14px; margin: 12px 0; font-size: 0.85rem; color: #78350f;
-    border-radius: 0 6px 6px 0;
+  /* ── STEP NUMBER ── */
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 50%; background: #0f2744;
+    color: #fff; font-weight: 900; font-size: 0.9rem;
+    flex-shrink: 0; margin-top: 2px;
   }
+  .step-row {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid #e2e8f0;
+    font-size: 0.93rem; line-height: 1.6;
+  }
+  .step-row:last-child { border-bottom: none; }
+
+  /* ── NAME BREAKDOWN ── */
+  .name-breakdown {
+    display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0;
+    justify-content: center;
+  }
+  .name-part {
+    text-align: center; padding: 14px 20px;
+    border-radius: 8px; min-width: 120px; flex: 1;
+  }
+  .name-part .char { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+  .name-part .label-sm { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-top: 6px; }
+  .name-part .meaning { font-size: 0.82rem; margin-top: 4px; font-style: italic; }
 
   /* RESPONSIVE */
   @media (max-width: 700px) {
@@ -162,6 +181,8 @@
     .inv-section { padding: 24px 18px 10px; }
     .altar-tablets { flex-direction: column; }
     .sec-divider { margin: 0 18px; }
+    .act-band { padding: 10px 20px; }
+    .name-breakdown { flex-direction: column; }
   }
 </style>
 </head>
@@ -195,345 +216,398 @@
 </nav>
 
 <!-- ════════════════════════════════════════════════════════════
-     § HERO
+     HERO
      ════════════════════════════════════════════════════════════ -->
 <div class="inv-hero">
   <div class="inv-hero-watermark">余</div>
-  <div class="inv-hero-tag" data-lang="es">Investigación genealógica activa · Marzo 2026</div>
-  <div class="inv-hero-tag" data-lang="en">Active genealogical research · March 2026</div>
-  <div class="inv-hero-tag" data-lang="zh">族谱调查进行中 · 2026年3月</div>
-  <h1 data-lang="es">La Investigación 2026<br><em>De México a 龍陽村</em></h1>
-  <h1 data-lang="en">The 2026 Research<br><em>From Mexico to 龍陽村</em></h1>
-  <h1 data-lang="zh">2026年研究<br><em>从墨西哥到龍陽村</em></h1>
-  <p class="sub" data-lang="es">Visita de campo · Taishan, Guangdong, China · 17–20 marzo 2026</p>
-  <p class="sub" data-lang="en">Field visit · Taishan, Guangdong, China · March 17–20, 2026</p>
-  <p class="sub" data-lang="zh">实地调查 · 广东台山 · 2026年3月17–20日</p>
+  <div class="inv-hero-tag" data-lang="es">La historia del descubrimiento · 2024 – 2026</div>
+  <div class="inv-hero-tag" data-lang="en">The story of the discovery · 2024 – 2026</div>
+  <div class="inv-hero-tag" data-lang="zh">发现之旅 · 2024–2026年</div>
+  <h1 data-lang="es">De México a <em>龍陽村</em><br>La búsqueda de Miguel</h1>
+  <h1 data-lang="en">From Mexico to <em>龍陽村</em><br>The search for Miguel</h1>
+  <h1 data-lang="zh">从墨西哥到<em>龍陽村</em><br>寻找Miguel的旅程</h1>
+  <p class="sub" data-lang="es">221 descendientes · un nombre chino desconocido · una aldea sin identificar</p>
+  <p class="sub" data-lang="en">221 descendants · an unknown Chinese name · an unidentified village</p>
+  <p class="sub" data-lang="zh">221位后裔 · 不知道的中文名 · 未确认的祖籍村庄</p>
   <p class="loc">龍陽村 (Lóng Yáng Cūn) · 白沙镇 (ex-三八镇) · 台山市 · 广东省</p>
 </div>
 
 <!-- ════════════════════════════════════════════════════════════
-     § 1 — LA ALDEA CONFIRMADA
+     ACTO 1 — El punto de partida
      ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
+<div class="act-band yw-fade">
+  <span class="act-num" data-lang="es">ACTO 1</span>
+  <span class="act-num" data-lang="en">ACT 1</span>
+  <span class="act-num" data-lang="zh">第一幕</span>
+  <span data-lang="es">El punto de partida · 2024</span>
+  <span data-lang="en">The starting point · 2024</span>
+  <span data-lang="zh">起点 · 2024年</span>
+</div>
+
+<div class="inv-section yw-fade">
 
   <h2 class="section-title" data-lang="es">
-    La aldea confirmada
-    <span class="zh">龍陽村</span>
+    221 personas que descienden de alguien sin nombre chino
   </h2>
   <h2 class="section-title" data-lang="en">
-    The confirmed village
-    <span class="en">龍陽村</span>
+    221 people descended from someone with no known Chinese name
   </h2>
   <h2 class="section-title" data-lang="zh">
-    确认祖籍村庄
-    <span class="zh">龍陽村</span>
+    221位后裔，却不知祖先的中文名字
   </h2>
 
-  <!-- Geographic chain -->
-  <div class="geo-chain">
-    <span class="geo-chip" style="background:#dcfce7;color:#14532d;border:1px solid #16a34a;">龍陽村</span>
-    <span class="geo-arrow">⊂</span>
-    <span class="geo-chip" style="background:#fef9c3;color:#78350f;border:1px solid #ca8a04;">裡邊鄉</span>
-    <span class="geo-arrow">⊂</span>
-    <span class="geo-chip" style="background:#eff6ff;color:#1e40af;border:1px solid #3b82f6;">白沙镇</span>
-    <span class="geo-arrow">=</span>
-    <span class="geo-chip" style="background:#fff7ed;color:#c2410c;border:1px solid #f97316;">三八镇 (Sanba)</span>
-    <span class="geo-arrow">⊂</span>
-    <span class="geo-chip" style="background:#f8fafc;color:#374151;border:1px solid #94a3b8;">台山市, 广东</span>
-    <span style="font-size:0.75rem;color:#94a3b8;margin-left:6px;">· 18 km de Taishan ciudad</span>
+  <p data-lang="es">En 2024, <strong>Yolanda Leticia Ríos Yee</strong>, nieta de Miguel Yee Wong, reunió en Mexicali a descendientes de cinco generaciones y documentó <strong>221 personas</strong> que trazan su origen a un inmigrante chino llegado a México a principios del siglo XX. El árbol era frondoso. Pero su raíz — el nombre chino de ese hombre, su aldea de origen, su familia en China — eran completamente desconocidos.</p>
+  <p data-lang="en">In 2024, <strong>Yolanda Leticia Ríos Yee</strong>, a granddaughter of Miguel Yee Wong, gathered descendants spanning five generations in Mexicali and documented <strong>221 people</strong> who trace their origin to a Chinese immigrant who arrived in Mexico in the early 20th century. The family tree was vast. But its root — the man's Chinese name, his village of origin, his family in China — was entirely unknown.</p>
+  <p data-lang="zh">2024年，Miguel Yee Wong的孙女<strong>Yolanda Leticia Ríos Yee</strong>在墨西卡利召集了跨越五代的后裔，记录了<strong>221人</strong>的家族成员，他们的根源可追溯到一位二十世纪初来到墨西哥的华人移民。家族树枝繁叶茂，但其根源——这位先祖的中文名字、祖籍村庄、在中国的家人——却完全不为人知。</p>
+
+  <div class="callout" style="background:#f0fdf4;border-left-color:#16a34a;margin-top:20px;">
+    <strong data-lang="es">Lo que se sabía en 2024</strong>
+    <strong data-lang="en">What was known in 2024</strong>
+    <strong data-lang="zh">2024年已知的信息</strong>
+    <ul style="margin:8px 0 0;padding-left:20px;font-size:0.92rem;line-height:1.9;">
+      <li data-lang="es">Nombre en México: <strong>Miguel Yee Wong</strong></li>
+      <li data-lang="en">Name in Mexico: <strong>Miguel Yee Wong</strong></li>
+      <li data-lang="zh">在墨西哥使用的名字：<strong>Miguel Yee Wong</strong></li>
+      <li data-lang="es">Esposa: María Guadalupe Ibarra · Residencia: Tampico, Tamaulipas</li>
+      <li data-lang="en">Wife: María Guadalupe Ibarra · Residence: Tampico, Tamaulipas</li>
+      <li data-lang="zh">妻子：María Guadalupe Ibarra · 居住地：塔毛利帕斯州坦皮科</li>
+      <li data-lang="es">Origen: China — pero ¿dónde exactamente?</li>
+      <li data-lang="en">Origin: China — but where exactly?</li>
+      <li data-lang="zh">祖籍：中国——但具体在哪里？</li>
+      <li data-lang="es">Nombre chino: desconocido</li>
+      <li data-lang="en">Chinese name: unknown</li>
+      <li data-lang="zh">中文名：未知</li>
+      <li data-lang="es">Aldea de origen: desconocida</li>
+      <li data-lang="en">Village of origin: unknown</li>
+      <li data-lang="zh">祖籍村庄：未知</li>
+    </ul>
   </div>
 
-  <p data-lang="es">En marzo de 2026 se llevó a cabo una visita de campo a la aldea ancestral de la familia Yee (余). El nombre del pueblo, <strong>龍陽村 (Lóng Yáng Cūn)</strong>, fue confirmado directamente por el letrero del edificio del centro comunitario (fotos DJI_0275–0278). Toda la aldea — y la aldea vecina 朝陽村 — es exclusivamente del clan 余.</p>
-  <p data-lang="en">In March 2026 a field visit was conducted to the ancestral village of the Yee (余) family. The village name, <strong>龍陽村 (Lóng Yáng Cūn)</strong>, was confirmed directly by the sign on the community center building (photos DJI_0275–0278). The entire village — and the neighboring village of 朝陽村 — belongs exclusively to the 余 clan.</p>
-  <p data-lang="zh">2026年3月，调查人员实地访问了余氏祖籍村庄。村名<strong>龍陽村（龙阳村）</strong>由社区中心建筑的标牌直接确认（照片DJI_0275–0278）。整个村庄及邻村朝陽村均为余氏族人。</p>
+  <p data-lang="es" style="font-size:0.92rem;color:#374151;margin-top:16px;">Esa genealogía de 221 personas es el punto de partida de esta investigación. Todo lo que se narra en las páginas siguientes es el esfuerzo por responder a una pregunta sencilla: <em>¿quién era Miguel Yee Wong antes de ser Miguel?</em></p>
+  <p data-lang="en" style="font-size:0.92rem;color:#374151;margin-top:16px;">That 221-person genealogy is the starting point of this investigation. Everything that follows is the effort to answer one simple question: <em>who was Miguel Yee Wong before he became Miguel?</em></p>
+  <p data-lang="zh" style="font-size:0.92rem;color:#374151;margin-top:16px;">这份包含221人的族谱就是本次调查的出发点。以下所记录的一切，都是为了回答一个简单的问题：<em>在成为"Miguel"之前，Miguel Yee Wong是谁？</em></p>
+
+</div>
+<hr class="sec-divider">
+
+<!-- ════════════════════════════════════════════════════════════
+     ACTO 2 — Los archivos
+     ════════════════════════════════════════════════════════════ -->
+<div class="act-band yw-fade">
+  <span class="act-num" data-lang="es">ACTO 2</span>
+  <span class="act-num" data-lang="en">ACT 2</span>
+  <span class="act-num" data-lang="zh">第二幕</span>
+  <span data-lang="es">Los archivos · enero – febrero 2026</span>
+  <span data-lang="en">The archives · January – February 2026</span>
+  <span data-lang="zh">档案之路 · 2026年1–2月</span>
+</div>
+
+<div class="inv-section yw-fade">
+
+  <h2 class="section-title" data-lang="es">
+    Lo que encontraron los documentos
+  </h2>
+  <h2 class="section-title" data-lang="en">
+    What the documents revealed
+  </h2>
+  <h2 class="section-title" data-lang="zh">
+    档案中的发现
+  </h2>
+
+  <p data-lang="es">Antes de viajar a China, la investigación revisó archivos civiles en México, registros de naturalización y una fuente inesperada: un libro de memorias de 87 páginas escrito por el hijo de un amigo de Miguel. Cada documento sumó una pieza.</p>
+  <p data-lang="en">Before traveling to China, the investigation reviewed civil records in Mexico, naturalization files, and an unexpected source: an 87-page memoir written by the son of one of Miguel's friends. Each document added a piece.</p>
+  <p data-lang="zh">前往中国之前，调查人员查阅了墨西哥民事档案、归化文件，以及一个意外的线索来源：一本87页的回忆录，由Miguel一位朋友的儿子所著。每份文件都拼上了一块碎片。</p>
+
+  <!-- Discovery timeline -->
+  <div style="margin-top:24px;">
+
+    <div class="step-row yw-fade">
+      <span class="step-num">1</span>
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="es">Fichas AGN 99476 (Arturo) y 99513 (Federico) — Archivo General de la Nación, México</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="en">AGN files 99476 (Arturo) and 99513 (Federico) — National Archive, Mexico</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="zh">墨西哥国家档案馆卡片99476（Arturo）和99513（Federico）</div>
+        <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">Los hermanos de Miguel, Arturo y Federico Yee Wong, aparecen en el AGN con su lugar de origen: <strong>"Hoy Sang"</strong> — transliteración de 开平/台山 en su nombre histórico. Primer indicio concreto: la familia procede del <strong>condado de Taishan, Guangdong</strong>.</p>
+        <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">Miguel's brothers, Arturo and Federico Yee Wong, appear in the AGN with their place of origin: <strong>"Hoy Sang"</strong> — a transliteration of the historical name for the Kaiping/Taishan region. First concrete clue: the family comes from <strong>Taishan county, Guangdong</strong>.</p>
+        <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">Miguel的兄弟Arturo和Federico Yee Wong出现在国家档案馆中，记录了其来源地：<strong>"Hoy Sang"</strong>——这是开平/台山地区历史名称的音译。第一条具体线索：这个家族来自<strong>广东台山县</strong>。</p>
+        <div style="margin-top:6px;"><span class="badge-conf">CONFIRMADO</span></div>
+      </div>
+    </div>
+
+    <div class="step-row yw-fade">
+      <span class="step-num">2</span>
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="es">Naturalización Manuel Yee Pang, 1936 — "Long Llang, Foo Bang"</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="en">Naturalization of Manuel Yee Pang, 1936 — "Long Llang, Foo Bang"</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="zh">Manuel Yee Pang归化文件，1936年——"Long Llang, Foo Bang"</div>
+        <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">El documento de naturalización de Manuel Yee Pang — quien llegó a México por la misma empresa que Miguel — registra su lugar de nacimiento como <strong>"Long Llang, Foo Bang"</strong>. Ese nombre extraño, escrito por un funcionario que nunca estuvo en China, era la clave para encontrar la aldea. Años más tarde se reconocería como la romanización taishanesa de <strong>龍陽</strong>.</p>
+        <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">The naturalization document of Manuel Yee Pang — who came to Mexico through the same company as Miguel — records his birthplace as <strong>"Long Llang, Foo Bang"</strong>. That strange name, written by an official who had never been to China, was the key to finding the village. Years later it would be recognized as the Taishanese romanization of <strong>龍陽</strong>.</p>
+        <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">Manuel Yee Pang的归化文件——他与Miguel通过同一家公司来到墨西哥——将其出生地记录为<strong>"Long Llang, Foo Bang"</strong>。这个奇怪的名字由一位从未到过中国的官员写下，却成为找到祖籍村庄的关键。多年后，这被识别为<strong>龍陽</strong>的台山话音译。</p>
+        <div style="margin-top:6px;"><span class="badge-hyp">PISTA CLAVE</span></div>
+      </div>
+    </div>
+
+    <div class="step-row yw-fade">
+      <span class="step-num">3</span>
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="es">Documento de identificación, Legación China, octubre 1912 — Pablo Yee Wong, 22 años</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="en">Identification document, Chinese Legation, October 1912 — Pablo Yee Wong, age 22</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="zh">中国驻墨公使馆身份证明文件，1912年10月——Pablo Yee Wong，22岁</div>
+        <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">Un documento de la Legación China en México, fechado en octubre de 1912, registra a un tal <strong>"Fun Von Yee"</strong> (余松旺 / Pablo Yee Wong) con 22 años, en la ciudad de Santa Rosalía, Baja California Sur. Este documento — firmado por T. H. Tong — establece que Pablo nació hacia <strong>1890</strong>, y ubica a toda la red 余 en la misma región costera de BCS a principios del siglo XX.</p>
+        <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">A document from the Chinese Legation in Mexico, dated October 1912, records a person listed as <strong>"Fun Von Yee"</strong> (余松旺 / Pablo Yee Wong), age 22, in the city of Santa Rosalía, Baja California Sur. This document — signed by T. H. Tong — establishes that Pablo was born around <strong>1890</strong>, and places the entire 余 network in the same coastal region of BCS in the early 20th century.</p>
+        <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">一份中国驻墨西哥公使馆文件，日期为1912年10月，记录了一位名为<strong>"Fun Von Yee"</strong>（余松旺/Pablo Yee Wong）的人，22岁，位于下加利福尼亚南部圣罗萨利亚市。这份由T. H. Tong签署的文件证明Pablo生于约<strong>1890年</strong>，并将整个余氏网络定位在二十世纪初的下加利福尼亚南部沿海地区。</p>
+        <div style="margin-top:6px;"><span class="badge-conf">CONFIRMADO</span></div>
+      </div>
+    </div>
+
+    <div class="step-row yw-fade">
+      <span class="step-num">4</span>
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="es">«Tras la Muralla de Bambú» — Esteban Yee Moreno, ~2015, 87 pp.</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="en">"Tras la Muralla de Bambú" — Esteban Yee Moreno, ~2015, 87 pp.</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="zh">《竹墙背后》——Esteban Yee Moreno著，约2015年，87页</div>
+        <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">El hijo de Pablo Yee Wong escribió un libro de memorias sobre la vida de su padre. En la página 21, al listar los amigos de Pablo a lo largo de su vida, aparece un nombre que detendría la investigación: <strong>«Miguel Yee Lián»</strong> — mencionado junto a <strong>«Arturo Yee»</strong>, hermano confirmado de Miguel Yee Wong. Era la primera vez que aparecía un posible nombre chino para Miguel. El sufijo "Lián" podría corresponder al carácter <strong>廉</strong>.</p>
+        <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">The son of Pablo Yee Wong wrote a memoir about his father's life. On page 21, while listing Pablo's lifelong friends, a name appeared that would stop the investigation in its tracks: <strong>"Miguel Yee Lián"</strong> — mentioned alongside <strong>"Arturo Yee"</strong>, Miguel Yee Wong's confirmed brother. It was the first time a possible Chinese name for Miguel had surfaced. The suffix "Lián" might correspond to the character <strong>廉</strong>.</p>
+        <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">Pablo Yee Wong的儿子写了一本关于父亲生平的回忆录。第21页在列举Pablo毕生友人时，出现了一个令调查驻足的名字：<strong>"Miguel Yee Lián"</strong>——与Miguel Yee Wong已确认的兄弟<strong>"Arturo Yee"</strong>并列出现。这是Miguel中文名第一次浮现。后缀"Lián"可能对应汉字<strong>廉</strong>。</p>
+        <div style="margin-top:6px;"><span class="badge-conf">FUENTE PRIMARIA</span></div>
+      </div>
+    </div>
+
+    <div class="step-row yw-fade">
+      <span class="step-num">5</span>
+      <div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="es">La empresa 怡盛維貨 (Yee Sing &amp; Cía.) — fundada 1907, Mulegé, BCS</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="en">The company 怡盛維貨 (Yee Sing &amp; Co.) — founded 1907, Mulegé, BCS</div>
+        <div style="font-weight:700;font-size:0.95rem;" data-lang="zh">怡盛維貨公司——1907年创立，穆来赫，下加利福尼亚南部</div>
+        <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">El libro documenta que la empresa Yee Sing reclutaba casi exclusivamente de la misma aldea de origen en Taishan. Su fundador, <strong>José Yee Chan (余)</strong>, traía a los nuevos empleados, les enseñaba español y los distribuía en sucursales a lo largo de toda Baja California Sur: Mulegé, Loreto, Comondú, Santa Rosalía, La Purísima. Miguel, Pablo, Arturo y Manuel Yee Pang llegaron todos dentro de esta misma red.</p>
+        <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">The book documents that Yee Sing recruited almost exclusively from the same village in Taishan. Its founder, <strong>José Yee Chan (余)</strong>, brought in new employees, taught them Spanish, and distributed them across branches throughout Baja California Sur: Mulegé, Loreto, Comondú, Santa Rosalía, La Purísima. Miguel, Pablo, Arturo, and Manuel Yee Pang all arrived within this same network.</p>
+        <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">该书记录了怡盛維貨几乎专门从台山同一村庄招募员工的历史。创始人<strong>余（José Yee Chan）</strong>将新员工带来，教他们西班牙语，并将他们分配到下加利福尼亚南部各分支：穆来赫、洛雷托、科蒙杜、圣罗萨利亚、拉普里西马。Miguel、Pablo、Arturo和Manuel Yee Pang都是通过这一网络来到墨西哥的。</p>
+        <div style="margin-top:6px;"><span class="badge-conf">CONFIRMADO</span></div>
+      </div>
+    </div>
+
+  </div><!-- end steps -->
+
+  <div class="forever-quote" style="margin-top:28px;font-size:0.95rem;">
+    <span data-lang="es">«Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · entre muchos otros.»</span>
+    <span data-lang="en">"Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · among many others."</span>
+    <span data-lang="zh">「Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · 以及众多其他人。」</span>
+    <div class="attribution" data-lang="es">Esteban Yee Moreno, <em>Tras la Muralla de Bambú</em>, pág. 21 · lista de amigos de Pablo Yee Wong (余松旺) a lo largo de su vida</div>
+    <div class="attribution" data-lang="en">Esteban Yee Moreno, <em>Tras la Muralla de Bambú</em>, p. 21 · list of Pablo Yee Wong's (余松旺) lifelong friends</div>
+    <div class="attribution" data-lang="zh">Esteban Yee Moreno，《竹墙背后》第21页 · Pablo Yee Wong（余松旺）毕生友人名单</div>
+  </div>
+
+  <p data-lang="es" style="font-size:0.9rem;margin-top:12px;">El hallazgo es decisivo: <strong>«Arturo Yee»</strong> es el hermano de Miguel, confirmado por el acta de defunción de Fresnillo (1942). Los dos nombres — el del hermano confirmado y el de «Miguel Yee Lián» — aparecen juntos en la misma lista. Si se trata de la misma persona, Miguel tenía un segundo elemento en su nombre: <strong>Lián</strong>.</p>
+  <p data-lang="en" style="font-size:0.9rem;margin-top:12px;">The finding is decisive: <strong>"Arturo Yee"</strong> is Miguel's brother, confirmed by the Fresnillo death record (1942). Both names — the confirmed brother's and "Miguel Yee Lián's" — appear together in the same list. If they are the same person, Miguel had a second element in his name: <strong>Lián</strong>.</p>
+  <p data-lang="zh" style="font-size:0.9rem;margin-top:12px;">这一发现至关重要：<strong>"Arturo Yee"</strong>是Miguel的兄弟，由弗雷斯尼略死亡记录（1942年）证实。已确认的兄弟和"Miguel Yee Lián"两个名字出现在同一份名单中。若是同一人，Miguel的名字中有第二个元素：<strong>Lián</strong>。</p>
+
+</div>
+<hr class="sec-divider">
+
+<!-- ════════════════════════════════════════════════════════════
+     ACTO 3 — La visita a China
+     ════════════════════════════════════════════════════════════ -->
+<div class="act-band yw-fade">
+  <span class="act-num" data-lang="es">ACTO 3</span>
+  <span class="act-num" data-lang="en">ACT 3</span>
+  <span class="act-num" data-lang="zh">第三幕</span>
+  <span data-lang="es">La visita a China · 17–20 marzo 2026</span>
+  <span data-lang="en">The visit to China · March 17–20, 2026</span>
+  <span data-lang="zh">走进中国 · 2026年3月17–20日</span>
+</div>
+
+<div class="inv-section yw-fade">
+
+  <h2 class="section-title" data-lang="es">
+    龍陽村 — lo que se encontró en campo
+  </h2>
+  <h2 class="section-title" data-lang="en">
+    龍陽村 — what was found on the ground
+  </h2>
+  <h2 class="section-title" data-lang="zh">
+    龍陽村——实地发现
+  </h2>
+
+  <p data-lang="es">En marzo de 2026, un equipo viajó a Taishan, Guangdong. Partiendo del nombre "Long Llang, Foo Bang" del documento de 1936, localizó la aldea de 龍陽村 en el municipio de 白沙镇 (anteriormente 三八镇), a 18 kilómetros de la ciudad de Taishan. Lo que encontró superó las expectativas.</p>
+  <p data-lang="en">In March 2026, a team traveled to Taishan, Guangdong. Starting from the name "Long Llang, Foo Bang" in the 1936 document, they located the village of 龍陽村 in the 白沙镇 township (formerly 三八镇), 18 kilometers from Taishan city. What they found exceeded expectations.</p>
+  <p data-lang="zh">2026年3月，一支调查团队前往广东台山。以1936年文件中的"Long Llang, Foo Bang"为起点，他们在台山市城区18公里外的白沙镇（原三八镇）找到了龍陽村。所见所闻超出了预期。</p>
+
+  <!-- Geo chain -->
+  <div class="geo-chain yw-fade">
+    <span class="geo-chip" style="background:#dcfce7;color:#14532d;border:1px solid #16a34a;">龍陽村</span>
+    <span class="geo-arrow">dentro de</span>
+    <span class="geo-chip" style="background:#fef9c3;color:#78350f;border:1px solid #ca8a04;">裡邊鄉</span>
+    <span class="geo-arrow">dentro de</span>
+    <span class="geo-chip" style="background:#eff6ff;color:#1e40af;border:1px solid #3b82f6;">白沙镇 (ex-三八镇)</span>
+    <span class="geo-arrow">dentro de</span>
+    <span class="geo-chip" style="background:#f8fafc;color:#374151;border:1px solid #94a3b8;">台山市, 广东</span>
+  </div>
 
   <!-- Evidence list -->
   <ul class="evidence-list">
-    <li>
+    <li class="yw-fade">
       <span class="ev-badge"><span class="badge-conf">CONFIRMADO</span></span>
-      <span data-lang="es"><strong>Letrero 龍陽村</strong> en el edificio del centro comunitario — fotos DJI_0275–0278 (dron, 17 mar 2026).</span>
-      <span data-lang="en"><strong>Sign 龍陽村</strong> on the community center building — photos DJI_0275–0278 (drone, Mar 17, 2026).</span>
-      <span data-lang="zh"><strong>龍陽村标牌</strong>见于社区中心建筑——照片DJI_0275–0278（无人机，2026年3月17日）。</span>
+      <span data-lang="es">El letrero del edificio del centro comunitario lleva escrito <strong>龍陽村</strong> — la aldea existe y ese es su nombre.</span>
+      <span data-lang="en">The sign on the community center building reads <strong>龍陽村</strong> — the village exists and that is its name.</span>
+      <span data-lang="zh">社区中心建筑的标牌上清楚写着<strong>龍陽村</strong>——该村庄确实存在，这就是它的名字。</span>
     </li>
-    <li>
+    <li class="yw-fade">
       <span class="ev-badge"><span class="badge-conf">CONFIRMADO</span></span>
-      <span data-lang="es"><strong>Sala ancestral 余植槐公祠</strong> dentro de la aldea — activa en 2026, murales, ceremonias recientes.</span>
-      <span data-lang="en"><strong>Ancestral hall 余植槐公祠</strong> (Yú Zhí Huái ancestral hall) inside the village — active in 2026 with murals and recent ceremonies.</span>
-      <span data-lang="zh"><strong>余植槐公祠</strong>位于村内，至2026年仍在使用，有壁画和近期祭祀活动。</span>
+      <span data-lang="es">Toda la aldea — y la aldea vecina, 朝陽村 — es exclusivamente del clan <strong>余 (Yee)</strong>. Un video local de la zona lo confirma: «龍陽村和朝陽村附近的村民都是姓余» ("todos los habitantes de ambas aldeas son del clan 余").</span>
+      <span data-lang="en">The entire village — and the neighboring village of 朝陽村 — belongs exclusively to the <strong>余 (Yee)</strong> clan. A local video of the area confirms it: "龍陽村和朝陽村附近的村民都是姓余" ("all inhabitants of both villages are of the 余 clan").</span>
+      <span data-lang="zh">整个龍陽村——及邻村朝陽村——均为<strong>余（Yee）</strong>氏族人。当地一段视频证实：「龍陽村和朝陽村附近的村民都是姓余」。</span>
     </li>
-    <li>
+    <li class="yw-fade">
       <span class="ev-badge"><span class="badge-conf">CONFIRMADO</span></span>
-      <span data-lang="es"><strong>Placa de donantes 2018</strong> (重建社稷捐款芳名, Nov. 2018): todos los donantes son del clan 余. El 祠堂 frente a la plaza fue construido en 1970 por jóvenes que regresaron al pueblo.</span>
-      <span data-lang="en"><strong>Donor plaque 2018</strong> (重建社稷捐款芳名, Nov. 2018): all donors belong to the 余 clan. The 祠堂 plaza was built in 1970 by young people who returned to the village.</span>
-      <span data-lang="zh"><strong>2018年捐款芳名</strong>（重建社稷捐款芳名，2018年11月）：所有捐款人均为余氏族人。祠堂前广场由1970年回乡知青捐建。</span>
+      <span data-lang="es">Dentro de la aldea hay una <strong>sala ancestral activa: 余植槐公祠</strong>. Las ceremonias siguen vigentes en 2026. La placa de donantes de 2018 lleva los nombres de decenas de personas, todas con el apellido 余. El mismo video local menciona que los emigrantes de esta zona «hablan español» (讲西班牙文).</span>
+      <span data-lang="en">Inside the village stands an <strong>active ancestral hall: 余植槐公祠</strong>. Ceremonies continue in 2026. The 2018 donor plaque lists dozens of names, all bearing the surname 余. The local video also notes that emigrants from this area "speak Spanish" (讲西班牙文).</span>
+      <span data-lang="zh">村内有一座仍在使用的<strong>余植槐公祠</strong>。2026年仍有祭祀活动。2018年捐款芳名录中记载了数十人的名字，全部为余姓。当地视频也提到该地区移民"讲西班牙文"。</span>
     </li>
-    <li>
+    <li class="yw-fade">
       <span class="ev-badge"><span class="badge-conf">CONFIRMADO</span></span>
-      <span data-lang="es"><strong>Árbol de banyan centenario</strong> en la plaza central de la aldea — fotos DJI_0280–0283.</span>
-      <span data-lang="en"><strong>Century-old banyan tree</strong> (榕树) at the center plaza — photos DJI_0280–0283.</span>
-      <span data-lang="zh"><strong>百年榕树</strong>位于村中心广场——照片DJI_0280–0283。</span>
+      <span data-lang="es">En la plaza central de la aldea crece un <strong>árbol de banyan centenario</strong> — la clase de referencia que los emigrantes llevan en la memoria durante décadas.</span>
+      <span data-lang="en">At the center of the village stands a <strong>century-old banyan tree</strong> — the kind of landmark that emigrants carry in memory for decades.</span>
+      <span data-lang="zh">村中心广场有一棵<strong>百年榕树</strong>——这正是移民们在异乡数十年后仍铭记心中的地标。</span>
     </li>
-    <li>
-      <span class="ev-badge"><span class="badge-conf">CONFIRMADO</span></span>
-      <span data-lang="es">Video 台山百曉 (YouTube): «龍陽村和朝陽村附近的村民都是姓余» — las dos aldeas son <strong>100% clan 余</strong>. Los emigrantes de esta zona «hablan español» (讲西班牙文).</span>
-      <span data-lang="en">Video 台山百曉 (YouTube): "龍陽村和朝陽村附近的村民都是姓余" — both villages are <strong>100% 余 clan</strong>. Emigrants from this area "speak Spanish" (讲西班牙文).</span>
-      <span data-lang="zh">台山百曉视频（YouTube）："龍陽村和朝陽村附近的村民都是姓余"——两个村庄均为<strong>余氏族人</strong>。该地区移民"讲西班牙文"。</span>
+    <li class="yw-fade">
+      <span class="ev-badge"><span class="badge-conf">OBSERVADO EN CAMPO</span></span>
+      <span data-lang="es">Los habitantes de 龍陽村 <strong>reconocieron el nombre de México</strong> y reconocieron la conexión con sus emigrantes al ver las fotos y los documentos que el equipo llevaba.</span>
+      <span data-lang="en">The inhabitants of 龍陽村 <strong>recognized the name of Mexico</strong> and acknowledged the connection with their emigrants upon seeing the photos and documents the team brought.</span>
+      <span data-lang="zh">龍陽村村民<strong>认出了墨西哥的名字</strong>，在看到调查团队带来的照片和文件时，认可了他们的移民与这里的关联。</span>
     </li>
-    <li>
-      <span class="ev-badge"><span class="badge-hyp">HIPÓTESIS FONÉTICA</span></span>
-      <span data-lang="es"><strong>"Long Llang, Foo Bang"</strong> (doc. naturalización Manuel Yee Pang, 1936) = romanización taishanesa de <strong>龍陽</strong> + unidad administrativa superior. "Long" = 龍 (directo); "Llang" = 陽 (en taishanés la Y inicial se realiza como L).</span>
-      <span data-lang="en"><strong>"Long Llang, Foo Bang"</strong> (Manuel Yee Pang naturalization document, 1936) = Taishanese romanization of <strong>龍陽</strong> + higher administrative unit. "Long" = 龍 (direct); "Llang" = 陽 (in Taishanese the initial Y is realized as L).</span>
-      <span data-lang="zh"><strong>"Long Llang, Foo Bang"</strong>（Manuel Yee Pang归化文件，1936年）= <strong>龍陽</strong>的台山话罗马字拼写 + 上级行政单位。"Long"=龍（对应直接）；"Llang"=陽（台山话中声母Y发音为L）。</span>
+    <li class="yw-fade">
+      <span class="ev-badge"><span class="badge-conf">OBSERVADO EN CAMPO</span></span>
+      <span data-lang="es">El nombre <strong>"Miguel"</strong> fue pronunciado por los habitantes al identificar al ancestro.</span>
+      <span data-lang="en">The name <strong>"Miguel"</strong> was spoken by the inhabitants when identifying the ancestor.</span>
+      <span data-lang="zh">村民在辨认祖先时说出了<strong>"Miguel"</strong>这个名字。</span>
     </li>
   </ul>
 
 </div>
-<hr class="sec-divider">
 
-<!-- ════════════════════════════════════════════════════════════
-     § 2 — LO QUE DIJERON LOS HABITANTES
-     ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
+<!-- ── SUB-SECTION: First house -->
+<div class="inv-section yw-fade" style="padding-top:0;">
 
-  <h2 class="section-title" data-lang="es">Lo que dijeron los habitantes
-    <span class="zh">— Transcripciones de video</span>
-  </h2>
-  <h2 class="section-title" data-lang="en">What the villagers said
-    <span class="en">— Video transcriptions</span>
-  </h2>
-  <h2 class="section-title" data-lang="zh">村民说了什么
-    <span class="zh">——视频转录</span>
-  </h2>
+  <h3 style="font-size:1.1rem;font-weight:900;color:#0f2744;margin-bottom:16px;" data-lang="es">La primera casa — el altar activo</h3>
+  <h3 style="font-size:1.1rem;font-weight:900;color:#0f2744;margin-bottom:16px;" data-lang="en">The first house — the active altar</h3>
+  <h3 style="font-size:1.1rem;font-weight:900;color:#0f2744;margin-bottom:16px;" data-lang="zh">第一栋房子——活跃的祭坛</h3>
 
-  <div class="warn-method" data-lang="es">
-    <strong>Nota metodológica:</strong> Transcripciones realizadas con Whisper (modelo <em>small</em>, 461 MB). El taishanés (台山话) es un dialecto Yue con diferencias fonológicas significativas del cantonés estándar. Las frases marcadas en verde tienen alta confianza; las demás son <strong>tentativas</strong>. Se requiere verificación con hablante nativo.
-  </div>
-  <div class="warn-method" data-lang="en">
-    <strong>Methodological note:</strong> Transcriptions produced with Whisper (model <em>small</em>, 461 MB). Taishanese (台山话) is a Yue dialect with significant phonological differences from standard Cantonese. Green-highlighted phrases have high confidence; others are <strong>tentative</strong>. Verification by a native speaker is required.
-  </div>
-  <div class="warn-method" data-lang="zh">
-    <strong>方法论说明：</strong>转录使用Whisper（small模型，461 MB）生成。台山话（台山话）是粤语方言，与标准粤语有显著语音差异。绿色标注的句子可信度较高；其余为<strong>暂定</strong>，需经母语者核实。
-  </div>
-
-  <!-- ── Video 0273 — the most important ── -->
-  <h3 data-lang="es" style="color:#059669;margin-top:20px;">Video DJI_0273 (~4.2 min) — Llegada a 龍陽村 · Frases críticas</h3>
-  <h3 data-lang="en" style="color:#059669;margin-top:20px;">Video DJI_0273 (~4.2 min) — Arrival at 龍陽村 · Critical phrases</h3>
-  <h3 data-lang="zh" style="color:#059669;margin-top:20px;">视频DJI_0273（约4.2分钟）——抵达龍陽村 · 关键语句</h3>
-
-  <table class="quote-table">
-    <thead>
-      <tr>
-        <th data-lang="es">Frase (cantonés / taishanés)</th>
-        <th data-lang="en">Phrase (Cantonese / Taishanese)</th>
-        <th data-lang="zh">原文（粤语/台山话）</th>
-        <th data-lang="es">Traducción</th>
-        <th data-lang="en">Translation</th>
-        <th data-lang="zh">译文</th>
-        <th data-lang="es">Significado genealógico</th>
-        <th data-lang="en">Genealogical significance</th>
-        <th data-lang="zh">族谱意义</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="critical">
-        <td class="chinese">這是Miguel Manuel</td>
-        <td data-lang="es">"Este es Miguel Manuel"</td>
-        <td data-lang="en">"This is Miguel Manuel"</td>
-        <td data-lang="zh">"这是Miguel Manuel"</td>
-        <td data-lang="es">Alguien en la aldea identifica al ancestro por ese nombre — el nombre "Miguel" era conocido allí.</td>
-        <td data-lang="en">Someone in the village identifies the ancestor by that name — the name "Miguel" was known there.</td>
-        <td data-lang="zh">村民以此名称识别先祖——"Miguel"这个名字在当地有人知晓。</td>
-      </tr>
-      <tr class="critical">
-        <td class="chinese">祖父親家在這裡</td>
-        <td data-lang="es">"La casa del abuelo / ancestro está aquí"</td>
-        <td data-lang="en">"The ancestor's / grandfather's house is here"</td>
-        <td data-lang="zh">"祖父的家在这里"</td>
-        <td data-lang="es"><strong>CONFIRMACIÓN DIRECTA</strong> de campo: la primera casa visitada es la casa ancestral de la familia.</td>
-        <td data-lang="en"><strong>DIRECT FIELD CONFIRMATION</strong>: the first house visited is the family's ancestral home.</td>
-        <td data-lang="zh"><strong>实地直接确认</strong>：所访问的第一所房屋即为家族祖居。</td>
-      </tr>
-      <tr>
-        <td class="chinese">麥犀哥 <span style="color:#6b7280;font-size:0.8em;">× múltiples</span></td>
-        <td data-lang="es">"México" (Mak-Si-Go en cantonés)</td>
-        <td data-lang="en">"Mexico" (Mak-Si-Go in Cantonese)</td>
-        <td data-lang="zh">"墨西哥"（粤语发音：Mak-Si-Go）</td>
-        <td data-lang="es">Los habitantes pronuncian "México" repetidamente al reconocer la conexión con el emigrante.</td>
-        <td data-lang="en">Villagers repeatedly say "Mexico" upon recognizing the connection with the emigrant.</td>
-        <td data-lang="zh">村民多次提及"墨西哥"，认出与移民的联系。</td>
-      </tr>
-      <tr class="critical">
-        <td class="chinese">麥犀哥，他可能是我們的</td>
-        <td data-lang="es">"México — él podría ser nuestro pariente"</td>
-        <td data-lang="en">"Mexico — he could be our relative"</td>
-        <td data-lang="zh">"墨西哥——他可能是我们的亲人"</td>
-        <td data-lang="es">Los habitantes de 龍陽村 reconocen al emigrante a México como posible pariente de su familia.</td>
-        <td data-lang="en">Villagers of 龍陽村 recognize the Mexican emigrant as a possible relative of their family.</td>
-        <td data-lang="zh">龍陽村村民认为去墨西哥的移民可能是他们的亲戚。</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- ── Video 0265 ── -->
-  <h3 data-lang="es" style="color:#7c3aed;margin-top:20px;">Video DJI_0265 (~3.8 min) — Primera casa · Altar</h3>
-  <h3 data-lang="en" style="color:#7c3aed;margin-top:20px;">Video DJI_0265 (~3.8 min) — First house · Altar</h3>
-  <h3 data-lang="zh" style="color:#7c3aed;margin-top:20px;">视频DJI_0265（约3.8分钟）——第一栋房子 · 祭坛</h3>
-
-  <table class="quote-table">
-    <thead>
-      <tr>
-        <th data-lang="es">Frase</th>
-        <th data-lang="en">Phrase</th>
-        <th data-lang="zh">原文</th>
-        <th data-lang="es">Traducción</th>
-        <th data-lang="en">Translation</th>
-        <th data-lang="zh">译文</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="chinese">不過而且還是他的牌呢</td>
-        <td data-lang="es">"Pero además sigue siendo su tableta / placa"</td>
-        <td data-lang="en">"But it's still his tablet / plaque"</td>
-        <td data-lang="zh">"不过还是他的牌位"</td>
-      </tr>
-      <tr>
-        <td class="chinese">對，我還還名字</td>
-        <td data-lang="es">"Sí, todavía tengo / recuerdo el nombre"</td>
-        <td data-lang="en">"Yes, I still have / remember the name"</td>
-        <td data-lang="zh">"是的，我还记得他的名字"</td>
-      </tr>
-      <tr>
-        <td class="chinese">他叫他的名字 · 他叫他的名字</td>
-        <td data-lang="es">"Él lo llama por su nombre" (repetido dos veces)</td>
-        <td data-lang="en">"He calls him by his name" (repeated twice)</td>
-        <td data-lang="zh">"他叫他的名字"（重复两次）</td>
-      </tr>
-      <tr>
-        <td class="chinese">我記性中，我記了</td>
-        <td data-lang="es">"En mi memoria, lo recuerdo"</td>
-        <td data-lang="en">"In my memory, I remember it"</td>
-        <td data-lang="zh">"我记得，我记住了"</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- ── Video 0266 ── -->
-  <h3 data-lang="es" style="color:#7c3aed;margin-top:20px;">Video DJI_0266 (~2.3 min) — Transición entre locaciones</h3>
-  <h3 data-lang="en" style="color:#7c3aed;margin-top:20px;">Video DJI_0266 (~2.3 min) — Transition between locations</h3>
-  <h3 data-lang="zh" style="color:#7c3aed;margin-top:20px;">视频DJI_0266（约2.3分钟）——两处之间的过渡</h3>
-
-  <table class="quote-table">
-    <thead>
-      <tr>
-        <th data-lang="es">Frase</th>
-        <th data-lang="en">Phrase</th>
-        <th data-lang="zh">原文</th>
-        <th data-lang="es">Traducción</th>
-        <th data-lang="en">Translation</th>
-        <th data-lang="zh">译文</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="chinese">你找我去哪里？</td>
-        <td data-lang="es">"¿Adónde me llevas?"</td>
-        <td data-lang="en">"Where are you taking me?"</td>
-        <td data-lang="zh">"你要带我去哪里？"</td>
-      </tr>
-      <tr>
-        <td class="chinese">阿祖也吃了一份饭</td>
-        <td data-lang="es">"El abuelo / ancestro también comió"</td>
-        <td data-lang="en">"The ancestor / grandfather also ate a meal"</td>
-        <td data-lang="zh">"阿祖也吃了饭"</td>
-      </tr>
-      <tr>
-        <td class="chinese">占华 <span style="color:#6b7280;font-size:0.8em;">× múltiples</span></td>
-        <td data-lang="es">"Zhàn Huá" / "Chan Wah" — nombre propio. El carácter 占 puede romanizarse "Chan" en taishanés; posible referencia a la rama Chan Pao Yee (padre de Manuel Yee Pang).</td>
-        <td data-lang="en">"Zhàn Huá" / "Chan Wah" — proper name. The character 占 can be romanized as "Chan" in Taishanese; possible reference to the Chan Pao Yee branch (father of Manuel Yee Pang).</td>
-        <td data-lang="zh">"占华" ——人名。"占"字在台山话中可读作"Chan"；或与Chan Pao Yee（Manuel Yee Pang之父）支系有关。</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-<hr class="sec-divider">
-
-<!-- ════════════════════════════════════════════════════════════
-     § 3 — EL ALTAR Y LA TABLETA
-     ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
-
-  <h2 class="section-title" data-lang="es">El altar y la tableta
-    <span class="zh">余礼[廉?] · Primera casa</span>
-  </h2>
-  <h2 class="section-title" data-lang="en">The altar and the tablet
-    <span class="en">余礼[廉?] · First house</span>
-  </h2>
-  <h2 class="section-title" data-lang="zh">祭坛与牌位
-    <span class="zh">余礼[廉?] · 第一栋房子</span>
-  </h2>
-
-  <p data-lang="es">Antes de llegar al centro de 龍陽村, el grupo visitó una <strong>casa tradicional de dos pisos</strong> — construcción taishanesa típica de principios del siglo XX: paredes de ladrillo gris, balcón con balaustrada verde y roja, patio interior. Una anciana habitaba el lugar. En el piso superior se encontró un altar activo con tres varitas de incienso encendidas.</p>
-  <p data-lang="en">Before reaching the center of 龍陽村, the group visited a <strong>traditional two-story house</strong> — a typical early 20th-century Taishanese structure: gray brick walls, green and red balustrade balcony, inner courtyard. An elderly woman lived there. On the upper floor, an active altar was found with three burning incense sticks.</p>
-  <p data-lang="zh">抵达龍陽村中心之前，调查组参观了一栋<strong>传统两层楼房</strong>——典型的二十世纪初台山建筑风格：灰砖墙、绿红栏杆阳台、内院。一位老妇人居住于此。二楼设有一处活跃的祭坛，三炷香正在燃烧。</p>
+  <p data-lang="es">Antes de llegar al centro de la aldea, el grupo visitó una <strong>casa tradicional de dos pisos</strong> — construcción taishanesa típica de principios del siglo XX: paredes de ladrillo gris, balcón con balaustrada, patio interior. Una anciana habitaba el lugar. En el piso superior había un altar activo: tres varitas de incienso encendidas, flores de papel, y sobre él una <strong>fotografía en blanco y negro de una pareja</strong> — un hombre de rasgos chinos y una mujer de posible ascendencia mixta.</p>
+  <p data-lang="en">Before reaching the center of the village, the group visited a <strong>traditional two-story house</strong> — a typical early 20th-century Taishanese structure: gray brick walls, balustraded balcony, inner courtyard. An elderly woman lived there. On the upper floor stood an active altar: three burning incense sticks, paper flowers, and above it a <strong>black-and-white photograph of a couple</strong> — a Chinese-featured man and a woman of possible mixed ancestry.</p>
+  <p data-lang="zh">抵达村中心之前，调查组参观了一栋<strong>传统两层楼房</strong>——典型的二十世纪初台山建筑风格：灰砖墙、有栏杆的阳台、内院。一位老妇人居住于此。二楼有一处活跃的祭坛：三炷燃香、纸花，其上方还有一张<strong>黑白夫妇合影</strong>——男方具有中国面孔，女方可能为混血。</p>
 
   <!-- Altar tablets display -->
-  <div class="altar-box">
-    <div class="altar-title" data-lang="es">Altar activo — tres tabletas — incienso encendido</div>
-    <div class="altar-title" data-lang="en">Active altar — three tablets — burning incense</div>
-    <div class="altar-title" data-lang="zh">活跃祭坛——三块牌位——香火正盛</div>
+  <div class="altar-box yw-fade">
+    <div class="altar-title" data-lang="es">Altar activo · tres tabletas · incienso encendido</div>
+    <div class="altar-title" data-lang="en">Active altar · three tablets · burning incense</div>
+    <div class="altar-title" data-lang="zh">活跃祭坛 · 三块牌位 · 香火正盛</div>
     <div class="altar-tablets">
       <div class="tablet">
         <div class="t-label" data-lang="es">Tableta izquierda</div>
         <div class="t-label" data-lang="en">Left tablet</div>
         <div class="t-label" data-lang="zh">左侧牌位</div>
         <div class="t-text">顯祖<br>余 [?]<br>公</div>
-        <div class="t-sub" data-lang="es">Segundo ancestro del clan 余 — tercer carácter ilegible</div>
-        <div class="t-sub" data-lang="en">Second 余 clan ancestor — third character illegible</div>
-        <div class="t-sub" data-lang="zh">余氏第二位先祖——第三字无法辨认</div>
+        <div class="t-sub" data-lang="es">Ancestro del clan 余 — tercer carácter ilegible en la foto</div>
+        <div class="t-sub" data-lang="en">余 clan ancestor — third character illegible in the photo</div>
+        <div class="t-sub" data-lang="zh">余氏先祖——第三字在照片中无法辨认</div>
       </div>
       <div class="tablet">
         <div class="t-label" data-lang="es">Tableta central</div>
         <div class="t-label" data-lang="en">Central tablet</div>
         <div class="t-label" data-lang="zh">中央牌位</div>
         <div class="t-text">下 · [?] · 壹</div>
-        <div class="t-sub" data-lang="es">Posible inscripción colectiva — carácter central ilegible</div>
-        <div class="t-sub" data-lang="en">Possible collective inscription — central character illegible</div>
-        <div class="t-sub" data-lang="zh">可能为集体铭文——中间字无法辨认</div>
+        <div class="t-sub" data-lang="es">Posible inscripción colectiva</div>
+        <div class="t-sub" data-lang="en">Possible collective inscription</div>
+        <div class="t-sub" data-lang="zh">可能为集体铭文</div>
       </div>
       <div class="tablet key-tablet">
-        <div class="t-label" data-lang="es">Tableta derecha ⭐ CLAVE</div>
-        <div class="t-label" data-lang="en">Right tablet ⭐ KEY</div>
-        <div class="t-label" data-lang="zh">右侧牌位 ⭐ 关键</div>
+        <div class="t-label" data-lang="es">Tableta derecha — CLAVE</div>
+        <div class="t-label" data-lang="en">Right tablet — KEY</div>
+        <div class="t-label" data-lang="zh">右侧牌位——关键</div>
         <div class="t-text">顯祖<br>余礼[廉?]<br>公</div>
-        <div class="t-sub" data-lang="es">Si [?] = 廉 → <strong>余礼廉 = Miguel Yee Lián</strong></div>
-        <div class="t-sub" data-lang="en">If [?] = 廉 → <strong>余礼廉 = Miguel Yee Lián</strong></div>
-        <div class="t-sub" data-lang="zh">若[?]=廉→<strong>余礼廉=Miguel Yee Lián</strong></div>
+        <div class="t-sub" data-lang="es">El apellido 余 es visible. El tercer carácter requiere mejor fotografía para confirmar si es 廉.</div>
+        <div class="t-sub" data-lang="en">The surname 余 is visible. The third character requires a better photograph to confirm whether it is 廉.</div>
+        <div class="t-sub" data-lang="zh">余姓清晰可见。第三个字符需要更清晰的照片来确认是否为廉。</div>
       </div>
     </div>
-    <div style="margin-top:14px;font-size:0.85rem;color:#374151;" data-lang="es">
-      <strong>Viga inferior:</strong> 金满宅 (Jīn Mǎn Zhái) = "Casa colmada de oro / prosperidad" — inscripción típica de casas construidas o renovadas con dinero de un emigrante.
+    <div style="margin-top:14px;font-size:0.88rem;color:#374151;border-top:1px solid #e9d5ff;padding-top:12px;" data-lang="es">
+      <strong>Viga inferior del altar:</strong> 金满宅 (Jīn Mǎn Zhái) — "Casa colmada de prosperidad". Es una inscripción típica de casas construidas o renovadas con dinero enviado desde el extranjero por un emigrante.
     </div>
-    <div style="margin-top:14px;font-size:0.85rem;color:#374151;" data-lang="en">
-      <strong>Lower beam:</strong> 金满宅 (Jīn Mǎn Zhái) = "House filled with gold / prosperity" — inscription typical of houses built or renovated with money sent by an emigrant.
+    <div style="margin-top:14px;font-size:0.88rem;color:#374151;border-top:1px solid #e9d5ff;padding-top:12px;" data-lang="en">
+      <strong>Lower beam of the altar:</strong> 金满宅 (Jīn Mǎn Zhái) — "House filled with prosperity". A typical inscription on houses built or renovated with money sent from abroad by an emigrant.
     </div>
-    <div style="margin-top:14px;font-size:0.85rem;color:#374151;" data-lang="zh">
-      <strong>下方横梁：</strong>金满宅（Jīn Mǎn Zhái）=「金玉满堂」——典型铭文，常见于海外移民出资修建或翻新的房屋。
+    <div style="margin-top:14px;font-size:0.88rem;color:#374151;border-top:1px solid #e9d5ff;padding-top:12px;" data-lang="zh">
+      <strong>祭坛横梁：</strong>金满宅（Jīn Mǎn Zhái）——"金玉满堂"。这是海外移民出资修建或翻新的房屋上常见的铭文。
     </div>
-    <div style="margin-top:10px;font-size:0.85rem;color:#374151;" data-lang="es">
-      <strong>Foto sobre el altar:</strong> Retrato formal en blanco y negro de una pareja — hombre chino + mujer de posible ascendencia mixta. Estilo ~1940–1960s. La mujer podría ser María Guadalupe Ibarra, esposa de Miguel Yee Wong en Tampico.
+  </div>
+
+</div>
+<hr class="sec-divider">
+
+<!-- ════════════════════════════════════════════════════════════
+     ACTO 4 — La hipótesis central
+     ════════════════════════════════════════════════════════════ -->
+<div class="act-band yw-fade">
+  <span class="act-num" data-lang="es">ACTO 4</span>
+  <span class="act-num" data-lang="en">ACT 4</span>
+  <span class="act-num" data-lang="zh">第四幕</span>
+  <span data-lang="es">La hipótesis central · La pregunta que queda</span>
+  <span data-lang="en">The central hypothesis · The remaining question</span>
+  <span data-lang="zh">核心假设 · 悬而未决的问题</span>
+</div>
+
+<div class="inv-section yw-fade">
+
+  <h2 class="section-title" data-lang="es">
+    Si el carácter es 廉
+    <span class="zh">余礼廉 = Miguel Yee Wong</span>
+  </h2>
+  <h2 class="section-title" data-lang="en">
+    If the character is 廉
+    <span class="zh">余礼廉 = Miguel Yee Wong</span>
+  </h2>
+  <h2 class="section-title" data-lang="zh">
+    如果那个字是廉
+    <span class="zh">余礼廉 = Miguel Yee Wong</span>
+  </h2>
+
+  <p data-lang="es">Todo lo encontrado hasta ahora apunta en la misma dirección. Si el tercer carácter de la tableta del altar es <strong>廉</strong>, entonces la hipótesis se vuelve sólida: el nombre chino de Miguel Yee Wong era <strong>余礼廉 (Yú Lǐ Lián)</strong>. Cada uno de los tres caracteres tiene una explicación precisa:</p>
+  <p data-lang="en">Everything found so far points in the same direction. If the third character of the altar tablet is <strong>廉</strong>, then the hypothesis becomes solid: Miguel Yee Wong's Chinese name was <strong>余礼廉 (Yú Lǐ Lián)</strong>. Each of the three characters has a precise explanation:</p>
+  <p data-lang="zh">迄今为止发现的一切都指向同一个方向。如果祭坛牌位的第三个字符是<strong>廉</strong>，那么假设就将变得站得住脚：Miguel Yee Wong的中文名是<strong>余礼廉（Yú Lǐ Lián）</strong>。三个汉字各有其精确的解释：</p>
+
+  <!-- Name breakdown -->
+  <div class="name-breakdown yw-fade">
+    <div class="name-part" style="background:#f0fdf4;border:2px solid #16a34a;">
+      <div class="char" style="color:#14532d;">余</div>
+      <div class="label-sm" style="color:#15803d;" data-lang="es">Apellido del clan</div>
+      <div class="label-sm" style="color:#15803d;" data-lang="en">Clan surname</div>
+      <div class="label-sm" style="color:#15803d;" data-lang="zh">族姓</div>
+      <div class="meaning" data-lang="es">"Yee" en taishanés<br>El 余 de toda la familia</div>
+      <div class="meaning" data-lang="en">"Yee" in Taishanese<br>The 余 of the whole family</div>
+      <div class="meaning" data-lang="zh">台山话读作"Yee"<br>全家族的余姓</div>
     </div>
-    <div style="margin-top:10px;font-size:0.85rem;color:#374151;" data-lang="en">
-      <strong>Photo above the altar:</strong> Black-and-white formal portrait of a couple — Chinese man + woman of possible mixed ancestry. Style ~1940–1960s. The woman may be María Guadalupe Ibarra, Miguel Yee Wong's wife in Tampico.
+    <div class="name-part" style="background:#fef9c3;border:2px solid #ca8a04;">
+      <div class="char" style="color:#78350f;">礼</div>
+      <div class="label-sm" style="color:#92400e;" data-lang="es">Carácter generacional</div>
+      <div class="label-sm" style="color:#92400e;" data-lang="en">Generational character</div>
+      <div class="label-sm" style="color:#92400e;" data-lang="zh">字辈</div>
+      <div class="meaning" data-lang="es">Poema generacional propio de 龍陽村 — ubica a Miguel en su generación del clan</div>
+      <div class="meaning" data-lang="en">Local generational poem of 龍陽村 — places Miguel in his generation of the clan</div>
+      <div class="meaning" data-lang="zh">龍陽村本地字辈诗——确定Miguel在族谱中的世代</div>
     </div>
-    <div style="margin-top:10px;font-size:0.85rem;color:#374151;" data-lang="zh">
-      <strong>祭坛上方照片：</strong>一对夫妇的黑白正式肖像——中国男性 + 可能为混血女性。风格约1940–1960年代。该女性或为Miguel Yee Wong在坦皮科的妻子María Guadalupe Ibarra。
+    <div class="name-part" style="background:#ede9fe;border:2px solid #7c3aed;">
+      <div class="char" style="color:#4c1d95;">廉</div>
+      <div class="label-sm" style="color:#6d28d9;" data-lang="es">Nombre personal</div>
+      <div class="label-sm" style="color:#6d28d9;" data-lang="en">Personal name</div>
+      <div class="label-sm" style="color:#6d28d9;" data-lang="zh">名</div>
+      <div class="meaning" data-lang="es">"Lián" → <strong>Miguel Yee Lián</strong><br>El nombre que aparece en el libro (p. 21)</div>
+      <div class="meaning" data-lang="en">"Lián" → <strong>Miguel Yee Lián</strong><br>The name that appears in the book (p. 21)</div>
+      <div class="meaning" data-lang="zh">"Lián"→<strong>Miguel Yee Lián</strong><br>书中出现的名字（第21页）</div>
     </div>
   </div>
 
   <!-- Central hypothesis callout -->
-  <div class="callout-hyp-central">
+  <div class="callout-hyp-central yw-fade">
     <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6d28d9;" data-lang="es">Hipótesis central activa</div>
     <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6d28d9;" data-lang="en">Active central hypothesis</div>
     <div style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6d28d9;" data-lang="zh">核心假设（进行中）</div>
@@ -544,332 +618,124 @@
       <span class="eq">=</span>
       Miguel Yee Wong
     </div>
-    <div style="font-size:0.9rem;text-align:center;line-height:2;color:#4c1d95;">
-      <strong>余</strong> = Yee (apellido clan) &nbsp;·&nbsp;
-      <strong>礼</strong> = carácter generacional 班派 local de 龍陽村 &nbsp;·&nbsp;
-      <strong>廉</strong> = nombre personal "Lián"
-    </div>
-    <div class="conf-badge" data-lang="es">Confianza: 70–75% · Pendiente confirmación fotográfica del tercer carácter</div>
-    <div class="conf-badge" data-lang="en">Confidence: 70–75% · Pending photographic confirmation of the third character</div>
-    <div class="conf-badge" data-lang="zh">可信度：70–75% · 待第三个字符的照片确认</div>
+    <div class="conf-badge" data-lang="es">Confianza: 70–75% · Pendiente confirmación fotográfica del tercer carácter de la tableta</div>
+    <div class="conf-badge" data-lang="en">Confidence: 70–75% · Pending photographic confirmation of the tablet's third character</div>
+    <div class="conf-badge" data-lang="zh">可信度：70–75% · 待牌位第三字符的照片确认</div>
   </div>
 
-  <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr;margin:16px 0;" class="hyp-grid">
+  <!-- Two supporting callouts -->
+  <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr;margin:16px 0;">
     <div class="callout" style="background:#fdf4ff;border-left-color:#7c3aed;">
-      <strong data-lang="es">¿Por qué "Yee Lián" en la comunidad china?</strong>
+      <strong data-lang="es">¿Por qué "Yee Lián" entre la comunidad china?</strong>
       <strong data-lang="en">Why "Yee Lián" in the Chinese community?</strong>
       <strong data-lang="zh">为何在华人社区称"Yee Lián"？</strong>
-      <p data-lang="es" style="margin:6px 0 0;font-size:0.87rem;">Entre la comunidad china usaba <strong>余廉</strong> (omitiendo el carácter generacional 礼 — práctica documentada). El libro de Esteban Yee Moreno lo nombra "Miguel Yee Lián" en la lista de amigos de Pablo Yee Wong (p. 21), junto a "Arturo Yee" (hermano confirmado de Miguel).</p>
-      <p data-lang="en" style="margin:6px 0 0;font-size:0.87rem;">In the Chinese community he used <strong>余廉</strong> (omitting the generational character 礼 — documented practice). Esteban Yee Moreno's book names him "Miguel Yee Lián" in Pablo Yee Wong's list of friends (p. 21), alongside "Arturo Yee" (confirmed brother of Miguel).</p>
-      <p data-lang="zh" style="margin:6px 0 0;font-size:0.87rem;">在华人社区中使用<strong>余廉</strong>（省略字辈"礼"——此为有据可查的做法）。Esteban Yee Moreno的书中将其列为Pablo Yee Wong友人（第21页），与"Arturo Yee"（Miguel确认的兄弟）并列。</p>
+      <p data-lang="es" style="margin:6px 0 0;font-size:0.87rem;">En el contexto de la comunidad china en México era habitual omitir el carácter generacional y usar solo el nombre personal. Así, 余礼廉 se convierte en <strong>余廉</strong> — y en boca de sus amigos hispanohablantes, en "Yee Lián" o "Yee Lian".</p>
+      <p data-lang="en" style="margin:6px 0 0;font-size:0.87rem;">Within the Chinese community in Mexico it was common practice to omit the generational character and use only the personal name. Thus, 余礼廉 becomes <strong>余廉</strong> — and in the mouths of Spanish-speaking friends, "Yee Lián" or "Yee Lian."</p>
+      <p data-lang="zh" style="margin:6px 0 0;font-size:0.87rem;">在墨西哥华人社区中，省略字辈、只用名是常见做法。因此余礼廉变成<strong>余廉</strong>——在说西班牙语的朋友口中，就成了"Yee Lián"或"Yee Lian"。</p>
     </div>
     <div class="callout" style="background:#f0fdf4;border-left-color:#16a34a;">
       <strong data-lang="es">¿Por qué "Yee Wong" en los documentos mexicanos?</strong>
       <strong data-lang="en">Why "Yee Wong" in Mexican documents?</strong>
       <strong data-lang="zh">为何墨西哥文件中称"Yee Wong"？</strong>
-      <p data-lang="es" style="margin:6px 0 0;font-size:0.87rem;">En México usó el apellido doble convencional: <strong>Yee</strong> (余, paterno) + <strong>Wong</strong> (黄, apellido materno de su madre — probable 黄蘭鳳). Así aparece en el AGN, Ancestry y todas las actas mexicanas.</p>
-      <p data-lang="en" style="margin:6px 0 0;font-size:0.87rem;">In Mexico he used the conventional double surname: <strong>Yee</strong> (余, paternal) + <strong>Wong</strong> (黄, his mother's surname — probable 黄蘭鳳). This is how he appears in AGN, Ancestry, and all Mexican records.</p>
-      <p data-lang="zh" style="margin:6px 0 0;font-size:0.87rem;">在墨西哥采用惯常双姓：<strong>Yee</strong>（余，父姓）+ <strong>Wong</strong>（黄，母姓——推测为黄蘭鳳）。他在墨西哥国家档案馆、Ancestry及所有墨西哥文件中均如此记录。</p>
+      <p data-lang="es" style="margin:6px 0 0;font-size:0.87rem;">En México adoptó el apellido doble convencional para los chinos en documentos oficiales: <strong>Yee</strong> (余, apellido paterno) + <strong>Wong</strong> (黄, apellido de la madre). Así aparece en el Archivo General de la Nación y en todas las actas mexicanas.</p>
+      <p data-lang="en" style="margin:6px 0 0;font-size:0.87rem;">In Mexico he adopted the conventional double surname used by Chinese people in official documents: <strong>Yee</strong> (余, paternal surname) + <strong>Wong</strong> (黄, mother's surname). This is how he appears in the National Archive and all Mexican records.</p>
+      <p data-lang="zh" style="margin:6px 0 0;font-size:0.87rem;">在墨西哥，他采用了华人在官方文件中惯用的双姓格式：<strong>Yee</strong>（余，父姓）+<strong>Wong</strong>（黄，母姓）。这就是他在墨西哥国家档案馆及所有墨西哥文件中的记录方式。</p>
     </div>
   </div>
 
-  <p data-lang="es" style="font-size:0.85rem;color:#374151;border-left:3px solid #7c3aed;padding-left:12px;">
-    <strong>Nota sobre la 班派 local:</strong> La placa de donantes 2018 de 龍陽村 muestra nombres como 余瑞波, 余坚敕, 余凌率 — ninguno coincide con la 班派 荻海 (克念乃祖，显扬乃德…). Por lo tanto, <strong>龍陽村 tiene su propia 班派 local</strong>, y la hipótesis anterior "余其品 (41世 荻海)" para Miguel queda revisada. <strong>余礼廉</strong> es ahora el candidato principal.
-  </p>
-  <p data-lang="en" style="font-size:0.85rem;color:#374151;border-left:3px solid #7c3aed;padding-left:12px;">
-    <strong>Note on the local 班派 generational system:</strong> The 2018 donor plaque of 龍陽村 shows names like 余瑞波, 余坚敕, 余凌率 — none matching the 荻海 班派 (克念乃祖，显扬乃德…). Therefore, <strong>龍陽村 has its own local 班派</strong>, and the previous hypothesis "余其品 (41st gen. 荻海)" for Miguel is revised. <strong>余礼廉</strong> is now the primary candidate.
-  </p>
-  <p data-lang="zh" style="font-size:0.85rem;color:#374151;border-left:3px solid #7c3aed;padding-left:12px;">
-    <strong>关于本地字辈（班派）的注记：</strong>龍陽村2018年捐款芳名中出现余瑞波、余坚敕、余凌率等名——均不符合荻海班派（克念乃祖，显扬乃德……）。因此，<strong>龍陽村拥有自身独特的本地字辈</strong>，此前"余其品（荻海41世）"的假设已修订。<strong>余礼廉</strong>现为首要候选名字。
-  </p>
+  <div style="background:#f8fafc;border-left:3px solid #7c3aed;padding:14px 18px;margin-top:16px;font-size:0.88rem;color:#374151;border-radius:0 6px 6px 0;" data-lang="es">
+    <strong>Nota sobre la 班派 (sistema generacional) de 龍陽村:</strong> Los nombres de los donantes en la placa de 2018 de la sala ancestral — 余瑞波, 余坚敕, 余凌率 — no siguen el sistema generacional del gran linaje de 荻海. Esto confirma que 龍陽村 tiene su propia secuencia generacional local, distinta de otras aldeas taishanesas. Hasta que esa secuencia se documente, no es posible saber en qué generación del clan cae el carácter 礼.
+  </div>
+  <div style="background:#f8fafc;border-left:3px solid #7c3aed;padding:14px 18px;margin-top:16px;font-size:0.88rem;color:#374151;border-radius:0 6px 6px 0;" data-lang="en">
+    <strong>Note on the 班派 (generational system) of 龍陽村:</strong> The names of donors on the 2018 plaque — 余瑞波, 余坚敕, 余凌率 — do not follow the generational system of the major 荻海 lineage. This confirms that 龍陽村 has its own local generational sequence, distinct from other Taishanese villages. Until that sequence is documented, it is not possible to know which generation the character 礼 falls in.
+  </div>
+  <div style="background:#f8fafc;border-left:3px solid #7c3aed;padding:14px 18px;margin-top:16px;font-size:0.88rem;color:#374151;border-radius:0 6px 6px 0;" data-lang="zh">
+    <strong>关于龍陽村字辈（班派）的说明：</strong>2018年祠堂捐款芳名上的名字——余瑞波、余坚敕、余凌率——不遵循荻海大宗支系的字辈系统。这证实龍陽村有其独特的本地字辈顺序，与台山其他村庄不同。在该字辈系统得到记录之前，无法确定"礼"字属于哪一世代。
+  </div>
 
 </div>
 <hr class="sec-divider">
 
 <!-- ════════════════════════════════════════════════════════════
-     § 4 — LA EMPRESA YEE SING Y LA RED DE INMIGRANTES
+     SECCIÓN FINAL — Lo que falta
      ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
+<div class="inv-section yw-fade">
 
-  <h2 class="section-title" data-lang="es">La empresa Yee Sing y la red de inmigrantes
-    <span class="zh">怡盛維貨 · Red 余 en México</span>
-  </h2>
-  <h2 class="section-title" data-lang="en">The Yee Sing company and the immigrant network
-    <span class="en">怡盛維貨 · 余 network in Mexico</span>
-  </h2>
-  <h2 class="section-title" data-lang="zh">怡盛維貨公司与移民网络
-    <span class="zh">余氏族人在墨西哥的纽带</span>
-  </h2>
+  <h2 class="section-title" data-lang="es">Lo que falta confirmar</h2>
+  <h2 class="section-title" data-lang="en">What remains to be confirmed</h2>
+  <h2 class="section-title" data-lang="zh">尚待确认的内容</h2>
 
-  <div class="network-card">
-    <div class="nc-title" data-lang="es">Compañía 怡盛維貨 (Yee Sing &amp; Cía.) — fundada 1907</div>
-    <div class="nc-title" data-lang="en">Company 怡盛維貨 (Yee Sing &amp; Co.) — founded 1907</div>
-    <div class="nc-title" data-lang="zh">怡盛維貨公司——1907年创立</div>
-    <table class="fact-table">
-      <tbody>
-        <tr>
-          <td class="label-col" data-lang="es">Director fundador</td>
-          <td class="label-col" data-lang="en">Founding director</td>
-          <td class="label-col" data-lang="zh">创始人</td>
-          <td><strong>José Yee Chan (余)</strong> · 1885–1950</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Casa matriz</td>
-          <td class="label-col" data-lang="en">Headquarters</td>
-          <td class="label-col" data-lang="zh">总部</td>
-          <td>Calle Principal #42, Mulegé, Baja California Sur</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Sucursales</td>
-          <td class="label-col" data-lang="en">Branches</td>
-          <td class="label-col" data-lang="zh">分支机构</td>
-          <td>La Purísima · Comondú · Loreto · San Ignacio · Santa Rosalía</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Productos</td>
-          <td class="label-col" data-lang="en">Products</td>
-          <td class="label-col" data-lang="zh">商品</td>
-          <td data-lang="es">Artículos nacionales + importados de Oriente: perfumes, porcelana, sedas. Productos agrícolas enviados a Guaymas y Mazatlán.</td>
-          <td data-lang="en">Domestic + Oriental imports: perfumes, porcelain, silks. Agricultural products shipped to Guaymas and Mazatlán.</td>
-          <td data-lang="zh">国内商品及东方进口商品：香水、瓷器、丝绸。农产品经由瓜伊马斯和马萨特兰出口。</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Organización comunitaria</td>
-          <td class="label-col" data-lang="en">Community organization</td>
-          <td class="label-col" data-lang="zh">社区组织</td>
-          <td data-lang="es">Unión Fraternal China — Miguel Yee Wong fue <strong>7° vocal 1911–1934</strong></td>
-          <td data-lang="en">Chinese Fraternal Union — Miguel Yee Wong served as <strong>7th board member 1911–1934</strong></td>
-          <td data-lang="zh">中华互助会——Miguel Yee Wong担任<strong>第七理事，1911–1934年</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p data-lang="es">La investigación ha llegado muy lejos. Pero cuatro preguntas siguen abiertas. Cada una tiene consecuencias directas sobre lo que sabemos de Miguel.</p>
+  <p data-lang="en">The investigation has come a long way. But four questions remain open. Each has direct consequences for what we know about Miguel.</p>
+  <p data-lang="zh">调查已取得长足进展，但仍有四个问题悬而未决。每一个都对我们了解Miguel有直接影响。</p>
 
-  <p data-lang="es" style="font-size:0.92rem;">El libro <em>"Tras la Muralla de Bambú"</em> (Esteban Yee Moreno, ~2015) documenta cómo la Compañía Yee Sing reclutaba casi exclusivamente de la misma aldea de origen: <strong>龍陽村, Taishan</strong>. La empresa enseñaba español a los recién llegados y les asignaba sucursales en todo el territorio de BCS. Esta red es el tejido que une a todas las ramas 余 estudiadas.</p>
-  <p data-lang="en" style="font-size:0.92rem;">The book <em>"Tras la Muralla de Bambú"</em> (Esteban Yee Moreno, ~2015) documents how Yee Sing & Co. recruited almost exclusively from the same village of origin: <strong>龍陽村, Taishan</strong>. The company taught Spanish to newcomers and assigned them branches throughout Baja California Sur. This network is the fabric connecting all the 余 branches under study.</p>
-  <p data-lang="zh" style="font-size:0.92rem;">《竹墙背后》（Esteban Yee Moreno著，约2015年）记录了怡盛維貨几乎专门从同一祖籍村庄——<strong>台山龍陽村</strong>——招募员工的历史。公司向新来者教授西班牙语，并在整个下加利福尼亚南部为其安排分支机构。这一网络是连接所有研究中余氏支系的纽带。</p>
-
-  <!-- Network of persons -->
-  <table class="fact-table" style="margin-top:16px;">
-    <thead>
-      <tr>
-        <th data-lang="es">Persona</th>
-        <th data-lang="en">Person</th>
-        <th data-lang="zh">人物</th>
-        <th data-lang="es">Nombre chino</th>
-        <th data-lang="en">Chinese name</th>
-        <th data-lang="zh">中文名</th>
-        <th data-lang="es">Rol en Yee Sing</th>
-        <th data-lang="en">Role in Yee Sing</th>
-        <th data-lang="zh">在怡盛的职务</th>
-        <th data-lang="es">Destino</th>
-        <th data-lang="en">Destination</th>
-        <th data-lang="zh">最终所在地</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>José Yee Chan</strong></td>
-        <td>—</td>
-        <td data-lang="es">Fundador · Mulegé 1907</td>
-        <td data-lang="en">Founder · Mulegé 1907</td>
-        <td data-lang="zh">创始人 · 穆来赫1907年</td>
-        <td data-lang="es">Mulegé, BCS (†1950)</td>
-        <td data-lang="en">Mulegé, BCS (†1950)</td>
-        <td data-lang="zh">穆来赫，下加利福尼亚南部（†1950）</td>
-      </tr>
-      <tr>
-        <td><strong>Pablo Yee Wong</strong></td>
-        <td>余松旺</td>
-        <td data-lang="es">Empleado → encargado sucursal Santa Rosalía</td>
-        <td data-lang="en">Employee → manager, Santa Rosalía branch</td>
-        <td data-lang="zh">员工→圣罗萨利亚分支负责人</td>
-        <td data-lang="es">Tijuana (†1973)</td>
-        <td data-lang="en">Tijuana (†1973)</td>
-        <td data-lang="zh">蒂华纳（†1973）</td>
-      </tr>
-      <tr>
-        <td><strong>Manuel Yee Pang</strong></td>
-        <td>余民权 (familia)</td>
-        <td data-lang="es">Empleado → encargado sucursal Comondú · n. 1893, Long Llang, Foo Bang</td>
-        <td data-lang="en">Employee → manager, Comondú branch · b. 1893, Long Llang, Foo Bang</td>
-        <td data-lang="zh">员工→科蒙杜分支负责人 · 生于1893年，龍陽村</td>
-        <td data-lang="es">BCS · naturalizado 1936</td>
-        <td data-lang="en">BCS · naturalized 1936</td>
-        <td data-lang="zh">下加利福尼亚南部 · 1936年入籍</td>
-      </tr>
-      <tr>
-        <td><strong>Arturo Yee (Wong)</strong></td>
-        <td>—</td>
-        <td data-lang="es">Compañero en BCS (período inicial) — amigo de Pablo (libro p. 21)</td>
-        <td data-lang="en">Companion in BCS (early period) — friend of Pablo (book p. 21)</td>
-        <td data-lang="zh">下加利福尼亚南部同伴（早期）——Pablo的朋友（书第21页）</td>
-        <td data-lang="es">Fresnillo, Zac. (†1942)</td>
-        <td data-lang="en">Fresnillo, Zac. (†1942)</td>
-        <td data-lang="zh">萨卡特卡斯弗雷斯尼略（†1942）</td>
-      </tr>
-      <tr>
-        <td><strong>Miguel Yee Wong</strong></td>
-        <td>余礼廉 (candidato)</td>
-        <td data-lang="es">Comerciante · Yee Sing &amp; Cía., Tampico. 7° vocal Unión Fraternal China 1911–1934</td>
-        <td data-lang="en">Merchant · Yee Sing &amp; Co., Tampico. 7th member, Chinese Fraternal Union 1911–1934</td>
-        <td data-lang="zh">商人 · 怡盛維貨，坦皮科。中华互助会第七理事，1911–1934年</td>
-        <td data-lang="es">BCS → Tampico (†1977)</td>
-        <td data-lang="en">BCS → Tampico (†1977)</td>
-        <td data-lang="zh">下加利福尼亚南部→坦皮科（†1977）</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>
-<hr class="sec-divider">
-
-<!-- ════════════════════════════════════════════════════════════
-     § 5 — PABLO YEE WONG Y EL LIBRO
-     ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
-
-  <h2 class="section-title" data-lang="es">Pablo Yee Wong (余松旺) y el libro
-    <span class="zh">«Tras la Muralla de Bambú»</span>
-  </h2>
-  <h2 class="section-title" data-lang="en">Pablo Yee Wong (余松旺) and the book
-    <span class="en">"Behind the Bamboo Wall"</span>
-  </h2>
-  <h2 class="section-title" data-lang="zh">Pablo Yee Wong（余松旺）与著作
-    <span class="zh">《竹墙背后》</span>
-  </h2>
-
-  <div class="confirmed" style="margin-bottom:16px;">
-    <div class="label" data-lang="es">Pablo Yee Wong · Datos confirmados</div>
-    <div class="label" data-lang="en">Pablo Yee Wong · Confirmed data</div>
-    <div class="label" data-lang="zh">Pablo Yee Wong · 已确认信息</div>
-    <table class="fact-table" style="margin:8px 0;">
-      <tbody>
-        <tr>
-          <td class="label-col" data-lang="es">Nombre chino</td>
-          <td class="label-col" data-lang="en">Chinese name</td>
-          <td class="label-col" data-lang="zh">中文名</td>
-          <td><strong>余松旺 (Yú Sōng Wàng)</strong> — confirmado por bisnieta Cristina (Facebook "FAMILIA YEE")</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Año de nacimiento</td>
-          <td class="label-col" data-lang="en">Birth year</td>
-          <td class="label-col" data-lang="zh">出生年份</td>
-          <td>~<strong>1890</strong> — doc. identificación Legación China, oct. 1912: "22 años", ciudad Santa Rosalía, B.C.</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Esposa</td>
-          <td class="label-col" data-lang="en">Wife</td>
-          <td class="label-col" data-lang="zh">妻子</td>
-          <td>Isabel Moreno</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Hijos</td>
-          <td class="label-col" data-lang="en">Children</td>
-          <td class="label-col" data-lang="zh">子女</td>
-          <td>Fernando · Pablo (jr.) · Laura · Héctor · <strong>Esteban</strong> · Rosendo</td>
-        </tr>
-        <tr>
-          <td class="label-col" data-lang="es">Libro publicado</td>
-          <td class="label-col" data-lang="en">Published book</td>
-          <td class="label-col" data-lang="zh">出版著作</td>
-          <td><em>"Tras la Muralla de Bambú"</em> — Esteban Yee Moreno (~2015, 87 pp.) · fuente primaria</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="forever-quote" style="font-size:0.95rem;">
-    <span data-lang="es">Lista de amigos de Pablo Yee Wong a lo largo de su vida (libro, p. 21): «Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · entre muchos otros.»</span>
-    <span data-lang="en">List of Pablo Yee Wong's lifelong friends (book, p. 21): "Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · among many others."</span>
-    <span data-lang="zh">Pablo Yee Wong毕生友人名单（书第21页）："Ignacio Yee · José · <strong>Miguel Yee Lián</strong> · <strong>Arturo Yee</strong> · Rafael Yee · Jesús Yee · Nicho Yee · Antonio Yee · Luis · Pablo · Manuel · Francisco · 以及众多其他人。"</span>
-    <div class="attribution">Esteban Yee Moreno, <em>Tras la Muralla de Bambú</em>, pág. 21 · contexto: amigos de Pablo Yee Wong a lo largo de su vida (1912–1973)</div>
-  </div>
-
-  <p data-lang="es" style="font-size:0.9rem;margin-top:12px;">La aparición de <strong>«Miguel Yee Lián»</strong> junto a <strong>«Arturo Yee»</strong> en esta lista es la evidencia textual más sólida de la investigación: Arturo Yee Wong es el hermano confirmado de Miguel Yee Wong (acta defunción Fresnillo, 1942). Los dos nombres — el del hermano confirmado y el de quien creemos es Miguel — aparecen juntos en la misma lista de amigos de Pablo. Este patrón de omisión del apellido Wong es consistente con el acta de Fresnillo (1942), donde el hermano Federico también aparece sin "Wong".</p>
-  <p data-lang="en" style="font-size:0.9rem;margin-top:12px;">The appearance of <strong>"Miguel Yee Lián"</strong> alongside <strong>"Arturo Yee"</strong> in this list is the investigation's strongest textual evidence: Arturo Yee Wong is Miguel Yee Wong's confirmed brother (death record Fresnillo, 1942). The two names — the confirmed brother's and who we believe is Miguel — appear together in Pablo's same friends list. This pattern of omitting the Wong surname is consistent with the 1942 Fresnillo record, where brother Federico also appears without "Wong."</p>
-  <p data-lang="zh" style="font-size:0.9rem;margin-top:12px;"><strong>"Miguel Yee Lián"</strong>与<strong>"Arturo Yee"</strong>在此名单中同时出现，是本次调查中最有力的文字证据：Arturo Yee Wong是Miguel Yee Wong已确认的兄弟（弗雷斯尼略死亡记录，1942年）。这两个名字——已确认的兄弟和我们认为是Miguel的人——出现在Pablo同一友人名单中。这种省略"Wong"姓的规律与1942年弗雷斯尼略记录一致，其中兄弟Federico也未附"Wong"。</p>
-
-</div>
-<hr class="sec-divider">
-
-<!-- ════════════════════════════════════════════════════════════
-     § 6 — PREGUNTAS ABIERTAS
-     ════════════════════════════════════════════════════════════ -->
-<div class="inv-section">
-
-  <h2 class="section-title" data-lang="es">Preguntas abiertas — lo que falta confirmar</h2>
-  <h2 class="section-title" data-lang="en">Open questions — what remains to be confirmed</h2>
-  <h2 class="section-title" data-lang="zh">待解问题——有待确认的内容</h2>
-
-  <table class="oq-table">
+  <table class="oq-table" style="margin-top:20px;">
     <thead>
       <tr>
         <th data-lang="es">Pregunta</th>
         <th data-lang="en">Question</th>
         <th data-lang="zh">问题</th>
-        <th data-lang="es">Importancia</th>
-        <th data-lang="en">Priority</th>
-        <th data-lang="zh">优先级</th>
+        <th data-lang="es">Por qué importa</th>
+        <th data-lang="en">Why it matters</th>
+        <th data-lang="zh">重要性</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td data-lang="es">¿El tercer carácter de la tableta derecha del altar es <strong>廉</strong>? → Foto con flash necesaria</td>
-        <td data-lang="en">Is the third character of the right altar tablet <strong>廉</strong>? → Flash photograph required</td>
-        <td data-lang="zh">右侧牌位第三个字符是否为<strong>廉</strong>？→需要闪光灯照片</td>
-        <td><span class="badge-crit" data-lang="es">CRÍTICA</span><span class="badge-crit" data-lang="en">CRITICAL</span><span class="badge-crit" data-lang="zh">关键</span></td>
+        <td data-lang="es">¿El tercer carácter de la tableta del altar es <strong>廉</strong>?</td>
+        <td data-lang="en">Is the third character of the altar tablet <strong>廉</strong>?</td>
+        <td data-lang="zh">祭坛牌位的第三个字符是否为<strong>廉</strong>？</td>
+        <td data-lang="es">Confirmaría el nombre chino de Miguel y elevaría la confianza de la hipótesis central al nivel de certeza.</td>
+        <td data-lang="en">Would confirm Miguel's Chinese name and raise the central hypothesis to the level of certainty.</td>
+        <td data-lang="zh">将确认Miguel的中文名，并将核心假设的可信度提升至确定性水平。</td>
       </tr>
       <tr>
-        <td data-lang="es">¿Qué dijo exactamente la anciana de la primera casa sobre el nombre del altar? → Revisar audio DJI_0265 con hablante nativo de cantonés / taishanés</td>
-        <td data-lang="en">What exactly did the elderly woman in the first house say about the altar's name? → Review DJI_0265 audio with a native Cantonese / Taishanese speaker</td>
-        <td data-lang="zh">第一栋房子里的老妇人究竟如何介绍祭坛上的名字？→请粤语/台山话母语者审听DJI_0265音频</td>
-        <td><span class="badge-crit" data-lang="es">CRÍTICA</span><span class="badge-crit" data-lang="en">CRITICAL</span><span class="badge-crit" data-lang="zh">关键</span></td>
+        <td data-lang="es">¿Qué dijo exactamente la anciana de la primera casa sobre el altar y el nombre del ancestro?</td>
+        <td data-lang="en">What exactly did the elderly woman in the first house say about the altar and the ancestor's name?</td>
+        <td data-lang="zh">第一栋房子里的老妇人究竟如何描述祭坛和祖先的名字？</td>
+        <td data-lang="es">Es la fuente oral más directa de toda la investigación. Vive en la casa donde probablemente está el ancestro de Miguel.</td>
+        <td data-lang="en">She is the most direct oral source in the entire investigation. She lives in the house where Miguel's ancestor likely resided.</td>
+        <td data-lang="zh">她是整个调查中最直接的口头信息来源，居住在Miguel祖先很可能曾生活过的房屋里。</td>
       </tr>
       <tr>
-        <td data-lang="es">¿Cuál es la 班派 (sistema generacional) local de 龍陽村? ¿En qué 世 cae el carácter <strong>礼</strong>?</td>
-        <td data-lang="en">What is the local 班派 (generational naming system) of 龍陽村? In which generation (世) does the character <strong>礼</strong> fall?</td>
-        <td data-lang="zh">龍陽村本地字辈（班派）是什么？<strong>礼</strong>字属于第几世？</td>
-        <td><span class="badge-hi" data-lang="es">ALTA</span><span class="badge-hi" data-lang="en">HIGH</span><span class="badge-hi" data-lang="zh">高</span></td>
+        <td data-lang="es">¿Cuál es el poema generacional (班派) propio de 龍陽村?</td>
+        <td data-lang="en">What is the local generational poem (班派) of 龍陽村?</td>
+        <td data-lang="zh">龍陽村的本地字辈诗（班派）是什么？</td>
+        <td data-lang="es">Permitiría ubicar a Miguel exactamente en la genealogía del clan 余 y establecer su parentesco con los demás emigrantes de la aldea.</td>
+        <td data-lang="en">Would allow placing Miguel exactly within the 余 clan genealogy and establishing his kinship with the other emigrants from the village.</td>
+        <td data-lang="zh">将使我们能够在余氏族谱中精确定位Miguel的世代，并确认他与村中其他移民的亲缘关系。</td>
       </tr>
       <tr>
-        <td data-lang="es">¿Chan Pin Yee (padre de Miguel) y Chan Pao Yee (padre de Manuel Yee Pang) son hermanos? → Verificar en 族谱 de 余植槐公祠</td>
-        <td data-lang="en">Were Chan Pin Yee (Miguel's father) and Chan Pao Yee (Manuel Yee Pang's father) brothers? → Verify in 余植槐公祠 genealogical register</td>
-        <td data-lang="zh">Chan Pin Yee（Miguel之父）与Chan Pao Yee（Manuel Yee Pang之父）是否为兄弟？→在余植槐公祠族谱中核实</td>
-        <td><span class="badge-hi" data-lang="es">ALTA</span><span class="badge-hi" data-lang="en">HIGH</span><span class="badge-hi" data-lang="zh">高</span></td>
-      </tr>
-      <tr>
-        <td data-lang="es">¿Quién es 余植槐? ¿En qué 世 está y cuál es su relación con la línea de Miguel?</td>
-        <td data-lang="en">Who is 余植槐? In which generation does he belong and what is his relation to Miguel's line?</td>
-        <td data-lang="zh">余植槐是谁？属于第几世？与Miguel的支系有何关系？</td>
-        <td><span class="badge-med" data-lang="es">MEDIA</span><span class="badge-med" data-lang="en">MEDIUM</span><span class="badge-med" data-lang="zh">中</span></td>
-      </tr>
-      <tr>
-        <td data-lang="es">¿Hay un monumento a Pablo Yee Moreno (hijo de Pablo Yee Wong) en la entrada de 龍陽村? → El libro lo menciona en 2015 "rodeado de flores frescas"</td>
-        <td data-lang="en">Is there a monument to Pablo Yee Moreno (Pablo Yee Wong's son) at the entrance of 龍陽村? → The book mentions it in 2015 "surrounded by fresh flowers"</td>
-        <td data-lang="zh">龍陽村入口处是否有Pablo Yee Moreno（Pablo Yee Wong之子）的纪念碑？→书中提及2015年时"周围摆有鲜花"</td>
-        <td><span class="badge-med" data-lang="es">MEDIA</span><span class="badge-med" data-lang="en">MEDIUM</span><span class="badge-med" data-lang="zh">中</span></td>
-      </tr>
-      <tr>
-        <td data-lang="es">¿"Foo Bang" corresponde a 裡邊 o a otro nombre de la unidad administrativa que contiene a 龍陽村?</td>
-        <td data-lang="en">Does "Foo Bang" correspond to 裡邊 or another name for the administrative unit containing 龍陽村?</td>
-        <td data-lang="zh">"Foo Bang"是否对应"裡邊"，或龍陽村所属行政单位的其他名称？</td>
-        <td><span class="badge-med" data-lang="es">MEDIA</span><span class="badge-med" data-lang="en">MEDIUM</span><span class="badge-med" data-lang="zh">中</span></td>
+        <td data-lang="es">¿Chan Pin Yee (padre de Miguel) y Chan Pao Yee (padre de Manuel Yee Pang) son hermanos?</td>
+        <td data-lang="en">Were Chan Pin Yee (Miguel's father) and Chan Pao Yee (Manuel Yee Pang's father) brothers?</td>
+        <td data-lang="zh">Chan Pin Yee（Miguel之父）与Chan Pao Yee（Manuel Yee Pang之父）是否为兄弟？</td>
+        <td data-lang="es">Confirmaría que Miguel y Manuel Yee Pang eran primos, y que los dos grandes ramas de la familia 余 en México son en realidad una sola familia.</td>
+        <td data-lang="en">Would confirm that Miguel and Manuel Yee Pang were cousins, and that the two major 余 branches in Mexico are in fact one single family.</td>
+        <td data-lang="zh">将确认Miguel与Manuel Yee Pang是堂兄弟，墨西哥余氏两大支系实为同一家族。</td>
       </tr>
     </tbody>
   </table>
+
+  <div class="callout" style="background:#fff7ed;border-left-color:#f97316;margin-top:24px;">
+    <strong data-lang="es">Cómo avanzar</strong>
+    <strong data-lang="en">How to move forward</strong>
+    <strong data-lang="zh">如何推进</strong>
+    <p data-lang="es" style="margin:6px 0 0;font-size:0.9rem;">La pregunta más urgente — el tercer carácter de la tableta — requiere una sola acción: una fotografía con flash, o con linterna directa, de la tableta derecha del altar de la primera casa. El libro genealógico (族谱) de la sala ancestral 余植槐公祠 respondería las preguntas 3 y 4. La anciana de la primera casa es la persona clave para la pregunta 2.</p>
+    <p data-lang="en" style="margin:6px 0 0;font-size:0.9rem;">The most urgent question — the third character of the tablet — requires a single action: a flash photograph, or direct flashlight photo, of the right tablet on the altar in the first house. The genealogical register (族谱) of the 余植槐公祠 ancestral hall would answer questions 3 and 4. The elderly woman in the first house is the key person for question 2.</p>
+    <p data-lang="zh" style="margin:6px 0 0;font-size:0.9rem;">最迫切的问题——牌位的第三个字符——只需一个行动：用闪光灯或手电筒对第一栋房子祭坛右侧牌位拍一张清晰的照片。余植槐公祠的族谱将回答第3和第4个问题。第一栋房子的老妇人是解答第2个问题的关键人物。</p>
+  </div>
 
 </div>
 <hr class="sec-divider">
 
 <!-- ════════════════════════════════════════════════════════════
-     § FOOTER
+     FOOTER
      ════════════════════════════════════════════════════════════ -->
 <div class="inv-section" style="padding-bottom:40px;">
   <div class="footer">
-    <span data-lang="es">Investigación genealógica Familia Yee Wong (余黄氏) · Versión 3.2 · 20 marzo 2026 · Fuentes: Visita campo 龍陽村 (17–20 mar 2026) · Video 台山百曉 (YouTube vl-DydYyAbE) · Libro "Tras la Muralla de Bambú" (Esteban Yee Moreno) · Transcripciones Whisper small (DJI_0265, 0266, 0273) · AGN México · Ancestry · Legación China 1912</span>
-    <span data-lang="en">Yee Wong family (余黄氏) genealogical research · Version 3.2 · March 20, 2026 · Sources: Field visit 龍陽村 (Mar 17–20, 2026) · Video 台山百曉 (YouTube vl-DydYyAbE) · Book "Tras la Muralla de Bambú" (Esteban Yee Moreno) · Whisper small transcriptions (DJI_0265, 0266, 0273) · AGN Mexico · Ancestry · Chinese Legation 1912</span>
-    <span data-lang="zh">余黄氏家族族谱研究 · 版本3.2 · 2026年3月20日 · 来源：龍陽村实地考察（2026年3月17–20日）· 台山百曉视频（YouTube vl-DydYyAbE）· 《竹墙背后》（Esteban Yee Moreno著）· Whisper small转录（DJI_0265、0266、0273）· 墨西哥国家档案馆 · Ancestry · 中华民国驻墨公使馆1912年文件</span>
+    <span data-lang="es">Investigación genealógica Familia Yee Wong (余黄氏) · Versión 3.2 · 20 marzo 2026 · Fuentes: Visita de campo 龍陽村 (17–20 mar 2026) · Video 台山百曉 (YouTube) · Libro "Tras la Muralla de Bambú" (Esteban Yee Moreno, ~2015, 87 pp.) · AGN México · Archivo General de la Nación · Legación China 1912 · Naturalización Manuel Yee Pang 1936 · Genealogía Yolanda Ríos Yee 2024</span>
+    <span data-lang="en">Yee Wong family (余黄氏) genealogical research · Version 3.2 · March 20, 2026 · Sources: Field visit 龍陽村 (Mar 17–20, 2026) · Video 台山百曉 (YouTube) · Book "Tras la Muralla de Bambú" (Esteban Yee Moreno, ~2015, 87 pp.) · AGN Mexico · National Archive of Mexico · Chinese Legation 1912 · Manuel Yee Pang naturalization 1936 · Yolanda Ríos Yee genealogy 2024</span>
+    <span data-lang="zh">余黄氏家族族谱研究 · 版本3.2 · 2026年3月20日 · 来源：龍陽村实地考察（2026年3月17–20日）· 台山百曉视频（YouTube）· 《竹墙背后》（Esteban Yee Moreno，约2015年，87页）· 墨西哥国家档案馆 · 中华民国驻墨公使馆1912年文件 · Manuel Yee Pang归化文件1936年 · Yolanda Ríos Yee族谱2024年</span>
   </div>
 </div>
 

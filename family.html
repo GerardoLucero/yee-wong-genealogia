@@ -11,7 +11,7 @@
 .family-hero {
   background: linear-gradient(135deg, #0f2744 0%, #1e3a5f 60%, #7c2d12 100%);
   color: #fff; padding: 60px 48px 48px; text-align: center;
-  border-bottom: 6px solid #f59e0b;
+  border-bottom: 6px solid #f59e0b; position: relative; overflow: hidden;
 }
 .family-hero .watermark {
   font-size: 220px; font-weight: 900; color: rgba(255,255,255,0.04);
@@ -47,6 +47,9 @@
 /* ── MAIN CONTENT ── */
 .family-content { max-width: 900px; margin: 0 auto; padding: 40px 32px 60px; }
 
+/* ── SECTION HEADER ── */
+.section-h { font-size: 1.25rem; font-weight: 900; color: #0f2744; border-bottom: 3px solid #4fa3c8; padding-bottom: 6px; margin: 40px 0 16px; }
+
 /* ── FOUNDING COUPLE CARD ── */
 .couple-card {
   background: #0f2744; color: #fff; border-radius: 12px;
@@ -54,7 +57,6 @@
   border: 2px solid #3b82f6;
   display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: start;
 }
-.couple-card .person { }
 .couple-card .person-role {
   font-size: 7pt; text-transform: uppercase; letter-spacing: 2px;
   color: #7eb8d4; margin-bottom: 8px;
@@ -81,6 +83,30 @@
 }
 .couple-card .marriage-badge .mb-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 1.5px; color: #7eb8d4; }
 .couple-card .marriage-badge .mb-date { font-size: 0.85rem; font-weight: 700; color: #fff; margin-top: 2px; }
+
+/* ── CHILDREN CARDS ── */
+.children-row {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 16px 0;
+}
+.child-card {
+  border-radius: 8px; padding: 12px 10px; text-align: center;
+  border: 1px solid #e2e8f0; background: #f8fafc;
+}
+.child-card.deceased { opacity: 0.65; border-style: dashed; }
+.child-card .cc-name { font-size: 0.78rem; font-weight: 700; color: #0f2744; margin-bottom: 4px; line-height: 1.3; }
+.child-card .cc-date { font-size: 0.7rem; color: #64748b; }
+.child-card .cc-place { font-size: 0.68rem; color: #94a3b8; margin-top: 3px; }
+.child-card .cc-cross { font-size: 0.7rem; color: #ef4444; }
+
+/* ── GENERATION TABLE ── */
+.gen-table-wrap { overflow-x: auto; margin: 16px 0; }
+.gen-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.gen-table th { background: #0f2744; color: #fff; padding: 10px 14px; text-align: left; }
+.gen-table td { padding: 9px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
+.gen-table tr:nth-child(even) td { background: #f8fafc; }
+.gen-table .total-row td { background: #0f2744 !important; color: #fff; font-weight: 900; font-size: 1rem; }
+.gen-table .total-row td.num { color: #86efac; font-size: 1.15rem; }
+.gen-num { font-size: 1.1rem; font-weight: 900; color: #0f2744; }
 
 /* ── THREE BROTHERS ── */
 .brothers-grid {
@@ -109,29 +135,35 @@
 .brother-card .bc-row .bv { color: #374151; }
 .brother-card .bc-agn { display: inline-block; font-size: 7pt; background: #1e3a5f; color: #93c5fd; border-radius: 10px; padding: 2px 8px; margin-top: 8px; }
 
-/* ── CHILDREN CARDS ── */
-.children-row {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 16px 0;
+/* ── PABLO YEE WONG — prominent section ── */
+.pablo-hero {
+  background: linear-gradient(135deg, #1c1917 0%, #292524 60%, #1c3a3e 100%);
+  border-radius: 14px; padding: 32px 36px; margin: 28px 0;
+  border: 2px solid #f59e0b; color: #fff;
 }
-.child-card {
-  border-radius: 8px; padding: 12px 10px; text-align: center;
-  border: 1px solid #e2e8f0; background: #f8fafc;
+.pablo-hero .ph-tag {
+  font-size: 7pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2.5px; color: #fbbf24; margin-bottom: 12px;
 }
-.child-card.deceased { opacity: 0.65; border-style: dashed; }
-.child-card .cc-name { font-size: 0.78rem; font-weight: 700; color: #0f2744; margin-bottom: 4px; line-height: 1.3; }
-.child-card .cc-date { font-size: 0.7rem; color: #64748b; }
-.child-card .cc-place { font-size: 0.68rem; color: #94a3b8; margin-top: 3px; }
-.child-card .cc-cross { font-size: 0.7rem; color: #ef4444; }
-
-/* ── GENERATION TABLE ── */
-.gen-table-wrap { overflow-x: auto; margin: 16px 0; }
-.gen-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-.gen-table th { background: #0f2744; color: #fff; padding: 10px 14px; text-align: left; }
-.gen-table td { padding: 9px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
-.gen-table tr:nth-child(even) td { background: #f8fafc; }
-.gen-table .total-row td { background: #0f2744 !important; color: #fff; font-weight: 900; font-size: 1rem; }
-.gen-table .total-row td.num { color: #86efac; font-size: 1.15rem; }
-.gen-num { font-size: 1.1rem; font-weight: 900; color: #0f2744; }
+.pablo-hero .ph-name { font-size: 1.6rem; font-weight: 900; color: #ffd700; margin-bottom: 4px; }
+.pablo-hero .ph-cn { font-size: 1.3rem; color: #86efac; font-weight: 700; margin-bottom: 16px; letter-spacing: 2px; }
+.pablo-hero .ph-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px;
+  font-size: 0.87rem; margin-bottom: 18px;
+}
+.pablo-hero .ph-row { display: flex; gap: 8px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.pablo-hero .ph-k { color: #7eb8d4; min-width: 100px; flex-shrink: 0; }
+.pablo-hero .ph-v { color: #e2e8f0; }
+.pablo-hero .ph-v.gold { color: #fbbf24; font-weight: 700; }
+.pablo-kin {
+  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4);
+  border-radius: 8px; padding: 14px 18px; margin-top: 16px;
+}
+.pablo-kin .pk-label {
+  font-size: 7pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 2px; color: #fbbf24; margin-bottom: 8px;
+}
+.pablo-kin .pk-body { font-size: 0.87rem; color: #d6d3d1; line-height: 1.75; }
 
 /* ── RELATED FAMILIES ── */
 .related-card {
@@ -167,23 +199,7 @@
 .kinship-box .kb-title { font-size: 1rem; font-weight: 700; color: #78350f; margin-bottom: 8px; }
 .kinship-box .kb-body { font-size: 0.88rem; color: #713f12; line-height: 1.7; }
 
-/* ── BRANCH HEADER ── */
-.branch-header {
-  display: flex; align-items: center; gap: 12px; margin: 32px 0 12px;
-  padding-bottom: 8px; border-bottom: 3px solid;
-}
-.branch-header.blue { border-color: #3b82f6; }
-.branch-header.purple { border-color: #7c3aed; }
-.branch-header.amber { border-color: #d97706; }
-.branch-header.green { border-color: #16a34a; }
-.branch-header .bh-icon { font-size: 1.5rem; }
-.branch-header .bh-title { font-size: 1.05rem; font-weight: 900; color: #0f2744; }
-.branch-header .bh-sub { font-size: 0.8rem; color: #64748b; margin-top: 2px; }
-
-/* ── SECTION HEADER ── */
-.section-h { font-size: 1.25rem; font-weight: 900; color: #0f2744; border-bottom: 3px solid #4fa3c8; padding-bottom: 6px; margin: 36px 0 16px; }
-
-/* ── ARTURO DESCENDANTS ── */
+/* ── ARTURO BOX ── */
 .arturo-box {
   background: #fff1f2; border: 2px solid #f87171; border-radius: 10px;
   padding: 18px 22px; margin: 12px 0;
@@ -208,6 +224,7 @@
   .brothers-grid { grid-template-columns: 1fr; }
   .children-row { grid-template-columns: repeat(2, 1fr); }
   .gen-table td, .gen-table th { padding: 8px 10px; font-size: 0.82rem; }
+  .pablo-hero .ph-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -241,7 +258,7 @@
 <!-- ══════════════════════════════════════════════════════════
      HERO
      ══════════════════════════════════════════════════════════ -->
-<div class="family-hero" style="position:relative; overflow:hidden;">
+<div class="family-hero">
   <div class="watermark">余</div>
   <div class="family-hero-inner">
 
@@ -284,7 +301,7 @@
         <div class="stat-lbl" data-lang="zh">成婚年份</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num">~93</div>
+        <div class="stat-num">~94</div>
         <div class="stat-lbl" data-lang="es">Años vivió Miguel</div>
         <div class="stat-lbl" data-lang="en">Years Miguel lived</div>
         <div class="stat-lbl" data-lang="zh">米格尔享年</div>
@@ -298,19 +315,27 @@
      ══════════════════════════════════════════════════════════ -->
 <div class="family-content">
 
-  <!-- ── §1: FOUNDING COUPLE ── -->
+  <!-- ══════════════════════════════════════════════════════════
+       §1: MIGUEL Y CATALINA — LA FAMILIA PRINCIPAL
+       ══════════════════════════════════════════════════════════ -->
 
   <div data-lang="es">
-    <h2 class="section-h">Miguel y Catalina — La pareja fundadora</h2>
-    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">De Taishan, China, a Mulegé, Baja California Sur — la unión que inició cinco generaciones en México.</p>
+    <h2 class="section-h">§1 · Miguel y Catalina — La familia principal</h2>
+    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">
+      De Taishan, China, a Mulegé, Baja California Sur — la unión que inició cinco generaciones en México.
+    </p>
   </div>
   <div data-lang="en">
-    <h2 class="section-h">Miguel and Catalina — The Founding Couple</h2>
-    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">From Taishan, China, to Mulegé, Baja California Sur — the union that began five generations in Mexico.</p>
+    <h2 class="section-h">§1 · Miguel and Catalina — The Main Family</h2>
+    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">
+      From Taishan, China, to Mulegé, Baja California Sur — the union that began five generations in Mexico.
+    </p>
   </div>
   <div data-lang="zh">
-    <h2 class="section-h">米格尔与卡塔丽娜——创始夫妇</h2>
-    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">从中国台山到南下加利福尼亚穆莱赫——开启墨西哥五代传承的结合。</p>
+    <h2 class="section-h">§1 · 米格尔与卡塔丽娜——主要家族</h2>
+    <p style="color:#475569; font-size:0.92rem; margin-bottom:4px;">
+      从中国台山到南下加利福尼亚穆莱赫——开启墨西哥五代传承的结合。
+    </p>
   </div>
 
   <div class="couple-card">
@@ -326,7 +351,13 @@
         <span class="pk" data-lang="es">Nacido</span>
         <span class="pk" data-lang="en">Born</span>
         <span class="pk" data-lang="zh">生年</span>
-        <span class="pv">~1883–1884 · 台山, Taishan, Guangdong</span>
+        <span class="pv">~1883 · Taishan (台山), Guangdong</span>
+      </div>
+      <div class="person-row">
+        <span class="pk" data-lang="es">Falleció</span>
+        <span class="pk" data-lang="en">Died</span>
+        <span class="pk" data-lang="zh">卒于</span>
+        <span class="pv green">4 mayo 1977 · San Juan de Los Planes, BCS</span>
       </div>
       <div class="person-row">
         <span class="pk" data-lang="es">Llegó a México</span>
@@ -341,10 +372,10 @@
         <span class="pv">Yee Sing &amp; Cía. · 怡盛維貨 (fund. 1907)</span>
       </div>
       <div class="person-row">
-        <span class="pk" data-lang="es">Falleció</span>
-        <span class="pk" data-lang="en">Died</span>
-        <span class="pk" data-lang="zh">卒于</span>
-        <span class="pv green">4 mayo 1977 · San Juan de Los Planes, BCS</span>
+        <span class="pk" data-lang="es">Organización</span>
+        <span class="pk" data-lang="en">Organization</span>
+        <span class="pk" data-lang="zh">社团</span>
+        <span class="pv">Unión Fraternal China · 7° vocal</span>
       </div>
       <div class="person-row">
         <span class="pk" data-lang="es">Descendencia</span>
@@ -354,22 +385,22 @@
       </div>
     </div>
 
-    <!-- Divider + marriage info -->
+    <!-- Divider + marriage -->
     <div class="divider">
-      <div style="font-size:2rem; color:#ffd700;">⚭</div>
+      <div style="font-size:2rem; color:#ffd700;">&#9901;</div>
       <div class="marriage-badge">
         <div class="mb-label" data-lang="es">Matrimonio civil</div>
         <div class="mb-label" data-lang="en">Civil marriage</div>
         <div class="mb-label" data-lang="zh">民事婚姻</div>
         <div class="mb-date">30 nov 1921</div>
-        <div style="font-size:6.5pt; color:#7eb8d4; margin-top:3px;">Mulegé, B.C.S.</div>
+        <div style="font-size:6.5pt; color:#7eb8d4; margin-top:3px;">Mulegé, B.C.S. · confirmado</div>
       </div>
       <div class="marriage-badge" style="margin-top:8px;">
         <div class="mb-label" data-lang="es">Matrimonio religioso</div>
         <div class="mb-label" data-lang="en">Religious marriage</div>
         <div class="mb-label" data-lang="zh">宗教婚姻</div>
         <div class="mb-date">13 ago 1923</div>
-        <div style="font-size:6.5pt; color:#7eb8d4; margin-top:3px;">Mulegé, B.C.S.</div>
+        <div style="font-size:6.5pt; color:#7eb8d4; margin-top:3px;">Mulegé, B.C.S. · confirmado</div>
       </div>
     </div>
 
@@ -405,26 +436,20 @@
         <span class="pk" data-lang="zh">子女</span>
         <span class="pv green">5 (1921–1929)</span>
       </div>
-      <div class="person-row">
-        <span class="pk" data-lang="es">Fuentes</span>
-        <span class="pk" data-lang="en">Sources</span>
-        <span class="pk" data-lang="zh">资料来源</span>
-        <span class="pv">Ancestry ✓ · RC BCS ✓ · Linaje familiar ✓</span>
-      </div>
     </div>
   </div>
 
   <!-- 5 Children -->
-  <div data-lang="es"><h3 style="color:#0f2744; margin-bottom:10px;">Los cinco hijos de Miguel y Catalina — Mulegé, BCS</h3></div>
-  <div data-lang="en"><h3 style="color:#0f2744; margin-bottom:10px;">The five children of Miguel and Catalina — Mulegé, BCS</h3></div>
-  <div data-lang="zh"><h3 style="color:#0f2744; margin-bottom:10px;">米格尔与卡塔丽娜的五个子女 — 穆莱赫，南下加利福尼亚</h3></div>
+  <div data-lang="es"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:24px;">Los cinco hijos de Miguel y Catalina</h3></div>
+  <div data-lang="en"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:24px;">The five children of Miguel and Catalina</h3></div>
+  <div data-lang="zh"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:24px;">米格尔与卡塔丽娜的五个子女</h3></div>
 
   <div class="children-row">
     <div class="child-card deceased">
-      <div class="cc-cross">†</div>
+      <div class="cc-cross">&#8224;</div>
       <div class="cc-name">Miguel Jr.</div>
       <div class="cc-date">12 nov 1921</div>
-      <div class="cc-date" style="color:#ef4444;">† 4 feb 1922</div>
+      <div class="cc-date" style="color:#ef4444;">&#8224; 4 feb 1922</div>
       <div class="cc-place" data-lang="es">85 días · Meningitis</div>
       <div class="cc-place" data-lang="en">85 days · Meningitis</div>
       <div class="cc-place" data-lang="zh">85天 · 脑膜炎</div>
@@ -432,51 +457,134 @@
     <div class="child-card">
       <div class="cc-name">María de la Luz</div>
       <div class="cc-date">6 abr 1923</div>
-      <div class="cc-date">† 25 feb 2010</div>
+      <div class="cc-date">&#8224; 25 feb 2010</div>
       <div class="cc-place">Mulegé</div>
-      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Lucas Castro Contreras · Tuxtla Gtz.</div>
+      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Lucas Castro Contreras</div>
     </div>
     <div class="child-card">
       <div class="cc-name">María Jesús</div>
       <div class="cc-date">27 jun 1924</div>
-      <div class="cc-date">† 24 ene 2019</div>
+      <div class="cc-date">&#8224; 24 ene 2019</div>
       <div class="cc-place">Mulegé</div>
-      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Antonio Geraldo · La Paz, BCS</div>
+      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Antonio Geraldo</div>
     </div>
     <div class="child-card">
       <div class="cc-name">Héctor Manuel</div>
       <div class="cc-date">28 ene 1928</div>
-      <div class="cc-date">† 3 ago 2001</div>
+      <div class="cc-date">&#8224; 3 ago 2001</div>
       <div class="cc-place">Mulegé</div>
-      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Santa Ana Salvatierra · La Paz, BCS</div>
+      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Santa Ana Salvatierra</div>
     </div>
     <div class="child-card">
       <div class="cc-name">Ma. de Lourdes Catalina</div>
       <div class="cc-date">22 ene 1929</div>
       <div class="cc-place">Mulegé, BCS</div>
-      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">4 parejas · BCS</div>
+      <div class="cc-place" style="font-size:0.65rem; color:#64748b; margin-top:2px;">Yolanda Ríos Yee, autora del linaje</div>
     </div>
   </div>
-  <p style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">
-    <span data-lang="es">Fuente: Registro Civil BCS · Ancestry ✓ · Linaje familiar (Yolanda Ríos Yee, 2024)</span>
-    <span data-lang="en">Source: Civil Registry BCS · Ancestry ✓ · Family genealogy (Yolanda Ríos Yee, 2024)</span>
-    <span data-lang="zh">来源：南下加利福尼亚民事登记 · Ancestry ✓ · 家族谱系（尤兰达·里奥斯·叶，2024）</span>
+
+  <!-- Generation table -->
+  <div data-lang="es"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:28px;">221 descendientes en 5 generaciones</h3></div>
+  <div data-lang="en"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:28px;">221 descendants across 5 generations</h3></div>
+  <div data-lang="zh"><h3 style="color:#0f2744; margin-bottom:10px; margin-top:28px;">五代221位后裔</h3></div>
+
+  <div class="gen-table-wrap">
+    <table class="gen-table">
+      <thead>
+        <tr>
+          <th data-lang="es">Generación</th>
+          <th data-lang="en">Generation</th>
+          <th data-lang="zh">世代</th>
+          <th data-lang="es">Relación</th>
+          <th data-lang="en">Relation</th>
+          <th data-lang="zh">与米格尔的关系</th>
+          <th style="text-align:center;">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="gen-num">I</span></td>
+          <td colspan="2" style="font-size:0.85rem;">
+            <span data-lang="es">Hijos</span>
+            <span data-lang="en">Children</span>
+            <span data-lang="zh">子女</span>
+          </td>
+          <td style="text-align:center; font-weight:700;">5</td>
+        </tr>
+        <tr>
+          <td><span class="gen-num">II</span></td>
+          <td colspan="2" style="font-size:0.85rem;">
+            <span data-lang="es">Nietos</span>
+            <span data-lang="en">Grandchildren</span>
+            <span data-lang="zh">孙辈</span>
+          </td>
+          <td style="text-align:center; font-weight:700;">35</td>
+        </tr>
+        <tr>
+          <td><span class="gen-num">III</span></td>
+          <td colspan="2" style="font-size:0.85rem;">
+            <span data-lang="es">Bisnietos</span>
+            <span data-lang="en">Great-grandchildren</span>
+            <span data-lang="zh">曾孙辈</span>
+          </td>
+          <td style="text-align:center; font-weight:700;">85</td>
+        </tr>
+        <tr>
+          <td><span class="gen-num">IV</span></td>
+          <td colspan="2" style="font-size:0.85rem;">
+            <span data-lang="es">Tataranietos</span>
+            <span data-lang="en">Great-great-grandchildren</span>
+            <span data-lang="zh">玄孙辈</span>
+          </td>
+          <td style="text-align:center; font-weight:700;">80</td>
+        </tr>
+        <tr>
+          <td><span class="gen-num">V</span></td>
+          <td colspan="2" style="font-size:0.85rem;">
+            <span data-lang="es">Choznos</span>
+            <span data-lang="en">5th generation</span>
+            <span data-lang="zh">五世孙辈</span>
+          </td>
+          <td style="text-align:center; font-weight:700;">16</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3" style="text-align:right; font-size:0.88rem; letter-spacing:0.5px;">
+            <span data-lang="es">TOTAL DESCENDIENTES</span>
+            <span data-lang="en">TOTAL DESCENDANTS</span>
+            <span data-lang="zh">后裔总计</span>
+          </td>
+          <td class="num" style="text-align:center;">221</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.75rem; color:#94a3b8; margin-top:6px; text-align:right;">
+    <span data-lang="es">Genealogía México: Yolanda Leticia Ríos Yee (2024)</span>
+    <span data-lang="en">Mexico genealogy: Yolanda Leticia Ríos Yee (2024)</span>
+    <span data-lang="zh">墨西哥族谱：尤兰达·莱蒂西亚·里奥斯·叶（2024）</span>
   </p>
 
-  <!-- ── §2: THREE BROTHERS ── -->
-
-  <div data-lang="es"><h2 class="section-h">Los tres hermanos Yee Wong</h2></div>
-  <div data-lang="en"><h2 class="section-h">The Three Yee Wong Brothers</h2></div>
-  <div data-lang="zh"><h2 class="section-h">余黄氏三兄弟</h2></div>
+  <!-- ══════════════════════════════════════════════════════════
+       §2: LOS TRES HERMANOS YEE WONG
+       ══════════════════════════════════════════════════════════ -->
 
   <div data-lang="es">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">Tres hijos de Chan Pin Yee y Lori Wong emigraron desde Taishan. Los tres llegaron a México en años distintos y terminaron en ciudades diferentes. Solo la rama de Miguel dejó descendencia confirmada en México.</p>
+    <h2 class="section-h">§2 · Los tres hermanos Yee Wong</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      Tres hijos de Chan Pin Yee y Lori Wong emigraron desde Taishan. Llegaron a México en años distintos y se establecieron en ciudades diferentes. Solo la rama de Miguel dejó descendencia confirmada en México.
+    </p>
   </div>
   <div data-lang="en">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">Three sons of Chan Pin Yee and Lori Wong emigrated from Taishan. All three arrived in Mexico in different years and settled in different cities. Only Miguel's line left confirmed descendants in Mexico.</p>
+    <h2 class="section-h">§2 · The Three Yee Wong Brothers</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      Three sons of Chan Pin Yee and Lori Wong emigrated from Taishan. They arrived in Mexico in different years and settled in different cities. Only Miguel's line left confirmed descendants in Mexico.
+    </p>
   </div>
   <div data-lang="zh">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">陈标余和罗黄的三个儿子从台山移民。三人先后抵达墨西哥，最终定居于不同城市。只有米格尔一支在墨西哥留下了有记录的后裔。</p>
+    <h2 class="section-h">§2 · 余黄氏三兄弟</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      陈标余和罗黄的三个儿子从台山移民。三人先后抵达墨西哥，最终定居于不同城市。只有米格尔一支在墨西哥留下了有记录的后裔。
+    </p>
   </div>
 
   <div class="brothers-grid">
@@ -484,24 +592,24 @@
     <!-- MIGUEL -->
     <div class="brother-card miguel">
       <div class="bc-star">
-        <span data-lang="es">★ Sujeto principal</span>
-        <span data-lang="en">★ Principal subject</span>
-        <span data-lang="zh">★ 主要研究对象</span>
+        <span data-lang="es">Sujeto principal · El mayor (posiblemente)</span>
+        <span data-lang="en">Principal subject · Possibly the eldest</span>
+        <span data-lang="zh">主要研究对象 · 可能为长兄</span>
       </div>
       <div class="bc-name">Miguel Yee Wong</div>
-      <div class="bc-dates">~1883–1884 · † 4 mayo 1977</div>
+      <div class="bc-dates">~1883 · &#8224; 4 mayo 1977</div>
 
       <div class="bc-row">
-        <span class="bk" data-lang="es">Establecido</span>
-        <span class="bk" data-lang="en">Settled</span>
+        <span class="bk" data-lang="es">Establecido en</span>
+        <span class="bk" data-lang="en">Settled in</span>
         <span class="bk" data-lang="zh">定居地</span>
-        <span class="bv">Mulegé, BCS</span>
+        <span class="bv">Mulegé, Baja California Sur</span>
       </div>
       <div class="bc-row">
         <span class="bk" data-lang="es">Empresa</span>
         <span class="bk" data-lang="en">Business</span>
         <span class="bk" data-lang="zh">商号</span>
-        <span class="bv">Yee Sing &amp; Cía. · 怡盛維貨</span>
+        <span class="bv">Yee Sing &amp; Cía. · 怡盛維貨 (fund. 1907)</span>
       </div>
       <div class="bc-row">
         <span class="bk" data-lang="es">Hijos</span>
@@ -510,22 +618,18 @@
         <span class="bv">5 (4 sobrevivientes)</span>
       </div>
       <div class="bc-row">
-        <span class="bk" data-lang="es">Desc.</span>
-        <span class="bk" data-lang="en">Desc.</span>
+        <span class="bk" data-lang="es">Descendencia</span>
+        <span class="bk" data-lang="en">Descendants</span>
         <span class="bk" data-lang="zh">后裔</span>
         <span class="bv" style="color:#16a34a; font-weight:700;">221 · 5 generaciones</span>
       </div>
-      <div class="bc-row">
-        <span class="bk" data-lang="es">Org.</span>
-        <span class="bk" data-lang="en">Org.</span>
-        <span class="bk" data-lang="zh">社团</span>
-        <span class="bv">Unión Fraternal China · 7° vocal</span>
+      <div style="margin-top:10px;">
+        <span class="badge-conf">
+          <span data-lang="es">Confirmado</span>
+          <span data-lang="en">Confirmed</span>
+          <span data-lang="zh">已确认</span>
+        </span>
       </div>
-      <span class="badge-conf" style="margin-top:8px; display:inline-block;">
-        <span data-lang="es">Confirmado</span>
-        <span data-lang="en">Confirmed</span>
-        <span data-lang="zh">已确认</span>
-      </span>
     </div>
 
     <!-- ARTURO -->
@@ -536,11 +640,11 @@
         <span data-lang="zh">兄弟 · 萨卡特卡斯弗雷斯尼约</span>
       </div>
       <div class="bc-name">Arturo Yee Wong</div>
-      <div class="bc-dates">~1882 · † 27 enero 1942</div>
+      <div class="bc-dates">~1882 · &#8224; 27 enero 1942</div>
 
       <div class="bc-row">
         <span class="bk" data-lang="es">Entrada</span>
-        <span class="bk" data-lang="en">Entry</span>
+        <span class="bk" data-lang="en">Entry port</span>
         <span class="bk" data-lang="zh">入境口岸</span>
         <span class="bv">Mazatlán, Sinaloa</span>
       </div>
@@ -554,13 +658,13 @@
         <span class="bk" data-lang="es">Falleció</span>
         <span class="bk" data-lang="en">Died</span>
         <span class="bk" data-lang="zh">卒于</span>
-        <span class="bv">Fresnillo, Zac. · cirrosis · ~60 años</span>
+        <span class="bv">Fresnillo, Zac. · cirrosis hepática · ~60 años</span>
       </div>
       <div class="bc-row">
-        <span class="bk" data-lang="es">Testigo</span>
-        <span class="bk" data-lang="en">Witness</span>
+        <span class="bk" data-lang="es">Testigo acta</span>
+        <span class="bk" data-lang="en">Death cert. witness</span>
         <span class="bk" data-lang="zh">证人</span>
-        <span class="bv">Federico Yee (acta defunción) ✓</span>
+        <span class="bv">Federico Yee (hermano) ✓</span>
       </div>
       <div class="bc-row">
         <span class="bk" data-lang="es">Hijos</span>
@@ -568,12 +672,14 @@
         <span class="bk" data-lang="zh">子女</span>
         <span class="bv">4 · Mulegé, BCS (antes de ~1930)</span>
       </div>
-      <span class="bc-agn" style="background:#7c1d1d; color:#fca5a5;">AGN 99476</span>
-      <span class="badge-conf" style="margin-top:8px; margin-left:4px; display:inline-block;">
-        <span data-lang="es">Confirmado</span>
-        <span data-lang="en">Confirmed</span>
-        <span data-lang="zh">已确认</span>
-      </span>
+      <div style="margin-top:10px;">
+        <span class="bc-agn" style="background:#7c1d1d; color:#fca5a5;">AGN 99476</span>
+        <span class="badge-conf" style="margin-left:6px;">
+          <span data-lang="es">Confirmado</span>
+          <span data-lang="en">Confirmed</span>
+          <span data-lang="zh">已确认</span>
+        </span>
+      </div>
     </div>
 
     <!-- FEDERICO -->
@@ -584,17 +690,17 @@
         <span data-lang="zh">兄弟 · 塔毛利帕斯州马德罗城</span>
       </div>
       <div class="bc-name">Federico Yee Wong</div>
-      <div class="bc-dates">19 mar 1891 · † 12 abril 1954</div>
+      <div class="bc-dates">19 mar 1891 · &#8224; 12 abril 1954</div>
 
       <div class="bc-row">
         <span class="bk" data-lang="es">Origen</span>
         <span class="bk" data-lang="en">Origin</span>
         <span class="bk" data-lang="zh">原籍</span>
-        <span class="bv">台山 "Hoy Sang, Cantón" ✓</span>
+        <span class="bv">Taishan "Hoy Sang, Cantón" ✓</span>
       </div>
       <div class="bc-row">
         <span class="bk" data-lang="es">Entrada</span>
-        <span class="bk" data-lang="en">Entry</span>
+        <span class="bk" data-lang="en">Entry port</span>
         <span class="bk" data-lang="zh">入境口岸</span>
         <span class="bv">Manzanillo, 1913</span>
       </div>
@@ -608,7 +714,7 @@
         <span class="bk" data-lang="es">Hija</span>
         <span class="bk" data-lang="en">Daughter</span>
         <span class="bk" data-lang="zh">女儿</span>
-        <span class="bv">Bertha Yee (~1936 – † 1° jul 1985)</span>
+        <span class="bv">Bertha Yee (~1936 – &#8224; 1° jul 1985)</span>
       </div>
       <div class="bc-row">
         <span class="bk" data-lang="es">Yerno</span>
@@ -616,272 +722,225 @@
         <span class="bk" data-lang="zh">女婿</span>
         <span class="bv">Pablo Chong</span>
       </div>
-      <span class="bc-agn" style="background:#14532d; color:#86efac;">AGN 99513</span>
-      <span class="badge-conf" style="margin-top:8px; margin-left:4px; display:inline-block;">
-        <span data-lang="es">Confirmado</span>
-        <span data-lang="en">Confirmed</span>
-        <span data-lang="zh">已确认</span>
-      </span>
+      <div style="margin-top:10px;">
+        <span class="bc-agn" style="background:#14532d; color:#86efac;">AGN 99513</span>
+        <span class="badge-conf" style="margin-left:6px;">
+          <span data-lang="es">Confirmado</span>
+          <span data-lang="en">Confirmed</span>
+          <span data-lang="zh">已确认</span>
+        </span>
+      </div>
     </div>
   </div>
 
-  <!-- Arturo box -->
+  <!-- Arturo descendants note -->
   <div class="arturo-box">
-    <strong data-lang="es">Posibles descendientes de Arturo — Fresnillo / Zacatecas</strong>
-    <strong data-lang="en">Possible descendants of Arturo — Fresnillo / Zacatecas</strong>
-    <strong data-lang="zh">阿图罗的可能后裔——弗雷斯尼约/萨卡特卡斯</strong>
+    <strong data-lang="es">Posibles descendientes de Arturo — Fresnillo, Zacatecas</strong>
+    <strong data-lang="en">Possible descendants of Arturo — Fresnillo, Zacatecas</strong>
+    <strong data-lang="zh">阿图罗的可能后裔——弗雷斯尼约，萨卡特卡斯</strong>
     <div style="font-size:0.85rem; color:#7c1d1d; margin-top:6px; line-height:1.7;">
-      <span data-lang="es">80 años después de la muerte de Arturo (1942), dos negocios con apellido Yee operan en la misma ciudad. <strong>Restaurant Hong Kong YeeMon</strong> (@hongkong.yeemon · Instagram) lleva posiblemente el nombre de la esposa de Arturo — <strong>余慕兰 (Yee Mu-lan)</strong>, cuyo nombre aparece en un certificado médico de la época. Hipótesis de alta probabilidad; pendiente de confirmación.</span>
-      <span data-lang="en">80 years after Arturo's death (1942), two businesses bearing the Yee surname operate in the same city. <strong>Restaurant Hong Kong YeeMon</strong> (@hongkong.yeemon · Instagram) likely carries the name of Arturo's wife — <strong>余慕兰 (Yee Mu-lan)</strong>, whose name appears on a period medical certificate. High-probability hypothesis; confirmation pending.</span>
-      <span data-lang="zh">阿图罗去世（1942年）80年后，同一城市中仍有两家以叶姓命名的商铺在运营。<strong>香港叶满餐厅</strong>（@hongkong.yeemon · Instagram）很可能以阿图罗妻子的名字命名——<strong>余慕兰（Yee Mu-lan）</strong>，其名字出现在一份同期医疗证明上。高概率假说，待确认。</span>
+      <span data-lang="es">Ochenta años después de la muerte de Arturo (1942), dos negocios con apellido Yee operan en la misma ciudad. <strong>Restaurant Hong Kong YeeMon</strong> lleva posiblemente el nombre de la esposa de Arturo — <strong>余慕兰 (Yee Mu-lan)</strong>, cuyo nombre figura en un certificado médico de la época.</span>
+      <span data-lang="en">Eighty years after Arturo's death (1942), two businesses with the Yee surname operate in the same city. <strong>Restaurant Hong Kong YeeMon</strong> likely carries the name of Arturo's wife — <strong>余慕兰 (Yee Mu-lan)</strong>, whose name appears on a period medical certificate.</span>
+      <span data-lang="zh">阿图罗去世（1942年）八十年后，同一城市中仍有两家以叶姓命名的商铺在运营。<strong>香港叶满餐厅</strong>很可能以阿图罗妻子的名字命名——<strong>余慕兰（Yee Mu-lan）</strong>，其名字出现在一份同期医疗证明上。</span>
     </div>
     <div style="margin-top:8px;">
       <span class="badge-hyp">
-        <span data-lang="es">Hipótesis · Alta probabilidad</span>
-        <span data-lang="en">Hypothesis · High probability</span>
-        <span data-lang="zh">假说 · 高概率</span>
+        <span data-lang="es">Hipótesis · pendiente de confirmación</span>
+        <span data-lang="en">Hypothesis · pending confirmation</span>
+        <span data-lang="zh">假说 · 待确认</span>
       </span>
     </div>
   </div>
 
-  <!-- ── §3: 221 DESCENDANTS ── -->
-
-  <div data-lang="es"><h2 class="section-h">Los 221 descendientes — 5 generaciones</h2></div>
-  <div data-lang="en"><h2 class="section-h">The 221 Descendants — 5 Generations</h2></div>
-  <div data-lang="zh"><h2 class="section-h">221位后裔——五代</h2></div>
-
-  <div class="gen-table-wrap">
-    <table class="gen-table">
-      <thead>
-        <tr>
-          <th data-lang="es">Generación</th>
-          <th data-lang="en">Generation</th>
-          <th data-lang="zh">世代</th>
-          <th data-lang="es">Relación con Miguel</th>
-          <th data-lang="en">Relation to Miguel</th>
-          <th data-lang="zh">与米格尔的关系</th>
-          <th data-lang="es">Rama Ma. de la Luz</th>
-          <th data-lang="en">Branch Ma. de la Luz</th>
-          <th data-lang="zh">玛丽亚德拉鲁斯支系</th>
-          <th data-lang="es">Rama Ma. Jesús</th>
-          <th data-lang="en">Branch Ma. Jesús</th>
-          <th data-lang="zh">玛丽亚赫苏斯支系</th>
-          <th data-lang="es">Rama Héctor Manuel</th>
-          <th data-lang="en">Branch Héctor Manuel</th>
-          <th data-lang="zh">埃克托尔曼努埃尔支系</th>
-          <th data-lang="es">Rama Ma. Lourdes</th>
-          <th data-lang="en">Branch Ma. Lourdes</th>
-          <th data-lang="zh">玛丽亚洛尔德斯支系</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="gen-num">I</span></td>
-          <td colspan="3" style="font-size:0.82rem; color:#475569; font-style:italic;">
-            <span data-lang="es">Miguel† · Ma. de la Luz · Ma. Jesús · Héctor Manuel · Ma. Lourdes Catalina</span>
-            <span data-lang="en">Miguel† · Ma. de la Luz · Ma. Jesús · Héctor Manuel · Ma. Lourdes Catalina</span>
-            <span data-lang="zh">小米格尔† · 玛丽亚德拉鲁斯 · 玛丽亚赫苏斯 · 埃克托尔曼努埃尔 · 玛丽亚洛尔德斯</span>
-          </td>
-          <td colspan="3" style="text-align:center;">—</td>
-          <td colspan="3" style="text-align:center;">—</td>
-          <td colspan="3" style="text-align:center;">—</td>
-          <td colspan="3" style="text-align:center;">—</td>
-          <td><strong>5</strong></td>
-        </tr>
-        <tr>
-          <td><span class="gen-num">II</span></td>
-          <td colspan="3" style="font-size:0.82rem;">
-            <span data-lang="es">Nietos</span>
-            <span data-lang="en">Grandchildren</span>
-            <span data-lang="zh">孙辈</span>
-          </td>
-          <td colspan="3" style="text-align:center;">10</td>
-          <td colspan="3" style="text-align:center;">3</td>
-          <td colspan="3" style="text-align:center;">17</td>
-          <td colspan="3" style="text-align:center;">5</td>
-          <td><strong>35</strong></td>
-        </tr>
-        <tr>
-          <td><span class="gen-num">III</span></td>
-          <td colspan="3" style="font-size:0.82rem;">
-            <span data-lang="es">Bisnietos</span>
-            <span data-lang="en">Great-grandchildren</span>
-            <span data-lang="zh">曾孙辈</span>
-          </td>
-          <td colspan="3" style="text-align:center;">17</td>
-          <td colspan="3" style="text-align:center;">5</td>
-          <td colspan="3" style="text-align:center;">56</td>
-          <td colspan="3" style="text-align:center;">7</td>
-          <td><strong>85</strong></td>
-        </tr>
-        <tr>
-          <td><span class="gen-num">IV</span></td>
-          <td colspan="3" style="font-size:0.82rem;">
-            <span data-lang="es">Tataranietos</span>
-            <span data-lang="en">Great-great-grandchildren</span>
-            <span data-lang="zh">玄孙辈</span>
-          </td>
-          <td colspan="3" style="text-align:center;">12</td>
-          <td colspan="3" style="text-align:center;">6</td>
-          <td colspan="3" style="text-align:center;">56</td>
-          <td colspan="3" style="text-align:center;">6</td>
-          <td><strong>80</strong></td>
-        </tr>
-        <tr>
-          <td><span class="gen-num">V</span></td>
-          <td colspan="3" style="font-size:0.82rem;">
-            <span data-lang="es">Choznos</span>
-            <span data-lang="en">5th generation</span>
-            <span data-lang="zh">五世孙辈</span>
-          </td>
-          <td colspan="12" style="text-align:center; font-style:italic; font-size:0.82rem; color:#64748b;">
-            <span data-lang="es">Distribuidos en varias ramas</span>
-            <span data-lang="en">Distributed across several branches</span>
-            <span data-lang="zh">分布于各支系</span>
-          </td>
-          <td><strong>16</strong></td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="18" style="text-align:right; font-size:0.88rem; letter-spacing:0.5px;">
-            <span data-lang="es">TOTAL DESCENDIENTES</span>
-            <span data-lang="en">TOTAL DESCENDANTS</span>
-            <span data-lang="zh">后裔总计</span>
-          </td>
-          <td class="num">221</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Branch summaries -->
-  <div data-lang="es">
-    <h3 style="color:#0f2744; margin-top:24px; margin-bottom:12px;">Las cuatro ramas principales</h3>
-  </div>
-  <div data-lang="en">
-    <h3 style="color:#0f2744; margin-top:24px; margin-bottom:12px;">The four main branches</h3>
-  </div>
-  <div data-lang="zh">
-    <h3 style="color:#0f2744; margin-top:24px; margin-bottom:12px;">四大主要支系</h3>
-  </div>
-
-  <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:8px 0 20px;">
-
-    <div style="background:#f0f9ff; border-left:4px solid #0284c7; border-radius:6px; padding:14px 16px;">
-      <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#0369a1; letter-spacing:1px; margin-bottom:6px;">
-        <span data-lang="es">Rama 1 · 39 desc. totales</span>
-        <span data-lang="en">Branch 1 · 39 total desc.</span>
-        <span data-lang="zh">第一支系 · 共39位后裔</span>
-      </div>
-      <div style="font-weight:900; color:#0c4a6e; font-size:0.95rem;">María de la Luz Yee Molina</div>
-      <div style="font-size:0.78rem; color:#0369a1; margin-top:2px;">6 abr 1923 – † 25 feb 2010</div>
-      <div style="font-size:0.78rem; color:#374151; margin-top:6px;">
-        <span data-lang="es">Casada con Lucas Castro Contreras (1943, La Paz). Residencia: Tuxtla Gutiérrez, Chiapas. 10 nietos de Miguel.</span>
-        <span data-lang="en">Married Lucas Castro Contreras (1943, La Paz). Residence: Tuxtla Gutiérrez, Chiapas. 10 of Miguel's grandchildren.</span>
-        <span data-lang="zh">与卢卡斯·卡斯特罗·孔特雷拉斯成婚（1943，拉巴斯）。居住于恰帕斯州图斯特拉古铁雷斯。米格尔之10位孙辈。</span>
-      </div>
-    </div>
-
-    <div style="background:#faf5ff; border-left:4px solid #7c3aed; border-radius:6px; padding:14px 16px;">
-      <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#6d28d9; letter-spacing:1px; margin-bottom:6px;">
-        <span data-lang="es">Rama 2 · 14 desc. totales</span>
-        <span data-lang="en">Branch 2 · 14 total desc.</span>
-        <span data-lang="zh">第二支系 · 共14位后裔</span>
-      </div>
-      <div style="font-weight:900; color:#4a1d96; font-size:0.95rem;">María Jesús Yee Molina</div>
-      <div style="font-size:0.78rem; color:#6d28d9; margin-top:2px;">27 jun 1924 – † 24 ene 2019 (94 años)</div>
-      <div style="font-size:0.78rem; color:#374151; margin-top:6px;">
-        <span data-lang="es">Pareja: Antonio Geraldo Geraldo. Residencia: San Juan de Los Planes y La Paz, BCS. 3 nietos de Miguel.</span>
-        <span data-lang="en">Partner: Antonio Geraldo Geraldo. Residence: San Juan de Los Planes and La Paz, BCS. 3 of Miguel's grandchildren.</span>
-        <span data-lang="zh">伴侣：安东尼奥·赫拉尔多。居住于圣胡安德洛斯普拉内斯及拉巴斯，南下加利福尼亚。米格尔之3位孙辈。</span>
-      </div>
-    </div>
-
-    <div style="background:#fff7ed; border-left:4px solid #ea580c; border-radius:6px; padding:14px 16px;">
-      <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#c2410c; letter-spacing:1px; margin-bottom:6px;">
-        <span data-lang="es">Rama 3 · ~129 desc. · La más numerosa</span>
-        <span data-lang="en">Branch 3 · ~129 desc. · Largest branch</span>
-        <span data-lang="zh">第三支系 · 约129位后裔 · 最大支系</span>
-      </div>
-      <div style="font-weight:900; color:#7c2d12; font-size:0.95rem;">Héctor Manuel Yee Molina</div>
-      <div style="font-size:0.78rem; color:#c2410c; margin-top:2px;">28 ene 1928 – † 3 ago 2001</div>
-      <div style="font-size:0.78rem; color:#374151; margin-top:6px;">
-        <span data-lang="es">1ª pareja: Santa Ana Salvatierra (13 hijos) · 2ª pareja: Blanca Burgoin Valdéz. Residencia: San Juan de Los Planes, BCS. La rama más numerosa: 17 hijos directos, 56+ bisnietos de Miguel.</span>
-        <span data-lang="en">1st partner: Santa Ana Salvatierra (13 children) · 2nd partner: Blanca Burgoin Valdéz. Residence: San Juan de Los Planes, BCS. Largest branch: 17 direct children, 56+ of Miguel's great-grandchildren.</span>
-        <span data-lang="zh">第一伴侣：桑塔·阿纳·萨尔瓦提拉（13个子女）· 第二伴侣：布兰卡·布尔戈因·巴尔德斯。居住于圣胡安德洛斯普拉内斯，南下加利福尼亚。最大支系：17名直系子女，56+位米格尔曾孙辈。</span>
-      </div>
-    </div>
-
-    <div style="background:#f0fdf4; border-left:4px solid #16a34a; border-radius:6px; padding:14px 16px;">
-      <div style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:#15803d; letter-spacing:1px; margin-bottom:6px;">
-        <span data-lang="es">Rama 4 · ~13 desc. · Autora del linaje</span>
-        <span data-lang="en">Branch 4 · ~13 desc. · Author of the genealogy</span>
-        <span data-lang="zh">第四支系 · 约13位后裔 · 族谱编撰者所在支系</span>
-      </div>
-      <div style="font-weight:900; color:#14532d; font-size:0.95rem;">Ma. de Lourdes Catalina Yee Molina</div>
-      <div style="font-size:0.78rem; color:#15803d; margin-top:2px;">22 ene 1929 · Mulegé, BCS</div>
-      <div style="font-size:0.78rem; color:#374151; margin-top:6px;">
-        <span data-lang="es">4 parejas: Rubén Ríos (1947) · David Amezcua (1952) · Frank T. Moriuchi (1955) · Renato Cota (1960). Su hija Yolanda Leticia Ríos Yee compiló el linaje de 221 descendientes (2024).</span>
-        <span data-lang="en">4 partners: Rubén Ríos (1947) · David Amezcua (1952) · Frank T. Moriuchi (1955) · Renato Cota (1960). Her daughter Yolanda Leticia Ríos Yee compiled the genealogy of 221 descendants (2024).</span>
-        <span data-lang="zh">4位伴侣：鲁本·里奥斯（1947）· 大卫·阿梅斯夸（1952）· 弗兰克·T·森内地（1955）· 雷纳托·科塔（1960）。其女儿尤兰达·莱蒂西亚·里奥斯·叶整理了221位后裔的族谱（2024年）。</span>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ── §4: RAMA YEE PANG ── -->
-
-  <div data-lang="es"><h2 class="section-h">La rama Yee Pang — familia relacionada</h2></div>
-  <div data-lang="en"><h2 class="section-h">The Yee Pang Branch — Related Family</h2></div>
-  <div data-lang="zh"><h2 class="section-h">余邦支系——相关家族</h2></div>
+  <!-- ══════════════════════════════════════════════════════════
+       §3: PABLO YEE WONG (余松旺)
+       ══════════════════════════════════════════════════════════ -->
 
   <div data-lang="es">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">Una segunda familia Yee (余) de Taishan llegó a México por la misma empresa, a la misma región y en la misma época que Miguel. Las coincidencias superan el nivel del azar. Solo hace falta el 族谱 para cerrar el círculo.</p>
+    <h2 class="section-h">§3 · Pablo Yee Wong — 余松旺</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:4px;">
+      Contemporáneo de Miguel, del mismo clan y posiblemente de la misma aldea. La primera fuente escrita que conecta su nombre con el de Miguel es el libro <em>Tras la Muralla de Bambú</em> (2008).
+    </p>
   </div>
   <div data-lang="en">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">A second Yee (余) family from Taishan arrived in Mexico through the same company, to the same region and in the same era as Miguel. The coincidences exceed chance. Only the 族谱 (genealogical register) is needed to close the circle.</p>
+    <h2 class="section-h">§3 · Pablo Yee Wong — 余松旺</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:4px;">
+      A contemporary of Miguel, from the same clan and possibly the same village. The first written source connecting his name to Miguel's is the book <em>Tras la Muralla de Bambú</em> (2008).
+    </p>
   </div>
   <div data-lang="zh">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">另一支来自台山的余氏家族，通过同一家公司、在同一时期来到墨西哥同一地区。如此多的巧合已超出偶然的范围。只需查阅族谱，便可确认这一联系。</p>
+    <h2 class="section-h">§3 · 巴布洛·叶黄 — 余松旺</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:4px;">
+      米格尔的同时代人，同宗，可能同村。将其姓名与米格尔联系起来的第一份书面文献是《翠竹墙后》（2008年）一书。
+    </p>
   </div>
 
+  <div class="pablo-hero">
+    <div class="ph-tag" data-lang="es">Figura central · Fuente primaria: Documento Legación China, octubre 1912</div>
+    <div class="ph-tag" data-lang="en">Central figure · Primary source: Chinese Legation document, October 1912</div>
+    <div class="ph-tag" data-lang="zh">核心人物 · 一手文献：中国使馆文件，1912年10月</div>
+
+    <div class="ph-name">Pablo Yee Wong</div>
+    <div class="ph-cn">余松旺 &nbsp;·&nbsp; Yú Sōng Wàng</div>
+
+    <div class="ph-grid">
+      <div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Nacido</span>
+          <span class="ph-k" data-lang="en">Born</span>
+          <span class="ph-k" data-lang="zh">生于</span>
+          <span class="ph-v">~1890 · Taishan (台山), Guangdong</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Falleció</span>
+          <span class="ph-k" data-lang="en">Died</span>
+          <span class="ph-k" data-lang="zh">卒于</span>
+          <span class="ph-v ph-v gold">1973 · Tijuana, Baja California</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Documento 1912</span>
+          <span class="ph-k" data-lang="en">1912 document</span>
+          <span class="ph-k" data-lang="zh">1912年文件</span>
+          <span class="ph-v">"Fun Von Yee" · 22 años · Santa Rosalía, BCS</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Propiedades</span>
+          <span class="ph-k" data-lang="en">Properties</span>
+          <span class="ph-k" data-lang="zh">财产</span>
+          <span class="ph-v">900 pesos · Nº ~8297 · firmado T. H. Tong</span>
+        </div>
+      </div>
+      <div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Nombre chino</span>
+          <span class="ph-k" data-lang="en">Chinese name</span>
+          <span class="ph-k" data-lang="zh">中文姓名</span>
+          <span class="ph-v ph-v gold">余松旺 — confirmado vía Facebook "FAMILIA YEE" (Cristina)</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Viajó con</span>
+          <span class="ph-k" data-lang="en">Traveled with</span>
+          <span class="ph-k" data-lang="zh">同行者</span>
+          <span class="ph-v">Santiago, Francisco, Luis, Alberto, José Yee (6 primos)</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Fuente literaria</span>
+          <span class="ph-k" data-lang="en">Literary source</span>
+          <span class="ph-k" data-lang="zh">文学来源</span>
+          <span class="ph-v"><em>Tras la Muralla de Bambú</em> · Esteban Yee Moreno (2008)</span>
+        </div>
+        <div class="ph-row">
+          <span class="ph-k" data-lang="es">Clan</span>
+          <span class="ph-k" data-lang="en">Clan</span>
+          <span class="ph-k" data-lang="zh">宗族</span>
+          <span class="ph-v">余 (Yee) · Taishan · mismo clan que Miguel</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote block -->
+    <div style="background:rgba(255,255,255,0.07); border-left:4px solid #f59e0b; border-radius:6px; padding:16px 20px; margin-top:4px; font-style:italic; font-size:0.9rem; color:#e7e5e4; line-height:1.8;">
+      <span data-lang="es">El libro de Esteban Yee Moreno documenta la vida de Pablo en México y menciona, en la página 21, a "Miguel Yee Lián" y "Arturo Yee" — la primera fuente escrita que conecta los nombres de los tres hombres.</span>
+      <span data-lang="en">Esteban Yee Moreno's book documents Pablo's life in Mexico and mentions, on page 21, "Miguel Yee Lián" and "Arturo Yee" — the first written source connecting the names of all three men.</span>
+      <span data-lang="zh">埃斯特班·叶莫雷诺的书记录了巴布洛在墨西哥的生活，并在第21页提到"米格尔·叶廉"和"阿图罗·叶"——这是将三人姓名联系在一起的第一份书面文献。</span>
+      <div style="font-size:0.78rem; color:#a8a29e; font-style:normal; margin-top:8px;">
+        <span data-lang="es">— <em>Tras la Muralla de Bambú</em>, Esteban Yee Moreno, 2008, p.21</span>
+        <span data-lang="en">— <em>Tras la Muralla de Bambú</em>, Esteban Yee Moreno, 2008, p.21</span>
+        <span data-lang="zh">— 《翠竹墙后》，埃斯特班·叶莫雷诺，2008年，第21页</span>
+      </div>
+    </div>
+
+    <!-- Kinship hypothesis -->
+    <div class="pablo-kin">
+      <div class="pk-label" data-lang="es">Hipótesis de parentesco con Miguel — Confianza 40–50%</div>
+      <div class="pk-label" data-lang="en">Kinship hypothesis with Miguel — 40–50% confidence</div>
+      <div class="pk-label" data-lang="zh">与米格尔的亲缘假说 — 可信度40–50%</div>
+      <div class="pk-body">
+        <span data-lang="es">
+          <strong>Lo que une a Pablo y Miguel:</strong> mismo clan 余, misma aldea probable (龍陽村, 三八镇, Taishan), misma red migratoria hacia México. El carácter generacional de Pablo es 松 (Sōng); el de Miguel parece ser 礼 (Lǐ). Esto indica que no son hermanos pero podrían ser primos de la misma generación, pertenecientes a líneas distintas del clan. La hipótesis más probable es que Pablo y Miguel son primos del clan 余, no parientes directos.
+        </span>
+        <span data-lang="en">
+          <strong>What unites Pablo and Miguel:</strong> same clan 余, same probable village (龍陽村, 三八镇, Taishan), same migration network to Mexico. Pablo's generational character is 松 (Sōng); Miguel's appears to be 礼 (Lǐ). This indicates they are not brothers but could be cousins of the same generation from different lines of the clan. The most probable hypothesis is that Pablo and Miguel are clan 余 cousins, not close relatives.
+        </span>
+        <span data-lang="zh">
+          <strong>联结巴布洛与米格尔的因素：</strong>同为余氏，同一可能的村庄（台山三八镇龍陽村），同一赴墨移民网络。巴布洛的字辈为"松"（Sōng）；米格尔的字辈似乎为"礼"（Lǐ）。这表明二人并非亲兄弟，但可能是同辈的族内堂兄弟，分属宗族不同支系。最可能的假说是巴布洛与米格尔为余氏同族堂兄弟，而非近亲。
+        </span>
+      </div>
+      <div style="margin-top:10px;">
+        <span class="badge-hyp">
+          <span data-lang="es">Hipótesis · 40–50% confianza</span>
+          <span data-lang="en">Hypothesis · 40–50% confidence</span>
+          <span data-lang="zh">假说 · 可信度40–50%</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       §4: LA RAMA YEE PANG
+       ══════════════════════════════════════════════════════════ -->
+
+  <div data-lang="es">
+    <h2 class="section-h">§4 · La rama Yee Pang</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      Una segunda familia Yee (余) de Taishan llegó a México a través de la misma empresa, a la misma región y en la misma época que Miguel. Las coincidencias superan el nivel del azar.
+    </p>
+  </div>
+  <div data-lang="en">
+    <h2 class="section-h">§4 · The Yee Pang Branch</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      A second Yee (余) family from Taishan arrived in Mexico through the same company, to the same region and in the same era as Miguel. The coincidences exceed chance.
+    </p>
+  </div>
+  <div data-lang="zh">
+    <h2 class="section-h">§4 · 余邦支系</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      另一支来自台山的余氏家族，通过同一家公司、在同一时期来到墨西哥同一地区。如此多的巧合已超出偶然的范围。
+    </p>
+  </div>
+
+  <!-- Manuel Yee Pang -->
   <div class="related-card">
     <div class="rc-tag">
-      <span data-lang="es">Confirmado — Carta de Naturalización 1936 · Artículo biográfico</span>
-      <span data-lang="en">Confirmed — 1936 Naturalization Letter · Biographical article</span>
+      <span data-lang="es">Confirmado — Carta de naturalización 1936 · Artículo biográfico</span>
+      <span data-lang="en">Confirmed — 1936 Naturalization letter · Biographical article</span>
       <span data-lang="zh">已确认 — 1936年入籍证书 · 传记文章</span>
     </div>
     <div class="rc-name">Manuel P. Yee Pang</div>
-    <div class="rc-cn" style="color:#1d4ed8; font-size:0.9rem;">余氏 · Long Llang, Foo Bang — probable 龍陽村, 三八镇</div>
+    <div class="rc-cn">余氏 · "Long Llang, Foo Bang" — probable 龍陽村, 三八镇, Taishan</div>
     <div class="rc-grid">
       <span class="rc-k" data-lang="es">Nacido</span>
       <span class="rc-k" data-lang="en">Born</span>
       <span class="rc-k" data-lang="zh">生于</span>
       <span class="rc-v">19 noviembre 1893 · "Long Llang, Foo Bang" (probable: 龍陽村, 三八镇, Taishan)</span>
+
       <span class="rc-k" data-lang="es">Padre</span>
       <span class="rc-k" data-lang="en">Father</span>
       <span class="rc-k" data-lang="zh">父亲</span>
-      <span class="rc-v">Chan Pao Yee (余展宝?) · Madre: Lo Bo Wong (黄罗宝?)</span>
-      <span class="rc-k" data-lang="es">Llegada</span>
-      <span class="rc-k" data-lang="en">Arrival</span>
-      <span class="rc-k" data-lang="zh">抵达</span>
-      <span class="rc-v">~1906 (1er arribo) · 1917 vía Compañía Yee Sing (怡盛)</span>
+      <span class="rc-v">Chan Pao Yee · Madre: Lo Bo Wong</span>
+
+      <span class="rc-k" data-lang="es">Llegada México</span>
+      <span class="rc-k" data-lang="en">Arrived Mexico</span>
+      <span class="rc-k" data-lang="zh">抵达墨西哥</span>
+      <span class="rc-v">~1917 vía Compañía Yee Sing (怡盛維貨) — misma empresa que Miguel</span>
+
       <span class="rc-k" data-lang="es">Acompañante</span>
-      <span class="rc-k" data-lang="en">With</span>
+      <span class="rc-k" data-lang="en">Traveled with</span>
       <span class="rc-k" data-lang="zh">同行者</span>
-      <span class="rc-v">
-        <span data-lang="es">Su hermano Ignacio Yee Pang</span>
-        <span data-lang="en">His brother Ignacio Yee Pang</span>
-        <span data-lang="zh">其兄弟伊格纳西奥·叶邦</span>
-      </span>
+      <span class="rc-v" data-lang="es">Su hermano Ignacio Yee Pang</span>
+      <span class="rc-v" data-lang="en">His brother Ignacio Yee Pang</span>
+      <span class="rc-v" data-lang="zh">其兄弟伊格纳西奥·叶邦</span>
+
       <span class="rc-k" data-lang="es">Naturalizado</span>
       <span class="rc-k" data-lang="en">Naturalized</span>
       <span class="rc-k" data-lang="zh">入籍时间</span>
       <span class="rc-v">1936</span>
-      <span class="rc-k" data-lang="es">Asociación</span>
-      <span class="rc-k" data-lang="en">Association</span>
+
+      <span class="rc-k" data-lang="es">Organización</span>
+      <span class="rc-k" data-lang="en">Organization</span>
       <span class="rc-k" data-lang="zh">社团</span>
-      <span class="rc-v">Unión Fraternal China · 1er Vocal (26 feb 1935)</span>
+      <span class="rc-v">Unión Fraternal China · 1° Vocal (26 feb 1935) — misma que Miguel</span>
+
       <span class="rc-k" data-lang="es">Hijos</span>
       <span class="rc-k" data-lang="en">Children</span>
       <span class="rc-k" data-lang="zh">子女</span>
@@ -889,36 +948,40 @@
     </div>
   </div>
 
+  <!-- Ignacio Yee Pang -->
   <div class="related-card" style="border-color:#7c3aed; background:#f5f3ff;">
     <div class="rc-tag" style="color:#6d28d9;">
-      <span data-lang="es">Confirmado — lista manuscrita · Tarjeta bilingüe</span>
-      <span data-lang="en">Confirmed — handwritten list · Bilingual business card</span>
-      <span data-lang="zh">已确认 — 手写名单 · 双语名片</span>
+      <span data-lang="es">Confirmado — lista manuscrita · Tarjeta bilingüe con nombre chino</span>
+      <span data-lang="en">Confirmed — handwritten list · Bilingual business card with Chinese name</span>
+      <span data-lang="zh">已确认 — 手写名单 · 附中文名的双语名片</span>
     </div>
     <div class="rc-name" style="color:#4a1d96;">Ignacio Yee Pang</div>
-    <div class="rc-cn" style="color:#7c3aed;">余贤邦 (YEEN BONE en documentos mexicanos)</div>
+    <div class="rc-cn" style="color:#7c3aed;">余贤邦 · "YEEN BONE" en documentos mexicanos</div>
     <div class="rc-grid">
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Origen</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Origin</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">原籍</span>
-      <span class="rc-v" style="color:#4a1d96;">Sun Ming (新宁 = Taishan) · junto con Manuel, vía Yee Sing</span>
+      <span class="rc-v" style="color:#4a1d96;">Sun Ming (新宁 = Taishan) · vía Yee Sing, junto con Manuel</span>
+
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Esposa</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Wife</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">妻子</span>
-      <span class="rc-v" style="color:#4a1d96;">MOY QUI — GWUI (Rose)</span>
+      <span class="rc-v" style="color:#4a1d96;">MOY QUI GWUI (Rose)</span>
+
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Hijos</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Children</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">子女</span>
-      <span class="rc-v" style="color:#4a1d96;">Bill (余民冠 Yù Mín Guān) · <strong>Loreto (余民权 Yù Mín Quán)</strong> · Salvador (余民彦 Yù Mín Yàn)</span>
+      <span class="rc-v" style="color:#4a1d96;">Bill (余民冠) · <strong>Loreto (余民权)</strong> · Salvador (余民彦)</span>
     </div>
-    <div style="margin-top:10px; font-size:0.82rem; color:#4a1d96;">
-      <strong>Loreto = 余民权:</strong>
+    <div style="margin-top:10px; font-size:0.83rem; color:#4a1d96; line-height:1.7;">
+      <strong>Loreto = 余民权 (Yù Mín Quán):</strong>
       <span data-lang="es"> Ingeniero Senior · Director General de 广州珠江外资建设总公司 (Pearl River Building, Guangzhou). Identidad confirmada por tarjeta bilingüe con anotación manuscrita "YU MIN QUAN ← LORETO".</span>
-      <span data-lang="en"> Senior Engineer · Director General of 广州珠江外资建设总公司 (Pearl River Building, Guangzhou). Identity confirmed by bilingual business card with handwritten note "YU MIN QUAN ← LORETO".</span>
-      <span data-lang="zh"> 高级工程师 · 广州珠江外资建设总公司总经理。身份通过双语名片上的手写注记"YU MIN QUAN ← LORETO"得到确认。</span>
+      <span data-lang="en"> Senior Engineer · Director General of 广州珠江外资建设总公司 (Pearl River Building, Guangzhou). Identity confirmed by bilingual business card with handwritten annotation "YU MIN QUAN ← LORETO".</span>
+      <span data-lang="zh"> 高级工程师 · 广州珠江外资建设总公司总经理。身份通过双语名片上手写注记"YU MIN QUAN ← LORETO"得到确认。</span>
     </div>
   </div>
 
+  <!-- Kinship hypothesis -->
   <div class="kinship-box">
     <div class="kb-label">
       <span data-lang="es">Hipótesis de parentesco — Confianza 65%</span>
@@ -926,14 +989,14 @@
       <span data-lang="zh">亲缘假说 — 可信度65%</span>
     </div>
     <div class="kb-title">
-      <span data-lang="es">Chan Pin Yee (padre de Miguel) y Chan Pao Yee (padre de Manuel/Ignacio) son hermanos → Miguel e Ignacio son primos hermanos</span>
-      <span data-lang="en">Chan Pin Yee (Miguel's father) and Chan Pao Yee (Manuel/Ignacio's father) are brothers → Miguel and Ignacio are first cousins</span>
-      <span data-lang="zh">陈标余（米格尔之父）与陈宝余（曼努埃尔/伊格纳西奥之父）为兄弟 → 米格尔与伊格纳西奥为堂兄弟</span>
+      <span data-lang="es">Si Chan Pin Yee (padre de Miguel) y Chan Pao Yee (padre de Manuel e Ignacio) son hermanos, entonces Miguel e Ignacio son primos hermanos.</span>
+      <span data-lang="en">If Chan Pin Yee (Miguel's father) and Chan Pao Yee (Manuel and Ignacio's father) are brothers, then Miguel and Ignacio are first cousins.</span>
+      <span data-lang="zh">若陈标余（米格尔之父）与陈宝余（曼努埃尔和伊格纳西奥之父）为兄弟，则米格尔与伊格纳西奥为堂兄弟。</span>
     </div>
     <div class="kb-body">
-      <span data-lang="es">Mismo apellido 余 · misma empresa 怡盛 · mismo origen Taishan · mismo destino BCS · misma asociación (Unión Fraternal China) · misma época. Sin documento que pruebe la filiación directa — pendiente de verificación en el 族谱 de 余植槐公祠 (龍陽村).</span>
-      <span data-lang="en">Same surname 余 · same company 怡盛 · same origin Taishan · same destination BCS · same association (Unión Fraternal China) · same era. No document yet proves direct kinship — pending verification in the 族谱 of 余植槐公祠 (龍陽村).</span>
-      <span data-lang="zh">同为余姓 · 同用怡盛公司 · 同源台山 · 同赴南下加利福尼亚 · 同属中华兄弟联合会 · 同一时代。目前尚无文件证明直接亲属关系——待在龍陽村余植槐公祠族谱中核实。</span>
+      <span data-lang="es">Mismo apellido 余 · misma empresa 怡盛維貨 · mismo origen Taishan · mismo destino BCS · misma organización (Unión Fraternal China) · misma época. No existe aún documento que pruebe la filiación directa — pendiente de verificación en el 族谱 de 余植槐公祠 (龍陽村).</span>
+      <span data-lang="en">Same surname 余 · same company 怡盛維貨 · same origin Taishan · same destination BCS · same organization (Unión Fraternal China) · same era. No document yet proves direct kinship — pending verification in the 族谱 of 余植槐公祠 (龍陽村).</span>
+      <span data-lang="zh">同为余姓 · 同用怡盛維貨公司 · 同源台山 · 同赴南下加利福尼亚 · 同属中华兄弟联合会 · 同一时代。目前尚无文件证明直接亲属关系——待在龍陽村余植槐公祠族谱中核实。</span>
     </div>
     <div style="margin-top:8px;">
       <span class="badge-hyp">
@@ -944,73 +1007,85 @@
     </div>
   </div>
 
-  <!-- ── §5: LUIS YEE HIP ── -->
-
-  <div data-lang="es"><h2 class="section-h">Luis Yee Hip — 余培勝 — Tercer inmigrante Yee</h2></div>
-  <div data-lang="en"><h2 class="section-h">Luis Yee Hip — 余培勝 — Third Yee Immigrant</h2></div>
-  <div data-lang="zh"><h2 class="section-h">路易斯·叶希 — 余培勝 — 第三位叶氏移民</h2></div>
+  <!-- ══════════════════════════════════════════════════════════
+       §5: LUIS YEE HIP (余培勝)
+       ══════════════════════════════════════════════════════════ -->
 
   <div data-lang="es">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">Un tercer comerciante Yee de Taishan, de una aldea distinta, llegó a México el mismo año que Miguel (1904). Confirma que la migración de los Yee a la costa del Pacífico mexicano fue organizada y extendida dentro del clan.</p>
+    <h2 class="section-h">§5 · Luis Yee Hip — 余培勝</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      Un tercer comerciante Yee de Taishan, de una aldea distinta (歧靖村), llegó a México el mismo año que Miguel. Confirma que la migración del clan 余 hacia la costa del Pacífico mexicano fue organizada y extendida.
+    </p>
   </div>
   <div data-lang="en">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">A third Yee merchant from Taishan, from a different village, arrived in Mexico the same year as Miguel (1904). This confirms that the Yee migration to the Mexican Pacific coast was organized and widespread within the clan.</p>
+    <h2 class="section-h">§5 · Luis Yee Hip — 余培勝</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      A third Yee merchant from Taishan, from a different village (歧靖村), arrived in Mexico the same year as Miguel. This confirms that the 余 clan's migration to the Mexican Pacific coast was organized and widespread.
+    </p>
   </div>
   <div data-lang="zh">
-    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">另一位来自台山不同村庄的叶氏商人，与米格尔同年（1904年）抵达墨西哥。这证实了余氏家族向墨西哥太平洋沿岸的移民是有组织的、宗族内部广泛协调的行动。</p>
+    <h2 class="section-h">§5 · 路易斯·叶希 — 余培勝</h2>
+    <p style="color:#475569; font-size:0.9rem; margin-bottom:12px;">
+      另一位来自台山不同村庄（歧靖村）的余氏商人，与米格尔同年抵达墨西哥。这证实了余氏宗族向墨西哥太平洋沿岸的移民是有组织的集体行动。
+    </p>
   </div>
 
   <div class="related-card yee-hip">
     <div class="rc-tag">
-      <span data-lang="es">Confirmado — Legación República de China en México · 20 jul 1919 · Sello 余培勝</span>
-      <span data-lang="en">Confirmed — Legation of the Republic of China in Mexico · Jul 20, 1919 · Seal 余培勝</span>
-      <span data-lang="zh">已确认 — 中华民国驻墨使署 · 1919年7月20日 · 余培勝印章</span>
+      <span data-lang="es">Confirmado — Legación República de China en México · 20 julio 1919 · Sello personal 余培勝</span>
+      <span data-lang="en">Confirmed — Legation of the Republic of China in Mexico · July 20, 1919 · Personal seal 余培勝</span>
+      <span data-lang="zh">已确认 — 中华民国驻墨使署 · 1919年7月20日 · 余培勝私章</span>
     </div>
     <div class="rc-name" style="color:#4a1d96;">Luis Yee Hip</div>
-    <div class="rc-cn" style="font-size:1.3rem; font-weight:900; letter-spacing:3px; margin-bottom:8px;">余培勝</div>
-    <div style="font-size:0.78rem; color:#6d28d9; margin-bottom:10px;">Yú Péi Shèng · 余 = apellido Yee · 培 = carácter generacional · 勝 = nombre personal</div>
+    <div class="rc-cn" style="font-size:1.4rem; font-weight:900; letter-spacing:3px; margin-bottom:6px;">余培勝</div>
+    <div style="font-size:0.78rem; color:#7c3aed; margin-bottom:12px;">Yú Péi Shèng · 余 = apellido Yee · 培 = carácter generacional · 勝 = nombre personal</div>
     <div class="rc-grid">
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Nacido</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Born</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">生于</span>
-      <span class="rc-v" style="color:#4a1d96;">~1887 (32 años en 1919)</span>
+      <span class="rc-v" style="color:#4a1d96;">~1887 (32 años en el documento de 1919)</span>
+
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Origen</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Origin</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">原籍</span>
-      <span class="rc-v" style="color:#4a1d96;">廣東新寧 / Son Ning, Cantón = 台山 Taishan ✓</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Aldea</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Village</span>
+      <span class="rc-v" style="color:#4a1d96;">廣東新寧 / Son Ning, Cantón = Taishan (台山) ✓</span>
+
+      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Aldea de origen</span>
+      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Home village</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">籍贯村庄</span>
-      <span class="rc-v" style="color:#4a1d96; font-weight:700;">歧靖村 (Qí Jìng Cūn) — tercera aldea Yee en Taishan (distinta de 龍陽村)</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Llegada</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Arrival</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">抵达</span>
+      <span class="rc-v" style="color:#4a1d96; font-weight:700;">歧靖村 (Qí Jìng Cūn) — distinta de 龍陽村 donde vivía el clan Yee Wong</span>
+
+      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Llegada a México</span>
+      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Arrived Mexico</span>
+      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">抵达墨西哥</span>
       <span class="rc-v" style="color:#4a1d96;">1904 — mismo año que Miguel Yee Wong</span>
+
       <span class="rc-k" style="color:#4a1d96;" data-lang="es">Empresa</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Business</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">商号</span>
       <span class="rc-v" style="color:#4a1d96;">信榕記 (Xìn Róng Jì) · Calle Bravo, La Paz, BCS</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Propiedades</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Properties</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">财产</span>
-      <span class="rc-v" style="color:#4a1d96;">$19,000 / $10,000 pesos (1919) — comerciante establecido</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Desc. posibles</span>
+
+      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Propiedades 1919</span>
+      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Properties 1919</span>
+      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">1919年财产</span>
+      <span class="rc-v" style="color:#4a1d96;">$19,000 / $10,000 pesos — comerciante establecido</span>
+
+      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Posibles desc.</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="en">Possible desc.</span>
       <span class="rc-k" style="color:#4a1d96;" data-lang="zh">可能后裔</span>
-      <span class="rc-v" style="color:#4a1d96;">Laura Medellín Yee · Elizabeth Yee Charra</span>
+      <span class="rc-v" style="color:#4a1d96;">Laura Medellín Yee · Elizabeth Yee Charra (La Paz, BCS)</span>
     </div>
-    <div style="margin-top:10px; font-size:0.82rem; background: rgba(124,58,237,0.08); border-radius:6px; padding:10px 12px; color:#4a1d96; line-height:1.7;">
-      <strong data-lang="es">Rama distinta — 班派 propia:</strong>
-      <strong data-lang="en">Different branch — own 班派:</strong>
-      <strong data-lang="zh">不同支系 — 独立字辈：</strong>
-      <span data-lang="es"> El carácter generacional 培 (Péi) no aparece en la 班派 de 荻海 (rama de Miguel). Luis pertenece a una sub-rama 余氏 con genealogía propia, probablemente de 歧靖村. Los tres inmigrantes Yee (Miguel, Manuel, Luis) representan al menos dos aldeas y dos ramas del clan 余氏 en Taishan que operaban en la misma red migratoria hacia México.</span>
-      <span data-lang="en"> The generational character 培 (Péi) does not appear in the 荻海 班派 (Miguel's branch). Luis belongs to a sub-branch of the 余氏 clan with its own genealogy, likely from 歧靖村. The three Yee immigrants (Miguel, Manuel, Luis) represent at least two villages and two branches of the 余氏 clan in Taishan, all operating within the same migration network toward Mexico.</span>
-      <span data-lang="zh"> 字辈"培"（Péi）不在荻海班派（米格尔支系）中出现。路易斯属于一个拥有独立谱系的余氏分支，很可能来自歧靖村。三位余氏移民（米格尔、曼努埃尔、路易斯）代表台山余氏宗族至少两个村庄和两个支系，共同在同一移民网络中活动，目的地均为墨西哥。</span>
+
+    <div class="callout" style="background:rgba(124,58,237,0.08); border-left-color:#7c3aed; margin-top:14px;">
+      <span data-lang="es"><strong>Rama distinta del clan 余:</strong> El carácter generacional 培 (Péi) no aparece en la rama de Miguel. Luis pertenece a una sub-rama del clan 余氏 con genealogía propia, procedente de 歧靖村. Los tres inmigrantes Yee (Miguel, Manuel, Luis) representan al menos dos aldeas y dos líneas del clan 余氏 en Taishan, todas enlazadas en la misma red migratoria hacia México.</span>
+      <span data-lang="en"><strong>Different clan branch:</strong> The generational character 培 (Péi) does not appear in Miguel's branch. Luis belongs to a sub-branch of the 余氏 clan with its own genealogy, from 歧靖村. The three Yee immigrants (Miguel, Manuel, Luis) represent at least two villages and two lines of the 余氏 clan in Taishan, all linked in the same migration network toward Mexico.</span>
+      <span data-lang="zh"><strong>余氏宗族不同支系：</strong>字辈"培"（Péi）不在米格尔支系中出现。路易斯属于拥有独立谱系的余氏宗族分支，来自歧靖村。三位余氏移民（米格尔、曼努埃尔、路易斯）代表台山余氏宗族至少两个村庄和两条支系，共同活动于同一赴墨移民网络之中。</span>
     </div>
-    <div style="margin-top:10px;">
+
+    <div style="margin-top:12px;">
       <span class="badge-conf">
-        <span data-lang="es">Confirmado — documentos Legación China 1919</span>
-        <span data-lang="en">Confirmed — Chinese Legation documents 1919</span>
+        <span data-lang="es">Confirmado — documento Legación China 1919</span>
+        <span data-lang="en">Confirmed — Chinese Legation document 1919</span>
         <span data-lang="zh">已确认 — 1919年中国使馆文件</span>
       </span>
       <span class="badge-poss" style="margin-left:6px;">
@@ -1021,7 +1096,7 @@
     </div>
   </div>
 
-  <!-- ── FOOTER NOTE ── -->
+  <!-- ── PAGE FOOTER ── -->
   <div class="page-footer">
     <span data-lang="es">Genealogía México: Yolanda Leticia Ríos Yee (2024) · 221 descendientes · 5 generaciones · Investigación: Gerardo Lucero Ríos · v3.2 · 20 marzo 2026</span>
     <span data-lang="en">Mexico genealogy: Yolanda Leticia Ríos Yee (2024) · 221 descendants · 5 generations · Research: Gerardo Lucero Ríos · v3.2 · March 20, 2026</span>
