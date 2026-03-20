@@ -41,6 +41,16 @@
     }
   });
 
+  // Catch-all: any element with yw-fade hardcoded in HTML must also be resolved
+  document.querySelectorAll('.yw-fade:not(.yw-visible)').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top > FOLD) {
+      io.observe(el);
+    } else {
+      el.classList.add('yw-visible');
+    }
+  });
+
   /* ── 2. Smooth scroll for anchor links ───────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
