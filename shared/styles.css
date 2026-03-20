@@ -1,0 +1,178 @@
+/* ============================================================
+   Familia Yee Wong · 余黄氏 · Shared Stylesheet
+   Taishan, Guangdong → México · 1883–2026
+   ============================================================ */
+
+body { font-family: Georgia, serif; font-size: 10pt; line-height: 1.6; color: #1a1a1a; margin: 0; padding: 0; }
+.page { max-width: 960px; margin: 0 auto; padding: 24px 48px; }
+h1.sec { font-size: 16pt; font-weight: bold; border-bottom: 2px solid #000; padding-bottom: 6px; margin: 32px 0 14px; }
+h2 { font-size: 12pt; font-weight: bold; margin: 20px 0 8px; }
+h3 { font-size: 10.5pt; font-weight: bold; margin: 14px 0 6px; }
+p { margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9pt; }
+thead tr { background: #0f2744; color: #fff; }
+thead th { padding: 6px 8px; text-align: left; }
+tbody tr:nth-child(even) { background: #f0f4f8; }
+tbody td { padding: 5px 8px; border-bottom: 1px solid #dde; vertical-align: top; }
+
+/* ── PORTADA ── */
+.cover { background: #0f2744; border-bottom: 6px solid #4fa3c8; color: #fff; padding: 64px 72px 56px; }
+.cover-watermark { float: right; font-size: 260px; font-weight: 900; color: rgba(255,255,255,0.05); font-family: serif; line-height: 1; margin: -10px -20px 0 0; }
+.cover-tag { font-size: 7.5pt; color: #7eb8d4; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 18px; }
+.cover h1 { font-size: 30pt; font-weight: 900; color: #fff; margin: 0 0 8px; line-height: 1.1; clear: none; }
+.cover h1 em { color: #86efac; font-style: italic; }
+.cover-sub { font-size: 11pt; color: #a8d5ea; font-style: italic; margin: 0 0 22px; }
+.cover-divider { width: 72px; height: 4px; background: #4fa3c8; margin: 0 0 24px; }
+.cover-grid { display: table; width: 100%; }
+.cover-item { display: table-cell; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 11px 14px; }
+.cover-item + .cover-item { border-left: none; }
+.cover-item .k { font-size: 7pt; text-transform: uppercase; letter-spacing: 1.5px; color: #7eb8d4; margin-bottom: 5px; }
+.cover-item .v { font-size: 9.5pt; color: #fff; font-weight: 700; }
+.cover-item .v.green { color: #86efac; }
+.cover-date { color: rgba(255,255,255,0.35); font-size: 7.5pt; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; }
+
+/* ── CALLOUTS ── */
+.confirmed { background: #f0fdf4; border: 2px solid #16a34a; border-radius: 6px; padding: 12px 16px; margin: 10px 0; }
+.confirmed .label { font-size: 7pt; font-weight: bold; text-transform: uppercase; color: #15803d; margin-bottom: 5px; }
+.callout { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 10px 14px; margin: 10px 0; font-size: 9.5pt; }
+.callout.green { background: #f0fdf4; border-left-color: #16a34a; }
+.warn { background: #fff7ed; border-left: 4px solid #f97316; padding: 10px 14px; margin: 10px 0; font-size: 9.5pt; }
+.gold { background: #fefce8; border: 2px solid #ca8a04; border-radius: 6px; padding: 12px 16px; margin: 10px 0; }
+.gold .label { font-size: 7pt; font-weight: bold; text-transform: uppercase; color: #92400e; margin-bottom: 5px; }
+.notice { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 10px 14px; margin: 10px 0; font-size: 9pt; }
+.score-card { border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; margin: 8px 0; background: #f8fafc; }
+.score-card.big { border-color: #86efac; background: #f0fdf4; }
+.hyp { font-size: 9.5pt; font-weight: bold; margin-bottom: 5px; }
+.bar { height: 6px; background: #e2e8f0; border-radius: 3px; margin: 4px 0; }
+.fill { height: 6px; border-radius: 3px; }
+.snum { font-size: 8.5pt; font-weight: bold; }
+.sdelta { font-size: 7.5pt; font-weight: normal; color: #6b7280; }
+.c-ok { color: #15803d; font-weight: bold; }
+.c-med { color: #b45309; font-weight: bold; }
+.c-lo { color: #b91c1c; font-weight: bold; }
+td.hl { background: #dcfce7 !important; font-weight: bold; color: #14532d; }
+td.hl2 { background: #fef9c3 !important; font-weight: 600; color: #713f12; }
+
+/* ── ÁRBOL GENEALÓGICO DINÁMICO ── */
+.dyn-tree-wrap { font-family: Georgia, serif; font-size: 8.5pt; margin: 14px 0; overflow-x: auto; }
+.dt-gen { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.dt-gen-label { font-size: 6.5pt; text-transform: uppercase; letter-spacing: 1.5px; color: #94a3b8; font-weight: 700; margin: 2px 0 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2px 14px; }
+.dt-vline { width: 2px; background: #94a3b8; height: 18px; margin: 0 auto; }
+.dt-vline.conf { background: #16a34a; }
+.dt-vline.hyp { background: #f59e0b; }
+.dt-vline.hist { background: #7c3aed; }
+.dt-siblings { display: flex; justify-content: center; align-items: flex-start; gap: 0; width: 100%; }
+.dt-branch-wrap { display: flex; flex-direction: column; align-items: center; position: relative; flex: 1; max-width: 240px; min-width: 120px; }
+.dt-hbar-row { display: flex; width: 100%; align-items: center; height: 18px; }
+.dt-hbar-seg { flex: 1; height: 2px; background: #94a3b8; }
+.dt-hbar-seg.conf { background: #16a34a; }
+.dt-hbar-seg.hyp  { background: #f59e0b; }
+.dt-hbar-seg.hist { background: #7c3aed; }
+.dt-hbar-seg.invis { background: transparent; }
+.dt-hbar-dot { width: 8px; height: 8px; border-radius: 50%; background: #94a3b8; flex-shrink: 0; }
+.dt-hbar-dot.conf { background: #16a34a; }
+.dt-hbar-dot.hyp  { background: #f59e0b; }
+.dt-node { border-radius: 8px; padding: 8px 11px; text-align: center; min-width: 100px; max-width: 220px; cursor: default; border-width: 2px; border-style: solid; box-sizing: border-box; }
+.dt-node-cn  { font-size: 11pt; font-weight: 700; letter-spacing: 1px; margin-bottom: 2px; }
+.dt-node-rom { font-size: 8pt; font-weight: 600; margin-bottom: 2px; }
+.dt-node-det { font-size: 7pt; line-height: 1.5; opacity: 0.85; }
+.dt-node-badge { display: inline-block; font-size: 6pt; font-weight: 700; border-radius: 8px; padding: 1px 6px; margin-top: 4px; }
+.dt-node.hist   { background: #4a1d96; color: #fff; border-color: #7c3aed; }
+.dt-node.hist .dt-node-badge { background: rgba(255,255,255,0.2); color: #e9d5ff; }
+.dt-node.gap    { background: #f1f5f9; color: #64748b; border: 2px dashed #cbd5e1; font-style: italic; }
+.dt-node.doc    { background: #0f2744; color: #fff; border-color: #3b82f6; }
+.dt-node.doc .dt-node-badge { background: rgba(255,255,255,0.18); color: #bfdbfe; }
+.dt-node.conf   { background: #14532d; color: #fff; border-color: #16a34a; }
+.dt-node.conf .dt-node-badge { background: #dcfce7; color: #14532d; }
+.dt-node.hyp    { background: #78350f; color: #fff; border-color: #f59e0b; }
+.dt-node.hyp .dt-node-badge { background: #fef9c3; color: #92400e; }
+.dt-node.mex    { background: #7c2d12; color: #fff; border-color: #ef4444; }
+.dt-node.mex .dt-node-badge { background: #fee2e2; color: #7c2d12; }
+.dt-node.pang   { background: #1e3a5f; color: #fff; border-color: #60a5fa; }
+.dt-node.pang .dt-node-badge { background: #dbeafe; color: #1e40af; }
+.dt-node.desc   { background: #065f46; color: #fff; border-color: #10b981; }
+.dt-node.desc .dt-node-badge { background: #d1fae5; color: #065f46; }
+.dt-node.unkn   { background: #374151; color: #d1d5db; border-color: #6b7280; }
+.dt-gapblock { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 16px; padding: 6px 20px; text-align: center; font-size: 7.5pt; color: #64748b; margin: 4px 0; font-style: italic; }
+.dt-hyp-label { font-size: 6.5pt; background: #fef9c3; color: #92400e; border: 1px solid #f59e0b; border-radius: 8px; padding: 2px 10px; margin: 4px auto; font-weight: 700; }
+.dt-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 6px; align-items: center; }
+.dt-leg-item { display: flex; align-items: center; gap: 5px; font-size: 7.5pt; color: #374151; }
+.dt-leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+/* ── FOOTER ── */
+.footer { font-size: 7pt; color: #9ca3af; border-top: 1px solid #e5e7eb; padding-top: 8px; margin-top: 24px; }
+
+/* ============================================================
+   TRILINGUAL LANGUAGE SWITCHER
+   ============================================================ */
+.lang-switcher {
+  position: fixed; top: 14px; right: 14px; z-index: 9999;
+  display: flex; gap: 6px; background: rgba(15,39,68,0.92);
+  padding: 6px 10px; border-radius: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.lang-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.25);
+  color: #93c5fd; padding: 4px 12px; border-radius: 16px;
+  cursor: pointer; font-size: 0.8rem; font-family: Georgia, serif;
+  transition: all 0.2s;
+}
+.lang-btn.active, .lang-btn:hover { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+
+[data-lang="en"], [data-lang="zh"] { display: none; }
+body.lang-en [data-lang="es"] { display: none; }
+body.lang-en [data-lang="en"] { display: revert; }
+body.lang-zh [data-lang="es"] { display: none; }
+body.lang-zh [data-lang="zh"] { display: revert; }
+
+/* ── SITE NAVIGATION ── */
+.site-nav {
+  background: #0a1c35; padding: 10px 32px;
+  display: flex; gap: 24px; align-items: center;
+  border-bottom: 2px solid #1e3a5f; flex-wrap: wrap;
+  position: sticky; top: 0; z-index: 100;
+}
+.site-nav .brand { color: #ffd700; font-weight: 900; font-size: 1.15rem; text-decoration: none; margin-right: 8px; }
+.site-nav a { color: #93c5fd; text-decoration: none; font-size: 0.875rem; padding: 4px 8px; border-radius: 6px; transition: background 0.15s; }
+.site-nav a:hover, .site-nav a.active { background: rgba(59,130,246,0.2); color: #fff; }
+
+/* ── DATA FACT TABLE ── */
+.fact-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+.fact-table th { background: #0f2744; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; }
+.fact-table td { padding: 9px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+.fact-table tr:nth-child(even) td { background: #f8fafc; }
+.fact-table .label-col { font-weight: 600; color: #374151; width: 220px; }
+.fact-table .conf { color: #15803d; font-weight: 700; }
+.fact-table .hyp { color: #b45309; font-weight: 700; }
+
+/* ── EVIDENCE BADGE ── */
+.badge-conf { display: inline-block; background: #dcfce7; color: #15803d; border: 1px solid #16a34a; border-radius: 12px; padding: 2px 10px; font-size: 0.75rem; font-weight: 700; }
+.badge-hyp  { display: inline-block; background: #fef9c3; color: #92400e; border: 1px solid #ca8a04; border-radius: 12px; padding: 2px 10px; font-size: 0.75rem; font-weight: 700; }
+.badge-poss { display: inline-block; background: #f1f5f9; color: #475569; border: 1px solid #94a3b8; border-radius: 12px; padding: 2px 10px; font-size: 0.75rem; font-weight: 700; }
+
+/* ── FOREVER PAGE SPECIFIC ── */
+.forever-hero { background: linear-gradient(135deg, #0f2744 0%, #1e3a5f 100%); color: #fff; padding: 60px 48px; text-align: center; }
+.forever-hero .chinese-big { font-size: 5rem; letter-spacing: 12px; margin-bottom: 12px; opacity: 0.9; }
+.forever-hero h1 { font-size: 2.2rem; font-weight: 900; color: #ffd700; margin: 0 0 8px; }
+.forever-hero .sub { color: #a8d5ea; font-size: 1.05rem; font-style: italic; }
+.forever-section { max-width: 800px; margin: 0 auto; padding: 48px 32px; }
+.forever-section h2 { color: #0f2744; font-size: 1.4rem; border-bottom: 3px solid #4fa3c8; padding-bottom: 8px; margin-bottom: 20px; }
+.forever-quote { background: #0f2744; color: #fff; border-radius: 10px; padding: 24px 32px; margin: 24px 0; font-size: 1.1rem; line-height: 1.9; font-style: italic; border-left: 6px solid #ffd700; }
+.forever-quote .attribution { font-size: 0.8rem; color: #7eb8d4; font-style: normal; margin-top: 12px; }
+
+@media (max-width: 700px) {
+  .page { padding: 16px 18px; }
+  .cover { padding: 32px 24px; }
+  .cover-grid { display: block; }
+  .cover-item { display: block; margin-bottom: 8px; }
+  .site-nav { gap: 12px; padding: 8px 16px; }
+  .forever-hero { padding: 40px 24px; }
+  .forever-hero .chinese-big { font-size: 3rem; }
+  .forever-section { padding: 32px 16px; }
+}
+
+@media print {
+  .lang-switcher, .site-nav { display: none !important; }
+  body { font-size: 9pt; }
+  .cover { page-break-after: always; }
+}
