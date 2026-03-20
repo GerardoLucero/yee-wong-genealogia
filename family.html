@@ -135,35 +135,14 @@
 .brother-card .bc-row .bv { color: #374151; }
 .brother-card .bc-agn { display: inline-block; font-size: 7pt; background: #1e3a5f; color: #93c5fd; border-radius: 10px; padding: 2px 8px; margin-top: 8px; }
 
-/* ── PABLO YEE WONG — prominent section ── */
-.pablo-hero {
-  background: linear-gradient(135deg, #1c1917 0%, #292524 60%, #1c3a3e 100%);
-  border-radius: 14px; padding: 32px 36px; margin: 28px 0;
-  border: 2px solid #f59e0b; color: #fff;
-}
-.pablo-hero .ph-tag {
-  font-size: 7pt; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2.5px; color: #fbbf24; margin-bottom: 12px;
-}
-.pablo-hero .ph-name { font-size: 1.6rem; font-weight: 900; color: #ffd700; margin-bottom: 4px; }
-.pablo-hero .ph-cn { font-size: 1.3rem; color: #86efac; font-weight: 700; margin-bottom: 16px; letter-spacing: 2px; }
-.pablo-hero .ph-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px;
-  font-size: 0.87rem; margin-bottom: 18px;
-}
-.pablo-hero .ph-row { display: flex; gap: 8px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.pablo-hero .ph-k { color: #7eb8d4; min-width: 100px; flex-shrink: 0; }
-.pablo-hero .ph-v { color: #e2e8f0; }
-.pablo-hero .ph-v.gold { color: #fbbf24; font-weight: 700; }
-.pablo-kin {
-  background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4);
-  border-radius: 8px; padding: 14px 18px; margin-top: 16px;
-}
-.pablo-kin .pk-label {
-  font-size: 7pt; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 2px; color: #fbbf24; margin-bottom: 8px;
-}
-.pablo-kin .pk-body { font-size: 0.87rem; color: #d6d3d1; line-height: 1.75; }
+/* ── RELATED PEOPLE — unified card variant for Pablo (gold accent) ── */
+.related-card.pablo { border-color: #f59e0b; background: #fffbeb; }
+.related-card.pablo .rc-tag { color: #92400e; }
+.related-card.pablo .rc-name { color: #78350f; }
+.related-card.pablo .rc-cn { color: #b45309; font-weight: 700; font-size: 1.15rem; letter-spacing: 1px; }
+.related-card.pablo .rc-k { color: #374151; }
+.related-card.pablo .rc-v { color: #78350f; }
+.related-card.pablo .rc-v.gold { color: #b45309; font-weight: 700; }
 
 /* ── RELATED FAMILIES ── */
 .related-card {
@@ -224,7 +203,7 @@
   .brothers-grid { grid-template-columns: 1fr; }
   .children-row { grid-template-columns: repeat(2, 1fr); }
   .gen-table td, .gen-table th { padding: 8px 10px; font-size: 0.82rem; }
-  .pablo-hero .ph-grid { grid-template-columns: 1fr; }
+
 }
 </style>
 </head>
@@ -775,104 +754,82 @@
     </p>
   </div>
 
-  <div class="pablo-hero">
-    <div class="ph-tag" data-lang="es">Figura central · Fuente primaria: Documento Legación China, octubre 1912</div>
-    <div class="ph-tag" data-lang="en">Central figure · Primary source: Chinese Legation document, October 1912</div>
-    <div class="ph-tag" data-lang="zh">核心人物 · 一手文献：中国使馆文件，1912年10月</div>
+  <div class="related-card pablo">
+    <div class="rc-tag">
+      <span data-lang="es">Figura central · Fuente primaria: Documento Legación China, octubre 1912</span>
+      <span data-lang="en">Central figure · Primary source: Chinese Legation document, October 1912</span>
+      <span data-lang="zh">核心人物 · 一手文献：中国使馆文件，1912年10月</span>
+    </div>
+    <div class="rc-name">Pablo Yee Wong</div>
+    <div class="rc-cn">余松旺 &nbsp;·&nbsp; Yú Sōng Wàng</div>
+    <div class="rc-grid">
+      <span class="rc-k" data-lang="es">Nacido</span>
+      <span class="rc-k" data-lang="en">Born</span>
+      <span class="rc-k" data-lang="zh">生于</span>
+      <span class="rc-v">~1890 · Taishan (台山), Guangdong</span>
 
-    <div class="ph-name">Pablo Yee Wong</div>
-    <div class="ph-cn">余松旺 &nbsp;·&nbsp; Yú Sōng Wàng</div>
+      <span class="rc-k" data-lang="es">Falleció</span>
+      <span class="rc-k" data-lang="en">Died</span>
+      <span class="rc-k" data-lang="zh">卒于</span>
+      <span class="rc-v">1973 · Tijuana, Baja California</span>
 
-    <div class="ph-grid">
-      <div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Nacido</span>
-          <span class="ph-k" data-lang="en">Born</span>
-          <span class="ph-k" data-lang="zh">生于</span>
-          <span class="ph-v">~1890 · Taishan (台山), Guangdong</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Falleció</span>
-          <span class="ph-k" data-lang="en">Died</span>
-          <span class="ph-k" data-lang="zh">卒于</span>
-          <span class="ph-v ph-v gold">1973 · Tijuana, Baja California</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Documento 1912</span>
-          <span class="ph-k" data-lang="en">1912 document</span>
-          <span class="ph-k" data-lang="zh">1912年文件</span>
-          <span class="ph-v">"Fun Von Yee" · 22 años · Santa Rosalía, BCS</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Propiedades</span>
-          <span class="ph-k" data-lang="en">Properties</span>
-          <span class="ph-k" data-lang="zh">财产</span>
-          <span class="ph-v">900 pesos · Nº ~8297 · firmado T. H. Tong</span>
-        </div>
-      </div>
-      <div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Nombre chino</span>
-          <span class="ph-k" data-lang="en">Chinese name</span>
-          <span class="ph-k" data-lang="zh">中文姓名</span>
-          <span class="ph-v ph-v gold">余松旺 — confirmado vía Facebook "FAMILIA YEE" (Cristina)</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Viajó con</span>
-          <span class="ph-k" data-lang="en">Traveled with</span>
-          <span class="ph-k" data-lang="zh">同行者</span>
-          <span class="ph-v">Santiago, Francisco, Luis, Alberto, José Yee (6 primos)</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Fuente literaria</span>
-          <span class="ph-k" data-lang="en">Literary source</span>
-          <span class="ph-k" data-lang="zh">文学来源</span>
-          <span class="ph-v"><em>Tras la Muralla de Bambú</em> · Esteban Yee Moreno (2008)</span>
-        </div>
-        <div class="ph-row">
-          <span class="ph-k" data-lang="es">Clan</span>
-          <span class="ph-k" data-lang="en">Clan</span>
-          <span class="ph-k" data-lang="zh">宗族</span>
-          <span class="ph-v">余 (Yee) · Taishan · mismo clan que Miguel</span>
-        </div>
-      </div>
+      <span class="rc-k" data-lang="es">Documento 1912</span>
+      <span class="rc-k" data-lang="en">1912 document</span>
+      <span class="rc-k" data-lang="zh">1912年文件</span>
+      <span class="rc-v">"Fun Von Yee" · 22 años · Santa Rosalía, BCS · Nº ~8297 · firmado T. H. Tong</span>
+
+      <span class="rc-k" data-lang="es">Nombre chino</span>
+      <span class="rc-k" data-lang="en">Chinese name</span>
+      <span class="rc-k" data-lang="zh">中文姓名</span>
+      <span class="rc-v gold">余松旺 — confirmado vía Facebook "FAMILIA YEE" (Cristina)</span>
+
+      <span class="rc-k" data-lang="es">Viajó con</span>
+      <span class="rc-k" data-lang="en">Traveled with</span>
+      <span class="rc-k" data-lang="zh">同行者</span>
+      <span class="rc-v">Santiago, Francisco, Luis, Alberto, José Yee (6 primos)</span>
+
+      <span class="rc-k" data-lang="es">Fuente literaria</span>
+      <span class="rc-k" data-lang="en">Literary source</span>
+      <span class="rc-k" data-lang="zh">文学来源</span>
+      <span class="rc-v"><em>Tras la Muralla de Bambú</em> · Esteban Yee Moreno (2008)</span>
+
+      <span class="rc-k" data-lang="es">Clan</span>
+      <span class="rc-k" data-lang="en">Clan</span>
+      <span class="rc-k" data-lang="zh">宗族</span>
+      <span class="rc-v">余 (Yee) · Taishan · mismo clan que Miguel</span>
     </div>
 
     <!-- Quote block -->
-    <div style="background:rgba(255,255,255,0.07); border-left:4px solid #f59e0b; border-radius:6px; padding:16px 20px; margin-top:4px; font-style:italic; font-size:0.9rem; color:#e7e5e4; line-height:1.8;">
+    <div style="border-left:4px solid #f59e0b; border-radius:6px; padding:14px 18px; margin-top:14px; font-style:italic; font-size:0.88rem; color:#78350f; line-height:1.8; background:rgba(245,158,11,0.07);">
       <span data-lang="es">El libro de Esteban Yee Moreno documenta la vida de Pablo en México y menciona, en la página 21, a "Miguel Yee Lián" y "Arturo Yee" — la primera fuente escrita que conecta los nombres de los tres hombres.</span>
       <span data-lang="en">Esteban Yee Moreno's book documents Pablo's life in Mexico and mentions, on page 21, "Miguel Yee Lián" and "Arturo Yee" — the first written source connecting the names of all three men.</span>
       <span data-lang="zh">埃斯特班·叶莫雷诺的书记录了巴布洛在墨西哥的生活，并在第21页提到"米格尔·叶廉"和"阿图罗·叶"——这是将三人姓名联系在一起的第一份书面文献。</span>
-      <div style="font-size:0.78rem; color:#a8a29e; font-style:normal; margin-top:8px;">
+      <div style="font-size:0.78rem; color:#92400e; font-style:normal; margin-top:8px;">
         <span data-lang="es">— <em>Tras la Muralla de Bambú</em>, Esteban Yee Moreno, 2008, p.21</span>
         <span data-lang="en">— <em>Tras la Muralla de Bambú</em>, Esteban Yee Moreno, 2008, p.21</span>
         <span data-lang="zh">— 《翠竹墙后》，埃斯特班·叶莫雷诺，2008年，第21页</span>
       </div>
     </div>
+  </div>
 
-    <!-- Kinship hypothesis -->
-    <div class="pablo-kin">
-      <div class="pk-label" data-lang="es">Hipótesis de parentesco con Miguel — Confianza 40–50%</div>
-      <div class="pk-label" data-lang="en">Kinship hypothesis with Miguel — 40–50% confidence</div>
-      <div class="pk-label" data-lang="zh">与米格尔的亲缘假说 — 可信度40–50%</div>
-      <div class="pk-body">
-        <span data-lang="es">
-          <strong>Lo que une a Pablo y Miguel:</strong> mismo clan 余, misma aldea probable (龍陽村, 三八镇, Taishan), misma red migratoria hacia México. El carácter generacional de Pablo es 松 (Sōng); el de Miguel parece ser 礼 (Lǐ). Esto indica que no son hermanos pero podrían ser primos de la misma generación, pertenecientes a líneas distintas del clan. La hipótesis más probable es que Pablo y Miguel son primos del clan 余, no parientes directos.
-        </span>
-        <span data-lang="en">
-          <strong>What unites Pablo and Miguel:</strong> same clan 余, same probable village (龍陽村, 三八镇, Taishan), same migration network to Mexico. Pablo's generational character is 松 (Sōng); Miguel's appears to be 礼 (Lǐ). This indicates they are not brothers but could be cousins of the same generation from different lines of the clan. The most probable hypothesis is that Pablo and Miguel are clan 余 cousins, not close relatives.
-        </span>
-        <span data-lang="zh">
-          <strong>联结巴布洛与米格尔的因素：</strong>同为余氏，同一可能的村庄（台山三八镇龍陽村），同一赴墨移民网络。巴布洛的字辈为"松"（Sōng）；米格尔的字辈似乎为"礼"（Lǐ）。这表明二人并非亲兄弟，但可能是同辈的族内堂兄弟，分属宗族不同支系。最可能的假说是巴布洛与米格尔为余氏同族堂兄弟，而非近亲。
-        </span>
-      </div>
-      <div style="margin-top:10px;">
-        <span class="badge-hyp">
-          <span data-lang="es">Hipótesis · 40–50% confianza</span>
-          <span data-lang="en">Hypothesis · 40–50% confidence</span>
-          <span data-lang="zh">假说 · 可信度40–50%</span>
-        </span>
-      </div>
+  <!-- Kinship hypothesis -->
+  <div class="kinship-box">
+    <div class="kb-label">
+      <span data-lang="es">Hipótesis de parentesco con Miguel — Confianza 40–50%</span>
+      <span data-lang="en">Kinship hypothesis with Miguel — 40–50% confidence</span>
+      <span data-lang="zh">与米格尔的亲缘假说 — 可信度40–50%</span>
+    </div>
+    <div class="kb-body">
+      <span data-lang="es"><strong>Lo que une a Pablo y Miguel:</strong> mismo clan 余, misma aldea probable (龍陽村, 三八镇, Taishan), misma red migratoria hacia México. El carácter generacional de Pablo es 松 (Sōng); el de Miguel parece ser 礼 (Lǐ). Esto indica que no son hermanos pero podrían ser primos de la misma generación, pertenecientes a líneas distintas del clan.</span>
+      <span data-lang="en"><strong>What unites Pablo and Miguel:</strong> same clan 余, same probable village (龍陽村, 三八镇, Taishan), same migration network to Mexico. Pablo's generational character is 松 (Sōng); Miguel's appears to be 礼 (Lǐ). This indicates they are not brothers but could be cousins of the same generation from different lines of the clan.</span>
+      <span data-lang="zh"><strong>联结巴布洛与米格尔的因素：</strong>同为余氏，同一可能的村庄（台山三八镇龍陽村），同一赴墨移民网络。巴布洛的字辈为"松"（Sōng）；米格尔的字辈似乎为"礼"（Lǐ）。二人并非亲兄弟，可能是同辈族内堂兄弟，分属宗族不同支系。</span>
+    </div>
+    <div style="margin-top:8px;">
+      <span class="badge-hyp">
+        <span data-lang="es">Hipótesis · 40–50% confianza</span>
+        <span data-lang="en">Hypothesis · 40–50% confidence</span>
+        <span data-lang="zh">假说 · 可信度40–50%</span>
+      </span>
     </div>
   </div>
 
@@ -949,31 +906,31 @@
   </div>
 
   <!-- Ignacio Yee Pang -->
-  <div class="related-card" style="border-color:#7c3aed; background:#f5f3ff;">
-    <div class="rc-tag" style="color:#6d28d9;">
+  <div class="related-card yee-hip">
+    <div class="rc-tag">
       <span data-lang="es">Confirmado — lista manuscrita · Tarjeta bilingüe con nombre chino</span>
       <span data-lang="en">Confirmed — handwritten list · Bilingual business card with Chinese name</span>
       <span data-lang="zh">已确认 — 手写名单 · 附中文名的双语名片</span>
     </div>
-    <div class="rc-name" style="color:#4a1d96;">Ignacio Yee Pang</div>
-    <div class="rc-cn" style="color:#7c3aed;">余贤邦 · "YEEN BONE" en documentos mexicanos</div>
+    <div class="rc-name">Ignacio Yee Pang</div>
+    <div class="rc-cn">余贤邦 · "YEEN BONE" en documentos mexicanos</div>
     <div class="rc-grid">
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Origen</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Origin</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">原籍</span>
-      <span class="rc-v" style="color:#4a1d96;">Sun Ming (新宁 = Taishan) · vía Yee Sing, junto con Manuel</span>
+      <span class="rc-k" data-lang="es">Origen</span>
+      <span class="rc-k" data-lang="en">Origin</span>
+      <span class="rc-k" data-lang="zh">原籍</span>
+      <span class="rc-v">Sun Ming (新宁 = Taishan) · vía Yee Sing, junto con Manuel</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Esposa</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Wife</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">妻子</span>
-      <span class="rc-v" style="color:#4a1d96;">MOY QUI GWUI (Rose)</span>
+      <span class="rc-k" data-lang="es">Esposa</span>
+      <span class="rc-k" data-lang="en">Wife</span>
+      <span class="rc-k" data-lang="zh">妻子</span>
+      <span class="rc-v">MOY QUI GWUI (Rose)</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Hijos</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Children</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">子女</span>
-      <span class="rc-v" style="color:#4a1d96;">Bill (余民冠) · <strong>Loreto (余民权)</strong> · Salvador (余民彦)</span>
+      <span class="rc-k" data-lang="es">Hijos</span>
+      <span class="rc-k" data-lang="en">Children</span>
+      <span class="rc-k" data-lang="zh">子女</span>
+      <span class="rc-v">Bill (余民冠) · <strong>Loreto (余民权)</strong> · Salvador (余民彦)</span>
     </div>
-    <div style="margin-top:10px; font-size:0.83rem; color:#4a1d96; line-height:1.7;">
+    <div class="callout" style="background:rgba(124,58,237,0.07); border-left-color:#7c3aed; margin-top:12px; font-size:0.83rem;">
       <strong>Loreto = 余民权 (Yù Mín Quán):</strong>
       <span data-lang="es"> Ingeniero Senior · Director General de 广州珠江外资建设总公司 (Pearl River Building, Guangzhou). Identidad confirmada por tarjeta bilingüe con anotación manuscrita "YU MIN QUAN ← LORETO".</span>
       <span data-lang="en"> Senior Engineer · Director General of 广州珠江外资建设总公司 (Pearl River Building, Guangzhou). Identity confirmed by bilingual business card with handwritten annotation "YU MIN QUAN ← LORETO".</span>
@@ -1036,44 +993,43 @@
       <span data-lang="en">Confirmed — Legation of the Republic of China in Mexico · July 20, 1919 · Personal seal 余培勝</span>
       <span data-lang="zh">已确认 — 中华民国驻墨使署 · 1919年7月20日 · 余培勝私章</span>
     </div>
-    <div class="rc-name" style="color:#4a1d96;">Luis Yee Hip</div>
-    <div class="rc-cn" style="font-size:1.4rem; font-weight:900; letter-spacing:3px; margin-bottom:6px;">余培勝</div>
-    <div style="font-size:0.78rem; color:#7c3aed; margin-bottom:12px;">Yú Péi Shèng · 余 = apellido Yee · 培 = carácter generacional · 勝 = nombre personal</div>
+    <div class="rc-name">Luis Yee Hip</div>
+    <div class="rc-cn">余培勝 &nbsp;·&nbsp; Yú Péi Shèng · 余 = Yee · 培 = carácter generacional · 勝 = nombre personal</div>
     <div class="rc-grid">
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Nacido</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Born</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">生于</span>
-      <span class="rc-v" style="color:#4a1d96;">~1887 (32 años en el documento de 1919)</span>
+      <span class="rc-k" data-lang="es">Nacido</span>
+      <span class="rc-k" data-lang="en">Born</span>
+      <span class="rc-k" data-lang="zh">生于</span>
+      <span class="rc-v">~1887 (32 años en el documento de 1919)</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Origen</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Origin</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">原籍</span>
-      <span class="rc-v" style="color:#4a1d96;">廣東新寧 / Son Ning, Cantón = Taishan (台山) ✓</span>
+      <span class="rc-k" data-lang="es">Origen</span>
+      <span class="rc-k" data-lang="en">Origin</span>
+      <span class="rc-k" data-lang="zh">原籍</span>
+      <span class="rc-v">廣東新寧 / Son Ning, Cantón = Taishan (台山) ✓</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Aldea de origen</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Home village</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">籍贯村庄</span>
-      <span class="rc-v" style="color:#4a1d96; font-weight:700;">歧靖村 (Qí Jìng Cūn) — distinta de 龍陽村 donde vivía el clan Yee Wong</span>
+      <span class="rc-k" data-lang="es">Aldea de origen</span>
+      <span class="rc-k" data-lang="en">Home village</span>
+      <span class="rc-k" data-lang="zh">籍贯村庄</span>
+      <span class="rc-v"><strong>歧靖村 (Qí Jìng Cūn)</strong> — distinta de 龍陽村 donde vivía el clan Yee Wong</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Llegada a México</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Arrived Mexico</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">抵达墨西哥</span>
-      <span class="rc-v" style="color:#4a1d96;">1904 — mismo año que Miguel Yee Wong</span>
+      <span class="rc-k" data-lang="es">Llegada a México</span>
+      <span class="rc-k" data-lang="en">Arrived Mexico</span>
+      <span class="rc-k" data-lang="zh">抵达墨西哥</span>
+      <span class="rc-v">1904 — mismo año que Miguel Yee Wong</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Empresa</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Business</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">商号</span>
-      <span class="rc-v" style="color:#4a1d96;">信榕記 (Xìn Róng Jì) · Calle Bravo, La Paz, BCS</span>
+      <span class="rc-k" data-lang="es">Empresa</span>
+      <span class="rc-k" data-lang="en">Business</span>
+      <span class="rc-k" data-lang="zh">商号</span>
+      <span class="rc-v">信榕記 (Xìn Róng Jì) · Calle Bravo, La Paz, BCS</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Propiedades 1919</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Properties 1919</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">1919年财产</span>
-      <span class="rc-v" style="color:#4a1d96;">$19,000 / $10,000 pesos — comerciante establecido</span>
+      <span class="rc-k" data-lang="es">Propiedades 1919</span>
+      <span class="rc-k" data-lang="en">Properties 1919</span>
+      <span class="rc-k" data-lang="zh">1919年财产</span>
+      <span class="rc-v">$19,000 / $10,000 pesos — comerciante establecido</span>
 
-      <span class="rc-k" style="color:#4a1d96;" data-lang="es">Posibles desc.</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="en">Possible desc.</span>
-      <span class="rc-k" style="color:#4a1d96;" data-lang="zh">可能后裔</span>
-      <span class="rc-v" style="color:#4a1d96;">Laura Medellín Yee · Elizabeth Yee Charra (La Paz, BCS)</span>
+      <span class="rc-k" data-lang="es">Posibles desc.</span>
+      <span class="rc-k" data-lang="en">Possible desc.</span>
+      <span class="rc-k" data-lang="zh">可能后裔</span>
+      <span class="rc-v">Laura Medellín Yee · Elizabeth Yee Charra (La Paz, BCS)</span>
     </div>
 
     <div class="callout" style="background:rgba(124,58,237,0.08); border-left-color:#7c3aed; margin-top:14px;">
