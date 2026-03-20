@@ -3,24 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Investigación genealógica de la familia Yee Wong (余黄氏). Taishan, Guangdong, China → México. 221 descendientes, 5 generaciones, 1883–2026.">
 <title>Familia Yee Wong · 余黄氏 · Taishan → México</title>
-<style>
-  body { font-family: Georgia, serif; background: #0f2744; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-  .cover { text-align: center; max-width: 600px; padding: 2rem; }
-  h1 { font-size: 2.5rem; color: #ffd700; margin-bottom: 0.5rem; }
-  .chinese { font-size: 4rem; margin: 1rem 0; opacity: 0.8; }
-  p { color: #94a3b8; line-height: 1.8; }
-  .badge { background: #1e3a5f; border: 1px solid #3b82f6; border-radius: 6px; padding: 0.5rem 1rem; display: inline-block; margin-top: 1rem; color: #93c5fd; font-size: 0.9rem; }
-</style>
+<link rel="stylesheet" href="shared/styles.css">
 </head>
 <body>
-<div class="cover">
-  <div class="chinese">余 黄 氏</div>
-  <h1>Familia Yee Wong</h1>
-  <p>Investigación genealógica · Taishan (台山), Guangdong, China → México<br>龍陽村, 三八镇 · 1883 – 2026</p>
-  <p>Genealogical research · Family Yee Wong · Five generations · 221 descendants</p>
-  <p>家族谱研究 · 余黄氏 · 台山广东 → 墨西哥 · 五代221人</p>
-  <div class="badge">Sitio en construcción · Site under construction · 网站建设中</div>
+
+<div class="lang-switcher">
+  <button class="lang-btn active" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
 </div>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand">余黄氏</a>
+  <span data-lang="es"><a href="index.html" class="active">Inicio</a></span>
+  <span data-lang="en"><a href="index.html" class="active">Home</a></span>
+  <span data-lang="zh"><a href="index.html" class="active">首页</a></span>
+  <span data-lang="es"><a href="origins.html">Orígenes</a></span>
+  <span data-lang="en"><a href="origins.html">Origins</a></span>
+  <span data-lang="zh"><a href="origins.html">起源</a></span>
+  <span data-lang="es"><a href="investigation.html">Investigación</a></span>
+  <span data-lang="en"><a href="investigation.html">Research</a></span>
+  <span data-lang="zh"><a href="investigation.html">研究</a></span>
+  <span data-lang="es"><a href="family.html">Familia</a></span>
+  <span data-lang="en"><a href="family.html">Family</a></span>
+  <span data-lang="zh"><a href="family.html">家族</a></span>
+  <span data-lang="es"><a href="forever.html">Para Siempre</a></span>
+  <span data-lang="en"><a href="forever.html">For Posterity</a></span>
+  <span data-lang="zh"><a href="forever.html">永久记录</a></span>
+</nav>
+
+<div id="sec-portada" class="cover">
+  <span class="cover-watermark">余</span>
+  <div class="cover-tag" data-lang="es">Investigación histórico-genealógica · Versión 3.2 · 20 marzo 2026</div>
+  <div class="cover-tag" data-lang="en">Historical-genealogical research · Version 3.2 · March 20, 2026</div>
+  <div class="cover-tag" data-lang="zh">历史族谱研究 · 版本 3.2 · 2026年3月20日</div>
+  <h1>Familia <em>Yee Wong</em><br>余 黄 氏</h1>
+  <p class="cover-sub" data-lang="es">La historia de un hombre que cruzó el mundo y fundó una familia</p>
+  <p class="cover-sub" data-lang="en">The story of a man who crossed the world and founded a family</p>
+  <p class="cover-sub" data-lang="zh">一个穿越世界、建立家族的男人的故事</p>
+  <p style="font-size:9pt;color:#7eb8d4;margin:-12px 0 18px;letter-spacing:1px;">221 descendientes · 5 generaciones · 1883–2026</p>
+  <div class="cover-divider"></div>
+  <div class="cover-grid">
+    <div class="cover-item">
+      <div class="k" data-lang="es">Aldea de origen confirmada</div>
+      <div class="k" data-lang="en">Confirmed ancestral village</div>
+      <div class="k" data-lang="zh">确认祖籍村庄</div>
+      <div class="v green">龍陽村 · 三八镇 · 台山</div>
+    </div>
+    <div class="cover-item">
+      <div class="k" data-lang="es">Nombre chino probable</div>
+      <div class="k" data-lang="en">Probable Chinese name</div>
+      <div class="k" data-lang="zh">可能的中文名</div>
+      <div class="v green">余礼廉 (Yú Lǐ Lián)</div>
+    </div>
+    <div class="cover-item">
+      <div class="k" data-lang="es">Hermanos documentados</div>
+      <div class="k" data-lang="en">Documented siblings</div>
+      <div class="k" data-lang="zh">有记录的兄弟</div>
+      <div class="v">Arturo · Federico · (Miguel)</div>
+    </div>
+    <div class="cover-item">
+      <div class="k" data-lang="es">Fichas AGN</div>
+      <div class="k" data-lang="en">National Archive records</div>
+      <div class="k" data-lang="zh">国家档案馆记录</div>
+      <div class="v">99476 (Arturo) · 99513 (Federico)</div>
+    </div>
+    <div class="cover-item">
+      <div class="k" data-lang="es">Visita de campo</div>
+      <div class="k" data-lang="en">Field visit</div>
+      <div class="k" data-lang="zh">实地考察</div>
+      <div class="v" style="color:#6ee7b7;">17–20 marzo 2026 · Altar 余礼廉 visitado</div>
+    </div>
+    <div class="cover-item">
+      <div class="k" data-lang="es">Empresa familiar</div>
+      <div class="k" data-lang="en">Family business</div>
+      <div class="k" data-lang="zh">家族企业</div>
+      <div class="v" style="color:#86efac;">怡盛維貨 (Yee Sing &amp; Cía.) · 1907</div>
+    </div>
+  </div>
+  <div class="cover-date" data-lang="es">20 marzo 2026 · 龍陽村 confirmada en campo · Hipótesis: 余礼廉 = Miguel Yee Wong (70–75% confianza)</div>
+  <div class="cover-date" data-lang="en">March 20, 2026 · 龍陽村 confirmed on site · Hypothesis: 余礼廉 = Miguel Yee Wong (70–75% confidence)</div>
+  <div class="cover-date" data-lang="zh">2026年3月20日 · 龍陽村实地确认 · 核心假设：余礼廉 = Miguel Yee Wong（置信度70–75%）</div>
+</div>
+
+<section id="introduccion" style="padding:48px;background:#fff;">
+
+  <div data-lang="es">
+    <h1 style="font-size:22pt;font-weight:900;color:#0f2744;border-bottom:3px solid #0f2744;padding-bottom:8px;margin-bottom:20px;">Por Qué Estamos Reunidos</h1>
+    <div style="border-left:6px solid #0f2744;background:#f0f4ff;padding:1.5rem 2rem;border-radius:8px;margin-bottom:2rem;">
+      <p style="font-size:1.1rem;line-height:1.9;margin:0">Esta investigación nació de una pregunta sencilla que ninguno de nosotros podía responder con certeza: <strong>¿De dónde venía nuestro bisabuelo Miguel?</strong> Sabíamos que era chino. Sabíamos que llegó a México hace más de un siglo. Sabíamos que fundó una familia y un negocio. Pero no sabíamos su nombre chino, no sabíamos de qué aldea provenía, no sabíamos quiénes eran sus padres. Durante décadas, esa historia vivió en fragmentos —una foto, una firma en un registro, el nombre de una empresa— dispersos entre documentos de archivo, recuerdos familiares y tarjetas viejas guardadas en cajones.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0">
+      <div style="background:#fff8e1;border-radius:8px;padding:1.5rem;border-left:4px solid #f59e0b">
+        <h3 style="margin-top:0;color:#92400e">¿Por qué esta investigación?</h3>
+        <p>Porque somos 221 personas que descendemos de un solo hombre y una sola mujer —Miguel Yee Wong y Catalina Molina González— y muy pocos sabíamos quiénes eran realmente. Esta investigación es un acto de memoria: un intento de recuperar la historia que el tiempo y la distancia casi borraron.</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:1.5rem;border-left:4px solid #16a34a">
+        <h3 style="margin-top:0;color:#15803d">¿Qué encontramos?</h3>
+        <p>Documentos de archivo, registros de inmigración, tarjetas de visita bilingües, registros de la Unión Fraternal China y una secuencia genealógica de 1,000 años del clan 余 de Taishan. En marzo de 2026, viajamos a China y encontramos la aldea: <strong>龍陽村</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div data-lang="en">
+    <h1 style="font-size:22pt;font-weight:900;color:#0f2744;border-bottom:3px solid #0f2744;padding-bottom:8px;margin-bottom:20px;">Why We Come Together</h1>
+    <div style="border-left:6px solid #0f2744;background:#f0f4ff;padding:1.5rem 2rem;border-radius:8px;margin-bottom:2rem;">
+      <p style="font-size:1.1rem;line-height:1.9;margin:0">This research began with a simple question that none of us could answer with certainty: <strong>Where did our great-grandfather Miguel come from?</strong> We knew he was Chinese. We knew he arrived in Mexico over a century ago. We knew he founded a family and a business. But we did not know his Chinese name, his village of origin, or who his parents were. For decades, that story lived in fragments — a photograph, a signature on a record, the name of a company — scattered across archival documents, family memories, and old cards kept in drawers.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0">
+      <div style="background:#fff8e1;border-radius:8px;padding:1.5rem;border-left:4px solid #f59e0b">
+        <h3 style="margin-top:0;color:#92400e">Why this research?</h3>
+        <p>Because we are 221 people who descend from one man and one woman — Miguel Yee Wong and Catalina Molina González — and very few of us knew who they really were. This research is an act of memory: an attempt to recover a history that time and distance had nearly erased.</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:1.5rem;border-left:4px solid #16a34a">
+        <h3 style="margin-top:0;color:#15803d">What did we find?</h3>
+        <p>Archival documents, immigration records, bilingual business cards, Chinese Fraternal Union records, and a 1,000-year genealogical sequence of the 余 (Yee) clan of Taishan. In March 2026, we traveled to China and found the village: <strong>龍陽村</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div data-lang="zh">
+    <h1 style="font-size:22pt;font-weight:900;color:#0f2744;border-bottom:3px solid #0f2744;padding-bottom:8px;margin-bottom:20px;">我们为何聚在一起</h1>
+    <div style="border-left:6px solid #0f2744;background:#f0f4ff;padding:1.5rem 2rem;border-radius:8px;margin-bottom:2rem;">
+      <p style="font-size:1.1rem;line-height:1.9;margin:0">这项研究起源于一个简单的问题：<strong>我们的曾祖父Miguel从哪里来？</strong>我们知道他是中国人，知道他一百多年前来到墨西哥，知道他建立了家庭和生意。但我们不知道他的中文名字，不知道他来自哪个村庄，不知道他的父母是谁。几十年来，那段历史活在碎片之中——一张照片、档案上的签名、一家公司的名字——散落在文件、记忆和旧卡片之间。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0">
+      <div style="background:#fff8e1;border-radius:8px;padding:1.5rem;border-left:4px solid #f59e0b">
+        <h3 style="margin-top:0;color:#92400e">为何进行这项研究？</h3>
+        <p>因为我们221人都是同一个男人和女人的后代——Miguel Yee Wong（余礼廉）和Catalina Molina González——而我们中很少有人真正了解他们。这项研究是一种记忆行为：试图找回时间和距离几乎抹去的历史。</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:1.5rem;border-left:4px solid #16a34a">
+        <h3 style="margin-top:0;color:#15803d">我们找到了什么？</h3>
+        <p>档案文件、移民记录、双语名片、中华联谊会记录，以及余氏宗族一千年的族谱序列。2026年3月，我们前往中国，找到了那个村庄：<strong>龍陽村</strong>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hallazgos clave -->
+  <h2 style="color:#0f2744;margin-top:2rem;"><span data-lang="es">Hallazgos principales</span><span data-lang="en">Key Findings</span><span data-lang="zh">主要发现</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1rem 0 2rem">
+    <div style="background:#f0fdf4;border-radius:10px;padding:1.2rem;border:2px solid #16a34a;text-align:center">
+      <div style="font-size:2rem;margin-bottom:0.5rem">&#127963;</div>
+      <strong style="color:#14532d;">龍陽村 · 三八镇</strong>
+      <p style="font-size:0.82rem;color:#166534;margin:0.5rem 0 0"><span data-lang="es">Aldea confirmada · marzo 2026</span><span data-lang="en">Village confirmed · March 2026</span><span data-lang="zh">实地确认 · 2026年3月</span></p>
+    </div>
+    <div style="background:#fefce8;border-radius:10px;padding:1.2rem;border:2px solid #ca8a04;text-align:center">
+      <div style="font-size:2rem;margin-bottom:0.5rem">&#x26EF;</div>
+      <strong style="color:#92400e;">余礼廉</strong>
+      <p style="font-size:0.82rem;color:#78350f;margin:0.5rem 0 0"><span data-lang="es">Tableta del altar · 70–75% confianza</span><span data-lang="en">Altar tablet · 70–75% confidence</span><span data-lang="zh">祭坛牌位 · 置信度70–75%</span></p>
+    </div>
+    <div style="background:#eff6ff;border-radius:10px;padding:1.2rem;border:2px solid #3b82f6;text-align:center">
+      <div style="font-size:2rem;margin-bottom:0.5rem">&#128106;</div>
+      <strong style="color:#1e40af;">221</strong>
+      <p style="font-size:0.82rem;color:#1d4ed8;margin:0.5rem 0 0"><span data-lang="es">Descendientes · 5 generaciones</span><span data-lang="en">Descendants · 5 generations</span><span data-lang="zh">后裔 · 五代</span></p>
+    </div>
+    <div style="background:#f5f3ff;border-radius:10px;padding:1.2rem;border:2px solid #7c3aed;text-align:center">
+      <div style="font-size:2rem;margin-bottom:0.5rem">&#128196;</div>
+      <strong style="color:#4c1d95;"><span data-lang="es">1,000 años</span><span data-lang="en">1,000 years</span><span data-lang="zh">千年族谱</span></strong>
+      <p style="font-size:0.82rem;color:#5b21b6;margin:0.5rem 0 0"><span data-lang="es">Clan 余 desde Dinastía Song</span><span data-lang="en">Clan 余 since Song Dynasty</span><span data-lang="zh">余氏宗族自宋朝起</span></p>
+    </div>
+  </div>
+
+  <!-- Links a páginas -->
+  <div style="background:#0f2744;color:#fff;border-radius:12px;padding:2rem;margin:2rem 0;text-align:center">
+    <h2 style="margin-top:0;color:#ffd700;font-size:1.3rem"><span data-lang="es">Explora la investigación</span><span data-lang="en">Explore the Research</span><span data-lang="zh">探索研究</span></h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:1rem">
+      <a href="origins.html" style="background:#1e3a5f;color:#93c5fd;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid #3b82f6;font-size:0.9rem"><span data-lang="es">&#127758; Orígenes chinos</span><span data-lang="en">&#127758; Chinese Origins</span><span data-lang="zh">&#127758; 中国起源</span></a>
+      <a href="investigation.html" style="background:#78350f;color:#fde68a;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid #f59e0b;font-size:0.9rem"><span data-lang="es">&#128269; Investigación 2026</span><span data-lang="en">&#128269; Research 2026</span><span data-lang="zh">&#128269; 2026年研究</span></a>
+      <a href="family.html" style="background:#14532d;color:#86efac;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid #16a34a;font-size:0.9rem"><span data-lang="es">&#128106; Familia en México</span><span data-lang="en">&#128106; Family in Mexico</span><span data-lang="zh">&#128106; 墨西哥家族</span></a>
+      <a href="forever.html" style="background:#4c1d95;color:#e9d5ff;padding:10px 22px;border-radius:8px;text-decoration:none;border:1px solid #7c3aed;font-size:0.9rem"><span data-lang="es">&#10024; Para la Posteridad</span><span data-lang="en">&#10024; For Posterity</span><span data-lang="zh">&#10024; 永久记录</span></a>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong><span data-lang="es">Una nota sobre el método: </span><span data-lang="en">A note on methodology: </span><span data-lang="zh">关于方法的说明：</span></strong>
+    <span data-lang="es">Esta investigación combina archivos del AGN, registros de inmigración, documentos notariales, fuentes de historia oral familiar y registros genealógicos del clan 余 en China. Ningún dato ha sido inventado: todo proviene de fuentes documentales o de inferencias explícitamente señaladas.</span>
+    <span data-lang="en">This research combines AGN records, immigration records, notarial documents, family oral history, and genealogical records of the 余 clan in China. No data has been invented: everything comes from documentary sources or explicitly identified inferences.</span>
+    <span data-lang="zh">本研究综合了AGN档案、移民记录、公证文件、家族口述历史及中国余氏宗族族谱记录。所有数据均来自文献资料或明确标注的推断，无任何虚构内容。</span>
+  </div>
+
+</section>
+
+<div class="footer" style="padding:12px 48px;">
+  <span data-lang="es">Familia Yee Wong · 余黄氏 · Taishan (台山), Guangdong → México · v3.2 · 20 mar 2026</span>
+  <span data-lang="en">Yee Wong Family · 余黄氏 · Taishan, Guangdong → Mexico · v3.2 · March 20, 2026</span>
+  <span data-lang="zh">余黄氏家族 · 台山广东 → 墨西哥 · v3.2 · 2026年3月20日</span>
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.className = lang === 'es' ? '' : 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : lang;
+  localStorage.setItem('yee-lang', lang);
+}
+(function(){ const l = localStorage.getItem('yee-lang'); if(l && l !== 'es') setLang(l); })();
+</script>
 </body>
 </html>
