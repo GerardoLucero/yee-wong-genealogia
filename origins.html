@@ -137,9 +137,9 @@
         <td><span class="badge-conf" data-lang="es">Confirmado</span><span class="badge-conf" data-lang="en">Confirmed</span><span class="badge-conf" data-lang="zh">确认</span></td>
       </tr>
       <tr>
-        <td class="label-col" data-lang="es">Llegó a México ~1906</td>
-        <td class="label-col" data-lang="en">Arrived in Mexico ~1906</td>
-        <td class="label-col" data-lang="zh">约1906年抵达墨西哥</td>
+        <td class="label-col" data-lang="es">Llegó a México ~1904</td>
+        <td class="label-col" data-lang="en">Arrived in Mexico ~1904</td>
+        <td class="label-col" data-lang="zh">约1904年抵达墨西哥</td>
         <td data-lang="es">Registros de Unión Fraternal China · Yee Sing &amp; Cía. fundada 1907</td>
         <td data-lang="en">Chinese Fraternal Union records · Yee Sing &amp; Co. founded 1907</td>
         <td data-lang="zh">中华联谊会记录 · 怡盛維貨1907年创立</td>
@@ -308,6 +308,79 @@
   </table>
 
 </section>
+
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- SECCIÓN MAP: 龍陽村 — Ubicación en el mapa -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section id="sec-mapa" style="padding:48px 56px;background:#fff;max-width:960px;margin:0 auto;border-top:1px solid #e2e8f0;">
+
+  <div data-lang="es">
+    <h2 style="font-size:18pt;font-weight:900;color:#0f2744;border-bottom:3px solid #16a34a;padding-bottom:8px;margin-bottom:6px;">龍陽村 en el Mapa</h2>
+    <p style="color:#64748b;font-size:9.5pt;margin-bottom:16px;font-style:italic;">Lóng Yáng Cūn · 三八镇, Taishan, Guangdong · Aldea ancestral confirmada en campo, marzo 2026</p>
+  </div>
+  <div data-lang="en">
+    <h2 style="font-size:18pt;font-weight:900;color:#0f2744;border-bottom:3px solid #16a34a;padding-bottom:8px;margin-bottom:6px;">龍陽村 on the Map</h2>
+    <p style="color:#64748b;font-size:9.5pt;margin-bottom:16px;font-style:italic;">Lóng Yáng Cūn · Sanba Town, Taishan, Guangdong · Ancestral village confirmed on site, March 2026</p>
+  </div>
+  <div data-lang="zh">
+    <h2 style="font-size:18pt;font-weight:900;color:#0f2744;border-bottom:3px solid #16a34a;padding-bottom:8px;margin-bottom:6px;">地图上的龍陽村</h2>
+    <p style="color:#64748b;font-size:9.5pt;margin-bottom:16px;font-style:italic;">龍陽村 · 三八镇，台山，广东 · 2026年3月实地确认祖籍村庄</p>
+  </div>
+
+  <div id="village-map" style="height:420px;border-radius:10px;border:2px solid #0f2744;margin:0 0 16px;z-index:0;position:relative;"></div>
+
+  <div class="confirmed" style="margin-top:0;">
+    <div class="label" data-lang="es">Coordenadas confirmadas en campo</div>
+    <div class="label" data-lang="en">Coordinates confirmed on site</div>
+    <div class="label" data-lang="zh">实地确认的坐标</div>
+    <p style="margin:4px 0 0;font-size:9pt;">
+      <strong>龍陽村</strong> (Lóng Yáng Cūn) &nbsp;·&nbsp;
+      <span data-lang="es">三八镇, Taishan, Guangdong</span>
+      <span data-lang="en">Sanba Town, Taishan, Guangdong</span>
+      <span data-lang="zh">三八镇，台山，广东</span>
+      &nbsp;·&nbsp; 22.3242°N, 112.6948°E &nbsp;·&nbsp;
+      <span data-lang="es">Letrero 龍陽村 fotografiado en campo (fotos DJI_0275–0278) · "Long Llang, Foo Bang" (doc. naturalización Manuel Yee Pang, 1936)</span>
+      <span data-lang="en">龍陽村 sign photographed on site (photos DJI_0275–0278) · "Long Llang, Foo Bang" (Manuel Yee Pang naturalization doc., 1936)</span>
+      <span data-lang="zh">实地拍摄龍陽村标牌（照片DJI_0275–0278）· "Long Llang, Foo Bang"（Manuel Yee Pang 1936年入籍文件）</span>
+    </p>
+  </div>
+
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPsE=" crossorigin=""></script>
+<script>
+(function() {
+  var LAT = 22.32416168940581;
+  var LNG = 112.69479033125856;
+  var map = L.map('village-map', { scrollWheelZoom: false }).setView([LAT, LNG], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19
+  }).addTo(map);
+  var icon = L.divIcon({
+    html: '<div style="background:#14532d;color:#fff;border:3px solid #16a34a;border-radius:50% 50% 50% 0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;transform:rotate(-45deg);box-shadow:0 2px 8px rgba(0,0,0,0.4);"><span style="transform:rotate(45deg);">余</span></div>',
+    className: '',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -36]
+  });
+  var marker = L.marker([LAT, LNG], { icon: icon }).addTo(map);
+  marker.bindPopup(
+    '<div style="font-family:Georgia,serif;min-width:160px;">' +
+    '<strong style="font-size:14px;">龍陽村</strong><br>' +
+    '<span style="font-size:11px;color:#374151;">Lóng Yáng Cūn</span><br>' +
+    '<hr style="margin:6px 0;border-color:#e2e8f0;">' +
+    '<span style="font-size:11px;color:#64748b;">三八镇 · 台山 · 广东</span><br>' +
+    '<span style="font-size:11px;color:#15803d;font-weight:700;">✓ Aldea ancestral Yee Wong</span><br>' +
+    '<span style="font-size:10px;color:#64748b;">Confirmada: marzo 2026</span>' +
+    '</div>'
+  ).openPopup();
+  // Enable scroll zoom on click
+  map.on('click', function() { map.scrollWheelZoom.enable(); });
+  map.on('mouseout', function() { map.scrollWheelZoom.disable(); });
+})();
+</script>
 
 <!-- ══════════════════════════════════════════════════════════════ -->
 <!-- SECCIÓN 3: El Clan 余 — Mil años de historia -->
