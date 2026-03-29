@@ -459,7 +459,7 @@ body.lang-zh [data-lang="zh"] { display: revert; }
   font-family: serif; position: absolute; right: 48px; top: 0;
   line-height: 1; pointer-events: none; user-select: none;
 }
-.family-hero-inner { position: relative; }
+.family-hero-inner { position: relative; max-width: var(--container); margin: 0 auto; }
 .family-hero .tag { font-size: var(--text-xs); color: var(--blue-light); text-transform: uppercase; letter-spacing: 3px; margin-bottom: var(--space-4); }
 .family-hero h1 { font-size: clamp(1.5rem, 4vw, 2.4rem); font-weight: 900; color: var(--gold); margin: 0 0 6px; line-height: 1.15; }
 .family-hero h1 em { color: var(--green); font-style: italic; }
@@ -564,6 +564,7 @@ body.lang-zh [data-lang="zh"] { display: revert; }
   padding: var(--space-16) var(--space-8) var(--space-12);
   position: relative; overflow: hidden;
 }
+.inv-hero-inner { max-width: var(--container); margin: 0 auto; position: relative; }
 .inv-hero-watermark {
   position: absolute; right: 40px; top: 10px;
   font-size: 220px; font-weight: 900; color: rgba(255,255,255,0.04);
