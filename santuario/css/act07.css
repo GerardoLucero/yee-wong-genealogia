@@ -118,3 +118,8 @@
 
 .a7 .a7-bridge { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--paper, #f4ecd8); margin: 0 0 1rem; text-shadow: 0 0 16px rgba(0, 0, 0, .8); }
 .a7 .a7-footnote, .a7 .a7-aviso { font-size: .62rem; opacity: .45; }
+
+/* Tablilla final: un poco mas compacta para no tocar la corona de la tablilla del altar */
+.a7 .a7-tab1 { font-size: clamp(1.5rem, 4.4vw, 2.6rem); margin-bottom: .8rem; }
+.a7 .a7-tab2 { font-size: clamp(1.05rem, 2.8vw, 1.55rem); max-width: 38ch; }
+.a7 .a7-p4 .a7-kicker { margin-bottom: 1rem; }
