@@ -134,7 +134,7 @@ def build():
         "<main id=\"santuario\">",
         "\n".join(body for _, body in acts),
         "</main>",
-        "<noscript><p style=\"padding:16px\">Esta pagina usa animaciones; el contenido se lee igual sin JavaScript.</p></noscript>",
+        "<noscript><p style=\"padding:16px\">Esta página usa animaciones; el contenido se lee igual sin JavaScript.</p></noscript>",
         collect_scripts(),
         "</body>",
         "</html>",

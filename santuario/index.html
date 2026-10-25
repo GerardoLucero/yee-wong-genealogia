@@ -1162,6 +1162,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a4-big { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); color: var(--paper); }
 .a4-birth { opacity: 0.6; margin-top: var(--sp-5); text-align: center; }
 .a4.a4-js .a4-card { width: 100%; max-width: 30rem; margin: 0 auto; }
+
+.a4 .a4-doc-name { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 4vw, 2.4rem); text-align: center; margin: 1rem 0; color: var(--gold-bright, #f7c948); }
 </style>
 <style data-src="css/act05.css">
 /* Acto 5: El arbol. Prefijo .a5- */
@@ -1456,6 +1458,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 /* Tablilla final: el momento mas solemne, texto grande y luminoso */
 .a7 .a7-tab1 { font-family: var(--font-serif); font-size: clamp(1.7rem, 5.2vw, 3rem); line-height: 1.3; color: var(--gold-bright, #f7c948); margin: 0 auto 1.2rem; max-width: 22ch; text-shadow: 0 0 26px rgba(247, 201, 72, .6), 0 2px 14px rgba(0, 0, 0, .8); }
 .a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.2rem, 3.4vw, 1.9rem); line-height: 1.45; color: var(--paper, #f4ecd8); margin: 0 auto; max-width: 32ch; text-shadow: 0 0 18px rgba(0, 0, 0, .9), 0 2px 10px rgba(0, 0, 0, .8); }
+
+.a7 .a7-bridge { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--paper, #f4ecd8); margin: 0 0 1rem; text-shadow: 0 0 16px rgba(0, 0, 0, .8); }
+.a7 .a7-footnote, .a7 .a7-aviso { font-size: .62rem; opacity: .45; }
 </style>
 </head>
 <body>
@@ -1709,7 +1714,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           <li class="a2-cand">
             <span class="a2-cand-zh" lang="zh">礼边村</span>
             <span class="a2-cand-py">Libian</span>
-            <span class="a2-cand-pct">50%</span>
+            
           </li>
           <li class="a2-cand">
             <span class="a2-cand-zh" lang="zh">朝陽村</span>
@@ -1869,9 +1874,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="1">
           <p class="a3-card-year">1909</p>
           <p class="a3-card-text">
-            <span data-lang="es">Un manifiesto de 1909 menciona a un "Man Yee Wong", de 27 años, que salió de Hong Kong rumbo a San Francisco. ¿Era él? Nadie lo sabe.</span>
-            <span data-lang="en">A 1909 manifest mentions a "Man Yee Wong", aged 27, who sailed from Hong Kong for San Francisco. Was it him? No one knows.</span>
-            <span data-lang="zh">1909年的一份乘客名单提到一位27岁的“Man Yee Wong”，他从香港启程前往旧金山。是他吗？没有人知道。</span>
+            <span data-lang="es">Un manifiesto de 1909 menciona a un "Man Yee Wong", de 27 años, que salió de Hong Kong rumbo a San Francisco. ¿Era él?</span>
+            <span data-lang="en">A 1909 manifest mentions a "Man Yee Wong", aged 27, who sailed from Hong Kong for San Francisco. Was it him?</span>
+            <span data-lang="zh">1909年的一份乘客名单提到一位27岁的“Man Yee Wong”，他从香港启程前往旧金山。是他吗？</span>
           </p>
           <p class="a3-seal a3-seal-unc">
             <span data-lang="es">Sin confirmar</span>
@@ -1882,9 +1887,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="2">
           <p class="a3-card-year">?</p>
           <p class="a3-card-text">
-            <span data-lang="es">Más tarde, dicen, llegó a La Paz. Tampoco se sabe en qué año.</span>
-            <span data-lang="en">Later, they say, he came to La Paz. Nor is it known in what year.</span>
-            <span data-lang="zh">后来，据说他到了拉巴斯。具体哪一年，同样无人知晓。</span>
+            <span data-lang="es">Más tarde, dicen, llegó a La Paz.</span>
+            <span data-lang="en">Later, they say, he came to La Paz.</span>
+            <span data-lang="zh">后来，据说他到了拉巴斯。</span>
           </p>
           <p class="a3-seal a3-seal-tbc">
             <span data-lang="es">Por confirmar</span>
@@ -1967,19 +1972,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <div class="a4-panel a4-p-census">
         <figure class="a4-doc" aria-label="Ilustración del censo de 1930">
           <div class="a4-doc-paper">
-            <p class="a4-doc-head a4-line"><span data-lang="es">Un censo de 1930 lo encontró en la calle Zaragoza.</span><span data-lang="en">A census in 1930 found him on Zaragoza street.</span><span data-lang="zh">1930年的一次人口普查，在萨拉戈萨街找到了他。</span></p>
-            <div class="a4-doc-row a4-line">
-              <span class="a4-k"><span data-lang="es">Localidad</span><span data-lang="en">Place</span><span data-lang="zh">地点</span></span>
-              <span class="a4-v">Mulegé, Baja California Sur</span>
-            </div>
-            <div class="a4-doc-row a4-line">
-              <span class="a4-k"><span data-lang="es">Calle</span><span data-lang="en">Street</span><span data-lang="zh">街道</span></span>
-              <span class="a4-v">Zaragoza</span>
-            </div>
-            <div class="a4-doc-row a4-line">
-              <span class="a4-k"><span data-lang="es">Nombre</span><span data-lang="en">Name</span><span data-lang="zh">姓名</span></span>
-              <span class="a4-v">Miguel Yee</span>
-            </div>
+            <p class="a4-doc-head a4-line"><span data-lang="es">En Mulegé, en la calle Zaragoza, el censo de 1930 anotó su nombre.</span><span data-lang="en">In Mulegé, on Zaragoza street, the 1930 census wrote down his name.</span><span data-lang="zh">在穆莱赫的萨拉戈萨街，1930年的人口普查记下了他的名字。</span></p>
+            <p class="a4-doc-name a4-line"><span data-lang="es">Miguel Yee</span><span data-lang="en">Miguel Yee</span><span data-lang="zh">Miguel Yee</span></p>
             <p class="a4-doc-foot a4-line"><span data-lang="es">ilustración</span><span data-lang="en">illustration</span><span data-lang="zh">示意</span></p>
           </div>
         </figure>
@@ -1988,7 +1982,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <div class="a4-panel a4-p-hijos">
         <div class="a4-card a4-card-maria">
           <p class="a4-year">1929</p>
-          <p class="a4-card-t a4-big"><span data-lang="es">Tuvieron hijos. Una de ellas fue María de Lourdes, nacida en 1929.</span><span data-lang="en">They had children. One of them was María de Lourdes, born in 1929.</span><span data-lang="zh">他们育有子女。其中一位是María de Lourdes，生于1929年。</span></p>
+          <p class="a4-card-t a4-big"><span data-lang="es">María de Lourdes, hija de Miguel y Catalina, nació en 1929.</span><span data-lang="en">María de Lourdes, daughter of Miguel and Catalina, was born in 1929.</span><span data-lang="zh">María de Lourdes，米格尔与卡塔利娜之女，生于1929年。</span></p>
           <p class="a4-maria-full">María de Lourdes Yee Molina</p>
         </div>
       </div>
@@ -2146,7 +2140,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <li data-node="manuel" class="a5-maybe">
         <p class="a5-role"><span data-lang="es">Misma familia; parentesco por confirmar.</span><span data-lang="en">Same family; kinship to be confirmed.</span><span data-lang="zh">同族；亲缘待证实。</span></p>
         <p class="a5-name">Manuel P. Yee Pang</p>
-        <p class="a5-voz"><span data-lang="es">Quizá Miguel fue su tío.</span><span data-lang="en">Perhaps Miguel was his uncle.</span><span data-lang="zh">或许米格尔是他的叔父。</span></p>
+        <p class="a5-voz"><span data-lang="es">Dicen que Miguel pudo ser su tío.</span><span data-lang="en">They say Miguel may have been his uncle.</span><span data-lang="zh">据说米格尔可能是他的叔辈。</span></p>
       </li>
       <li data-node="lourdes">
         <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina.</span><span data-lang="en">Daughter of Miguel and Catalina.</span><span data-lang="zh">米格尔与卡塔利娜之女。</span></p>
@@ -2182,14 +2176,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <article class="a6-case a6-case--pending" id="a6-c-viaje" data-a6-case>
         <div class="a6-paper">
           <h3 class="a6-case-title"><span data-lang="es">El barco</span><span data-lang="en">The ship</span><span data-lang="zh">那艘船</span></h3>
-          <p class="a6-human"><span data-lang="es">¿Era él quien subió a aquel barco en 1909? Nadie puede probarlo.</span><span data-lang="en">Was it he who boarded that ship in 1909? No one can prove it.</span><span data-lang="zh">1909年登上那艘船的,是他吗?无人能够证明。</span></p>
+          <p class="a6-human"><span data-lang="es">¿Era él quien subió a aquel barco en 1909?</span><span data-lang="en">Was it he who boarded that ship in 1909?</span><span data-lang="zh">1909年登上那艘船的,是他吗?</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-anio" data-a6-case>
         <div class="a6-paper">
           <h3 class="a6-case-title"><span data-lang="es">El año</span><span data-lang="en">The year</span><span data-lang="zh">那一年</span></h3>
-          <p class="a6-human"><span data-lang="es">Nació entre 1882 y 1892. Nadie sabe cuándo exactamente.</span><span data-lang="en">He was born between 1882 and 1892. No one knows exactly when.</span><span data-lang="zh">他生于1882至1892年之间。确切何时,无人知晓。</span></p>
+          <p class="a6-human"><span data-lang="es">Nació entre 1882 y 1892.</span><span data-lang="en">He was born between 1882 and 1892.</span><span data-lang="zh">他生于1882至1892年之间。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
@@ -2256,7 +2250,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <canvas class="a7-canvas" aria-hidden="true"></canvas>
 
       <svg class="a7-altar" viewBox="0 0 400 300" role="img" aria-labelledby="a7-altar-t" preserveAspectRatio="xMidYMax meet">
-        <title id="a7-altar-t">Ilustracion de un altar ancestral con tablilla, velas e incienso</title>
+        <title id="a7-altar-t">Ilustración de un altar ancestral con tablilla, velas e incienso</title>
         <defs>
           <radialGradient id="a7-flame" cx="50%" cy="65%" r="60%">
             <stop offset="0" stop-color="var(--paper, #f4ecd8)"/>
@@ -2341,6 +2335,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         </article>
 
         <article class="a7-panel a7-p3">
+          <p class="a7-bridge"><span data-lang="es">Para Miguel, que cruzó el mar.</span><span data-lang="en">For Miguel, who crossed the sea.</span><span data-lang="zh">献给渡海而来的米格尔。</span></p>
           <p class="a7-kicker"><span data-lang="es">En memoria de tu hija</span><span data-lang="en">In memory of your daughter</span><span data-lang="zh">谨以此纪念你的女儿</span></p>
           <p class="a7-name">María de Lourdes<br>Yee Molina</p>
           <p class="a7-years">1929 · 2025</p>
@@ -2367,7 +2362,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           <h3 class="a7-c-title"><span data-lang="es">Familia Yee</span><span data-lang="en">Yee Family</span><span data-lang="zh">余氏家族</span></h3>
           <dl>
             <dt><span data-lang="es">Una historia de</span><span data-lang="en">A story of</span><span data-lang="zh">献给</span></dt>
-            <dd><span data-lang="es">Taishan, Mulegé y los caminos entre ambos</span><span data-lang="en">Taishan, Mulege and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
+            <dd><span data-lang="es">Taishan, Mulegé y los caminos entre ambos</span><span data-lang="en">Taishan, Mulegé and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
             <dt><span data-lang="es">Fuentes</span><span data-lang="en">Sources</span><span data-lang="zh">资料来源</span></dt>
             <dd><span data-lang="es">Censo de México 1930, Museo de emigrantes de Taishan, salón del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
           </dl>
@@ -2380,7 +2375,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 </section>
 
 </main>
-<noscript><p style="padding:16px">Esta pagina usa animaciones; el contenido se lee igual sin JavaScript.</p></noscript>
+<noscript><p style="padding:16px">Esta página usa animaciones; el contenido se lee igual sin JavaScript.</p></noscript>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script data-src="js/engine.js">
