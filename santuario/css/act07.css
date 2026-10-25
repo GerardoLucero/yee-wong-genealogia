@@ -93,3 +93,8 @@
 
 /* .act trae overflow:hidden, que rompe position:sticky; clip no crea contenedor de scroll */
 .act.a7 { overflow: clip; }
+
+/* Dedicatoria final: mas grande y luminosa que el resto de los paneles */
+.a7 .a7-p3 .a7-kicker { font-size: clamp(.85rem, 2.4vw, 1.05rem); color: var(--gold-bright, #f7c948); text-shadow: 0 0 14px rgba(247, 201, 72, .55); }
+.a7 .a7-p3 .a7-dedic { font-size: clamp(2rem, 7vw, 3.6rem); font-style: normal; color: var(--paper, #f4ecd8); text-shadow: 0 0 22px rgba(247, 201, 72, .6), 0 2px 12px rgba(0, 0, 0, .7); }
+.a7 .a7-p2 .a7-dedic { font-size: clamp(1.8rem, 6vw, 3rem); text-shadow: 0 0 18px rgba(247, 201, 72, .45), 0 2px 10px rgba(0, 0, 0, .7); }

@@ -1445,6 +1445,11 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 /* .act trae overflow:hidden, que rompe position:sticky; clip no crea contenedor de scroll */
 .act.a7 { overflow: clip; }
+
+/* Dedicatoria final: mas grande y luminosa que el resto de los paneles */
+.a7 .a7-p3 .a7-kicker { font-size: clamp(.85rem, 2.4vw, 1.05rem); color: var(--gold-bright, #f7c948); text-shadow: 0 0 14px rgba(247, 201, 72, .55); }
+.a7 .a7-p3 .a7-dedic { font-size: clamp(2rem, 7vw, 3.6rem); font-style: normal; color: var(--paper, #f4ecd8); text-shadow: 0 0 22px rgba(247, 201, 72, .6), 0 2px 12px rgba(0, 0, 0, .7); }
+.a7 .a7-p2 .a7-dedic { font-size: clamp(1.8rem, 6vw, 3rem); text-shadow: 0 0 18px rgba(247, 201, 72, .45), 0 2px 10px rgba(0, 0, 0, .7); }
 </style>
 </head>
 <body>
@@ -2621,20 +2626,19 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
         <article class="a7-panel a7-p2">
           <p class="a7-dedic">
-            <span data-lang="es">Para quienes cruzaron el mar,<br>y para quienes los buscan.</span>
-            <span data-lang="en">For those who crossed the sea,<br>and for those who look for them.</span>
-            <span data-lang="zh">献给漂洋过海的人，<br>也献给寻找他们的人。</span>
+            <span data-lang="es">Miguel,<br>seguimos buscándote.</span>
+            <span data-lang="en">Miguel,<br>we keep looking for you.</span>
+            <span data-lang="zh">米格尔，<br>我们仍在寻找你。</span>
           </p>
         </article>
 
         <article class="a7-panel a7-p3">
-          <p class="a7-kicker"><span data-lang="es">La puerta sigue abierta</span><span data-lang="en">The door stays open</span><span data-lang="zh">门仍开着</span></p>
-          <p class="a7-text">
-            <span data-lang="es">Esta historia no termina aqui. Quedan preguntas sin respuesta: de donde salio exactamente la familia, que fue de cuatro ninos que cruzaron por Nogales en 1930, quien era el hombre del manifiesto de 1909. El ADN esta en camino y sera una nueva pagina. Si eres de la familia Yee, escribenos.</span>
-            <span data-lang="en">This story does not end here. Questions remain: where exactly the family came from, what became of four children who crossed at Nogales in 1930, who the man on the 1909 manifest was. The DNA is on its way and will be a new page. If you are of the Yee family, write to us.</span>
-            <span data-lang="zh">故事并未结束。仍有许多问题：家族确切来自哪里，1930年从诺加莱斯过境的四个孩子后来如何，1909年名单上的那个人是谁。DNA结果正在路上，将成为新的一页。如果你是余家人，请与我们联系。</span>
+          <p class="a7-kicker"><span data-lang="es">En memoria de tu hija</span><span data-lang="en">In memory of your daughter</span><span data-lang="zh">谨以此纪念你的女儿</span></p>
+          <p class="a7-dedic">
+            <span data-lang="es">María de Lourdes<br>Yee Molina</span>
+            <span data-lang="en">María de Lourdes<br>Yee Molina</span>
+            <span data-lang="zh">María de Lourdes<br>Yee Molina</span>
           </p>
-          <p class="a7-contact"><a href="mailto:luceroriosg@gmail.com">luceroriosg@gmail.com</a></p>
         </article>
       </div>
 
@@ -2647,6 +2651,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             <dt><span data-lang="es">Una historia de</span><span data-lang="en">A story of</span><span data-lang="zh">献给</span></dt>
             <dd><span data-lang="es">Taishan, Mulege y los caminos entre ambos</span><span data-lang="en">Taishan, Mulege and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
             <dt><span data-lang="es">Con la memoria de</span><span data-lang="en">With the memory of</span><span data-lang="zh">以此纪念</span></dt>
+            <dd><span data-lang="es">María de Lourdes Yee Molina, hija de Miguel</span><span data-lang="en">María de Lourdes Yee Molina, daughter of Miguel</span><span data-lang="zh">María de Lourdes Yee Molina，米格尔之女</span></dd>
             <dd><span data-lang="es">Los que cruzaron el mar</span><span data-lang="en">Those who crossed the sea</span><span data-lang="zh">漂洋过海的人</span></dd>
             <dd><span data-lang="es">Los que se quedaron esperando</span><span data-lang="en">Those who stayed behind, waiting</span><span data-lang="zh">留下等待的人</span></dd>
             <dd><span data-lang="es">Los que siguen buscando</span><span data-lang="en">Those who keep searching</span><span data-lang="zh">仍在寻找的人</span></dd>
@@ -2655,7 +2660,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             <dt><span data-lang="es">Aviso</span><span data-lang="en">Note</span><span data-lang="zh">说明</span></dt>
             <dd><span data-lang="es">Lo no confirmado se marca como hipotesis. Por respeto, no se nombra a personas vivas.</span><span data-lang="en">Whatever is unconfirmed is marked as a hypothesis. Out of respect, no living person is named.</span><span data-lang="zh">未确认之处均标注为假设。出于尊重，不提及在世者姓名。</span></dd>
           </dl>
-          <p class="a7-c-end"><span data-lang="es">La historia continua.</span><span data-lang="en">The story goes on.</span><span data-lang="zh">故事仍在继续。</span></p>
+          <p class="a7-c-end"><span data-lang="es">Miguel, seguimos buscándote.</span><span data-lang="en">Miguel, we keep looking for you.</span><span data-lang="zh">米格尔，我们仍在寻找你。</span></p>
         </div>
       </div>
     </div>
