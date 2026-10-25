@@ -77,7 +77,7 @@ window.Santuario.register(1, function (ctx) {
   /* Momento memorable: el caracter se dibuja al ritmo del scroll, con pin */
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=520%', scrub: .8, pin: stage, anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=640%', scrub: .8, pin: stage, anticipatePin: 1 }
   });
   tl.set(char, { opacity: 1 }, 0)
     .to(glow, { '--a1-r': '120%', duration: 1 }, 0)

@@ -36,6 +36,12 @@ window.Santuario.register(6, function (ctx) {
   wordsIn('.a6-lede', { duration: 0.7, stagger: 0.025 }, function (el) { return { trigger: el, start: 'top 88%', once: true }; });
   wordsIn('.a6-credo p', { duration: 1, stagger: 0.12 }, function (el) { return { trigger: el, start: 'top 85%', once: true }; });
 
+  q('[data-a6-block]').forEach(function (el) {
+    var ws = splitWords(el);
+    gsap.fromTo(ws, { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.09, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+  });
+
   /* Papeles: salen de una pila sobre la mesa y vuelan a su lugar */
   var cards = q('[data-a6-case]');
   var pile = function (card) {
@@ -83,7 +89,7 @@ window.Santuario.register(6, function (ctx) {
     gsap.fromTo(f, { opacity: confirmed ? 0.95 : 0.35, scale: 0.2 },
       { opacity: 0, scale: confirmed ? 1.5 : 1, duration: 0.7, ease: 'power2.out', onComplete: function () { f.remove(); } });
     if (!confirmed) return;
-    var cx = paper.clientWidth - 12 - 34, cy = 12 + 34;
+    var cx = paper.clientWidth - 12 - 14, cy = 12 + 14;
     for (var k = 0; k < 10; k++) {
       var s = document.createElement('i'); s.className = 'a6-spark'; s.setAttribute('aria-hidden', 'true');
       s.style.left = cx + 'px'; s.style.top = cy + 'px'; paper.appendChild(s);

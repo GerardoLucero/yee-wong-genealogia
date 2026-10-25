@@ -102,3 +102,12 @@
 .a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 0.52rem; letter-spacing: 0.04em; }
 .a6-flash { top: calc(var(--sp-3) + 2.1rem - 5rem); right: calc(var(--sp-3) + 2.1rem - 5rem); }
 .a6-desk { padding-bottom: var(--sp-8); }
+
+/* Bloques y sellos discretos */
+.a6-block-title { grid-column: 1 / -1; font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: var(--fs-lg); color: var(--gold-bright); padding-bottom: var(--sp-2); border-bottom: 1px solid var(--line); margin: 0; }
+.a6-block-title--b { margin-top: var(--sp-6); color: var(--paper-dim); }
+.a6-stamp { width: 1.7rem; height: 1.7rem; top: var(--sp-3); right: var(--sp-3); border-width: 2px; }
+.a6-stamp--confirmed { background: var(--cinnabar); box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 3px var(--cinnabar-deep); }
+.a6-stamp--pending { background: transparent; border-style: dashed; }
+.a6-flash { width: 8rem; height: 8rem; top: calc(var(--sp-3) + 0.85rem - 4rem); right: calc(var(--sp-3) + 0.85rem - 4rem); }
+.a6-case-title { padding-right: 2.6rem; }

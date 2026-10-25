@@ -104,11 +104,11 @@ window.Santuario.register(7, function (ctx) {
   var cHalo = sec.querySelector('.a7-candle-b .a7-flame-halo');
 
   var bridge = P[2].querySelector('.a7-bridge');
-  var kick = P[2].querySelector('.a7-kicker'), pname = P[2].querySelector('.a7-name'), years = P[2].querySelector('.a7-years');
+  var kick = P[2].querySelector('.a7-kicker'), pname = P[2].querySelector('.a7-name'), years = P[2].querySelector('.a7-years'), sub = P[2].querySelector('.a7-sub');
   var tab1 = P[3].querySelector('.a7-tab1'), tab2 = P[3].querySelector('.a7-tab2');
   var aura = sec.querySelector('.a7-tablet-aura');
   gsap.set(P, { opacity: 0, y: 14 });
-  gsap.set([bridge, kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
+  gsap.set([bridge, kick, pname, sub, years, tab1, tab2], { opacity: 0, y: 10 });
   gsap.set(altar, { opacity: 0 });
   gsap.set([cFlame, cHalo], { opacity: 0 });
   var credY = function () { return -(0.38 * stage.offsetHeight + credits.offsetHeight); };
@@ -128,7 +128,7 @@ window.Santuario.register(7, function (ctx) {
     .to(kick, { opacity: 1, y: 0, duration: 4 }, 43)
     .to(cFlame, { opacity: 1, duration: 5 }, 46)
     .to(cHalo, { opacity: 1, duration: 5 }, 46)
-    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 46)
+    .to([pname, sub, years], { opacity: 1, y: 0, duration: 4, stagger: 1.5 }, 46)
     .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 47)
     .to(P[2], { opacity: 0, y: -10, duration: 4 }, 56)
     .to(P[3], { opacity: 1, y: 0, duration: 2 }, 60)
