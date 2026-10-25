@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <title>Motivos del santuario</title>
+
+  <!-- Nube xiangyun (auspiciosa), 160x80 -->
+  <symbol id="m-xiangyun" viewBox="0 0 160 80">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 62 C10 48 26 46 32 54 C32 38 54 34 62 46 C66 30 92 28 98 44 C106 36 122 40 122 54 C138 52 150 60 148 68 L14 68 C10 68 10 65 10 62 Z"/>
+      <path d="M40 54 C40 48 48 48 50 52"/>
+      <path d="M68 46 C68 40 78 38 82 44"/>
+      <path d="M104 46 C108 42 114 44 114 50"/>
+      <path d="M26 74 C60 78 110 78 140 74" opacity="0.5"/>
+    </g>
+  </symbol>
+
+  <!-- Olas (qinghai) , 120x60 -->
+  <symbol id="m-olas" viewBox="0 0 120 60">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <path d="M0 44 C10 30 24 30 30 44 C36 30 50 30 60 44 C70 30 84 30 90 44 C96 30 110 30 120 44"/>
+      <path d="M0 52 C10 38 24 38 30 52 C36 38 50 38 60 52 C70 38 84 38 90 52 C96 38 110 38 120 52" opacity="0.65"/>
+      <path d="M0 60 C10 46 24 46 30 60 C36 46 50 46 60 60 C70 46 84 46 90 60 C96 46 110 46 120 60" opacity="0.35"/>
+      <path d="M20 24 C26 14 36 14 40 22 M74 20 C80 10 92 10 96 20" opacity="0.7"/>
+    </g>
+  </symbol>
+
+  <!-- Bambu, 100x160 -->
+  <symbol id="m-bambu" viewBox="0 0 100 160">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M36 160 L36 4 M44 160 L44 4"/>
+      <path d="M32 40 H48 M32 84 H48 M32 126 H48"/>
+      <path d="M44 40 C58 34 74 28 92 30 C76 36 62 40 44 42 Z"/>
+      <path d="M44 84 C60 76 78 74 96 78 C80 86 62 88 44 86 Z"/>
+      <path d="M36 62 C24 56 12 52 2 54 C14 60 26 64 36 64 Z"/>
+      <path d="M36 112 C22 104 10 102 0 106 C12 112 24 116 36 114 Z"/>
+    </g>
+  </symbol>
+
+  <!-- Ciruelo en flor, 140x140 -->
+  <symbol id="m-ciruelo" viewBox="0 0 140 140">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 136 C30 110 40 96 56 88 C72 80 80 62 96 54 C108 48 118 38 130 18"/>
+      <path d="M56 88 C48 74 40 66 28 62"/>
+      <path d="M80 70 C84 56 92 50 104 48"/>
+      <path d="M96 54 C98 44 106 38 112 34"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+      <path d="M28 62 m0 -7 c4 -4 10 0 7 6 c4 4 -2 10 -7 6 c-6 2 -10 -4 -6 -8 c-3 -5 3 -8 6 -4 Z"/>
+      <path d="M104 48 m0 -7 c4 -4 10 0 7 6 c4 4 -2 10 -7 6 c-6 2 -10 -4 -6 -8 c-3 -5 3 -8 6 -4 Z"/>
+      <path d="M112 34 m0 -6 c3 -3 8 0 6 5 c3 3 -2 8 -6 5 c-5 2 -8 -3 -5 -6 c-2 -4 2 -6 5 -4 Z"/>
+      <path d="M130 18 m0 -6 c3 -3 8 0 6 5 c3 3 -2 8 -6 5 c-5 2 -8 -3 -5 -6 c-2 -4 2 -6 5 -4 Z"/>
+    </g>
+    <g fill="currentColor" stroke="none">
+      <circle cx="28" cy="62" r="1.6"/><circle cx="104" cy="48" r="1.6"/>
+      <circle cx="112" cy="34" r="1.4"/><circle cx="130" cy="18" r="1.4"/>
+      <circle cx="60" cy="84" r="2.2"/><circle cx="84" cy="66" r="2"/>
+    </g>
+  </symbol>
+
+  <!-- Montana en tinta (shan shui), 240x120 -->
+  <symbol id="m-montana" viewBox="0 0 240 120">
+    <g fill="currentColor" stroke="none">
+      <path d="M0 120 L0 92 C20 80 34 52 54 38 C64 30 70 40 80 50 C92 34 104 12 120 8 C136 6 146 30 158 52 C170 44 182 40 194 50 C208 62 222 80 240 90 L240 120 Z" opacity="0.28"/>
+      <path d="M0 120 L0 104 C24 96 40 80 62 74 C80 70 92 84 110 80 C130 74 146 64 168 72 C188 80 208 96 240 102 L240 120 Z" opacity="0.5"/>
+      <path d="M0 120 L0 112 C40 106 70 108 110 110 C150 112 200 106 240 112 L240 120 Z" opacity="0.8"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.7">
+      <path d="M120 8 C116 24 112 34 106 48 M120 8 C126 22 130 34 138 46"/>
+      <path d="M54 38 C52 52 48 60 42 70 M80 50 C82 60 82 68 78 76"/>
+    </g>
+  </symbol>
+
+  <!-- Farol, 80x140 -->
+  <symbol id="m-farol" viewBox="0 0 80 140">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 0 V24"/>
+      <path d="M22 24 H58 M26 30 H54"/>
+      <path d="M26 30 C8 44 8 84 26 98 H54 C72 84 72 44 54 30"/>
+      <path d="M40 30 V98 M30 32 C20 52 20 78 30 98 M50 32 C60 52 60 78 50 98" opacity="0.6"/>
+      <path d="M24 98 H56 M28 104 H52"/>
+      <path d="M32 104 V138 M40 104 V140 M48 104 V138" opacity="0.8"/>
+    </g>
+  </symbol>
+
+  <!-- Sello rojo (chop) con caracter 余, 100x100. Usa fill de color actual -->
+  <symbol id="m-sello" viewBox="0 0 100 100">
+    <rect x="6" y="6" width="88" height="88" rx="4" fill="currentColor"/>
+    <rect x="12" y="12" width="76" height="76" fill="none" stroke="#120a0a" stroke-width="2" opacity="0.55"/>
+    <text x="50" y="72" text-anchor="middle" font-family="'Noto Serif SC','Songti SC',serif" font-weight="700" font-size="64" fill="#120a0a">&#x4F59;</text>
+  </symbol>
+
+  <!-- Incienso, 80x140 -->
+  <symbol id="m-incienso" viewBox="0 0 80 140">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 134 C14 124 66 124 66 134 Z"/>
+      <path d="M18 128 H62" opacity="0.6"/>
+      <path d="M32 126 L30 78 M40 126 V70 M48 126 L50 78" stroke-width="2.2"/>
+      <path d="M30 76 C20 62 40 56 28 42 C18 28 34 20 26 6" opacity="0.7"/>
+      <path d="M40 68 C52 54 32 46 44 32 C54 18 40 10 46 0" opacity="0.7"/>
+      <path d="M50 76 C60 64 46 56 58 44 C66 32 56 24 62 12" opacity="0.7"/>
+    </g>
+    <g fill="currentColor" stroke="none"><circle cx="30" cy="78" r="1.8"/><circle cx="40" cy="70" r="1.8"/><circle cx="50" cy="78" r="1.8"/></g>
+  </symbol>
+
+  <!-- Ventana de celosia, 100x100 -->
+  <symbol id="m-celosia" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+      <rect x="4" y="4" width="92" height="92"/>
+      <rect x="12" y="12" width="76" height="76" stroke-width="1.2"/>
+      <path d="M12 50 H88 M50 12 V88"/>
+      <path d="M12 30 H32 V12 M68 12 V30 H88 M12 70 H32 V88 M68 88 V70 H88" stroke-width="1.4"/>
+      <path d="M50 24 L76 50 L50 76 L24 50 Z" stroke-width="1.4"/>
+      <circle cx="50" cy="50" r="6" stroke-width="1.4"/>
+    </g>
+  </symbol>
+
+  <!-- Moneda antigua (cobre), 60x60: apoya acto 3 -->
+  <symbol id="m-moneda" viewBox="0 0 60 60">
+    <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+      <circle cx="30" cy="30" r="26"/>
+      <rect x="22" y="22" width="16" height="16"/>
+      <path d="M30 6 V12 M30 48 V54 M6 30 H12 M48 30 H54" opacity="0.6"/>
+    </g>
+  </symbol>
+</svg>

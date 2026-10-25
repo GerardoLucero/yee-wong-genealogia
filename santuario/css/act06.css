@@ -1,0 +1,103 @@
+/* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
+#acto6 { background: linear-gradient(180deg, var(--lacquer) 0%, var(--lacquer-2) 100%); color: var(--paper); }
+.a6-desk { max-width: 72rem; margin: 0 auto; padding: var(--sp-8) var(--gutter); }
+.a6-head { max-width: var(--measure); margin-bottom: var(--sp-6); }
+.a6-eyebrow { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--gold); }
+.a6-title { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-4); font-weight: 500; }
+.a6-lede { font-size: var(--fs-base); line-height: var(--lh-loose); color: var(--paper-dim); }
+
+.a6-legend { display: flex; flex-wrap: wrap; gap: var(--sp-3) var(--sp-5); margin-bottom: var(--sp-6); font-size: var(--fs-sm); color: var(--paper-dim); }
+.a6-legend-item { display: inline-flex; align-items: center; gap: var(--sp-2); }
+.a6-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; display: inline-block; }
+.a6-dot--confirmed { background: var(--cinnabar); }
+.a6-dot--pending { background: transparent; border: 2px dashed var(--paper-dim); }
+
+.a6-table { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); perspective: 1200px; }
+@media (min-width: 720px) { .a6-table { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6) var(--sp-5); } }
+@media (min-width: 1100px) { .a6-table { grid-template-columns: repeat(3, 1fr); } }
+
+.a6-case { position: relative; will-change: transform, opacity; }
+.a6-case:nth-child(odd) .a6-paper { transform: rotate(-0.6deg); }
+.a6-case:nth-child(even) .a6-paper { transform: rotate(0.5deg); }
+.a6-paper {
+  position: relative; background: var(--paper); color: var(--ink);
+  padding: var(--sp-5) var(--sp-5) var(--sp-6); min-height: 100%;
+  border-radius: var(--radius); border-top: 3px solid var(--gold-dim);
+  box-shadow: 0 1px 0 var(--fog-strong), 0 14px 30px rgba(0,0,0,0.45);
+  overflow: hidden;
+}
+.a6-file { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.7; }
+.a6-case-title { font-family: var(--font-serif); font-size: var(--fs-md); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-3); font-weight: 600; padding-right: 5.5rem; }
+.a6-case-body { font-size: var(--fs-sm); line-height: var(--lh-base); }
+.a6-basis, .a6-conf { margin-top: var(--sp-3); font-size: var(--fs-sm); line-height: var(--lh-base); }
+.a6-k { display: inline-block; font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.65; margin-right: var(--sp-2); }
+.a6-conf { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); }
+.a6-conf .a6-k { margin-right: 0; }
+.a6-meter { display: inline-flex; gap: 3px; }
+.a6-meter i { width: 1.1rem; height: 0.45rem; border: 1px solid var(--ink-2); background: transparent; display: block; }
+.a6-meter--high i { background: var(--ink-2); }
+.a6-meter--mid i:nth-child(-n+2) { background: var(--ink-2); }
+.a6-meter--low i:nth-child(1) { background: var(--ink-2); }
+
+/* Sellos */
+.a6-stamp {
+  position: absolute; top: var(--sp-4); right: var(--sp-4);
+  width: 5rem; height: 5rem; display: grid; place-items: center; text-align: center;
+  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.15;
+  border: 3px solid currentColor; transform: rotate(-12deg); pointer-events: none;
+  mix-blend-mode: multiply;
+}
+.a6-stamp span { padding: 0 var(--sp-1); }
+.a6-stamp--confirmed { color: var(--cinnabar); border-radius: var(--radius); box-shadow: inset 0 0 0 2px var(--paper), inset 0 0 0 3px currentColor; }
+.a6-stamp--pending { color: var(--ink-2); opacity: 0.6; border-style: dashed; border-radius: 50%; transform: rotate(8deg); }
+.a6-case--pending .a6-paper { background: color-mix(in srgb, var(--paper) 88%, var(--paper-dim)); }
+
+/* Metodo */
+.a6-method { margin-top: var(--sp-8); position: relative; }
+.a6-method-title { font-family: var(--font-serif); font-size: var(--fs-lg); font-weight: 500; margin-bottom: var(--sp-5); }
+.a6-steps { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); counter-reset: none; }
+@media (min-width: 820px) { .a6-steps { grid-template-columns: repeat(4, 1fr); } }
+.a6-step { border-left: 2px solid var(--line); padding-left: var(--sp-4); }
+.a6-step-n { font-family: var(--font-serif); font-size: var(--fs-lg); color: var(--gold); line-height: 1; display: block; margin-bottom: var(--sp-2); }
+.a6-step h4 { font-size: var(--fs-md); font-weight: 600; margin-bottom: var(--sp-2); }
+.a6-step p { font-size: var(--fs-sm); color: var(--paper-dim); line-height: var(--lh-base); }
+.a6-method-line { display: none; }
+@media (min-width: 820px) {
+  .a6-method-line { display: block; height: 2px; margin-top: var(--sp-4); }
+  .a6-method-line svg { width: 100%; height: 2px; display: block; overflow: visible; }
+  .a6-method-line line { stroke: var(--gold); stroke-width: 2; }
+}
+
+.a6-credo { margin: var(--sp-8) auto var(--sp-5); max-width: var(--measure); text-align: center; }
+.a6-credo p { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); font-style: italic; color: var(--gold-bright); }
+.a6-next { text-align: center; font-size: var(--fs-sm); color: var(--paper-dim); letter-spacing: 0.04em; }
+
+/* Dinamismo: tablero de detective, hilos rojos, destellos */
+.a6-table { position: relative; }
+.a6-case { z-index: 1; }
+.a6-threads { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.a6-thread { fill: none; stroke: var(--cinnabar); stroke-width: 2.5; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--cinnabar)); }
+.a6-thread--gold { stroke: var(--gold-bright); filter: drop-shadow(0 0 4px var(--gold)); stroke-width: 1.6; }
+.a6-pin {
+  position: absolute; top: -0.55rem; left: 50%; width: 1.1rem; height: 1.1rem; margin-left: -0.55rem; z-index: 2;
+  border-radius: 50%; background: radial-gradient(circle at 35% 30%, var(--gold-bright), var(--cinnabar) 55%, var(--cinnabar-deep));
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5), var(--glow-lantern); pointer-events: none;
+}
+.a6-paper { overflow: visible; }
+.a6-case--confirmed .a6-paper { border-top-color: var(--cinnabar); }
+.a6-case--confirmed .a6-paper::after {
+  content: ""; position: absolute; inset: 0; border-radius: var(--radius); pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, color-mix(in srgb, var(--gold-bright) 45%, transparent) 50%, transparent 60%);
+  background-size: 250% 100%; background-position: 120% 0; animation: a6-gleam 5s var(--ease-breath) infinite;
+}
+@keyframes a6-gleam { 0%, 55% { background-position: 120% 0; } 100% { background-position: -40% 0; } }
+.a6-flash {
+  position: absolute; top: calc(var(--sp-4) + 2.5rem - 5rem); right: calc(var(--sp-4) + 2.5rem - 5rem); width: 10rem; height: 10rem; border-radius: 50%; z-index: 3;
+  background: radial-gradient(circle, var(--gold-bright) 0%, color-mix(in srgb, var(--gold) 50%, transparent) 35%, transparent 70%);
+  pointer-events: none; opacity: 0; mix-blend-mode: screen;
+}
+.a6-spark { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); box-shadow: var(--glow-gold); z-index: 3; pointer-events: none; }
+.a6-w { display: inline-block; will-change: transform, opacity; }
+.a6-step-n { display: inline-block; }
+.a6-credo p { text-shadow: var(--glow-gold); }
+.a6-stamp--confirmed { text-shadow: 0 0 6px color-mix(in srgb, var(--cinnabar) 40%, transparent); }

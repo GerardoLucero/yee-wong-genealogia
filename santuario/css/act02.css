@@ -1,0 +1,75 @@
+/* Acto 2: La aldea. Prefijo .a2- */
+.a2 { position: relative; background: var(--paper); color: var(--ink); }
+.a2-stage { position: relative; height: 100vh; height: 100svh; overflow: hidden; background: var(--paper); }
+
+.a2-sky { position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, var(--gold-bright) 0, var(--paper) 38%, var(--paper) 100%); }
+.a2-sun { position: absolute; left: 50%; top: 30%; width: 34vmin; height: 34vmin; margin-left: -17vmin; border-radius: 50%; z-index: 0; will-change: transform; animation: a2-flow 40s linear infinite;
+  background: radial-gradient(circle, var(--cinnabar) 0, var(--cinnabar) 52%, var(--cinnabar-deep) 100%);
+  box-shadow: 0 0 60px 24px var(--gold-bright), 0 0 160px 70px var(--gold); animation: a2-pulse 5s ease-in-out infinite; }
+@keyframes a2-pulse { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.18); } }
+.a2-cloud { position: absolute; z-index: 0; width: 60vw; height: 14vh; border-radius: 50%; filter: blur(14px); opacity: .7;
+  background: radial-gradient(ellipse, var(--gold-bright) 0, transparent 70%); animation: a2-drift 38s linear infinite; }
+.a2-cloud1 { top: 14%; left: -60vw; } .a2-cloud2 { top: 30%; left: -60vw; animation-duration: 55s; animation-delay: -22s; opacity: .5; }
+@keyframes a2-drift { to { transform: translateX(170vw); } }
+.a2-dust { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.a2-mote { position: absolute; bottom: -10px; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 10px 3px var(--gold); opacity: 0; animation: a2-rise linear infinite; }
+@keyframes a2-rise { 0% { transform: translate(0, 0); opacity: 0; } 15% { opacity: .9; } 100% { transform: translate(var(--dx, 30px), -105vh); opacity: 0; } }
+.a2-brush { display: block; width: min(70vw, 420px); height: 14px; flex-basis: 100%; margin: 0 auto; overflow: visible; }
+.a2-b1 { stop-color: var(--cinnabar); } .a2-b2 { stop-color: var(--gold); }
+
+.a2-layers { position: absolute; inset: 0; z-index: 1; }
+.a2-layer { position: absolute; left: -4%; width: 108%; bottom: 0; height: 70%; will-change: transform; }
+.a2-l1 { color: var(--jade); opacity: .55; height: 78%; }
+.a2-l2 { color: var(--jade-deep); opacity: .65; height: 68%; }
+.a2-l3 { color: var(--ink-2); opacity: .7; height: 56%; }
+.a2-l4 { color: var(--ink); opacity: .85; height: 42%; }
+.a2-roofs { opacity: 1; }
+
+.a2-fog { position: absolute; left: -50%; width: 200%; height: 36%; pointer-events: none; will-change: transform;
+  background:
+    radial-gradient(ellipse 22% 50% at 12% 50%, var(--paper), transparent 70%),
+    radial-gradient(ellipse 26% 42% at 38% 60%, var(--paper), transparent 70%),
+    radial-gradient(ellipse 20% 55% at 63% 45%, var(--paper), transparent 70%),
+    radial-gradient(ellipse 28% 45% at 88% 55%, var(--paper), transparent 70%); }
+.a2-fog1 { bottom: 38%; opacity: .75; }
+.a2-fog2 { bottom: 26%; opacity: .7; }
+.a2-fog3 { bottom: 14%; opacity: .6; }
+
+.a2-evoc { position: absolute; left: 16px; right: 16px; bottom: 2.2vh; z-index: 4; margin: 0; text-align: center; font-size: .72rem; letter-spacing: .06em; font-style: italic; opacity: .6; }
+
+.a2-copy { position: absolute; inset: 0; z-index: 3; padding: 11vh 16px 7vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; gap: .7rem; }
+.a2-line { margin: 0; overflow: hidden; font-family: var(--font-serif); font-size: clamp(1.15rem, 3.4vw, 1.9rem); line-height: 1.4; max-width: 34ch; }
+.a2-line-in { display: block; will-change: transform; }
+
+.a2-names { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .4rem 2.2rem; margin-top: 1rem; }
+.a2-name { font-family: var(--font-cjk); font-size: clamp(3rem, 14vw, 7rem); line-height: 1; color: var(--cinnabar); text-shadow: 0 0 22px var(--gold-bright), 0 2px 0 var(--cinnabar-deep); will-change: transform, opacity, filter; }
+.a2-name-cap { flex-basis: 100%; margin: .2rem 0 0; font-size: .9rem; opacity: .75; max-width: 40ch; margin-inline: auto; }
+
+.a2-village { position: relative; margin-top: 1.2rem; max-width: 36rem; }
+.a2-village-lead { margin: 0 0 .8rem; font-size: 1rem; }
+.a2-cands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
+.a2-cand { display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .7rem 1.1rem; min-width: 9.5rem; border: 2px solid var(--cinnabar); background: linear-gradient(160deg, var(--paper), var(--gold-bright)); box-shadow: 0 0 18px var(--gold); }
+.a2-cand-zh { font-family: var(--font-cjk); font-size: 1.7rem; }
+.a2-cand-py { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+.a2-cand-pct { font-size: 1.1rem; color: var(--cinnabar); font-weight: 600; }
+.a2-cand-note { font-size: .78rem; font-style: italic; opacity: .8; max-width: 14ch; }
+
+.a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
+
+@media (min-width: 720px) {
+  .a2-copy { padding-top: 13vh; }
+  .a2-seal { right: -34px; }
+}
+@media (max-height: 640px) {
+  .a2-copy { padding-top: 7vh; gap: .4rem; }
+  .a2-name { font-size: clamp(2.2rem, 10vw, 4rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a2-sun, .a2-cloud, .a2-mote, .a2-fog { animation: none; }
+  .a2-dust { display: none; }
+  .a2-stage { height: auto; min-height: 100svh; overflow: visible; }
+  .a2-copy { position: relative; }
+}
+@keyframes a2-flow { to { background-position: 50% 0; } }
+.a2-fog { background-size: 50% 100%; background-repeat: repeat-x; }
+.a2-w { display: inline-block; will-change: transform, opacity; }

@@ -1,0 +1,96 @@
+{
+  "menu": {
+    "label": {
+      "es": "Actos",
+      "en": "Acts",
+      "zh": "篇章"
+    },
+    "actos": [
+      { "n": 1, "es": "El umbral", "en": "The Threshold", "zh": "门槛" },
+      { "n": 2, "es": "La aldea", "en": "The Village", "zh": "故乡村落" },
+      { "n": 3, "es": "La travesía", "en": "The Crossing", "zh": "远渡重洋" },
+      { "n": 4, "es": "México", "en": "Mexico", "zh": "墨西哥" },
+      { "n": 5, "es": "El árbol", "en": "The Tree", "zh": "家族之树" },
+      { "n": 6, "es": "La investigación", "en": "The Search", "zh": "追寻" },
+      { "n": 7, "es": "El altar", "en": "The Altar", "zh": "祭坛" }
+    ]
+  },
+  "hint": {
+    "scroll": {
+      "es": "Desliza para avanzar",
+      "en": "Scroll to begin",
+      "zh": "向下滑动，开始"
+    }
+  },
+  "audio": {
+    "on": {
+      "es": "Activar sonido",
+      "en": "Sound on",
+      "zh": "开启声音"
+    },
+    "off": {
+      "es": "Silenciar",
+      "en": "Sound off",
+      "zh": "关闭声音"
+    }
+  },
+  "lang": {
+    "label": {
+      "es": "Idioma",
+      "en": "Language",
+      "zh": "语言"
+    }
+  },
+  "aviso": {
+    "reduced": {
+      "es": "Tu dispositivo pide menos movimiento. Esta historia se muestra en calma, sin animaciones.",
+      "en": "Your device asks for less motion. This story is shown still, without animation.",
+      "zh": "您的设备要求减少动态效果。本页将以静态方式呈现，不含动画。"
+    }
+  },
+  "sello": {
+    "confirmado": {
+      "es": "Confirmado",
+      "en": "Confirmed",
+      "zh": "已证实"
+    },
+    "porConfirmar": {
+      "es": "Por confirmar",
+      "en": "To be confirmed",
+      "zh": "待证实"
+    },
+    "hipotesis": {
+      "es": "Hipótesis",
+      "en": "Hypothesis",
+      "zh": "推测"
+    }
+  },
+  "prologo": {
+    "es": [
+      "Antes de ser un apellido en un registro, fue un camino.",
+      "Esta es la historia de una familia que cruzó el mundo y que todavía se está encontrando."
+    ],
+    "en": [
+      "Before it was a surname in a register, it was a road.",
+      "This is the story of a family that crossed the world and is still finding its way back together."
+    ],
+    "zh": [
+      "在成为登记簿上的一个姓氏之前，它先是一条路。",
+      "这是一个跨越世界的家族的故事，而他们至今仍在彼此寻找。"
+    ]
+  },
+  "epilogo": {
+    "es": [
+      "La historia no termina aquí: sigue abierta, como una puerta.",
+      "Si llevas este apellido, o lo buscas, entra. Hay un lugar para ti en el altar."
+    ],
+    "en": [
+      "The story does not end here: it stays open, like a door.",
+      "If you carry this surname, or are searching for it, come in. There is a place for you at the altar."
+    ],
+    "zh": [
+      "故事并未在此结束，它像一扇门，依然敞开。",
+      "如果您姓余，或正在寻找这个姓氏，请进来。祭坛前，有您的位置。"
+    ]
+  }
+}

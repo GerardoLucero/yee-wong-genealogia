@@ -1,0 +1,187 @@
+/* Acto III: La travesia. Prefijo .a3- . Acento: porcelana + oro imperial */
+
+.a3 { position: relative; color: var(--paper); background: var(--grad-lacquer); overflow-x: clip; }
+
+.a3-intro {
+  max-width: 44rem; margin: 0 auto; padding: 6rem 16px 3rem; text-align: center; position: relative;
+}
+.a3-kicker { letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; color: var(--porcelain-bright); margin: 0 0 1rem; }
+.a3-title {
+  font-size: clamp(2.2rem, 7vw, 4rem); margin: 0 0 1.5rem; line-height: 1.1;
+  background: var(--grad-gold-text); background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: a3-shimmer 6s linear infinite;
+}
+@keyframes a3-shimmer { to { background-position: -200% 0; } }
+.a3-lede { font-size: 1.15rem; line-height: 1.7; margin: 0 0 1.5rem; }
+.a3-context {
+  font-size: .95rem; line-height: 1.7; margin: 0 auto; padding: 1rem 0 0;
+  border-top: 1px solid var(--line); color: var(--paper-dim);
+}
+.a3-w { display: inline-block; will-change: transform, opacity; }
+
+/* Escenario */
+.a3-pin { position: relative; }
+.a3-stage {
+  position: relative; width: 100%; height: 100vh; height: 100svh; min-height: 30rem;
+  overflow: hidden; isolation: isolate;
+}
+.a3-sky { position: absolute; inset: 0; z-index: 0; }
+.a3-sky-day {
+  background:
+    radial-gradient(ellipse at 20% 85%, var(--gold-bright) 0%, transparent 55%),
+    linear-gradient(to bottom, var(--porcelain-bright) 0%, var(--paper) 78%);
+}
+.a3-sky-dusk {
+  background: radial-gradient(ellipse at 50% 100%, var(--red-china) 0%, var(--cinnabar-deep) 30%, transparent 70%);
+  opacity: 0; mix-blend-mode: screen;
+}
+.a3-sky-night {
+  background: linear-gradient(to bottom, var(--lacquer) 0%, var(--porcelain) 130%);
+  opacity: 0;
+}
+
+/* Montanas lejanas y nubes (parallax) */
+.a3-far { position: absolute; z-index: 0; left: -5%; width: 110%; bottom: 20%; height: 22%; }
+.a3-ridge-1 { fill: var(--porcelain); opacity: .55; }
+.a3-ridge-2 { fill: var(--porcelain-bright); opacity: .35; }
+.a3-clouds { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.a3-cloud { position: absolute; width: 18vw; min-width: 110px; max-width: 220px; fill: var(--paper); opacity: .55; }
+.a3-cloud path { stroke: var(--gold); stroke-width: 1.2; }
+.a3-cloud-1 { top: 10%; left: 5%; }
+.a3-cloud-2 { top: 22%; left: 55%; width: 24vw; opacity: .4; }
+.a3-cloud-3 { top: 6%; left: 80%; opacity: .5; }
+
+/* Mapa */
+.a3-map { position: absolute; z-index: 1; left: 0; top: 0; width: 100%; height: 72%; }
+@media (min-width: 900px) { .a3-map { height: 100%; } }
+
+.a3-land {
+  fill: var(--lacquer-3); stroke: var(--gold-bright); stroke-width: 1.8; stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px var(--gold-dim));
+}
+.a3-gulf { fill: none; stroke: var(--porcelain-bright); stroke-width: 1.2; opacity: .6; }
+.a3-seamarks path { fill: none; stroke: var(--porcelain-bright); stroke-width: 1.6; opacity: .45; }
+.a3-stars circle { fill: var(--gold-bright); opacity: 0; }
+
+.a3-sun { fill: var(--gold-bright); filter: drop-shadow(0 0 14px var(--gold)); }
+.a3-moon { fill: var(--paper); opacity: 0; filter: drop-shadow(0 0 12px var(--porcelain-bright)); }
+
+.a3-route-ghost { fill: none; stroke: var(--gold-bright); stroke-width: 2; stroke-dasharray: 2 9; opacity: .55; stroke-linecap: round; }
+.a3-route {
+  fill: none; stroke: url(#a3-rg); stroke-width: 4; stroke-linecap: round;
+  filter: drop-shadow(0 0 5px var(--gold-bright)) drop-shadow(0 0 10px var(--red-china));
+}
+.a3-route-2 { stroke-dasharray: 10 8; }
+
+.a3-pt-dot { fill: var(--red-china); stroke: var(--gold-bright); stroke-width: 2.5; }
+.a3-pt-ring { fill: none; stroke: var(--gold-bright); stroke-width: 2; opacity: .8; transform-box: fill-box; transform-origin: center; }
+.a3-lbl { font-family: var(--font-serif); font-size: 22px; fill: var(--paper); paint-order: stroke; stroke: var(--lacquer); stroke-width: 5px; }
+.a3-lbl-sm { font-size: 18px; fill: var(--gold-bright); }
+
+.a3-ship-hull { fill: var(--red-china); stroke: var(--gold-bright); stroke-width: 1.5; }
+.a3-ship-sail { fill: var(--gold-bright); stroke: var(--red-china-deep); stroke-width: 1; }
+.a3-ship-sail-2 { fill: var(--cinnabar); }
+.a3-ship-mast { fill: none; stroke: var(--lacquer); stroke-width: 2; }
+.a3-ship { filter: drop-shadow(0 0 8px var(--gold)); }
+
+/* Olas */
+.a3-waves { position: absolute; left: 0; right: 0; bottom: 0; height: 24%; z-index: 2; pointer-events: none; }
+.a3-wave { position: absolute; bottom: 0; left: -10%; width: 120%; height: 100%; }
+.a3-wave-1 { height: 55%; }
+.a3-wave-2 { height: 75%; }
+.a3-wave-1 path { fill: var(--porcelain); }
+.a3-wave-2 path { fill: var(--porcelain-bright); opacity: .7; }
+.a3-wave-3 path { fill: var(--jade-deep); opacity: .6; }
+.a3-wave-1 { filter: drop-shadow(0 -2px 0 var(--gold-dim)); }
+
+/* Faroles */
+.a3-lanterns { position: absolute; inset: 0 0 auto 0; height: 40%; z-index: 3; pointer-events: none; }
+.a3-lantern {
+  position: absolute; top: -6px; left: var(--x); width: 26px; height: 34px;
+  background: radial-gradient(ellipse at 50% 40%, var(--gold-bright) 0%, var(--cinnabar) 45%, var(--red-china-deep) 100%);
+  border-radius: 48% 48% 44% 44%;
+  box-shadow: 0 0 22px var(--cinnabar), 0 0 44px var(--red-china);
+  transform-origin: 50% -80px;
+  animation: a3-sway 4.2s ease-in-out infinite alternate; animation-delay: var(--d);
+}
+.a3-lantern::before { content: ""; position: absolute; left: 50%; top: -80px; width: 1px; height: 80px; background: var(--gold); }
+.a3-lantern::after { content: ""; position: absolute; left: 6px; right: 6px; bottom: -10px; height: 12px; background: linear-gradient(var(--gold), transparent); }
+@keyframes a3-sway { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+
+/* Particulas doradas */
+.a3-sparks { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.a3-spark { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 8px var(--gold); opacity: 0; }
+
+.a3-stamp-ill {
+  position: absolute; z-index: 5; left: 16px; top: 12px; margin: 0; max-width: 70%;
+  font-size: .72rem; letter-spacing: .08em; line-height: 1.4; color: var(--paper);
+  padding: .3rem .6rem; border: 1px dashed var(--gold); background: var(--lacquer-2);
+}
+
+/* Tarjetas */
+.a3-cards { position: absolute; z-index: 4; left: 16px; right: 16px; bottom: 24%; }
+.a3-card {
+  max-width: 28rem; margin: 0 auto .75rem; padding: 1rem 1.2rem;
+  background: linear-gradient(160deg, var(--lacquer-3), var(--lacquer));
+  border: 1px solid var(--gold); box-shadow: var(--glow-gold, 0 0 24px var(--gold-dim));
+  color: var(--paper);
+}
+@media (min-width: 900px) {
+  .a3-cards { left: 4vw; right: auto; width: 28rem; bottom: 28%; }
+  .a3-card { margin-left: 0; }
+}
+.a3-card-year {
+  font-size: 2rem; line-height: 1; margin: 0 0 .5rem; font-family: var(--font-brush);
+  background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.a3-card-text { margin: 0 0 .75rem; font-size: .98rem; line-height: 1.55; }
+
+/* Sin JS: estatico, tarjetas viven en la linea de tiempo */
+.a3:not(.a3-js) .a3-cards { display: none; }
+.a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; aspect-ratio: 5 / 3; }
+.a3:not(.a3-js) .a3-map { height: 100%; }
+.a3:not(.a3-js) .a3-ship { transform: translate(892px, 432px); }
+
+.a3-js .a3-cards { height: 14rem; }
+.a3-js .a3-card { position: absolute; left: 0; right: 0; bottom: 0; margin: 0 auto; opacity: 0; }
+@media (min-width: 900px) { .a3-js .a3-card { right: auto; width: 100%; margin: 0; } }
+
+/* Sellos */
+.a3-seal, .a3-tag {
+  display: inline-block; margin: 0; font-style: normal; font-size: .72rem; letter-spacing: .14em;
+  text-transform: uppercase; padding: .2rem .55rem; border: 1px solid currentColor; border-radius: 2px;
+}
+.a3-seal-ok, .a3-tl-ok .a3-tag { color: var(--jade-soft); }
+.a3-seal-tbc, .a3-tl-tbc .a3-tag { color: var(--gold-bright); border-style: dashed; }
+.a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
+.a3-seal-ill { color: var(--paper-dim); border-style: dotted; }
+
+/* Linea de tiempo */
+.a3-timeline { max-width: 44rem; margin: 0 auto; padding: 4rem 16px 6rem; position: relative; }
+.a3-tl-title { font-size: 1.5rem; margin: 0 0 2rem; text-align: center; color: var(--gold-bright); }
+.a3-tl { list-style: none; margin: 0; padding: 0 0 0 1.25rem; border-left: 2px solid var(--gold-dim); position: relative; }
+.a3-tl::after {
+  content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%;
+  background: var(--grad-red-gold); transform-origin: top; transform: scaleY(var(--a3-fill, 1));
+}
+.a3-tl-item { position: relative; display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0 0 2rem; }
+.a3-tl-item::before {
+  content: ""; position: absolute; left: calc(-1.25rem - 6px); top: .6rem; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 10px var(--gold); z-index: 1;
+}
+.a3-tl-ok::before { background: var(--jade-soft); box-shadow: 0 0 10px var(--jade); }
+.a3-tl-unc::before { background: var(--hypothesis); box-shadow: 0 0 10px var(--porcelain-bright); }
+.a3-tl-tbc::before { background: var(--lacquer); border: 1px solid var(--gold-bright); }
+.a3-tl-note::before { background: var(--lacquer); border: 1px dashed var(--paper); box-shadow: none; }
+.a3-tl-year { font-size: 1.5rem; font-family: var(--font-brush); color: var(--gold-bright); }
+.a3-tl-body { display: block; line-height: 1.65; }
+.a3-tl-body .a3-tag { margin-top: .6rem; display: table; }
+
+.a3 :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .a3-js .a3-cards { display: none; }
+  .a3-title, .a3-lantern { animation: none; }
+  .a3-sky-day { opacity: 1; }
+}

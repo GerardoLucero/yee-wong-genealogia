@@ -1,0 +1,90 @@
+/* Acto 5: El arbol. Prefijo .a5- */
+/* .act trae overflow:hidden, que rompe position:sticky; clip no crea contenedor de scroll */
+.act.a5 { overflow: visible; overflow: clip; padding: 0; min-height: 0; }
+.a5 { position: relative; color: var(--paper); background: var(--lacquer-2); font-family: var(--font-serif); }
+/* rosa ciruelo derivado de los tokens */
+.a5 { --a5-plum: color-mix(in srgb, var(--red-china) 38%, var(--paper)); --a5-glow: color-mix(in srgb, var(--gold-bright) 70%, transparent); }
+.a5-stage { background: radial-gradient(ellipse 70% 55% at 50% 100%, color-mix(in srgb, var(--red-china) 38%, transparent), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 8%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 70%); }
+.a5-fall { pointer-events: none; }
+.a5-pet { fill: var(--a5-plum); opacity: .9; }
+.a5-pet--gold { fill: var(--gold-bright); }
+.a5-ring { fill: none; stroke: var(--gold-bright); stroke-width: 1.5; opacity: 0; }
+.a5-svg .a5-branch { filter: drop-shadow(0 0 3px var(--a5-glow)); }
+.a5-title { background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.a5-head { max-width: 40rem; margin: 0 auto; padding: 5rem 16px 2rem; text-align: center; }
+.a5-kicker { color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; margin: 0 0 .75rem; }
+.a5-title { font-size: clamp(2.2rem, 7vw, 3.8rem); margin: 0 0 1rem; font-weight: 400; color: var(--paper); }
+.a5-lede { line-height: 1.7; margin: 0; opacity: .88; }
+
+.a5-scroller { position: relative; }
+.a5-stage { position: relative; height: 100vh; height: 100svh; display: flex; align-items: flex-end; justify-content: center; }
+.a5-svg { width: 100%; height: 100%; max-width: 640px; display: block; }
+
+.a5-branch { fill: none; stroke: var(--gold); stroke-width: 3.2; stroke-linecap: round; }
+.a5-trunk { stroke-width: 5.5; }
+.a5-twig { stroke-width: 2.4; }
+.a5-fine { stroke-width: 2; opacity: .75; }
+.a5-dotted { stroke: var(--hypothesis); stroke-width: 3; stroke-dasharray: 2 7; opacity: .85; }
+
+.a5-petal { fill: var(--a5-plum); stroke: var(--gold-bright); stroke-width: .8; }
+.a5-pistil { fill: var(--gold-bright); }
+.a5-node--open .a5-petal { fill: none; stroke-dasharray: 2 2; }
+.a5-node--open .a5-pistil { fill: none; stroke: var(--gold); stroke-width: .8; }
+.a5-node--maybe .a5-petal { fill: none; stroke: var(--hypothesis); stroke-dasharray: 2 2; }
+.a5-node--maybe .a5-pistil { fill: var(--hypothesis); }
+.a5-node.a5-on .a5-bloom { filter: drop-shadow(0 0 9px var(--gold-bright)) drop-shadow(0 0 3px var(--cinnabar)); }
+
+.a5-label { fill: var(--paper); font-size: 12px; letter-spacing: .04em; }
+.a5-label--root { fill: var(--gold); font-style: italic; font-size: 11px; }
+.a5-leaf { fill: var(--jade-soft); opacity: .9; filter: drop-shadow(0 0 3px var(--jade)); }
+.a5-stamp rect { fill: var(--lacquer-2); stroke: var(--hypothesis); stroke-width: 1.2; }
+.a5-stamp text { fill: var(--hypothesis); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+
+.a5-futuro { position: absolute; top: 4svh; left: 0; right: 0; margin: 0; text-align: center; color: var(--gold); font-style: italic; font-size: clamp(1.1rem, 3.4vw, 1.6rem); letter-spacing: .05em; pointer-events: none; }
+
+.a5-card { position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 1rem 1.1rem; background: var(--lacquer-3); border: 1px solid var(--gold-bright); border-radius: 2px; box-shadow: 0 0 22px color-mix(in srgb, var(--gold) 35%, transparent), inset 0 0 18px color-mix(in srgb, var(--red-china) 25%, transparent); opacity: 0; visibility: hidden; transition: opacity .35s; }
+.a5-card.a5-card--on { opacity: 1; visibility: visible; }
+.a5-card .a5-name { color: var(--gold-bright); }
+.a5-card .a5-meta { font-size: .9rem; }
+@media (min-width: 900px) {
+  .a5-card { left: auto; right: 4vw; bottom: auto; top: 50%; transform: translateY(-50%); width: 22rem; }
+  .a5-svg { margin-right: 18rem; }
+}
+
+.a5-role { color: var(--gold); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .3rem; }
+.a5-name { font-size: 1.25rem; margin: 0 0 .4rem; color: var(--paper); }
+.a5-alt { opacity: .7; font-size: .85em; }
+.a5-meta { margin: 0; line-height: 1.6; opacity: .9; }
+
+.a5-after { max-width: 40rem; margin: 0 auto; padding: 3rem 16px 5rem; }
+.a5-h3 { font-weight: 400; color: var(--gold); font-size: 1.2rem; margin: 0 0 1.25rem; }
+.a5-list { list-style: none; padding: 0; margin: 0 0 3rem; }
+.a5-list li { padding: 1rem 0; border-top: 1px solid var(--gold); }
+.a5-list li.a5-maybe { border-top-style: dotted; border-top-color: var(--hypothesis); }
+.a5-list li.a5-maybe .a5-role { color: var(--hypothesis); }
+
+.a5-zibei { text-align: center; }
+.a5-zb-col { display: inline-flex; flex-direction: column; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
+.a5-zb-dots { color: var(--gold); letter-spacing: .3em; opacity: .6; }
+.a5-zb-cell { opacity: .35; transition: opacity .6s, box-shadow .6s, transform .6s; display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .6rem 1.6rem; border: 1px solid var(--gold); min-width: 12rem; }
+.a5-zb-char { font-family: var(--font-cjk); font-size: 3rem; line-height: 1.1; color: var(--paper); }
+.a5-zb-gen, .a5-zb-tag { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.a5-zb-cell--ok { background: var(--grad-gold); }
+.a5-zb-cell.a5-lit { opacity: 1; box-shadow: 0 0 28px var(--a5-glow); }
+.a5-zb-cell--ok.a5-lit .a5-zb-char { animation: a5-pulse 2.4s ease-in-out infinite; }
+.a5-zb-cell--maybe.a5-lit .a5-zb-char { text-shadow: 0 0 14px var(--hypothesis); }
+.a5-zb-dots { transition: opacity .6s; }
+@keyframes a5-pulse { 50% { transform: scale(1.12); text-shadow: 0 0 16px var(--paper); } }
+.a5-zb-col:not(.a5-armed) .a5-zb-cell { opacity: 1; }
+.a5-zb-cell--ok .a5-zb-char, .a5-zb-cell--ok .a5-zb-gen, .a5-zb-cell--ok .a5-zb-tag { color: var(--lacquer); }
+.a5-zb-cell--maybe { border-style: dashed; border-color: var(--hypothesis); }
+.a5-zb-cell--maybe .a5-zb-gen, .a5-zb-cell--maybe .a5-zb-tag { color: var(--hypothesis); }
+.a5-zb-note { margin: 0; line-height: 1.7; opacity: .88; }
+
+/* Con JS y movimiento: el escenario queda fijo mientras el scroll hace crecer el arbol */
+.a5.a5-js .a5-scroller { height: 520vh; }
+.a5.a5-js .a5-stage { position: sticky; top: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .a5-card { transition: none; }
+  .a5-zb-cell--ok.a5-lit .a5-zb-char { animation: none; }
+}

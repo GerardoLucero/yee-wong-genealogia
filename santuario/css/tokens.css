@@ -1,0 +1,124 @@
+/* Santuario Yee Wong: tokens de diseno. Nombres estables, no renombrar. */
+:root {
+  color-scheme: dark;
+
+  /* Paleta china viva. Nombres anteriores se conservan con valores mas intensos */
+  --lacquer: #120a0a;        /* laca negra rojiza, fondo base */
+  --lacquer-2: #1d0f10;      /* laca elevada */
+  --lacquer-3: #2e1517;      /* laca clara, tarjetas */
+  --red-china: #C8102E;      /* rojo chino */
+  --red-china-deep: #8f0b20;
+  --cinnabar: #E34234;       /* rojo cinabrio, sellos y faroles */
+  --cinnabar-deep: #a82a1f;
+  --gold: #D4AF37;           /* oro imperial */
+  --gold-bright: #F7C948;    /* amarillo imperial */
+  --gold-dim: #9a7d24;
+  --ink: #0b0b0d;            /* negro tinta */
+  --ink-2: #1a1c22;
+  --paper: #F8F4E6;          /* blanco arroz, texto principal */
+  --rice: #F8F4E6;
+  --paper-dim: #c4b9a2;      /* texto secundario (AA sobre lacquer) */
+  --jade: #00A86B;
+  --jade-deep: #006e47;
+  --jade-soft: #4fd1a0;      /* jade para texto sobre oscuro */
+  --porcelain: #1F4E8C;      /* azul porcelana (fondos, bordes) */
+  --porcelain-bright: #5b8fd6; /* azul porcelana legible como texto/trazo */
+  --fog: rgba(240, 226, 196, 0.10);
+  --fog-strong: rgba(240, 226, 196, 0.22);
+  --hypothesis: #8fb8ee;     /* tinta azul clara para hipotesis */
+  --line: rgba(212, 175, 55, 0.45);
+
+  /* Degradados */
+  --grad-red-gold: linear-gradient(135deg, var(--red-china) 0%, var(--cinnabar) 45%, var(--gold) 100%);
+  --grad-gold: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 35%, var(--gold-bright) 55%, var(--gold) 80%, var(--gold-dim) 100%);
+  --grad-gold-text: linear-gradient(100deg, var(--gold) 0%, var(--gold-bright) 40%, var(--gold) 70%, var(--cinnabar) 100%);
+  --grad-lacquer: radial-gradient(ellipse at 50% 0%, var(--lacquer-3) 0%, var(--lacquer) 70%);
+  --grad-jade: linear-gradient(160deg, var(--jade) 0%, var(--jade-deep) 100%);
+  --grad-porcelain: linear-gradient(160deg, var(--porcelain-bright) 0%, var(--porcelain) 100%);
+
+  /* Acento por acto (cada .act[data-act] fija --accent y --accent-2) */
+  --accent-1: var(--gold-bright);   --accent-1b: var(--red-china);
+  --accent-2: var(--jade-soft);     --accent-2b: var(--gold);
+  --accent-3: var(--porcelain-bright); --accent-3b: var(--gold-bright);
+  --accent-4: var(--cinnabar);      --accent-4b: var(--gold);
+  --accent-5: var(--gold);          --accent-5b: var(--jade-soft);
+  --accent-6: var(--hypothesis);    --accent-6b: var(--gold-bright);
+  --accent-7: var(--red-china);     --accent-7b: var(--gold-bright);
+  --accent: var(--gold);
+  --accent-2nd: var(--cinnabar);
+
+  /* Fondo por defecto */
+  --bg: var(--lacquer);
+  --fg: var(--paper);
+
+  /* Familias tipograficas */
+  --font-serif: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+  --font-cjk: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-brush: "Ma Shan Zheng", "Noto Serif SC", cursive;
+  --font-ui: "Cormorant Garamond", Georgia, serif;
+
+  /* Escala tipografica fluida (360px a 1440px) */
+  --fs-xs: clamp(0.78rem, 0.74rem + 0.18vw, 0.9rem);
+  --fs-sm: clamp(0.92rem, 0.88rem + 0.2vw, 1.05rem);
+  --fs-base: clamp(1.08rem, 1rem + 0.35vw, 1.3rem);
+  --fs-md: clamp(1.3rem, 1.1rem + 0.9vw, 1.8rem);
+  --fs-lg: clamp(1.7rem, 1.3rem + 1.8vw, 2.8rem);
+  --fs-xl: clamp(2.2rem, 1.4rem + 3.6vw, 4.6rem);
+  --fs-2xl: clamp(3rem, 1.6rem + 6vw, 7rem);
+  --fs-han: clamp(6rem, 3rem + 16vw, 22rem);   /* caracter chino monumental */
+  --lh-tight: 1.1;
+  --lh-base: 1.6;
+  --lh-loose: 1.85;
+  --tracking-wide: 0.18em;
+  --measure: 34rem;
+
+  /* Espaciado */
+  --gutter: 16px;
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2.25rem;
+  --sp-7: 3.5rem;
+  --sp-8: 5.5rem;
+  --sp-9: 9rem;
+  --radius: 2px;
+
+  /* Movimiento */
+  --dur-fast: 180ms;
+  --dur-base: 420ms;
+  --dur-slow: 900ms;
+  --dur-reveal: 1400ms;
+  --dur-epic: 2400ms;
+  --ease-ink: cubic-bezier(0.22, 0.61, 0.36, 1);      /* tinta que se asienta */
+  --ease-silk: cubic-bezier(0.65, 0, 0.35, 1);        /* seda */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-breath: cubic-bezier(0.37, 0, 0.63, 1);      /* respiracion, bucles */
+
+  /* Capas */
+  --z-bg: -1;
+  --z-layer-far: 1;
+  --z-layer-mid: 2;
+  --z-layer-near: 3;
+  --z-content: 10;
+  --z-fog: 20;
+  --z-grain: 80;
+  --z-chrome: 100;
+  --z-menu: 120;
+  --z-modal: 200;
+
+  /* Sombras y brillos */
+  --glow-gold: 0 0 24px rgba(247, 201, 72, 0.55), 0 0 60px rgba(212, 175, 55, 0.25);
+  --glow-red: 0 0 28px rgba(227, 66, 52, 0.6), 0 0 70px rgba(200, 16, 46, 0.35);
+  --glow-jade: 0 0 28px rgba(0, 168, 107, 0.5);
+  --glow-porcelain: 0 0 28px rgba(91, 143, 214, 0.5);
+  --glow-lantern: 0 0 40px rgba(227, 66, 52, 0.7), 0 0 100px rgba(200, 16, 46, 0.4);
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 32px; --measure: 38rem; }
+}
+@media (min-width: 1200px) {
+  :root { --gutter: 64px; }
+}

@@ -1,0 +1,134 @@
+/* Acto IV: Mexico. Prefijo .a4-. Paleta: de tinta fria a sepia/atardecer. */
+.a4 {
+  --a4-sunset: color-mix(in srgb, var(--cinnabar) 55%, var(--gold-bright));
+  --a4-ember: color-mix(in srgb, var(--cinnabar-deep) 70%, var(--gold));
+  --a4-sepia: color-mix(in srgb, var(--paper) 78%, var(--gold));
+  --a4-sepia-dark: color-mix(in srgb, var(--lacquer-3) 75%, var(--gold-dim));
+  position: relative;
+  color: var(--paper);
+  background: var(--ink);
+  overflow: hidden;
+}
+.a4-stage { position: relative; min-height: 100vh; }
+.a4-sky, .a4-dusk, .a4-scene, .a4-grain, .a4-vignette { position: absolute; inset: 0; pointer-events: none; }
+.a4-sky { background: linear-gradient(to bottom, var(--ink), var(--ink-2) 60%, var(--lacquer-2)); }
+.a4-dusk {
+  background: linear-gradient(to bottom, var(--lacquer-3) 0%, var(--a4-ember) 45%, var(--a4-sunset) 78%, var(--gold-bright) 100%);
+  opacity: 0.85;
+}
+.a4-scene { width: 100%; height: 100%; z-index: var(--z-layer-mid); }
+.a4-sun { fill: var(--gold-bright); opacity: 0.9; filter: drop-shadow(0 0 30px var(--gold-bright)); }
+.a4-dune-far { fill: color-mix(in srgb, var(--a4-ember) 60%, var(--lacquer)); }
+.a4-dune-mid { fill: color-mix(in srgb, var(--a4-sepia-dark) 70%, var(--lacquer)); }
+.a4-cactus path, .a4-palm path { fill: none; stroke: var(--lacquer); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.a4-palm path:not(.a4-trunk) { stroke-width: 5; }
+.a4-wave { fill: none; stroke: color-mix(in srgb, var(--gold-bright) 70%, var(--cinnabar)); stroke-width: 2.5; opacity: 0.7; }
+.a4-wave-2 { opacity: 0.5; } .a4-wave-3 { opacity: 0.35; }
+
+.a4-rays path { fill: var(--gold-bright); opacity: 0.09; transform-origin: 860px 330px; }
+.a4-cloud { fill: color-mix(in srgb, var(--a4-sunset) 60%, var(--lacquer-3)); opacity: 0.55; }
+.a4-bird { fill: none; stroke: var(--lacquer); stroke-width: 2.5; stroke-linecap: round; }
+.a4-particles { position: absolute; inset: 0; z-index: var(--z-layer-near); pointer-events: none; overflow: hidden; }
+.a4-mote { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 8px var(--gold-bright); opacity: 0; }
+.a4-mote.a4-red { background: var(--cinnabar); box-shadow: 0 0 8px var(--cinnabar); }
+.a4-w { display: inline-block; white-space: pre; }
+
+/* Acentos chinos: rojo bermellon y oro imperial */
+.a4-chop {
+  display: inline-grid; place-items: center; width: 3.2rem; height: 3.2rem; margin: 0 0 var(--sp-4);
+  background: var(--cinnabar); color: var(--paper); font-family: var(--font-cjk); font-size: var(--fs-lg); font-weight: 700;
+  border: 2px solid var(--gold-bright); border-radius: var(--radius); box-shadow: var(--glow-lantern); transform: rotate(-4deg);
+}
+.a4-title { border-bottom: 3px solid var(--cinnabar); display: inline-block; padding-bottom: var(--sp-2); }
+.a4-title::after { content: ""; display: block; height: 3px; margin-top: 3px; background: var(--gold-bright); }
+.a4-sub { border-left: 4px solid var(--cinnabar); padding-left: var(--sp-4); }
+.a4-kicker::before { content: ""; display: inline-block; width: 2rem; height: 2px; background: var(--cinnabar); vertical-align: middle; margin-right: var(--sp-3); }
+
+/* Grano de pelicula y vineta */
+.a4-grain {
+  z-index: var(--z-grain);
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: a4-grain 0.9s steps(6) infinite;
+}
+@keyframes a4-grain {
+  0% { transform: translate(0, 0); } 20% { transform: translate(-3%, 2%); } 40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); } 80% { transform: translate(3%, 3%); } 100% { transform: translate(0, 0); }
+}
+.a4-vignette { z-index: calc(var(--z-grain) - 1); background: radial-gradient(ellipse at center, transparent 45%, var(--lacquer) 125%); opacity: 0.8; }
+
+/* Contenido: estatico por defecto (fluye vertical) */
+.a4-content { position: relative; z-index: var(--z-content); padding: var(--sp-8) var(--gutter); }
+.a4-panel { max-width: var(--measure); margin: 0 auto var(--sp-8); }
+.a4-kicker { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--gold-bright); margin: 0 0 var(--sp-3); }
+.a4-title { font-family: var(--font-serif); font-size: var(--fs-2xl); line-height: var(--lh-tight); margin: 0 0 var(--sp-5); color: var(--paper); text-shadow: 0 2px 30px var(--lacquer); }
+.a4-sub { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-tight); margin: 0 0 var(--sp-5); color: var(--gold-bright); font-weight: 500; }
+.a4-lead { font-size: var(--fs-md); line-height: var(--lh-base); margin: 0 0 var(--sp-4); text-shadow: 0 1px 14px var(--lacquer); }
+.a4-note { font-size: var(--fs-sm); line-height: var(--lh-base); color: var(--paper-dim); margin: 0; }
+.a4-note-small { font-size: var(--fs-xs); margin-top: var(--sp-4); }
+.a4 [data-lang] { }
+
+/* Sellos "por confirmar" */
+.a4-stamp, .a4-stamp-inline {
+  background: color-mix(in srgb, var(--hypothesis) 10%, transparent);
+  display: inline-block; font-style: normal; font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--hypothesis); border: 1px solid var(--hypothesis); padding: 0 var(--sp-2); border-radius: var(--radius);
+  transform: rotate(-2deg);
+}
+.a4-stamp { margin-top: var(--sp-3); }
+
+/* Linea de tiempo */
+.a4-tl-window { margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
+.a4-tl-track { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-5); }
+.a4-card {
+  background: color-mix(in srgb, var(--lacquer-3) 82%, transparent);
+  border: 1px solid var(--gold-bright); border-top: 4px solid var(--cinnabar); border-radius: var(--radius);
+  outline: 1px solid var(--gold-dim); outline-offset: 4px;
+  padding: var(--sp-5); box-shadow: var(--glow-lantern);
+  backdrop-filter: blur(2px);
+}
+.a4-year { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: 1; margin: 0 0 var(--sp-3); color: var(--gold-bright); }
+.a4-card-h { font-size: var(--fs-md); margin: 0 0 var(--sp-3); color: var(--paper); }
+.a4-card-t { font-size: var(--fs-sm); line-height: var(--lh-base); margin: 0; color: var(--paper-dim); }
+
+/* Documento del censo */
+.a4-doc { margin: 0; }
+.a4-doc-paper {
+  background: linear-gradient(to bottom, var(--a4-sepia), color-mix(in srgb, var(--a4-sepia) 80%, var(--gold-dim)));
+  color: var(--lacquer); padding: var(--sp-6) var(--sp-5); border-radius: var(--radius);
+  box-shadow: 0 20px 60px var(--lacquer), inset 0 0 60px color-mix(in srgb, var(--gold-dim) 40%, transparent);
+  transform: rotate(-0.6deg);
+}
+.a4-doc-head { font-family: var(--font-serif); font-weight: 700; letter-spacing: 0.1em; font-size: var(--fs-sm); margin: 0 0 var(--sp-5); padding-bottom: var(--sp-3); border-bottom: 3px double var(--cinnabar); }
+.a4-doc-row { display: flex; gap: var(--sp-4); align-items: baseline; padding: var(--sp-2) 0; border-bottom: 1px dashed var(--gold-dim); }
+.a4-k { flex: 0 0 7rem; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.1em; color: var(--lacquer-3); }
+.a4-v { font-family: var(--font-brush); font-size: var(--fs-md); color: var(--ink); line-height: 1.2; }
+.a4-v-pending { color: var(--cinnabar-deep); font-size: var(--fs-base); }
+.a4-doc-foot { font-size: var(--fs-xs); font-style: italic; margin: var(--sp-4) 0 0; color: var(--lacquer-3); }
+.a4-line { will-change: clip-path, opacity; }
+
+/* Ninos en la frontera */
+.a4-kids { display: flex; gap: var(--sp-5); margin: 0 0 var(--sp-5); }
+.a4-kid { width: 28px; height: auto; fill: none; stroke: var(--paper); stroke-width: 2.5; stroke-linecap: round; opacity: 0.85; }
+
+/* Modo con JS: etapa fijada, paneles apilados */
+.a4.a4-js .a4-stage { height: 100vh; min-height: 0; }
+.a4.a4-js .a4-content { position: absolute; inset: 0; padding: 0 var(--gutter); display: grid; place-items: center; }
+.a4.a4-js .a4-panel { grid-area: 1 / 1; width: 100%; margin: 0 auto; opacity: 0; visibility: hidden; }
+.a4.a4-js .a4-p-intro { opacity: 1; visibility: visible; }
+.a4.a4-js .a4-p-timeline { max-width: none; }
+.a4.a4-js .a4-tl-window { overflow: hidden; margin: 0 calc(var(--gutter) * -1); padding: var(--sp-3) 0; }
+.a4.a4-js .a4-tl-track { flex-direction: row; gap: var(--sp-5); width: max-content; padding: 0 var(--gutter); }
+.a4.a4-js .a4-card { width: min(78vw, 24rem); flex: 0 0 auto; }
+.a4.a4-js .a4-p-timeline > .a4-sub, .a4.a4-js .a4-p-timeline > .a4-note { max-width: var(--measure); margin-left: auto; margin-right: auto; }
+.a4.a4-js .a4-p-timeline > .a4-sub { margin-bottom: var(--sp-4); }
+
+@media (min-width: 768px) {
+  .a4-doc-paper { padding: var(--sp-7) var(--sp-6); }
+  .a4-k { flex-basis: 9rem; }
+  .a4-kid { width: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .a4-grain { animation: none; }
+}
