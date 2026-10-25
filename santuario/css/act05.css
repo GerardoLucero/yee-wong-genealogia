@@ -63,33 +63,17 @@
 .a5-list li.a5-maybe { border-top-style: dotted; border-top-color: var(--hypothesis); }
 .a5-list li.a5-maybe .a5-role { color: var(--hypothesis); }
 
-.a5-zibei { text-align: center; }
-.a5-zb-col { display: inline-flex; flex-direction: column; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
-.a5-zb-dots { color: var(--gold); letter-spacing: .3em; opacity: .6; }
-.a5-zb-cell { opacity: .35; transition: opacity .6s, box-shadow .6s, transform .6s; display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .6rem 1.6rem; border: 1px solid var(--gold); min-width: 12rem; }
-.a5-zb-char { font-family: var(--font-cjk); font-size: 3rem; line-height: 1.1; color: var(--paper); }
-.a5-zb-gen, .a5-zb-tag { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
-.a5-zb-cell--ok { background: var(--grad-gold); }
-.a5-zb-cell.a5-lit { opacity: 1; box-shadow: 0 0 28px var(--a5-glow); }
-.a5-zb-cell--ok.a5-lit .a5-zb-char { animation: a5-pulse 2.4s ease-in-out infinite; }
-.a5-zb-cell--maybe.a5-lit .a5-zb-char { text-shadow: 0 0 14px var(--hypothesis); }
-.a5-zb-dots { transition: opacity .6s; }
-@keyframes a5-pulse { 50% { transform: scale(1.12); text-shadow: 0 0 16px var(--paper); } }
-.a5-zb-col:not(.a5-armed) .a5-zb-cell { opacity: 1; }
-.a5-zb-cell--ok .a5-zb-char, .a5-zb-cell--ok .a5-zb-gen, .a5-zb-cell--ok .a5-zb-tag { color: var(--lacquer); }
-.a5-zb-cell--maybe { border-style: dashed; border-color: var(--hypothesis); }
-.a5-zb-cell--maybe .a5-zb-gen, .a5-zb-cell--maybe .a5-zb-tag { color: var(--hypothesis); }
-.a5-zb-note { margin: 0; line-height: 1.7; opacity: .88; }
 
 /* Con JS y movimiento: el escenario queda fijo mientras el scroll hace crecer el arbol */
 .a5.a5-js .a5-scroller { height: 520vh; }
 .a5.a5-js .a5-stage { position: sticky; top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .a5-card { transition: none; }
-  .a5-zb-cell--ok.a5-lit .a5-zb-char { animation: none; }
 }
 
 .a5-main { stroke-width: 4; }
 .a5-node--star .a5-petal { fill: var(--gold-bright); stroke: var(--a5-plum); }
 .a5-node--star .a5-pistil { fill: var(--red-china); }
 .a5-voz { font-style: italic; color: var(--gold-bright); margin: 0 0 .5rem; font-size: 1.05rem; }
+
+.a5-muerte { font-size: 1.3rem; color: var(--paper); margin: .6rem 0; letter-spacing: .04em; }

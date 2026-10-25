@@ -62,9 +62,8 @@
 
 /* Carta a Miguel: apilada y visible por defecto; superpuesta solo con JS */
 .a1-letter { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; padding: 0 16px; }
-.a1-ln { margin: 0; font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.25; max-width: 22ch; color: var(--gold-bright);
+.a1-ln { margin: 0; font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.25; max-width: 24ch; color: var(--gold-bright);
   text-shadow: 0 0 18px var(--gold), 0 0 46px var(--cinnabar); }
-.a1-ln--name { font-size: var(--fs-xl); letter-spacing: .08em; }
 .a1-js .a1-stage { grid-template-areas: "c"; }
 .a1-js .a1-center, .a1-js .a1-letter { grid-area: c; }
 .a1-js .a1-ln { grid-area: auto; }

@@ -90,7 +90,7 @@
         t.parentNode.replaceChild(frag, t);
       });
     }
-    qa('.a3-lede, .a3-lede2, .a3-card-text').forEach(splitWords);
+    qa('.a3-lede, .a3-card-text').forEach(splitWords);
 
     var dusk = q('.a3-sky-dusk');
     var ridges = [q('.a3-ridge-1'), q('.a3-ridge-2')];
@@ -161,7 +161,7 @@
       scrollTrigger: {
         trigger: q('.a3-pin'),
         start: 'top top',
-        end: '+=320%',
+        end: '+=240%',
         pin: q('.a3-stage'),
         pinSpacing: true,
         scrub: 0.8,
@@ -222,7 +222,7 @@
     ScrollTrigger.create({
       trigger: q('.a3-pin'),
       start: 'top top',
-      end: '+=320%',
+      end: '+=240%',
       onUpdate: function (self) {
         var d = self.progress * LT;
         if (!reached.hk && self.progress > 0.01) { reached.hk = true; pulse(points.hk); }
@@ -240,8 +240,6 @@
       clearProps: 'filter,clipPath', scrollTrigger: { trigger: q('.a3-intro'), start: 'top 75%' } });
     gsap.from(qa('.a3-lede .a3-w'), { opacity: 0, y: 14, stagger: 0.04, duration: 0.6, ease: 'power2.out',
       scrollTrigger: { trigger: q('.a3-lede'), start: 'top 85%' } });
-    gsap.from(qa('.a3-lede2 .a3-w'), { opacity: 0, y: 12, stagger: 0.04, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: q('.a3-lede2'), start: 'top 90%' } });
 
 
   });

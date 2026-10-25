@@ -773,9 +773,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 /* Carta a Miguel: apilada y visible por defecto; superpuesta solo con JS */
 .a1-letter { position: relative; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; padding: 0 16px; }
-.a1-ln { margin: 0; font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.25; max-width: 22ch; color: var(--gold-bright);
+.a1-ln { margin: 0; font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.25; max-width: 24ch; color: var(--gold-bright);
   text-shadow: 0 0 18px var(--gold), 0 0 46px var(--cinnabar); }
-.a1-ln--name { font-size: var(--fs-xl); letter-spacing: .08em; }
 .a1-js .a1-stage { grid-template-areas: "c"; }
 .a1-js .a1-center, .a1-js .a1-letter { grid-area: c; }
 .a1-js .a1-ln { grid-area: auto; }
@@ -1020,7 +1019,6 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   display: inline-block; margin: 0; font-style: normal; font-size: .72rem; letter-spacing: .14em;
   text-transform: uppercase; padding: .2rem .55rem; border: 1px solid currentColor; border-radius: 2px;
 }
-.a3-seal-ok, .a3-tl-ok .a3-tag { color: var(--jade-soft); }
 .a3-seal-tbc, .a3-tl-tbc .a3-tag { color: var(--gold-bright); border-style: dashed; }
 .a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
 .a3-seal-ill { color: var(--paper-dim); border-style: dotted; }
@@ -1114,8 +1112,6 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a4-stamp { margin-top: var(--sp-3); }
 
 /* Linea de tiempo */
-.a4-tl-window { margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
-.a4-tl-track { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-5); }
 .a4-card {
   background: color-mix(in srgb, var(--lacquer-3) 82%, transparent);
   border: 1px solid var(--gold-bright); border-top: 4px solid var(--cinnabar); border-radius: var(--radius);
@@ -1143,26 +1139,16 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a4-doc-foot { font-size: var(--fs-xs); font-style: italic; margin: var(--sp-4) 0 0; color: var(--lacquer-3); }
 .a4-line { will-change: clip-path, opacity; }
 
-/* Ninos en la frontera */
-.a4-kids { display: flex; gap: var(--sp-5); margin: 0 0 var(--sp-5); }
-.a4-kid { width: 28px; height: auto; fill: none; stroke: var(--paper); stroke-width: 2.5; stroke-linecap: round; opacity: 0.85; }
 
 /* Modo con JS: etapa fijada, paneles apilados */
 .a4.a4-js .a4-stage { height: 100vh; min-height: 0; }
 .a4.a4-js .a4-content { position: absolute; inset: 0; padding: 0 var(--gutter); display: grid; place-items: center; }
 .a4.a4-js .a4-panel { grid-area: 1 / 1; width: 100%; margin: 0 auto; opacity: 0; visibility: hidden; }
 .a4.a4-js .a4-p-intro { opacity: 1; visibility: visible; }
-.a4.a4-js .a4-p-timeline { max-width: none; }
-.a4.a4-js .a4-tl-window { overflow: hidden; margin: 0 calc(var(--gutter) * -1); padding: var(--sp-3) 0; }
-.a4.a4-js .a4-tl-track { flex-direction: row; gap: var(--sp-5); width: max-content; padding: 0 var(--gutter); }
-.a4.a4-js .a4-card { width: min(78vw, 24rem); flex: 0 0 auto; }
-.a4.a4-js .a4-p-timeline > .a4-sub, .a4.a4-js .a4-p-timeline > .a4-note { max-width: var(--measure); margin-left: auto; margin-right: auto; }
-.a4.a4-js .a4-p-timeline > .a4-sub { margin-bottom: var(--sp-4); }
 
 @media (min-width: 768px) {
   .a4-doc-paper { padding: var(--sp-7) var(--sp-6); }
   .a4-k { flex-basis: 9rem; }
-  .a4-kid { width: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .a4-grain { animation: none; }
@@ -1172,11 +1158,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a4-card-maria { border-top-color: var(--gold-bright); border-color: var(--cinnabar); }
 .a4-maria-full { margin: var(--sp-3) 0 0; font-family: var(--font-serif); font-size: var(--fs-sm); letter-spacing: 0.06em; color: var(--gold-bright); border-top: 1px solid var(--cinnabar); padding-top: var(--sp-3); }
 
-/* Escena del silencio: Nogales */
-.a4-fact { font-size: var(--fs-sm); line-height: var(--lh-base); color: var(--paper-dim); margin: 0 0 var(--sp-5); }
-.a4-hush { margin: 0 0 var(--sp-5); }
-.a4-hush-line { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); margin: 0 0 var(--sp-3); color: var(--paper); }
-.a4-hush-line:last-child { color: var(--gold-bright); }
+
+.a4-big { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); color: var(--paper); }
+.a4-birth { opacity: 0.6; margin-top: var(--sp-5); text-align: center; }
+.a4.a4-js .a4-card { width: 100%; max-width: 30rem; margin: 0 auto; }
 </style>
 <style data-src="css/act05.css">
 /* Acto 5: El arbol. Prefijo .a5- */
@@ -1244,41 +1229,25 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a5-list li.a5-maybe { border-top-style: dotted; border-top-color: var(--hypothesis); }
 .a5-list li.a5-maybe .a5-role { color: var(--hypothesis); }
 
-.a5-zibei { text-align: center; }
-.a5-zb-col { display: inline-flex; flex-direction: column; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
-.a5-zb-dots { color: var(--gold); letter-spacing: .3em; opacity: .6; }
-.a5-zb-cell { opacity: .35; transition: opacity .6s, box-shadow .6s, transform .6s; display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .6rem 1.6rem; border: 1px solid var(--gold); min-width: 12rem; }
-.a5-zb-char { font-family: var(--font-cjk); font-size: 3rem; line-height: 1.1; color: var(--paper); }
-.a5-zb-gen, .a5-zb-tag { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
-.a5-zb-cell--ok { background: var(--grad-gold); }
-.a5-zb-cell.a5-lit { opacity: 1; box-shadow: 0 0 28px var(--a5-glow); }
-.a5-zb-cell--ok.a5-lit .a5-zb-char { animation: a5-pulse 2.4s ease-in-out infinite; }
-.a5-zb-cell--maybe.a5-lit .a5-zb-char { text-shadow: 0 0 14px var(--hypothesis); }
-.a5-zb-dots { transition: opacity .6s; }
-@keyframes a5-pulse { 50% { transform: scale(1.12); text-shadow: 0 0 16px var(--paper); } }
-.a5-zb-col:not(.a5-armed) .a5-zb-cell { opacity: 1; }
-.a5-zb-cell--ok .a5-zb-char, .a5-zb-cell--ok .a5-zb-gen, .a5-zb-cell--ok .a5-zb-tag { color: var(--lacquer); }
-.a5-zb-cell--maybe { border-style: dashed; border-color: var(--hypothesis); }
-.a5-zb-cell--maybe .a5-zb-gen, .a5-zb-cell--maybe .a5-zb-tag { color: var(--hypothesis); }
-.a5-zb-note { margin: 0; line-height: 1.7; opacity: .88; }
 
 /* Con JS y movimiento: el escenario queda fijo mientras el scroll hace crecer el arbol */
 .a5.a5-js .a5-scroller { height: 520vh; }
 .a5.a5-js .a5-stage { position: sticky; top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .a5-card { transition: none; }
-  .a5-zb-cell--ok.a5-lit .a5-zb-char { animation: none; }
 }
 
 .a5-main { stroke-width: 4; }
 .a5-node--star .a5-petal { fill: var(--gold-bright); stroke: var(--a5-plum); }
 .a5-node--star .a5-pistil { fill: var(--red-china); }
 .a5-voz { font-style: italic; color: var(--gold-bright); margin: 0 0 .5rem; font-size: 1.05rem; }
+
+.a5-muerte { font-size: 1.3rem; color: var(--paper); margin: .6rem 0; letter-spacing: .04em; }
 </style>
 <style data-src="css/act06.css">
 /* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
 #acto6 { background: linear-gradient(180deg, var(--lacquer) 0%, var(--lacquer-2) 100%); color: var(--paper); }
-.a6-desk { max-width: 72rem; margin: 0 auto; padding: var(--sp-8) var(--gutter); }
+.a6-desk { max-width: 72rem; margin: 0 auto; padding: var(--sp-7) var(--gutter); }
 .a6-head { max-width: var(--measure); margin-bottom: var(--sp-6); }
 .a6-eyebrow { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--gold); }
 .a6-title { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-4); font-weight: 500; }
@@ -1366,6 +1335,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-human { margin-top: var(--sp-3); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
 .a6-case--pending .a6-human { color: var(--ink-2); }
 .a6-case-title { padding-right: 5.8rem; }
+
+@media (min-width: 720px) { .a6-table { grid-template-columns: repeat(3, 1fr); } }
+.a6-credo { margin-top: var(--sp-7); }
 </style>
 <style data-src="css/act07.css">
 /* Acto 7: El altar. Prefijo .a7- */
@@ -1401,7 +1373,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7 .a7-tablet-body { fill: var(--cinnabar-deep); stroke: var(--gold, #c9a24b); stroke-width: 1.4; }
 .a7 .a7-tablet-top { fill: var(--gold, #c9a24b); opacity: .85; }
 .a7 .a7-tablet-frame { stroke: var(--gold, #c9a24b); stroke-width: .6; opacity: .6; }
-.a7 .a7-tablet-char { fill: var(--gold-bright); filter: drop-shadow(0 0 6px var(--gold-bright)); animation: a7-char 3s ease-in-out infinite; font-family: var(--font-cjk); font-size: 58px; font-weight: 700; }
+.a7 .a7-tablet-aura { opacity: .35; }
+.a7 .a7-tablet-col { fill: var(--gold-bright); font-family: var(--font-cjk); font-size: 9px; opacity: .95; }
+.a7 .a7-tablet-char { fill: var(--gold-bright); filter: drop-shadow(0 0 6px var(--gold-bright)); animation: a7-char 3s ease-in-out infinite; font-family: var(--font-cjk); font-size: 22px; font-weight: 700; }
 .a7 .a7-tablet-name { fill: var(--paper, #f4ecd8); font-family: var(--font-serif); font-size: 13px; letter-spacing: .12em; }
 .a7 .a7-candle-body { fill: var(--paper, #f4ecd8); opacity: .9; }
 .a7 .a7-flame { fill: var(--gold-bright); filter: drop-shadow(0 0 5px var(--gold-bright)); transform-box: fill-box; transform-origin: 50% 100%; animation: a7-flick 1.6s ease-in-out infinite; }
@@ -1459,6 +1433,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7.a7-live .a7-foot { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); width: calc(100% - 32px); padding: 0; z-index: 10; opacity: 0; }
 .a7.a7-live .a7-credits { z-index: 9; }
 .a7.a7-live .a7-candle-b .a7-flame, .a7.a7-live .a7-candle-b .a7-flame-halo { opacity: 0; }
+.a7 .a7-tab1 { font-family: var(--font-serif); font-size: clamp(1.4rem, 4.6vw, 2.1rem); line-height: 1.35; margin: 0 0 1.2rem; color: var(--gold-bright); text-shadow: var(--glow-gold); letter-spacing: .02em; }
+.a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3.6vw, 1.5rem); line-height: 1.5; margin: 0; color: var(--paper); }
 @media (max-width: 480px) {
   .a7 .a7-text { font-size: 1rem; line-height: 1.6; }
   .a7.a7-live .a7-panels { top: 10vh; }
@@ -1476,6 +1452,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7 .a7-p3 .a7-kicker { font-size: clamp(.85rem, 2.4vw, 1.05rem); color: var(--gold-bright, #f7c948); text-shadow: 0 0 14px rgba(247, 201, 72, .55); }
 .a7 .a7-p3 .a7-dedic { font-size: clamp(2rem, 7vw, 3.6rem); font-style: normal; color: var(--paper, #f4ecd8); text-shadow: 0 0 22px rgba(247, 201, 72, .6), 0 2px 12px rgba(0, 0, 0, .7); }
 .a7 .a7-p2 .a7-dedic { font-size: clamp(1.8rem, 6vw, 3rem); text-shadow: 0 0 18px rgba(247, 201, 72, .45), 0 2px 10px rgba(0, 0, 0, .7); }
+
+/* Tablilla final: el momento mas solemne, texto grande y luminoso */
+.a7 .a7-tab1 { font-family: var(--font-serif); font-size: clamp(1.7rem, 5.2vw, 3rem); line-height: 1.3; color: var(--gold-bright, #f7c948); margin: 0 auto 1.2rem; max-width: 22ch; text-shadow: 0 0 26px rgba(247, 201, 72, .6), 0 2px 14px rgba(0, 0, 0, .8); }
+.a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.2rem, 3.4vw, 1.9rem); line-height: 1.45; color: var(--paper, #f4ecd8); margin: 0 auto; max-width: 32ch; text-shadow: 0 0 18px rgba(0, 0, 0, .9), 0 2px 10px rgba(0, 0, 0, .8); }
 </style>
 </head>
 <body>
@@ -1643,18 +1623,20 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     </div>
 
     <div class="a1-letter">
-      <p class="a1-ln a1-ln--name">
-        <span data-lang="es">Miguel.</span><span data-lang="en">Miguel.</span><span data-lang="zh">米格尔。</span>
+      <p class="a1-ln">
+        <span data-lang="es">Hace más de un siglo, alguien salió de una aldea al sur de China.</span>
+        <span data-lang="en">More than a century ago, someone left a village in the south of China.</span>
+        <span data-lang="zh">一百多年前,有个人离开了中国南方的一座村子。</span>
       </p>
       <p class="a1-ln">
-        <span data-lang="es">No sabemos cuándo saliste de casa.</span>
-        <span data-lang="en">We do not know when you left home.</span>
-        <span data-lang="zh">我们不知道你是何时离开家的。</span>
+        <span data-lang="es">Cruzó el mar.</span>
+        <span data-lang="en">He crossed the sea.</span>
+        <span data-lang="zh">他渡过了大海。</span>
       </p>
       <p class="a1-ln a1-ln--last">
-        <span data-lang="es">Soy tu bisnieto. Vine a buscarte.</span>
-        <span data-lang="en">I am your great-grandson. I came to find you.</span>
-        <span data-lang="zh">我是你的曾孙。我来找你了。</span>
+        <span data-lang="es">Se llamaba Miguel. Esta es la historia de cómo lo estamos encontrando.</span>
+        <span data-lang="en">His name was Miguel. This is the story of how we are finding him.</span>
+        <span data-lang="zh">他叫米格尔。这是我们如何找到他的故事。</span>
       </p>
     </div>
 
@@ -1698,30 +1680,30 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
     <div class="a2-copy">
       <p class="a2-line"><span class="a2-line-in">
-        <span data-lang="es">Al sur de Guangdong, en Taishan, de donde saliste.</span>
-        <span data-lang="en">In southern Guangdong, in Taishan, where you came from.</span>
-        <span data-lang="zh">广东南部,台山,你出发的地方。</span></span></p>
+        <span data-lang="es">Al sur de Guangdong está Taishan. De allí salió la familia 余.</span>
+        <span data-lang="en">In southern Guangdong lies Taishan. From there the 余 family came.</span>
+        <span data-lang="zh">广东南部有台山。余氏一家,从那里出发。</span></span></p>
       <p class="a2-line"><span class="a2-line-in">
-        <span data-lang="es">Aquí se hablaba toisanés. Quizá fue la última lengua que oíste antes de partir.</span>
-        <span data-lang="en">Here they spoke Toisanese. Perhaps it was the last language you heard before leaving.</span>
-        <span data-lang="zh">这里说台山话。也许,那是你启程前听到的最后一种语言。</span></span></p>
+        <span data-lang="es">Allí se habla toisanés, una lengua propia, distinta del cantonés.</span>
+        <span data-lang="en">There they speak Toisanese, a tongue of its own, distinct from Cantonese.</span>
+        <span data-lang="zh">那里说台山话,一种自成一体的语言,不同于粤语。</span></span></p>
 
       <div class="a2-names">
         <span class="a2-name a2-n1" lang="zh">台山</span>
         <span class="a2-name a2-n2" lang="zh">龙洋</span>
         <svg class="a2-brush" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="a2-g"><stop offset="0" class="a2-b1"/><stop offset=".5" class="a2-b2"/><stop offset="1" class="a2-b1"/></linearGradient></defs><path pathLength="1" d="M4 12 C80 2 160 18 240 8 S360 14 396 6" fill="none" stroke="url(#a2-g)" stroke-width="5" stroke-linecap="round"/></svg>
         <p class="a2-name-cap">
-          <span data-lang="es">Taishan, y dentro de él Longyang: la zona de la que salió la familia.</span>
-          <span data-lang="en">Taishan, and within it Longyang: the area the family came from.</span>
-          <span data-lang="zh">台山,以及其中的龙洋:家族出发的地方。</span>
+          <span data-lang="es">Dentro de Taishan está Longyang, la zona de la que salió la familia.</span>
+          <span data-lang="en">Within Taishan lies Longyang, the area the family came from.</span>
+          <span data-lang="zh">台山之中有龙洋,家族出发的地方。</span>
         </p>
       </div>
 
       <div class="a2-village">
         <p class="a2-village-lead">
-          <span data-lang="es">¿Y tu aldea exacta? Todavía no lo sabemos. Te buscamos bajo dos nombres.</span>
-          <span data-lang="en">And your exact village? We do not know yet. We look for you under two names.</span>
-          <span data-lang="zh">你确切的村子呢?我们还不知道。我们用两个名字寻找你。</span>
+          <span data-lang="es">¿Y la aldea exacta? Aún no se sabe. Dos nombres esperan en el camino.</span>
+          <span data-lang="en">And the exact village? It is not known yet. Two names wait along the road.</span>
+          <span data-lang="zh">确切的村子呢?尚不可知。路上有两个名字在等待。</span>
         </p>
         <ul class="a2-cands">
           <li class="a2-cand">
@@ -1759,14 +1741,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <span data-lang="es">La travesía</span><span data-lang="en">The crossing</span><span data-lang="zh">跨越太平洋</span>
     </h2>
     <p class="a3-lede">
-      <span data-lang="es">No dejaste papeles de tu viaje. Por eso lo imaginamos con tinta.</span>
-      <span data-lang="en">You left no papers about your journey. So we imagine it in ink.</span>
-      <span data-lang="zh">你没有留下关于这趟旅程的任何文件。所以我们用墨来想象它。</span>
-    </p>
-    <p class="a3-lede2">
-      <span data-lang="es">Esto es un mapa de lo que sabemos y de lo que todavía buscamos.</span>
-      <span data-lang="en">This is a map of what we know and what we are still looking for.</span>
-      <span data-lang="zh">这是一张地图：标出我们知道的，和我们仍在寻找的。</span>
+      <span data-lang="es">No quedaron papeles de su viaje. Por eso el mar se dibuja con tinta.</span>
+      <span data-lang="en">No papers remain from his journey. That is why the sea is drawn in ink.</span>
+      <span data-lang="zh">他的旅程没有留下任何文件。所以大海是用墨画出来的。</span>
     </p>
   </header>
 
@@ -1879,9 +1856,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="0">
           <p class="a3-card-year">1904</p>
           <p class="a3-card-text">
-            <span data-lang="es">Dicen en la familia que llegaste en 1904. No hay papel que lo diga todavía.</span>
-            <span data-lang="en">The family says you arrived in 1904. No paper says so yet.</span>
-            <span data-lang="zh">家里人说你是1904年到的。目前还没有文件可以证明。</span>
+            <span data-lang="es">La familia cuenta que Miguel llegó a Baja California Sur en 1904. Ningún documento lo dice todavía.</span>
+            <span data-lang="en">The family says Miguel arrived in Baja California Sur in 1904. No document says so yet.</span>
+            <span data-lang="zh">家里人说，米格尔于1904年抵达下加利福尼亚南部。目前还没有任何文件这样记载。</span>
           </p>
           <p class="a3-seal a3-seal-tbc">
             <span data-lang="es">A confirmar</span>
@@ -1892,9 +1869,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="1">
           <p class="a3-card-year">1909</p>
           <p class="a3-card-text">
-            <span data-lang="es">Un manifiesto de 1909 trae a un "Man Yee Wong" de 27 años. ¿Eras tú? No lo sabemos.</span>
-            <span data-lang="en">A 1909 manifest lists a "Man Yee Wong", aged 27. Was it you? We do not know.</span>
-            <span data-lang="zh">1909年的一份乘客名单上，有一位27岁的“Man Yee Wong”。是你吗？我们不知道。</span>
+            <span data-lang="es">Un manifiesto de 1909 menciona a un "Man Yee Wong", de 27 años, que salió de Hong Kong rumbo a San Francisco. ¿Era él? Nadie lo sabe.</span>
+            <span data-lang="en">A 1909 manifest mentions a "Man Yee Wong", aged 27, who sailed from Hong Kong for San Francisco. Was it him? No one knows.</span>
+            <span data-lang="zh">1909年的一份乘客名单提到一位27岁的“Man Yee Wong”，他从香港启程前往旧金山。是他吗？没有人知道。</span>
           </p>
           <p class="a3-seal a3-seal-unc">
             <span data-lang="es">Sin confirmar</span>
@@ -1905,40 +1882,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="2">
           <p class="a3-card-year">?</p>
           <p class="a3-card-text">
-            <span data-lang="es">Después, la familia dice que llegaste a La Paz. No sabemos en qué año.</span>
-            <span data-lang="en">Later, the family says you came to La Paz. We do not know in what year.</span>
-            <span data-lang="zh">后来，家里人说你去了拉巴斯。具体哪一年，我们不知道。</span>
+            <span data-lang="es">Más tarde, dicen, llegó a La Paz. Tampoco se sabe en qué año.</span>
+            <span data-lang="en">Later, they say, he came to La Paz. Nor is it known in what year.</span>
+            <span data-lang="zh">后来，据说他到了拉巴斯。具体哪一年，同样无人知晓。</span>
           </p>
           <p class="a3-seal a3-seal-tbc">
             <span data-lang="es">Por confirmar</span>
             <span data-lang="en">To be confirmed</span>
             <span data-lang="zh">待确认</span>
-          </p>
-        </article>
-        <article class="a3-card" data-i="3">
-          <p class="a3-card-year">1921</p>
-          <p class="a3-card-text">
-            <span data-lang="es">El 30 de noviembre de 1921 te casaste con Catalina Molina González, en Mulegé.</span>
-            <span data-lang="en">On 30 November 1921 you married Catalina Molina González, in Mulegé.</span>
-            <span data-lang="zh">1921年11月30日，你在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯结婚。</span>
-          </p>
-          <p class="a3-seal a3-seal-ok">
-            <span data-lang="es">Confirmado</span>
-            <span data-lang="en">Confirmed</span>
-            <span data-lang="zh">已确认</span>
-          </p>
-        </article>
-        <article class="a3-card" data-i="4">
-          <p class="a3-card-year">1930</p>
-          <p class="a3-card-text">
-            <span data-lang="es">En 1930 el censo te encontró en Mulegé, en la calle Zaragoza. Ya eras de allí.</span>
-            <span data-lang="en">In 1930 the census found you in Mulegé, on Zaragoza street. You already belonged there.</span>
-            <span data-lang="zh">1930年，人口普查在穆莱赫的萨拉戈萨街找到了你。你已经属于那里了。</span>
-          </p>
-          <p class="a3-seal a3-seal-ok">
-            <span data-lang="es">Confirmado</span>
-            <span data-lang="en">Confirmed</span>
-            <span data-lang="zh">已确认</span>
           </p>
         </article>
       </div>
@@ -1999,102 +1950,24 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
     <div class="a4-content">
 
-      <!-- Panel 1: llegada al desierto y el mar -->
       <div class="a4-panel a4-p-intro">
-        <p class="a4-kicker">
-          <span data-lang="es">Acto IV</span><span data-lang="en">Act IV</span><span data-lang="zh">第四幕</span>
-        </p>
+        <p class="a4-kicker"><span data-lang="es">Acto IV</span><span data-lang="en">Act IV</span><span data-lang="zh">第四幕</span></p>
         <span class="a4-chop" aria-hidden="true">余</span>
-        <h2 class="a4-title">
-          <span data-lang="es">Mulegé</span><span data-lang="en">Mulege</span><span data-lang="zh">穆莱赫</span>
-        </h2>
-        <p class="a4-lead">
-          <span data-lang="es">Del otro lado del mar hay una península de desierto, palmeras y agua quieta. Aquí la tinta se vuelve luz de atardecer.</span>
-          <span data-lang="en">Across the sea lies a peninsula of desert, palms and still water. Here the ink turns into evening light.</span>
-          <span data-lang="zh">海的另一边，是沙漠、棕榈与静水的半岛。墨色在此化为暮光。</span>
-        </p>
-        <p class="a4-note">
-          <span data-lang="es">Baja California Sur. Te estableciste en la península. El año de tu llegada (se menciona 1904) está <em class="a4-stamp-inline">por confirmar</em>.</span>
-          <span data-lang="en">Baja California Sur. You settled on the peninsula. The year you arrived (1904 is mentioned) is <em class="a4-stamp-inline">to be confirmed</em>.</span>
-          <span data-lang="zh">南下加利福尼亚州。你在半岛安顿下来。你抵达的年份（有说1904年）<em class="a4-stamp-inline">待确认</em>。</span>
-        </p>
+        <h2 class="a4-title"><span data-lang="es">Mulegé</span><span data-lang="en">Mulegé</span><span data-lang="zh">墨西哥</span></h2>
+        <p class="a4-lead"><span data-lang="es">Del otro lado del mar hay una península de desierto, palmeras y agua quieta.</span><span data-lang="en">Across the sea lies a peninsula of desert, palms and still water.</span><span data-lang="zh">海的另一边，是一片半岛：沙漠、棕榈与静水。</span></p>
       </div>
 
-      <!-- Panel 2: linea de tiempo que se desliza -->
-      <div class="a4-panel a4-p-timeline">
-        <h3 class="a4-sub">
-          <span data-lang="es">1921 a 1977</span><span data-lang="en">1921 to 1977</span><span data-lang="zh">1921至1977</span>
-        </h3>
-        <div class="a4-tl-window">
-          <ol class="a4-tl-track">
-            <li class="a4-card">
-              <p class="a4-year">1921</p>
-              <p class="a4-card-h"><span data-lang="es">Matrimonio</span><span data-lang="en">Marriage</span><span data-lang="zh">婚姻</span></p>
-              <p class="a4-card-t">
-                <span data-lang="es">En Mulegé te casaste con Catalina Molina González, el 30 de noviembre de 1921.</span>
-                <span data-lang="en">In Mulegé you married Catalina Molina González, on 30 November 1921.</span>
-                <span data-lang="zh">1921年11月30日，你在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯成婚。</span>
-              </p>
-            </li>
-            <li class="a4-card a4-card-maria">
-              <p class="a4-year">1929</p>
-              <p class="a4-card-h"><span data-lang="es">María de Lourdes</span><span data-lang="en">María de Lourdes</span><span data-lang="zh">María de Lourdes</span></p>
-              <p class="a4-card-t">
-                <span data-lang="es">Tuvieron hijos. Una de ellas fue María de Lourdes, nacida en 1929. Ella es la que llega hasta mí.</span>
-                <span data-lang="en">You had children. One of them was María de Lourdes, born in 1929. She is the one who reaches me.</span>
-                <span data-lang="zh">你们育有子女。其中一位是María de Lourdes，生于1929年。是她，走到了我这里。</span>
-              </p>
-              <p class="a4-maria-full">María de Lourdes Yee Molina</p>
-            </li>
-            <li class="a4-card">
-              <p class="a4-year">1930</p>
-              <p class="a4-card-h"><span data-lang="es">Censo, calle Zaragoza</span><span data-lang="en">Census, Zaragoza street</span><span data-lang="zh">人口普查，萨拉戈萨街</span></p>
-              <p class="a4-card-t">
-                <span data-lang="es">Un censo de 1930 te encontró en la calle Zaragoza.</span>
-                <span data-lang="en">A census in 1930 found you on Zaragoza street.</span>
-                <span data-lang="zh">1930年的一次人口普查，在萨拉戈萨街找到了你。</span>
-              </p>
-            </li>
-            <li class="a4-card">
-              <p class="a4-year">1942</p>
-              <p class="a4-card-h"><span data-lang="es">Arturo, en Fresnillo</span><span data-lang="en">Arturo, in Fresnillo</span><span data-lang="zh">阿图罗，在弗雷斯尼略</span></p>
-              <p class="a4-card-t">
-                <span data-lang="es">Arturo Yee, probable hermano mayor, murió en Fresnillo, Zacatecas. El parentesco es probable, no probado.</span>
-                <span data-lang="en">Arturo Yee, probably the elder brother, dies in Fresnillo, Zacatecas. The kinship is probable, not proven.</span>
-                <span data-lang="zh">阿图罗·余，可能是兄长，卒于萨卡特卡斯州弗雷斯尼略。亲属关系为推测，未证实。</span>
-              </p>
-              <span class="a4-stamp"><span data-lang="es">hermano por confirmar</span><span data-lang="en">brother to be confirmed</span><span data-lang="zh">兄弟关系待确认</span></span>
-            </li>
-            <li class="a4-card">
-              <p class="a4-year">1977</p>
-              <p class="a4-card-h"><span data-lang="es">San Juan de los Planes</span><span data-lang="en">San Juan de los Planes</span><span data-lang="zh">圣胡安德洛斯普拉内斯</span></p>
-              <p class="a4-card-t">
-                <span data-lang="es">Moriste el 4 de mayo de 1977, en San Juan de los Planes. Tu línea llega hasta hoy.</span>
-                <span data-lang="en">You died on 4 May 1977, in San Juan de los Planes. Your line reaches today.</span>
-                <span data-lang="zh">1977年5月4日，你在圣胡安德洛斯普拉内斯去世。你的血脉延续至今。</span>
-              </p>
-            </li>
-          </ol>
+      <div class="a4-panel a4-p-wed">
+        <div class="a4-card">
+          <p class="a4-year">1921</p>
+          <p class="a4-card-t a4-big"><span data-lang="es">En Mulegé, el 30 de noviembre de 1921, Miguel se casó con Catalina Molina González.</span><span data-lang="en">In Mulegé, on 30 November 1921, Miguel married Catalina Molina González.</span><span data-lang="zh">1921年11月30日，在穆莱赫，米格尔与卡塔利娜·莫利纳·冈萨雷斯成婚。</span></p>
         </div>
-        <p class="a4-note a4-note-small">
-          <span data-lang="es">Naciste hacia 1886; no sabemos el año exacto.</span>
-          <span data-lang="en">You were born around 1886; we do not know the exact year.</span>
-          <span data-lang="zh">你约生于1886年；确切年份我们不知道。</span>
-        </p>
       </div>
 
-      <!-- Panel 3: el censo se revela -->
       <div class="a4-panel a4-p-census">
-        <h3 class="a4-sub">
-          <span data-lang="es">El censo de 1930</span><span data-lang="en">The 1930 census</span><span data-lang="zh">1930年人口普查</span>
-        </h3>
-        <figure class="a4-doc" aria-label="Reconstrucción ilustrativa del registro del censo de 1930">
+        <figure class="a4-doc" aria-label="Ilustración del censo de 1930">
           <div class="a4-doc-paper">
-            <p class="a4-doc-head a4-line">
-              <span data-lang="es">CENSO GENERAL DE POBLACIÓN, 1930</span>
-              <span data-lang="en">GENERAL POPULATION CENSUS, 1930</span>
-              <span data-lang="zh">1930年人口普查</span>
-            </p>
+            <p class="a4-doc-head a4-line"><span data-lang="es">Un censo de 1930 lo encontró en la calle Zaragoza.</span><span data-lang="en">A census in 1930 found him on Zaragoza street.</span><span data-lang="zh">1930年的一次人口普查，在萨拉戈萨街找到了他。</span></p>
             <div class="a4-doc-row a4-line">
               <span class="a4-k"><span data-lang="es">Localidad</span><span data-lang="en">Place</span><span data-lang="zh">地点</span></span>
               <span class="a4-v">Mulegé, Baja California Sur</span>
@@ -2107,41 +1980,25 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
               <span class="a4-k"><span data-lang="es">Nombre</span><span data-lang="en">Name</span><span data-lang="zh">姓名</span></span>
               <span class="a4-v">Miguel Yee</span>
             </div>
-            <p class="a4-doc-foot a4-line">
-              <span data-lang="es">Reconstrucción ilustrativa del registro. No es el documento original.</span>
-              <span data-lang="en">Illustrative reconstruction of the record. Not the original document.</span>
-              <span data-lang="zh">此为记录的示意重构，并非原件。</span>
-            </p>
+            <p class="a4-doc-foot a4-line"><span data-lang="es">ilustración</span><span data-lang="en">illustration</span><span data-lang="zh">示意</span></p>
           </div>
         </figure>
       </div>
 
-      <!-- Panel 4: Nogales -->
-      <div class="a4-panel a4-p-border">
-        <h3 class="a4-sub">
-          <span data-lang="es">Nogales, 26 de mayo de 1930</span><span data-lang="en">Nogales, 26 May 1930</span><span data-lang="zh">诺加莱斯，1930年5月26日</span>
-        </h3>
-        <div class="a4-kids" aria-hidden="true">
-          <svg viewBox="0 0 40 70" class="a4-kid"><circle cx="20" cy="12" r="8"/><path d="M20 22 V50 M20 30 L8 44 M20 30 L32 44 M20 50 L10 68 M20 50 L30 68"/></svg>
-          <svg viewBox="0 0 40 70" class="a4-kid"><circle cx="20" cy="12" r="8"/><path d="M20 22 V50 M20 30 L8 44 M20 30 L32 44 M20 50 L10 68 M20 50 L30 68"/></svg>
-          <svg viewBox="0 0 40 70" class="a4-kid"><circle cx="20" cy="12" r="8"/><path d="M20 22 V50 M20 30 L8 44 M20 30 L32 44 M20 50 L10 68 M20 50 L30 68"/></svg>
-          <svg viewBox="0 0 40 70" class="a4-kid"><circle cx="20" cy="12" r="8"/><path d="M20 22 V50 M20 30 L8 44 M20 30 L32 44 M20 50 L10 68 M20 50 L30 68"/></svg>
+      <div class="a4-panel a4-p-hijos">
+        <div class="a4-card a4-card-maria">
+          <p class="a4-year">1929</p>
+          <p class="a4-card-t a4-big"><span data-lang="es">Tuvieron hijos. Una de ellas fue María de Lourdes, nacida en 1929.</span><span data-lang="en">They had children. One of them was María de Lourdes, born in 1929.</span><span data-lang="zh">他们育有子女。其中一位是María de Lourdes，生于1929年。</span></p>
+          <p class="a4-maria-full">María de Lourdes Yee Molina</p>
         </div>
-        <p class="a4-fact">
-          <span data-lang="es">Cuatro niños, hijos de Arturo, cruzaron juntos por Nogales, Arizona, camino a San Francisco. Las tarjetas originales dicen: Muleye, B. C., Mexico.</span>
-          <span data-lang="en">Four of Arturo's children crossed together through Nogales, Arizona, bound for San Francisco. The original cards read: Muleye, B. C., Mexico.</span>
-          <span data-lang="zh">阿图罗的四个孩子一同经亚利桑那州诺加莱斯前往旧金山。原始卡片写着：Muleye, B. C., Mexico。</span>
-        </p>
-        <div class="a4-hush">
-          <p class="a4-hush-line"><span data-lang="es">Cuatro niños.</span><span data-lang="en">Four children.</span><span data-lang="zh">四个孩子。</span></p>
-          <p class="a4-hush-line"><span data-lang="es">Cuatro tarjetas.</span><span data-lang="en">Four cards.</span><span data-lang="zh">四张卡片。</span></p>
-          <p class="a4-hush-line"><span data-lang="es">Después, ningún rastro.</span><span data-lang="en">After that, no trace.</span><span data-lang="zh">此后，杳无踪迹。</span></p>
+      </div>
+
+      <div class="a4-panel a4-p-end">
+        <div class="a4-card">
+          <p class="a4-year">1977</p>
+          <p class="a4-card-t a4-big"><span data-lang="es">Miguel murió el 4 de mayo de 1977, en San Juan de los Planes. Su línea llega hasta hoy.</span><span data-lang="en">Miguel died on 4 May 1977, in San Juan de los Planes. His line reaches today.</span><span data-lang="zh">米格尔于1977年5月4日在圣胡安德洛斯普拉内斯去世。他的血脉延续至今。</span></p>
         </div>
-        <p class="a4-note">
-          <span data-lang="es">Una hipótesis, <em class="a4-stamp-inline">por confirmar</em>: regresaron a China durante las deportaciones de 1930 a 1933. La historia sigue abierta.</span>
-          <span data-lang="en">One hypothesis, <em class="a4-stamp-inline">to be confirmed</em>: they returned to China during the deportations of 1930 to 1933. The story stays open.</span>
-          <span data-lang="zh">一种假设<em class="a4-stamp-inline">待确认</em>：他们在1930至1933年的遣返潮中回到了中国。故事仍然敞开。</span>
-        </p>
+        <p class="a4-note a4-note-small a4-birth"><span data-lang="es">Nació hacia 1886; el año exacto no se sabe.</span><span data-lang="en">He was born around 1886; the exact year is not known.</span><span data-lang="zh">他约生于1886年；确切年份不得而知。</span></p>
       </div>
 
     </div>
@@ -2153,9 +2010,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <p class="a5-kicker"><span data-lang="es">Acto V</span><span data-lang="en">Act V</span><span data-lang="zh">第五幕</span></p>
     <h2 class="a5-title"><span data-lang="es">El árbol</span><span data-lang="en">The tree</span><span data-lang="zh">家谱树</span></h2>
     <p class="a5-lede">
-      <span data-lang="es">Un árbol que crece de la raíz a la copa. Solo cuelgan flores de quienes ya no están y de quienes la documentación confirma. Lo que falta por probar se dibuja con línea punteada.</span>
-      <span data-lang="en">A tree that grows from root to crown. Only blossoms for those who are gone and whom the records confirm. What is still unproven is drawn with a dotted line.</span>
-      <span data-lang="zh">树从根长到冠。只有已故且有记录可证的人才开花。尚未证实的，以虚线表示。</span>
+      <span data-lang="es">Todo árbol empieza en una raíz.</span><span data-lang="en">Every tree begins in a root.</span><span data-lang="zh">每棵树，都始于一条根。</span>
     </p>
   </header>
 
@@ -2270,77 +2125,42 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <h3 class="a5-h3"><span data-lang="es">Los nombres, en orden</span><span data-lang="en">The names, in order</span><span data-lang="zh">按序排列的名字</span></h3>
     <ol class="a5-list">
       <li data-node="padres">
-        <p class="a5-role"><span data-lang="es">Los padres, en China</span><span data-lang="en">The parents, in China</span><span data-lang="zh">在中国的父母</span></p>
-        <p class="a5-name"><span data-lang="es">Sin resolver</span><span data-lang="en">Unresolved</span><span data-lang="zh">未解</span></p>
-        <p class="a5-voz"><span data-lang="es">No sé cómo se llamaban tus padres.</span><span data-lang="en">I do not know what your parents were called.</span><span data-lang="zh">我不知道你的父母叫什么名字。</span></p>
-        <p class="a5-meta"><span data-lang="es">Sus nombres siguen sin aparecer en ningún documento que tengamos. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">Their names appear in no document we hold. The root exists, though it has no face yet.</span><span data-lang="zh">目前没有任何文件记载他们的名字。根是存在的，只是尚无面容。</span></p>
+        <p class="a5-voz"><span data-lang="es">Los padres de Miguel no tienen nombre en ningún papel. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">Miguel's parents have no name in any paper. The root exists, though it has no face yet.</span><span data-lang="zh">米格尔的父母，在任何文书中都没有留下名字。根是存在的，只是尚无面容。</span></p>
       </li>
       <li data-node="arturo">
-        <p class="a5-role"><span data-lang="es">Hermano mayor probable de Miguel</span><span data-lang="en">Probable elder brother of Miguel</span><span data-lang="zh">米格尔的兄长（可能）</span></p>
         <p class="a5-name">Arturo Yee</p>
-        <p class="a5-voz"><span data-lang="es">Quizá fue tu hermano mayor.</span><span data-lang="en">Perhaps he was your elder brother.</span><span data-lang="zh">他也许是你的兄长。</span></p>
-        <p class="a5-meta"><span data-lang="es">Nacido entre 1881 y 1889. Murió en 1942 en Fresnillo, Zacatecas.</span><span data-lang="en">Born between 1881 and 1889. Died in 1942 in Fresnillo, Zacatecas.</span><span data-lang="zh">生于1881至1889年间，1942年卒于萨卡特卡斯州弗雷斯尼略。</span></p>
+        <p class="a5-voz"><span data-lang="es">Quizá fue su hermano mayor. Murió en Fresnillo en 1942.</span><span data-lang="en">Perhaps he was his elder brother. He died in Fresnillo in 1942.</span><span data-lang="zh">或许他是米格尔的兄长。1942年，他在弗雷斯尼略去世。</span></p>
       </li>
       <li data-node="miguel">
-        <p class="a5-role"><span data-lang="es">Quien se quedó en la península</span><span data-lang="en">The one who stayed on the peninsula</span><span data-lang="zh">留在半岛的人</span></p>
-        <p class="a5-name">Miguel Yee <span class="a5-alt">(Yee Wong)</span></p>
-        <p class="a5-voz"><span data-lang="es">Quedaste en la península.</span><span data-lang="en">You stayed on the peninsula.</span><span data-lang="zh">你留在了半岛上。</span></p>
-        <p class="a5-meta"><span data-lang="es">Nacido hacia 1886 (el año exacto no está confirmado). Murió el 4 de mayo de 1977 en San Juan de los Planes, Baja California Sur.</span><span data-lang="en">Born around 1886 (the exact year is unconfirmed). Died on 4 May 1977 in San Juan de los Planes, Baja California Sur.</span><span data-lang="zh">约生于1886年（确切年份未证实）。1977年5月4日卒于南下加利福尼亚州圣胡安德洛斯普拉内斯。</span></p>
+        <p class="a5-name">Miguel Yee</p>
+        <p class="a5-voz"><span data-lang="es">Se quedó en la península.</span><span data-lang="en">He stayed on the peninsula.</span><span data-lang="zh">他留在了半岛上。</span></p>
       </li>
       <li data-node="catalina">
-        <p class="a5-role"><span data-lang="es">Esposa de Miguel</span><span data-lang="en">Wife of Miguel</span><span data-lang="zh">米格尔之妻</span></p>
         <p class="a5-name">Catalina Molina González</p>
-        <p class="a5-voz"><span data-lang="es">En los libros no estaba. Aquí sí.</span><span data-lang="en">She was not in the books. Here she is.</span><span data-lang="zh">她不在族谱里。在这里，她在。</span></p>
-        <p class="a5-meta"><span data-lang="es">Se casó con Miguel el 30 de noviembre de 1921 en Mulegé. De ella nace la línea que llega hasta hoy. Los zupu suelen no registrar a las mujeres: es parte de su diseño, no un olvido.</span><span data-lang="en">Married Miguel on 30 November 1921 in Mulegé. From her comes the line that reaches today. Zupu usually do not record women: it is part of their design, not neglect.</span><span data-lang="zh">1921年11月30日在穆莱赫与米格尔成婚。传到今天的这一支由她而来。族谱多以父系编排，女性往往不记其名，这是体例使然，而非遗忘。</span></p>
+        <p class="a5-voz"><span data-lang="es">Los zupu no registran a las mujeres. En los libros no estaba. Aquí sí.</span><span data-lang="en">Zupu do not record women. She was not in the books. Here she is.</span><span data-lang="zh">族谱不记女性。她不在族谱里。在这里，她在。</span></p>
       </li>
       <li data-node="federico">
-        <p class="a5-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄弟（待证实）</span></p>
         <p class="a5-name">Federico Yee</p>
-        <p class="a5-voz"><span data-lang="es">De él sabemos poco todavía.</span><span data-lang="en">We still know little of him.</span><span data-lang="zh">关于他，我们所知仍少。</span></p>
-        <p class="a5-meta"><span data-lang="es">Nacido hacia 1891. Su vida posterior sigue por documentar.</span><span data-lang="en">Born around 1891. The rest of his life remains to be documented.</span><span data-lang="zh">约生于1891年。此后的生平仍待查证。</span></p>
+        <p class="a5-voz"><span data-lang="es">De él se sabe poco todavía.</span><span data-lang="en">Little is known of him yet.</span><span data-lang="zh">关于他，至今所知甚少。</span></p>
       </li>
       <li data-node="manuel" class="a5-maybe">
-        <p class="a5-role"><span data-lang="es">Misma familia; parentesco exacto por confirmar</span><span data-lang="en">Same family; exact kinship to be confirmed</span><span data-lang="zh">同族；确切亲缘待证实</span></p>
-        <p class="a5-name">Manuel P. Yee Pang <span class="a5-alt">余邦</span></p>
-        <p class="a5-voz"><span data-lang="es">Tal vez fuiste su tío. Aún no lo sé.</span><span data-lang="en">Perhaps you were his uncle. I do not know yet.</span><span data-lang="zh">也许你是他的叔父。我还不知道。</span></p>
-        <p class="a5-meta"><span data-lang="es">Nacido el 19 de noviembre de 1893 en Taishan; comerciante, naturalizado mexicano en 1936. Hipótesis abierta: que Miguel fuera su tío (la relación exacta sigue sin resolver). Su padre fue 余展宝.</span><span data-lang="en">Born 19 November 1893 in Taishan; a merchant, naturalized Mexican in 1936. Open hypothesis: that Miguel was his uncle (the exact relationship is still unresolved). His father was 余展宝.</span><span data-lang="zh">1893年11月19日生于台山；商人，1936年入籍墨西哥。开放假说：米格尔或为其叔辈（确切亲缘尚未解决）。其父为余展宝。</span></p>
+        <p class="a5-role"><span data-lang="es">Misma familia; parentesco por confirmar.</span><span data-lang="en">Same family; kinship to be confirmed.</span><span data-lang="zh">同族；亲缘待证实。</span></p>
+        <p class="a5-name">Manuel P. Yee Pang</p>
+        <p class="a5-voz"><span data-lang="es">Quizá Miguel fue su tío.</span><span data-lang="en">Perhaps Miguel was his uncle.</span><span data-lang="zh">或许米格尔是他的叔父。</span></p>
       </li>
       <li data-node="lourdes">
-        <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina; abuela de quien escribe</span><span data-lang="en">Daughter of Miguel and Catalina; grandmother of the one who writes</span><span data-lang="zh">米格尔与卡塔利娜之女；执笔者的外祖母</span></p>
-        <p class="a5-name">María de Lourdes Yee Molina <span class="a5-alt">1929 &#183; 2025</span></p>
-        <p class="a5-voz"><span data-lang="es">Tu hija. Mi abuela.</span><span data-lang="en">Your daughter. My grandmother.</span><span data-lang="zh">你的女儿。我的外婆。</span></p>
-        <p class="a5-meta"><span data-lang="es">Nació en 1929 y murió en 2025. Su rama es la que llega hasta hoy, y de ella parten las hojas sin nombre.</span><span data-lang="en">Born in 1929, died in 2025. Hers is the branch that reaches today, and from it the nameless leaves grow.</span><span data-lang="zh">生于1929年，卒于2025年。通向今天的是她这一支，无名的叶子由此生出。</span></p>
+        <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina.</span><span data-lang="en">Daughter of Miguel and Catalina.</span><span data-lang="zh">米格尔与卡塔利娜之女。</span></p>
+        <p class="a5-name">María de Lourdes Yee Molina</p>
+        <p class="a5-meta"><span data-lang="es">Nació en 1929.</span><span data-lang="en">Born in 1929.</span><span data-lang="zh">生于1929年。</span></p>
+        <p class="a5-muerte"><span data-lang="es">Murió en 2025.</span><span data-lang="en">Died in 2025.</span><span data-lang="zh">卒于2025年。</span></p>
+        <p class="a5-meta"><span data-lang="es">De ella parten las hojas sin nombre.</span><span data-lang="en">From her grow the nameless leaves.</span><span data-lang="zh">无名的叶子由她而生。</span></p>
       </li>
       <li data-node="futuro">
-        <p class="a5-role"><span data-lang="es">Las ramas que siguen</span><span data-lang="en">The branches that go on</span><span data-lang="zh">继续生长的枝</span></p>
         <p class="a5-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p>
-        <p class="a5-voz"><span data-lang="es">Todo esto viene de la misma raíz.</span><span data-lang="en">All of this comes from one root.</span><span data-lang="zh">这一切都出自同一条根。</span></p>
-        <p class="a5-meta"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p>
+        <p class="a5-voz"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p>
       </li>
     </ol>
 
-    <div class="a5-zibei">
-      <h3 class="a5-h3"><span data-lang="es">字辈, el poema de las generaciones</span><span data-lang="en">字辈, the generational poem</span><span data-lang="zh">字辈</span></h3>
-      <div class="a5-zb-col" role="group" aria-label="Poema generacional, generaciones 33 y 34">
-        <span class="a5-zb-dots" aria-hidden="true">&#183;</span>
-        <div class="a5-zb-cell a5-zb-cell--maybe">
-          <span class="a5-zb-gen"><span data-lang="es">gen. 33</span><span data-lang="en">gen. 33</span><span data-lang="zh">第33代</span></span>
-          <span class="a5-zb-char" lang="zh">和</span>
-          <span class="a5-zb-tag"><span data-lang="es">hipótesis para el apellido</span><span data-lang="en">hypothesis for the surname</span><span data-lang="zh">假说</span></span>
-        </div>
-        <div class="a5-zb-cell a5-zb-cell--ok">
-          <span class="a5-zb-gen"><span data-lang="es">gen. 34</span><span data-lang="en">gen. 34</span><span data-lang="zh">第34代</span></span>
-          <span class="a5-zb-char" lang="zh">礼</span>
-          <span class="a5-zb-tag"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span>
-        </div>
-        <span class="a5-zb-dots" aria-hidden="true">&#183;</span>
-      </div>
-      <p class="a5-zb-note">
-        <span data-lang="es">Los zupu son patrilineales: las mujeres no aparecen por diseño del libro, y por eso su silencio no es ausencia.</span>
-        <span data-lang="en">Zupu are patrilineal: women do not appear by the book's design, so their silence is not absence.</span>
-        <span data-lang="zh">族谱以父系编排，女性多依体例不入谱，因此她们的沉默并非缺席。</span>
-      </p>
-    </div>
   </div>
 </section>
 
@@ -2349,69 +2169,30 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <header class="a6-head">
       <p class="a6-eyebrow"><span data-lang="es">Acto VI</span><span data-lang="en">Act VI</span><span data-lang="zh">第六幕</span></p>
       <h2 class="a6-title"><span data-lang="es">La investigación</span><span data-lang="en">The investigation</span><span data-lang="zh">追寻</span></h2>
-      <p class="a6-lede"><span data-lang="es">Una mesa de trabajo. Cada papel se lee, se cruza y recibe un sello. Algunos se confirman. Otros esperan.</span><span data-lang="en">A worktable. Each paper is read, cross-checked and given a seal. Some are confirmed. Others wait.</span><span data-lang="zh">一张工作台。每份文件都要阅读、比对,再盖上印章。有的已确认,有的仍在等待。</span></p>
     </header>
 
-    <div class="a6-legend">
-      <span class="a6-legend-item"><i class="a6-dot a6-dot--confirmed"></i><span data-lang="es">Sello rojo: confirmado</span><span data-lang="en">Red seal: confirmed</span><span data-lang="zh">红印:已确认</span></span>
-      <span class="a6-legend-item"><i class="a6-dot a6-dot--pending"></i><span data-lang="es">Tinta gris: por confirmar</span><span data-lang="en">Grey ink: to confirm</span><span data-lang="zh">灰墨:待确认</span></span>
-    </div>
-
     <div class="a6-table" data-a6-table>
-      <article class="a6-case a6-case--confirmed" id="a6-c-generacion" data-a6-case>
-        <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Generación 34: 礼</span><span data-lang="en">Generation 34: 礼</span><span data-lang="zh">第三十四代:礼</span></h3>
-          <p class="a6-human"><span data-lang="es">Un carácter que se hereda, de generación en generación.</span><span data-lang="en">A character handed down, generation after generation.</span><span data-lang="zh">一个代代相传的字。</span></p>
-          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
-        </div>
-      </article>
       <article class="a6-case a6-case--pending" id="a6-c-aldea" data-a6-case>
         <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Tu aldea</span><span data-lang="en">Your village</span><span data-lang="zh">你的村子</span></h3>
-          <p class="a6-human"><span data-lang="es">礼边村 al 50%, o 朝陽村, como dice la placa del altar. Te buscamos bajo dos nombres.</span><span data-lang="en">礼边村 at 50%, or 朝陽村, as the altar plaque reads. We looked for you under two names.</span><span data-lang="zh">礼边村,约五成把握;或是祭坛石牌上的朝陽村。我们用两个名字寻你。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">La aldea</span><span data-lang="en">The village</span><span data-lang="zh">村子</span></h3>
+          <p class="a6-human"><span data-lang="es">Dos nombres lo esperan: 礼边村 y 朝陽村. Aún no se sabe cuál fue la suya.</span><span data-lang="en">Two names await him: 礼边村 and 朝陽村. It is not yet known which one was his.</span><span data-lang="zh">两个名字在等着他:礼边村和朝陽村。至今不知哪一个是他的。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
-      <article class="a6-case a6-case--pending" id="a6-c-nacimiento" data-a6-case>
+      <article class="a6-case a6-case--pending" id="a6-c-viaje" data-a6-case>
         <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Tu año</span><span data-lang="en">Your year</span><span data-lang="zh">你的出生年</span></h3>
-          <p class="a6-human"><span data-lang="es">Entre 1882 y 1892. No sabemos con certeza cuándo naciste.</span><span data-lang="en">Between 1882 and 1892. We do not know for certain when you were born.</span><span data-lang="zh">在1882至1892年之间。我们不确知你生于何时。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">El barco</span><span data-lang="en">The ship</span><span data-lang="zh">那艘船</span></h3>
+          <p class="a6-human"><span data-lang="es">¿Era él quien subió a aquel barco en 1909? Nadie puede probarlo.</span><span data-lang="en">Was it he who boarded that ship in 1909? No one can prove it.</span><span data-lang="zh">1909年登上那艘船的,是他吗?无人能够证明。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
-      <article class="a6-case a6-case--pending" id="a6-c-manifiesto" data-a6-case>
+      <article class="a6-case a6-case--pending" id="a6-c-anio" data-a6-case>
         <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Tu viaje</span><span data-lang="en">Your voyage</span><span data-lang="zh">你的旅程</span></h3>
-          <p class="a6-human"><span data-lang="es">Un manifiesto del S.S. Asia, en 1909, nombra a un hombre de 27 años. Quizá fuiste tú. No podemos probarlo.</span><span data-lang="en">A manifest of the S.S. Asia, in 1909, names a man of 27. Perhaps it was you. We cannot prove it.</span><span data-lang="zh">1909年亚洲号的名单上有一位二十七岁的男子。或许是你。我们无法证明。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">El año</span><span data-lang="en">The year</span><span data-lang="zh">那一年</span></h3>
+          <p class="a6-human"><span data-lang="es">Nació entre 1882 y 1892. Nadie sabe cuándo exactamente.</span><span data-lang="en">He was born between 1882 and 1892. No one knows exactly when.</span><span data-lang="zh">他生于1882至1892年之间。确切何时,无人知晓。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
-      <article class="a6-case a6-case--pending" id="a6-c-parentesco" data-a6-case>
-        <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Lo que fuiste para él</span><span data-lang="en">What you were to him</span><span data-lang="zh">你之于他</span></h3>
-          <p class="a6-human"><span data-lang="es">¿Tío o hermano de Manuel Yee Pang? Todavía no sabemos qué fuiste para él.</span><span data-lang="en">Uncle or brother of Manuel Yee Pang? We still do not know what you were to him.</span><span data-lang="zh">是曼努埃尔·余邦的叔父,还是兄弟?我们仍不知道你之于他是何关系。</span></p>
-          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
-        </div>
-      </article>
-      <article class="a6-case a6-case--pending" id="a6-c-ninos" data-a6-case>
-        <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Los cuatro niños</span><span data-lang="en">The four children</span><span data-lang="zh">四个孩子</span></h3>
-          <p class="a6-human"><span data-lang="es">Cruzaron por Nogales en 1930. Después, ningún rastro. Los seguimos esperando.</span><span data-lang="en">They crossed at Nogales in 1930. After that, no trace. We are still waiting for them.</span><span data-lang="zh">1930年他们从诺加利斯入境。此后,杳无踪迹。我们仍在等他们。</span></p>
-          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
-        </div>
-      </article>
-      <article class="a6-case a6-case--pending" id="a6-c-lumshee" data-a6-case>
-        <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">Quien los esperaba</span><span data-lang="en">Who was waiting</span><span data-lang="zh">等候他们的人</span></h3>
-          <p class="a6-human"><span data-lang="es">Lum Shee. Alguien los esperaba en San Francisco. Todavía no sabemos quién.</span><span data-lang="en">Lum Shee. Someone was waiting for them in San Francisco. We still do not know who.</span><span data-lang="zh">Lum Shee。旧金山有人在等他们。我们仍不知道是谁。</span></p>
-          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="a6-method" data-a6-method>
-      <p class="a6-method-text"><span data-lang="es">Un papel, su traducción, otra fuente que lo cruce. Y la confianza que merece.</span><span data-lang="en">A paper, its translation, another source to cross it. And the trust it deserves.</span><span data-lang="zh">一份文件,它的译文,另一来源的印证,以及它应得的可信度。</span></p>
-      <span class="a6-method-line" aria-hidden="true"><svg viewBox="0 0 100 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="100" y2="1" pathLength="100" data-a6-line/></svg></span>
     </div>
 
     <blockquote class="a6-credo" data-a6-credo>
@@ -2489,13 +2270,21 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <rect class="a7-table-leg" x="330" y="250" width="10" height="50"/>
         <rect class="a7-cloth" x="70" y="250" width="260" height="40"/>
         <!-- tablilla -->
+        <ellipse class="a7-tablet-aura" cx="200" cy="160" rx="90" ry="110" fill="url(#a7-flame)"/>
         <g class="a7-tablet">
           <path class="a7-tablet-base" d="M150 236 h100 v-8 h-100z"/>
           <rect class="a7-tablet-body" x="158" y="96" width="84" height="132" rx="4"/>
           <path class="a7-tablet-top" d="M152 100 q48 -34 96 0 v-10 q-48 -34 -96 0z"/>
           <rect class="a7-tablet-frame" x="166" y="106" width="68" height="116" rx="2" fill="none"/>
-          <text class="a7-tablet-char" x="200" y="176" text-anchor="middle" lang="zh">余</text>
-          <text class="a7-tablet-name" x="200" y="206" text-anchor="middle">Familia Yee</text>
+          <text class="a7-tablet-char" x="200" y="126" text-anchor="middle" lang="zh">余</text>
+          <text class="a7-tablet-col" x="200" y="144" text-anchor="middle" lang="zh">氏</text>
+          <text class="a7-tablet-col" x="200" y="154" text-anchor="middle" lang="zh">历</text>
+          <text class="a7-tablet-col" x="200" y="164" text-anchor="middle" lang="zh">代</text>
+          <text class="a7-tablet-col" x="200" y="174" text-anchor="middle" lang="zh">祖</text>
+          <text class="a7-tablet-col" x="200" y="184" text-anchor="middle" lang="zh">先</text>
+          <text class="a7-tablet-col" x="200" y="194" text-anchor="middle" lang="zh">之</text>
+          <text class="a7-tablet-col" x="200" y="204" text-anchor="middle" lang="zh">灵</text>
+          <text class="a7-tablet-col" x="200" y="214" text-anchor="middle" lang="zh">位</text>
         </g>
         <!-- velas -->
         <g class="a7-candle" transform="translate(112 0)">
@@ -2537,9 +2326,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a7-panel a7-p1">
           <p class="a7-kicker"><span data-lang="es">Marzo de 2026</span><span data-lang="en">March 2026</span><span data-lang="zh">2026年3月</span></p>
           <p class="a7-text">
-            <span data-lang="es">Llegué a la tierra de la que saliste. En la pared del altar, una placa de donantes lleva escrito 朝陽村. El nombre exacto de la aldea sigue por confirmar, pero el altar estaba ahí.</span>
-            <span data-lang="en">I reached the land you left. On the wall of the altar, a plaque of donors reads 朝陽村. The exact name of the village is still to be confirmed, but the altar was there.</span>
-            <span data-lang="zh">我来到了你离开的那片土地。神龛墙上的捐款者牌匾写着朝陽村。村名仍待确认，但神龛就在那里。</span>
+            <span data-lang="es">En marzo de 2026, la familia llegó a la tierra de la que salió. En la pared del altar, una placa de donantes lleva escrito 朝陽村. El nombre exacto de la aldea sigue por confirmar, pero el altar estaba ahí.</span>
+            <span data-lang="en">In March 2026, the family reached the land it came from. On the wall of the altar, a plaque of donors reads 朝陽村. The exact name of the village is still to be confirmed, but the altar was there.</span>
+            <span data-lang="zh">2026年3月，家人来到了先辈出发的土地。神龛墙上的捐款者牌匾写着朝陽村。村名仍待确认，但神龛就在那里。</span>
           </p>
         </article>
 
@@ -2552,17 +2341,22 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         </article>
 
         <article class="a7-panel a7-p3">
-          <p class="a7-dedic">
-            <span data-lang="es">Y a los cuatro niños que cruzaron por Nogales:<br>a ustedes también.</span>
-            <span data-lang="en">And to the four children who crossed at Nogales:<br>you too.</span>
-            <span data-lang="zh">还有从诺加莱斯过境的四个孩子：<br>也献给你们。</span>
-          </p>
+          <p class="a7-kicker"><span data-lang="es">En memoria de tu hija</span><span data-lang="en">In memory of your daughter</span><span data-lang="zh">谨以此纪念你的女儿</span></p>
+          <p class="a7-name">María de Lourdes<br>Yee Molina</p>
+          <p class="a7-years">1929 · 2025</p>
         </article>
 
         <article class="a7-panel a7-p4">
-          <p class="a7-kicker"><span data-lang="es">En memoria de tu hija, mi abuela</span><span data-lang="en">In memory of your daughter, my grandmother</span><span data-lang="zh">谨以此纪念你的女儿，我的外祖母</span></p>
-          <p class="a7-name">María de Lourdes<br>Yee Molina</p>
-          <p class="a7-years">1929 · 2025</p>
+          <p class="a7-tab1">
+            <span data-lang="es">Tablilla espiritual dedicada a los ancestros de todas las generaciones de la familia Yee.</span>
+            <span data-lang="en">Spirit tablet dedicated to the ancestors of every generation of the Yee family.</span>
+            <span data-lang="zh">谨以此灵位，献给余氏家族历代祖先。</span>
+          </p>
+          <p class="a7-tab2">
+            <span data-lang="es">Que el linaje de la familia perdure para siempre y que sus descendientes crezcan y prosperen.</span>
+            <span data-lang="en">May the family line endure forever, and may its descendants grow and prosper.</span>
+            <span data-lang="zh">愿家族血脉永续，子孙繁衍昌盛。</span>
+          </p>
         </article>
       </div>
 
@@ -2575,7 +2369,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             <dt><span data-lang="es">Una historia de</span><span data-lang="en">A story of</span><span data-lang="zh">献给</span></dt>
             <dd><span data-lang="es">Taishan, Mulegé y los caminos entre ambos</span><span data-lang="en">Taishan, Mulege and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
             <dt><span data-lang="es">Fuentes</span><span data-lang="en">Sources</span><span data-lang="zh">资料来源</span></dt>
-            <dd><span data-lang="es">Censo de México 1930, registros de cruce de Nogales 1930, Museo de emigrantes de Taishan, salón del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Nogales crossing records 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、1930年诺加莱斯过境记录、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
+            <dd><span data-lang="es">Censo de México 1930, Museo de emigrantes de Taishan, salón del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
           </dl>
           <p class="a7-c-end"><span data-lang="es">Miguel, seguimos buscándote.</span><span data-lang="en">Miguel, we keep looking for you.</span><span data-lang="zh">米格尔，我们仍在寻找你。</span></p>
         </div>
@@ -3541,7 +3335,7 @@ window.Santuario.register(2, function (ctx) {
         t.parentNode.replaceChild(frag, t);
       });
     }
-    qa('.a3-lede, .a3-lede2, .a3-card-text').forEach(splitWords);
+    qa('.a3-lede, .a3-card-text').forEach(splitWords);
 
     var dusk = q('.a3-sky-dusk');
     var ridges = [q('.a3-ridge-1'), q('.a3-ridge-2')];
@@ -3612,7 +3406,7 @@ window.Santuario.register(2, function (ctx) {
       scrollTrigger: {
         trigger: q('.a3-pin'),
         start: 'top top',
-        end: '+=320%',
+        end: '+=240%',
         pin: q('.a3-stage'),
         pinSpacing: true,
         scrub: 0.8,
@@ -3673,7 +3467,7 @@ window.Santuario.register(2, function (ctx) {
     ScrollTrigger.create({
       trigger: q('.a3-pin'),
       start: 'top top',
-      end: '+=320%',
+      end: '+=240%',
       onUpdate: function (self) {
         var d = self.progress * LT;
         if (!reached.hk && self.progress > 0.01) { reached.hk = true; pulse(points.hk); }
@@ -3691,29 +3485,30 @@ window.Santuario.register(2, function (ctx) {
       clearProps: 'filter,clipPath', scrollTrigger: { trigger: q('.a3-intro'), start: 'top 75%' } });
     gsap.from(qa('.a3-lede .a3-w'), { opacity: 0, y: 14, stagger: 0.04, duration: 0.6, ease: 'power2.out',
       scrollTrigger: { trigger: q('.a3-lede'), start: 'top 85%' } });
-    gsap.from(qa('.a3-lede2 .a3-w'), { opacity: 0, y: 12, stagger: 0.04, duration: 0.6, ease: 'power2.out',
-      scrollTrigger: { trigger: q('.a3-lede2'), start: 'top 90%' } });
 
 
   });
 })();
 </script>
 <script data-src="js/act04.js">
-/* Acto IV: Mexico. Pin + scrub: tinta a atardecer, dunas en parallax, linea de tiempo deslizante, censo revelado. */
+/* Acto IV: Mexico. Pin + scrub: tinta a atardecer, parallax multicapa, particulas, texto por palabras, censo revelado. */
 window.Santuario.register(4, function (ctx) {
   var gsap = ctx.gsap, ScrollTrigger = ctx.ScrollTrigger, sec = ctx.section;
   if (!gsap || !ScrollTrigger || !sec || ctx.reduced) return; // estatico: todo visible
 
   var q = function (s) { return sec.querySelector(s); };
   var qa = function (s) { return sec.querySelectorAll(s); };
-  var panels = { intro: q('.a4-p-intro'), tl: q('.a4-p-timeline'), census: q('.a4-p-census'), border: q('.a4-p-border') };
-  var track = q('.a4-tl-track'), win = q('.a4-tl-window');
-  if (!panels.intro || !panels.tl || !panels.census || !panels.border || !track || !win) return;
+  var keys = ['intro', 'wed', 'census', 'hijos', 'end'];
+  var panels = {};
+  for (var k = 0; k < keys.length; k++) {
+    panels[keys[k]] = q('.a4-p-' + keys[k]);
+    if (!panels[keys[k]]) return;
+  }
 
   sec.classList.add('a4-js');
   gsap.registerPlugin(ScrollTrigger);
 
-  // Texto por palabras: cada nodo de texto dentro de los idiomas se parte en spans
+  // Texto por palabras
   var splitWords = function (root) {
     var out = [];
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
@@ -3732,10 +3527,10 @@ window.Santuario.register(4, function (ctx) {
     return out;
   };
   var words = {};
-  ['intro', 'tl', 'census', 'border'].forEach(function (k) {
-    words[k] = [];
-    panels[k].querySelectorAll('.a4-title,.a4-lead,.a4-fact,.a4-note,.a4-card-t,.a4-card-h,.a4-sub').forEach(function (el) {
-      words[k] = words[k].concat(splitWords(el));
+  keys.forEach(function (key) {
+    words[key] = [];
+    panels[key].querySelectorAll('.a4-title,.a4-lead,.a4-card-t,.a4-year,.a4-maria-full,.a4-birth').forEach(function (el) {
+      words[key] = words[key].concat(splitWords(el));
     });
   });
 
@@ -3743,110 +3538,90 @@ window.Santuario.register(4, function (ctx) {
   var layer = document.createElement('div');
   layer.className = 'a4-particles'; layer.setAttribute('aria-hidden', 'true');
   q('.a4-stage').insertBefore(layer, q('.a4-content'));
-  var motes = [];
   for (var i = 0; i < 40; i++) {
     var m = document.createElement('i'); m.className = 'a4-mote' + (i % 6 === 0 ? ' a4-red' : '');
     m.style.left = (Math.random() * 100) + '%'; m.style.top = (30 + Math.random() * 70) + '%';
     var sz = 2 + Math.random() * 4; m.style.width = m.style.height = sz + 'px';
-    layer.appendChild(m); motes.push(m);
-  }
-  motes.forEach(function (m, i) {
+    layer.appendChild(m);
     gsap.fromTo(m, { y: 0, x: 0, opacity: 0 }, {
       y: -(120 + Math.random() * 260), x: (Math.random() - 0.5) * 160, opacity: 0.4 + Math.random() * 0.6,
       duration: 4 + Math.random() * 5, delay: Math.random() * 5, ease: 'sine.inOut', repeat: -1, yoyo: true
     });
-  });
+  }
 
-  var shift = function () { return -Math.max(0, track.scrollWidth - win.clientWidth); };
-
-  var show = function (el, t, at) {
-    tl.set(el, { visibility: 'visible' }, at)
-      .fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: t, ease: 'power2.out' }, at);
-  };
-  var hide = function (el, t, at) {
-    tl.to(el, { opacity: 0, y: -30, duration: t, ease: 'power2.in' }, at)
-      .set(el, { visibility: 'hidden' }, at + t);
-  };
-
+  var T = 9; // duracion total de la linea de tiempo
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=760%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=480%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
   });
 
-  // Fondo: la tinta fria cede al atardecer (0 a 1.2)
+  var show = function (el, at) {
+    tl.set(el, { visibility: 'visible' }, at)
+      .fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, at);
+  };
+  var hide = function (el, at) {
+    tl.to(el, { opacity: 0, y: -30, duration: 0.4, ease: 'power2.in' }, at)
+      .set(el, { visibility: 'hidden' }, at + 0.4);
+  };
+  var wordsIn = function (key, at, each) {
+    gsap.set(words[key], { opacity: 0, y: 18, rotateX: -60 });
+    tl.to(words[key], { opacity: 1, y: 0, rotateX: 0, stagger: each, duration: 0.3, ease: 'power2.out' }, at);
+  };
+
+  // Fondo: tinta fria a atardecer
   gsap.set(q('.a4-dusk'), { opacity: 0 });
   tl.to(q('.a4-dusk'), { opacity: 0.9, duration: 1.2 }, 0)
     .fromTo(q('.a4-sun'), { y: 80, opacity: 0.2 }, { y: 0, opacity: 0.95, duration: 2 }, 0)
-    .to(q('.a4-sun'), { y: 70, duration: 3 }, 5);
+    .to(q('.a4-sun'), { y: 70, duration: 3 }, T - 3.5);
 
-  // Parallax de capas durante todo el recorrido (duracion total 8)
-  tl.fromTo(q('.a4-l-far'), { x: 0 }, { x: -60, duration: 12.8 }, 0)
-    .fromTo(q('.a4-l-mid'), { x: 0 }, { x: -140, duration: 12.8 }, 0)
-    .fromTo(q('.a4-l-palm'), { x: 0, y: 0 }, { x: -240, y: 10, duration: 12.8 }, 0);
+  // Parallax multicapa
+  tl.fromTo(q('.a4-l-far'), { x: 0 }, { x: -60, duration: T }, 0)
+    .fromTo(q('.a4-l-mid'), { x: 0 }, { x: -140, duration: T }, 0)
+    .fromTo(q('.a4-l-palm'), { x: 0, y: 0 }, { x: -240, y: 10, duration: T }, 0)
+    .fromTo(q('.a4-l-cloud'), { x: 0 }, { x: 200, duration: T }, 0)
+    .fromTo(q('.a4-l-bird'), { x: -120, y: 40 }, { x: 700, y: -60, duration: T }, 0)
+    .fromTo(q('.a4-rays'), { rotation: -6, opacity: 0.5, transformOrigin: '860px 330px' }, { rotation: 8, opacity: 1, duration: T }, 0)
+    .fromTo(layer, { y: 0 }, { y: -160, duration: T }, 0);
 
-  // Mas capas: nubes, aves, rayos, particulas con parallax
-  tl.fromTo(q('.a4-l-cloud'), { x: 0 }, { x: 200, duration: 12.8 }, 0)
-    .fromTo(q('.a4-l-bird'), { x: -120, y: 40 }, { x: 700, y: -60, duration: 12.8 }, 0)
-    .fromTo(q('.a4-rays'), { rotation: -6, opacity: 0.5, transformOrigin: '860px 330px' }, { rotation: 8, opacity: 1, duration: 8 }, 0)
-    .fromTo(layer, { y: 0 }, { y: -160, duration: 12.8 }, 0);
+  // Movimiento continuo
+  qa('.a4-wave').forEach(function (w, j) {
+    gsap.to(w, { x: j % 2 ? 100 : -100, duration: 4 + j, ease: 'sine.inOut', repeat: -1, yoyo: true });
+  });
   gsap.to(qa('.a4-cactus'), { rotation: 1.5, transformOrigin: '50% 100%', duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true });
   gsap.to(qa('.a4-palm'), { rotation: 2, transformOrigin: '50% 100%', duration: 2.6, ease: 'sine.inOut', repeat: -1, yoyo: true, stagger: 0.7 });
-  gsap.to(q('.a4-sun'), { scale: 1.06, transformOrigin: '860px 330px', duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true });
   gsap.to(q('.a4-chop'), { rotation: -1, duration: 2.4, ease: 'sine.inOut', repeat: -1, yoyo: true });
 
-  // Olas: bucle independiente del scroll
-  qa('.a4-wave').forEach(function (w, i) {
-    gsap.to(w, { x: i % 2 ? 100 : -100, duration: 4 + i, ease: 'sine.inOut', repeat: -1, yoyo: true });
-  });
-
-  // Panel 1 -> 2
-  var wordsIn = function (k, at, each) {
-    gsap.set(words[k], { opacity: 0, y: 18, rotateX: -60 });
-    tl.to(words[k], { opacity: 1, y: 0, rotateX: 0, stagger: each, duration: 0.3, ease: 'power2.out' }, at);
-  };
-  wordsIn('intro', 0.05, 0.02);
+  // 1. intro
+  wordsIn('intro', 0.05, 0.03);
   tl.fromTo(q('.a4-chop'), { scale: 0, rotation: -40 }, { scale: 1, rotation: -4, duration: 0.5, ease: 'back.out(2)' }, 0);
-  hide(panels.intro, 0.4, 1.8);
-  show(panels.tl, 0.4, 2.2);
-  // Linea de tiempo se desliza de 1921 a 1977
-  tl.fromTo(track, { x: 0 }, { x: shift, duration: 2.2, ease: 'none' }, 2.6);
-  wordsIn('tl', 2.3, 0.01);
-  tl.from(qa('.a4-card'), { opacity: 0, rotateY: 50, x: 60, stagger: 0.15, duration: 0.5, transformPerspective: 800 }, 2.3);
-  tl.from(qa('.a4-stamp'), { scale: 2.2, opacity: 0, rotation: 10, stagger: 0.4, duration: 0.3, ease: 'power3.in' }, 3.6);
-  hide(panels.tl, 0.4, 4.9);
+  hide(panels.intro, 1.8);
 
-  // Panel 3: el censo se revela linea por linea (momento memorable)
-  show(panels.census, 0.4, 5.3);
-  tl.from(q('.a4-doc-paper'), { scaleY: 0.85, transformOrigin: 'top center', duration: 0.5 }, 5.3);
-  wordsIn('census', 5.3, 0.01);
+  // 2. 1921
+  show(panels.wed, 2.2);
+  wordsIn('wed', 2.4, 0.03);
+  tl.from(q('.a4-p-wed .a4-card'), { rotateY: 50, x: 60, duration: 0.5, transformPerspective: 800 }, 2.3);
+  hide(panels.wed, 3.8);
+
+  // 3. censo: se revela linea por linea (momento memorable)
+  show(panels.census, 4.2);
+  tl.from(q('.a4-doc-paper'), { scaleY: 0.85, transformOrigin: 'top center', duration: 0.5 }, 4.2);
   var lines = qa('.a4-line');
   gsap.set(lines, { clipPath: 'inset(0 100% 0 0)', opacity: 0.2 });
-  tl.to(lines, { clipPath: 'inset(0 0% 0 0)', opacity: 1, stagger: 0.18, duration: 0.45, ease: 'power1.inOut' }, 5.7);
-  hide(panels.census, 0.4, 7.0);
+  tl.to(lines, { clipPath: 'inset(0 0% 0 0)', opacity: 1, stagger: 0.25, duration: 0.5, ease: 'power1.inOut' }, 4.6);
+  hide(panels.census, 6.0);
 
-  // Panel 4: Nogales, escena propia con silencio
-  show(panels.border, 0.5, 7.4);
-  var kids = qa('.a4-kid'), hush = qa('.a4-hush-line');
-  wordsIn('border', 7.5, 0.015);
-  gsap.set(hush, { opacity: 0, y: 14 });
-  tl.from(kids, { x: -60, opacity: 0, stagger: 0.12, duration: 0.4 }, 7.6);
-  // El mundo baja: menos movimiento, mas oscuro, sin particulas
-  tl.to(layer, { opacity: 0, duration: 0.8 }, 8.0)
-    .to([q('.a4-rays'), q('.a4-l-bird')], { opacity: 0, duration: 0.8 }, 8.0)
-    .to(q('.a4-vignette'), { opacity: 1, duration: 1 }, 8.0)
-    .to(q('.a4-dusk'), { opacity: 0.35, duration: 1.2 }, 8.0);
-  // Las figuras se van quedando una a una
-  kids.forEach(function (k, i) {
-    tl.to(k, { opacity: 0.08, y: 6, duration: 0.6 }, 8.4 + i * 0.7);
-  });
-  hush.forEach(function (h, i) {
-    tl.to(h, { opacity: 1, y: 0, duration: 0.6, ease: 'power1.out' }, 8.6 + i * 0.9);
-  });
-  tl.fromTo(q('.a4-p-border .a4-note'), { opacity: 0 }, { opacity: 1, duration: 0.6 }, 11.4);
-  tl.fromTo(q('.a4-p-border .a4-stamp-inline'), { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3 }, 11.7);
-  tl.to({}, { duration: 0.6 }, 12.2);
+  // 4. hijos y Maria de Lourdes
+  show(panels.hijos, 6.4);
+  wordsIn('hijos', 6.6, 0.03);
+  tl.from(q('.a4-p-hijos .a4-card'), { rotateY: -50, x: -60, duration: 0.5, transformPerspective: 800 }, 6.5);
+  hide(panels.hijos, 7.9);
 
-  ScrollTrigger.addEventListener('refreshInit', function () { gsap.set(track, { x: 0 }); });
+  // 5. muerte y nacimiento (linea tenue)
+  show(panels.end, 8.2);
+  wordsIn('end', 8.4, 0.03);
+  tl.to({}, { duration: 0.8 }, T);
+
+  ScrollTrigger.addEventListener('refreshInit', function () { gsap.set(lines, { clearProps: 'clipPath' }); });
 });
 </script>
 <script data-src="js/act05.js">
@@ -3992,25 +3767,6 @@ window.Santuario.register(5, function (ctx) {
     }
   });
 
-  // Poema generacional: se ilumina caracter a caracter al entrar en pantalla
-  var col = sec.querySelector('.a5-zb-col');
-  if (col) {
-    col.classList.add('a5-armed');
-    var items = col.querySelectorAll('.a5-zb-cell, .a5-zb-dots');
-    var lit = gsap.timeline({ paused: true });
-    items.forEach(function (it, k) {
-      lit.call(function () { it.classList.add('a5-lit'); }, null, k * 0.7);
-      if (it.classList.contains('a5-zb-cell')) {
-        lit.fromTo(it, { y: 24, scale: 0.85 }, { y: 0, scale: 1, duration: 0.7, ease: 'back.out(2)' }, k * 0.7);
-      }
-    });
-    gsap.set(col.querySelectorAll('.a5-zb-dots'), { opacity: 0.2 });
-    lit.to(col.querySelectorAll('.a5-zb-dots'), { opacity: 0.8, duration: 0.6, stagger: 1.4 }, 0.4);
-    ST.create({
-      trigger: col, start: 'top 85%', once: true,
-      onEnter: function () { lit.play(); }
-    });
-  }
 });
 </script>
 <script data-src="js/act06.js">
@@ -4111,10 +3867,7 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-aldea', 'a6-c-nacimiento', 0],
-    ['a6-c-nacimiento', 'a6-c-manifiesto', 0], ['a6-c-manifiesto', 'a6-c-parentesco', 0],
-    ['a6-c-generacion', 'a6-c-parentesco', 1], ['a6-c-parentesco', 'a6-c-ninos', 0],
-    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-manifiesto', 'a6-c-lumshee', 1]
+    ['a6-c-aldea', 'a6-c-viaje', 0], ['a6-c-viaje', 'a6-c-anio', 0]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');
@@ -4149,13 +3902,6 @@ window.Santuario.register(6, function (ctx) {
   var tmr;
   window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(function () { buildThreads(); ST.refresh(); }, 250); });
 
-  /* Metodo: una linea que se traza */
-  var line = sec.querySelector('[data-a6-line]');
-  if (line) {
-    gsap.set(line, { strokeDasharray: 100, strokeDashoffset: 100 });
-    gsap.to(line, { strokeDashoffset: 0, ease: 'none',
-      scrollTrigger: { trigger: '[data-a6-method]', start: 'top 80%', end: 'top 25%', scrub: 0.5 } });
-  }
 
 });
 </script>
@@ -4265,7 +4011,11 @@ window.Santuario.register(7, function (ctx) {
   var cFlame = sec.querySelector('.a7-candle-b .a7-flame');
   var cHalo = sec.querySelector('.a7-candle-b .a7-flame-halo');
 
+  var kick = P[2].querySelector('.a7-kicker'), pname = P[2].querySelector('.a7-name'), years = P[2].querySelector('.a7-years');
+  var tab1 = P[3].querySelector('.a7-tab1'), tab2 = P[3].querySelector('.a7-tab2');
+  var aura = sec.querySelector('.a7-tablet-aura');
   gsap.set(P, { opacity: 0, y: 14 });
+  gsap.set([kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
   gsap.set(altar, { opacity: 0 });
   gsap.set([cFlame, cHalo], { opacity: 0 });
   var credY = function () { return -(0.38 * stage.offsetHeight + credits.offsetHeight); };
@@ -4280,13 +4030,18 @@ window.Santuario.register(7, function (ctx) {
     .to(P[0], { opacity: 0, y: -10, duration: 4 }, 15)
     .to(P[1], { opacity: 1, y: 0, duration: 6 }, 20)
     .to(P[1], { opacity: 0, y: -10, duration: 4 }, 31)
-    .to(P[2], { opacity: 1, y: 0, duration: 6 }, 36)
-    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 47)
-    .to(cFlame, { opacity: 1, duration: 5 }, 52)
-    .to(cHalo, { opacity: 1, duration: 5 }, 52)
-    .to(P[3], { opacity: 1, y: 0, duration: 6 }, 53)
-    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 55)
-    .to(P[3], { opacity: 0, y: -10, duration: 4 }, 68)
+    .to(P[2], { opacity: 1, y: 0, duration: 2 }, 36)
+    .to(kick, { opacity: 1, y: 0, duration: 4 }, 36)
+    .to(cFlame, { opacity: 1, duration: 5 }, 40)
+    .to(cHalo, { opacity: 1, duration: 5 }, 40)
+    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 40)
+    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 41)
+    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 52)
+    .to(P[3], { opacity: 1, y: 0, duration: 2 }, 56)
+    .to(aura, { opacity: 1, duration: 8 }, 56)
+    .to(tab1, { opacity: 1, y: 0, duration: 6 }, 56)
+    .to(tab2, { opacity: 1, y: 0, duration: 6 }, 62)
+    .to(P[3], { opacity: 0, y: -10, duration: 3 }, 70)
     .to(sec.querySelectorAll('.a7-lantern'), { y: -120, opacity: 0, duration: 10 }, 72)
     .to(altar, { opacity: 0, duration: 8 }, 74)
     .to(fade, { opacity: 1, duration: 8 }, 74)

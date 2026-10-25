@@ -1,6 +1,6 @@
 /* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
 #acto6 { background: linear-gradient(180deg, var(--lacquer) 0%, var(--lacquer-2) 100%); color: var(--paper); }
-.a6-desk { max-width: 72rem; margin: 0 auto; padding: var(--sp-8) var(--gutter); }
+.a6-desk { max-width: 72rem; margin: 0 auto; padding: var(--sp-7) var(--gutter); }
 .a6-head { max-width: var(--measure); margin-bottom: var(--sp-6); }
 .a6-eyebrow { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--gold); }
 .a6-title { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-4); font-weight: 500; }
@@ -88,3 +88,6 @@
 .a6-human { margin-top: var(--sp-3); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
 .a6-case--pending .a6-human { color: var(--ink-2); }
 .a6-case-title { padding-right: 5.8rem; }
+
+@media (min-width: 720px) { .a6-table { grid-template-columns: repeat(3, 1fr); } }
+.a6-credo { margin-top: var(--sp-7); }

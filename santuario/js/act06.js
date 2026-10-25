@@ -95,10 +95,7 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-aldea', 'a6-c-nacimiento', 0],
-    ['a6-c-nacimiento', 'a6-c-manifiesto', 0], ['a6-c-manifiesto', 'a6-c-parentesco', 0],
-    ['a6-c-generacion', 'a6-c-parentesco', 1], ['a6-c-parentesco', 'a6-c-ninos', 0],
-    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-manifiesto', 'a6-c-lumshee', 1]
+    ['a6-c-aldea', 'a6-c-viaje', 0], ['a6-c-viaje', 'a6-c-anio', 0]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');
@@ -133,12 +130,5 @@ window.Santuario.register(6, function (ctx) {
   var tmr;
   window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(function () { buildThreads(); ST.refresh(); }, 250); });
 
-  /* Metodo: una linea que se traza */
-  var line = sec.querySelector('[data-a6-line]');
-  if (line) {
-    gsap.set(line, { strokeDasharray: 100, strokeDashoffset: 100 });
-    gsap.to(line, { strokeDashoffset: 0, ease: 'none',
-      scrollTrigger: { trigger: '[data-a6-method]', start: 'top 80%', end: 'top 25%', scrub: 0.5 } });
-  }
 
 });

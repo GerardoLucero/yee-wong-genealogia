@@ -140,23 +140,4 @@ window.Santuario.register(5, function (ctx) {
     }
   });
 
-  // Poema generacional: se ilumina caracter a caracter al entrar en pantalla
-  var col = sec.querySelector('.a5-zb-col');
-  if (col) {
-    col.classList.add('a5-armed');
-    var items = col.querySelectorAll('.a5-zb-cell, .a5-zb-dots');
-    var lit = gsap.timeline({ paused: true });
-    items.forEach(function (it, k) {
-      lit.call(function () { it.classList.add('a5-lit'); }, null, k * 0.7);
-      if (it.classList.contains('a5-zb-cell')) {
-        lit.fromTo(it, { y: 24, scale: 0.85 }, { y: 0, scale: 1, duration: 0.7, ease: 'back.out(2)' }, k * 0.7);
-      }
-    });
-    gsap.set(col.querySelectorAll('.a5-zb-dots'), { opacity: 0.2 });
-    lit.to(col.querySelectorAll('.a5-zb-dots'), { opacity: 0.8, duration: 0.6, stagger: 1.4 }, 0.4);
-    ST.create({
-      trigger: col, start: 'top 85%', once: true,
-      onEnter: function () { lit.play(); }
-    });
-  }
 });

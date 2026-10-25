@@ -79,8 +79,6 @@
 .a4-stamp { margin-top: var(--sp-3); }
 
 /* Linea de tiempo */
-.a4-tl-window { margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
-.a4-tl-track { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-5); }
 .a4-card {
   background: color-mix(in srgb, var(--lacquer-3) 82%, transparent);
   border: 1px solid var(--gold-bright); border-top: 4px solid var(--cinnabar); border-radius: var(--radius);
@@ -108,26 +106,16 @@
 .a4-doc-foot { font-size: var(--fs-xs); font-style: italic; margin: var(--sp-4) 0 0; color: var(--lacquer-3); }
 .a4-line { will-change: clip-path, opacity; }
 
-/* Ninos en la frontera */
-.a4-kids { display: flex; gap: var(--sp-5); margin: 0 0 var(--sp-5); }
-.a4-kid { width: 28px; height: auto; fill: none; stroke: var(--paper); stroke-width: 2.5; stroke-linecap: round; opacity: 0.85; }
 
 /* Modo con JS: etapa fijada, paneles apilados */
 .a4.a4-js .a4-stage { height: 100vh; min-height: 0; }
 .a4.a4-js .a4-content { position: absolute; inset: 0; padding: 0 var(--gutter); display: grid; place-items: center; }
 .a4.a4-js .a4-panel { grid-area: 1 / 1; width: 100%; margin: 0 auto; opacity: 0; visibility: hidden; }
 .a4.a4-js .a4-p-intro { opacity: 1; visibility: visible; }
-.a4.a4-js .a4-p-timeline { max-width: none; }
-.a4.a4-js .a4-tl-window { overflow: hidden; margin: 0 calc(var(--gutter) * -1); padding: var(--sp-3) 0; }
-.a4.a4-js .a4-tl-track { flex-direction: row; gap: var(--sp-5); width: max-content; padding: 0 var(--gutter); }
-.a4.a4-js .a4-card { width: min(78vw, 24rem); flex: 0 0 auto; }
-.a4.a4-js .a4-p-timeline > .a4-sub, .a4.a4-js .a4-p-timeline > .a4-note { max-width: var(--measure); margin-left: auto; margin-right: auto; }
-.a4.a4-js .a4-p-timeline > .a4-sub { margin-bottom: var(--sp-4); }
 
 @media (min-width: 768px) {
   .a4-doc-paper { padding: var(--sp-7) var(--sp-6); }
   .a4-k { flex-basis: 9rem; }
-  .a4-kid { width: 40px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .a4-grain { animation: none; }
@@ -137,8 +125,7 @@
 .a4-card-maria { border-top-color: var(--gold-bright); border-color: var(--cinnabar); }
 .a4-maria-full { margin: var(--sp-3) 0 0; font-family: var(--font-serif); font-size: var(--fs-sm); letter-spacing: 0.06em; color: var(--gold-bright); border-top: 1px solid var(--cinnabar); padding-top: var(--sp-3); }
 
-/* Escena del silencio: Nogales */
-.a4-fact { font-size: var(--fs-sm); line-height: var(--lh-base); color: var(--paper-dim); margin: 0 0 var(--sp-5); }
-.a4-hush { margin: 0 0 var(--sp-5); }
-.a4-hush-line { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); margin: 0 0 var(--sp-3); color: var(--paper); }
-.a4-hush-line:last-child { color: var(--gold-bright); }
+
+.a4-big { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); color: var(--paper); }
+.a4-birth { opacity: 0.6; margin-top: var(--sp-5); text-align: center; }
+.a4.a4-js .a4-card { width: 100%; max-width: 30rem; margin: 0 auto; }
