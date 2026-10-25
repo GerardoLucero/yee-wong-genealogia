@@ -6,18 +6,18 @@
     var q = function (s) { return root.querySelector(s); };
     var qa = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
 
-    var r1 = q('#a3-route-1'), r2 = q('#a3-route-2');
+    var r1 = q('#a3-route-1'), r2 = q('#a3-route-2'), r3 = q('#a3-route-3');
     var ship = q('.a3-ship');
-    if (!r1 || !r2 || !ship) return;
+    if (!r1 || !r2 || !r3 || !ship) return;
 
-    var L1 = r1.getTotalLength(), L2 = r2.getTotalLength(), LT = L1 + L2;
+    var L1 = r1.getTotalLength(), L2 = r2.getTotalLength(), L3 = r3.getTotalLength(), LT = L1 + L2 + L3;
     var ORB_Y = 150;
 
     // Posicion y rumbo del barco a lo largo de las dos rutas
     function placeShip(p) {
       var d = p * LT;
-      var path = d <= L1 ? r1 : r2;
-      var local = d <= L1 ? d : d - L1;
+      var path = d <= L1 ? r1 : (d <= L1 + L2 ? r2 : r3);
+      var local = d <= L1 ? d : (d <= L1 + L2 ? d - L1 : d - L1 - L2);
       var a = path.getPointAtLength(Math.max(0, local - 1));
       var b = path.getPointAtLength(Math.min(path.getTotalLength(), local + 1));
       var ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
@@ -30,12 +30,14 @@
       var d = p * LT;
       r1.style.strokeDashoffset = L1 - Math.min(d, L1);
       // el tramo 2 es discontinuo: se revela con mascara de longitud via dasharray compuesto
-      var shown2 = Math.max(0, d - L1);
-      r2.style.strokeDasharray = shown2 <= 0 ? '0 ' + L2 : buildDash(shown2);
+      var shown2 = Math.min(L2, Math.max(0, d - L1));
+      r2.style.strokeDasharray = shown2 <= 0 ? '0 ' + L2 : buildDash(shown2, L2);
+      var shown3 = Math.max(0, d - L1 - L2);
+      r3.style.strokeDasharray = shown3 <= 0 ? '0 ' + L3 : buildDash(shown3, L3);
     }
 
     // tramo 2: patron 10/8 recortado hasta "shown" unidades
-    function buildDash(shown) {
+    function buildDash(shown, total) {
       var out = [], pos = 0, on = true;
       while (pos < shown) {
         var seg = on ? 10 : 8;
@@ -43,8 +45,8 @@
         out.push(len);
         pos += len; on = !on;
       }
-      if (out.length % 2 === 1) out.push(L2);
-      else out.push(0, L2);
+      if (out.length % 2 === 1) out.push(total);
+      else out.push(0, total);
       return out.join(' ');
     }
 
@@ -57,13 +59,14 @@
     var orb = q('.a3-orb'), sun = q('.a3-sun'), moon = q('.a3-moon');
     var stars = qa('.a3-stars circle');
     var waves = [q('.a3-wave-1'), q('.a3-wave-2'), q('.a3-wave-3')];
-    var points = { hk: q('.a3-pt-hk'), sf: q('.a3-pt-sf'), bcs: q('.a3-pt-bcs') };
+    var points = { hk: q('.a3-pt-hk'), sf: q('.a3-pt-sf'), bcs: q('.a3-pt-bcs'), lp: q('.a3-pt-lp') };
 
     // Estado estatico (reduced motion): ruta completa, barco al final, dia
     if (ctx.reduced) {
       root.classList.remove('a3-js');
       r1.style.strokeDashoffset = 0;
       r2.style.strokeDasharray = '10 8';
+      r3.style.strokeDasharray = '10 8';
       placeShip(1);
       return;
     }
@@ -214,7 +217,7 @@
       if (!ring) return;
       gsap.fromTo(ring, { scale: 1, opacity: 0.9 }, { scale: 2.2, opacity: 0, duration: 1.2, ease: 'power2.out' });
     }
-    var reached = { hk: false, sf: false, bcs: false };
+    var reached = { hk: false, sf: false, bcs: false, lp: false };
     ScrollTrigger.create({
       trigger: q('.a3-pin'),
       start: 'top top',
@@ -223,8 +226,9 @@
         var d = self.progress * LT;
         if (!reached.hk && self.progress > 0.01) { reached.hk = true; pulse(points.hk); }
         if (!reached.sf && d >= L1) { reached.sf = true; pulse(points.sf); }
-        if (!reached.bcs && self.progress > 0.99) { reached.bcs = true; pulse(points.bcs); }
-        if (self.progress < 0.005) { reached.hk = reached.sf = reached.bcs = false; }
+        if (!reached.bcs && d >= L1 + L2) { reached.bcs = true; pulse(points.bcs); }
+        if (!reached.lp && self.progress > 0.99) { reached.lp = true; pulse(points.lp); }
+        if (self.progress < 0.005) { reached.hk = reached.sf = reached.bcs = reached.lp = false; }
       }
     });
 
