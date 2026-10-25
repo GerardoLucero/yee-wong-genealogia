@@ -83,7 +83,7 @@ window.Santuario.register(6, function (ctx) {
     gsap.fromTo(f, { opacity: confirmed ? 0.95 : 0.35, scale: 0.2 },
       { opacity: 0, scale: confirmed ? 1.5 : 1, duration: 0.7, ease: 'power2.out', onComplete: function () { f.remove(); } });
     if (!confirmed) return;
-    var cx = paper.clientWidth - 16 - 40, cy = 16 + 40;
+    var cx = paper.clientWidth - 12 - 34, cy = 12 + 34;
     for (var k = 0; k < 10; k++) {
       var s = document.createElement('i'); s.className = 'a6-spark'; s.setAttribute('aria-hidden', 'true');
       s.style.left = cx + 'px'; s.style.top = cy + 'px'; paper.appendChild(s);
@@ -95,7 +95,10 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-viaje', 0], ['a6-c-viaje', 'a6-c-anio', 0]
+    ['a6-c-aldea', 'a6-c-distrito', 0], ['a6-c-distrito', 'a6-c-altar', 0], ['a6-c-aldea', 'a6-c-altar', 1],
+    ['a6-c-barco', 'a6-c-anio', 0], ['a6-c-llegada', 'a6-c-barco', 1],
+    ['a6-c-parentesco', 'a6-c-poema', 0], ['a6-c-poema', 'a6-c-manuel', 0], ['a6-c-parentesco', 'a6-c-manuel', 1],
+    ['a6-c-otronombre', 'a6-c-barco', 1], ['a6-c-lapaz', 'a6-c-llegada', 0]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');

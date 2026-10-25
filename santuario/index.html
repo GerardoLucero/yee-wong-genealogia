@@ -1340,6 +1340,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 @media (min-width: 720px) { .a6-table { grid-template-columns: repeat(3, 1fr); } }
 .a6-credo { margin-top: var(--sp-7); }
+
+/* 17 papeles: rejilla densa */
+.a6-table { gap: var(--sp-5) var(--sp-4); }
+@media (min-width: 720px) { .a6-table { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .a6-table { grid-template-columns: repeat(4, 1fr); } }
+.a6-paper { padding: var(--sp-4) var(--sp-4) var(--sp-5); }
+.a6-case-title { font-size: var(--fs-base); padding-right: 4.8rem; min-height: 2.6em; }
+.a6-human { font-size: var(--fs-sm); margin-top: var(--sp-2); }
+.a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 0.52rem; letter-spacing: 0.04em; }
+.a6-flash { top: calc(var(--sp-3) + 2.1rem - 5rem); right: calc(var(--sp-3) + 2.1rem - 5rem); }
+.a6-desk { padding-bottom: var(--sp-8); }
 </style>
 <style data-src="css/act07.css">
 /* Acto 7: El altar. Prefijo .a7- */
@@ -1887,14 +1898,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a3-card" data-i="2">
           <p class="a3-card-year">?</p>
           <p class="a3-card-text">
-            <span data-lang="es">Más tarde, dicen, llegó a La Paz.</span>
-            <span data-lang="en">Later, they say, he came to La Paz.</span>
-            <span data-lang="zh">后来，据说他到了拉巴斯。</span>
+            <span data-lang="es">Más tarde llegó a La Paz, donde vivió. El año de su llegada no se conoce.</span>
+            <span data-lang="en">Later he came to La Paz, where he lived. The year he arrived is not known.</span>
+            <span data-lang="zh">后来他来到拉巴斯，并在那里生活。到达的年份尚不清楚。</span>
           </p>
-          <p class="a3-seal a3-seal-tbc">
-            <span data-lang="es">Por confirmar</span>
-            <span data-lang="en">To be confirmed</span>
-            <span data-lang="zh">待确认</span>
+          <p class="a3-seal a3-seal-ok">
+            <span data-lang="es">Confirmado</span>
+            <span data-lang="en">Confirmed</span>
+            <span data-lang="zh">已确认</span>
           </p>
         </article>
       </div>
@@ -2163,34 +2174,138 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <header class="a6-head">
       <p class="a6-eyebrow"><span data-lang="es">Acto VI</span><span data-lang="en">Act VI</span><span data-lang="zh">第六幕</span></p>
       <h2 class="a6-title"><span data-lang="es">La investigación</span><span data-lang="en">The investigation</span><span data-lang="zh">追寻</span></h2>
+      <p class="a6-lede"><span data-lang="es">Una mesa de trabajo. Cada papel se lee, se cruza y recibe un sello.</span><span data-lang="en">A worktable. Each paper is read, cross-checked and given a seal.</span><span data-lang="zh">一张工作台。每份文件都要阅读、比对,再盖上印章。</span></p>
     </header>
 
+    <div class="a6-legend">
+      <span class="a6-legend-item"><i class="a6-dot a6-dot--confirmed"></i><span data-lang="es">Sello rojo: confirmado</span><span data-lang="en">Red seal: confirmed</span><span data-lang="zh">红印:已确认</span></span>
+      <span class="a6-legend-item"><i class="a6-dot a6-dot--pending"></i><span data-lang="es">Tinta gris: por confirmar</span><span data-lang="en">Grey ink: to confirm</span><span data-lang="zh">灰墨:待确认</span></span>
+    </div>
+
     <div class="a6-table" data-a6-table>
+      <article class="a6-case a6-case--confirmed" id="a6-c-apellido" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El apellido</span><span data-lang="en">The surname</span><span data-lang="zh">姓氏</span></h3>
+          <p class="a6-human"><span data-lang="es">余, Yee en toisanés. La familia viene de Taishan, en Guangdong.</span><span data-lang="en">余, Yee in Toisanese. The family comes from Taishan, in Guangdong.</span><span data-lang="zh">余,台山话读作 Yee。这一家来自广东台山。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-distrito" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El distrito</span><span data-lang="en">The district</span><span data-lang="zh">乡镇</span></h3>
+          <p class="a6-human"><span data-lang="es">Longyang (龙洋), dentro de Taishan, es la zona de la que salió la familia.</span><span data-lang="en">Longyang (龙洋), inside Taishan, is the area the family came from.</span><span data-lang="zh">台山境内的龙洋,是这一家出发的地方。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-poema" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El poema de generaciones</span><span data-lang="en">The generation poem</span><span data-lang="zh">字辈诗</span></h3>
+          <p class="a6-human"><span data-lang="es">En el poema generacional de la rama 余 consultada, 礼 corresponde a la generación 34.</span><span data-lang="en">In the generation poem of the 余 branch consulted, 礼 marks generation 34.</span><span data-lang="zh">在所查阅的余氏字辈诗中,礼字对应第三十四代。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-matrimonio" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El matrimonio</span><span data-lang="en">The marriage</span><span data-lang="zh">婚礼</span></h3>
+          <p class="a6-human"><span data-lang="es">El 30 de noviembre de 1921, en Mulegé, Miguel se casó con Catalina Molina González.</span><span data-lang="en">On 30 November 1921, in Mulegé, Miguel married Catalina Molina González.</span><span data-lang="zh">1921年11月30日,在穆莱赫,米格尔与卡塔琳娜·莫利纳·冈萨雷斯成婚。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-censo" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El censo</span><span data-lang="en">The census</span><span data-lang="zh">人口普查</span></h3>
+          <p class="a6-human"><span data-lang="es">El censo de 1930 anotó su nombre en la calle Zaragoza, en Mulegé.</span><span data-lang="en">The 1930 census recorded his name on Zaragoza street, in Mulegé.</span><span data-lang="zh">1930年的人口普查,在穆莱赫萨拉戈萨街上记下了他的名字。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-muerte" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">La muerte</span><span data-lang="en">His passing</span><span data-lang="zh">离世</span></h3>
+          <p class="a6-human"><span data-lang="es">Miguel murió el 4 de mayo de 1977, en San Juan de los Planes, Baja California Sur.</span><span data-lang="en">Miguel died on 4 May 1977, in San Juan de los Planes, Baja California Sur.</span><span data-lang="zh">米格尔于1977年5月4日,在南下加利福尼亚州的圣胡安德洛斯普拉内斯去世。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-zupu" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">Los libros del clan</span><span data-lang="en">The clan books</span><span data-lang="zh">族谱</span></h3>
+          <p class="a6-human"><span data-lang="es">Los zupu son patrilineales: las mujeres no aparecen por diseño del libro.</span><span data-lang="en">The zupu follow the male line: women do not appear, by the book's design.</span><span data-lang="zh">族谱依男系而修:女子不入谱,这是谱书的体例。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-altar" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El altar</span><span data-lang="en">The altar</span><span data-lang="zh">祭坛</span></h3>
+          <p class="a6-human"><span data-lang="es">En marzo de 2026 se encontró el altar de la aldea. Una placa de donantes lleva escrito 朝陽村.</span><span data-lang="en">In March 2026 the village altar was found. A donor plaque reads 朝陽村.</span><span data-lang="zh">2026年3月,找到了村中的祭坛。一块捐款牌上写着朝陽村。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-manuel" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">Manuel Yee Pang</span><span data-lang="en">Manuel Yee Pang</span><span data-lang="zh">曼努埃尔·余邦</span></h3>
+          <p class="a6-human"><span data-lang="es">Nació el 19 de noviembre de 1893 en Taishan y se naturalizó mexicano en 1936.</span><span data-lang="en">Born on 19 November 1893 in Taishan, he became a Mexican citizen in 1936.</span><span data-lang="zh">1893年11月19日生于台山,1936年入籍墨西哥。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
       <article class="a6-case a6-case--pending" id="a6-c-aldea" data-a6-case>
         <div class="a6-paper">
           <h3 class="a6-case-title"><span data-lang="es">La aldea</span><span data-lang="en">The village</span><span data-lang="zh">村子</span></h3>
-          <p class="a6-human"><span data-lang="es">Dos nombres lo esperan: 礼边村 y 朝陽村. Aún no se sabe cuál fue la suya.</span><span data-lang="en">Two names await him: 礼边村 and 朝陽村. It is not yet known which one was his.</span><span data-lang="zh">两个名字在等着他：礼边村和朝陽村。至今不知哪一个是他的。</span></p>
-          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
-        </div>
-      </article>
-      <article class="a6-case a6-case--pending" id="a6-c-viaje" data-a6-case>
-        <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">El barco</span><span data-lang="en">The ship</span><span data-lang="zh">那艘船</span></h3>
-          <p class="a6-human"><span data-lang="es">¿Era él quien subió a aquel barco en 1909?</span><span data-lang="en">Was it he who boarded that ship in 1909?</span><span data-lang="zh">1909年登上那艘船的，是他吗？</span></p>
+          <p class="a6-human"><span data-lang="es">Dos nombres esperan en el camino: 礼边村 (Libian) y 朝陽村 (Zhaoyang).</span><span data-lang="en">Two names wait along the road: 礼边村 (Libian) and 朝陽村 (Zhaoyang).</span><span data-lang="zh">路上有两个名字在等:礼边村(Libian)和朝陽村(Zhaoyang)。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-anio" data-a6-case>
         <div class="a6-paper">
-          <h3 class="a6-case-title"><span data-lang="es">El año</span><span data-lang="en">The year</span><span data-lang="zh">那一年</span></h3>
-          <p class="a6-human"><span data-lang="es">Nació entre 1882 y 1892.</span><span data-lang="en">He was born between 1882 and 1892.</span><span data-lang="zh">他生于1882至1892年之间。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">El año de nacimiento</span><span data-lang="en">The year of birth</span><span data-lang="zh">出生年份</span></h3>
+          <p class="a6-human"><span data-lang="es">Entre 1882 y 1892. Hacia 1886, según varias fuentes.</span><span data-lang="en">Between 1882 and 1892. Around 1886, according to several sources.</span><span data-lang="zh">在1882至1892年之间。多个来源指向约1886年。</span></p>
+          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--pending" id="a6-c-llegada" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">La llegada</span><span data-lang="en">The arrival</span><span data-lang="zh">抵达</span></h3>
+          <p class="a6-human"><span data-lang="es">La familia cuenta que Miguel llegó a Baja California Sur en 1904.</span><span data-lang="en">The family says Miguel reached Baja California Sur in 1904.</span><span data-lang="zh">家里人说,米格尔1904年到了南下加利福尼亚。</span></p>
+          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--pending" id="a6-c-barco" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El barco</span><span data-lang="en">The ship</span><span data-lang="zh">那艘船</span></h3>
+          <p class="a6-human"><span data-lang="es">Un manifiesto de 1909 menciona a un "Man Yee Wong", de 27 años. Otro candidato, Yee Foo Wong, fue descartado. ¿Era él?</span><span data-lang="en">A 1909 manifest mentions a "Man Yee Wong", age 27. Another candidate, Yee Foo Wong, was ruled out. Was it he?</span><span data-lang="zh">1909年的一份名单提到一位二十七岁的 "Man Yee Wong"。另一候选人 Yee Foo Wong 已被排除。是他吗?</span></p>
+          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--pending" id="a6-c-parentesco" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">Tío o hermano</span><span data-lang="en">Uncle or brother</span><span data-lang="zh">叔父还是兄弟</span></h3>
+          <p class="a6-human"><span data-lang="es">Si "Wong" se lee como 和 (generación 33) o como 黄 (apellido materno), cambia el parentesco con Manuel Yee Pang: ¿tío o hermano?</span><span data-lang="en">If "Wong" is read as 和 (generation 33) or as 黄 (maternal surname), the tie to Manuel Yee Pang changes: uncle or brother?</span><span data-lang="zh">"Wong" 若读作和(第三十三代)或黄(母姓),与曼努埃尔·余邦的关系便不同:是叔父,还是兄弟?</span></p>
+          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--pending" id="a6-c-otronombre" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">El otro nombre</span><span data-lang="en">The other name</span><span data-lang="zh">另一个名字</span></h3>
+          <p class="a6-human"><span data-lang="es">La familia recuerda también a "Cheung Yee Wong" como otro nombre de Miguel.</span><span data-lang="en">The family also remembers "Cheung Yee Wong" as another name for Miguel.</span><span data-lang="zh">家里人还记得 "Cheung Yee Wong" 是米格尔的另一个名字。</span></p>
+          <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--confirmed" id="a6-c-lapaz" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">La Paz</span><span data-lang="en">La Paz</span><span data-lang="zh">拉巴斯</span></h3>
+          <p class="a6-human"><span data-lang="es">Más tarde llegó a La Paz, donde vivió. El año de su llegada no se conoce.</span><span data-lang="en">Later he came to La Paz, where he lived. The year he arrived is not known.</span><span data-lang="zh">后来他来到拉巴斯，并在那里生活。到达的年份尚不清楚。</span></p>
+          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
+        </div>
+      </article>
+      <article class="a6-case a6-case--pending" id="a6-c-hermanos" data-a6-case>
+        <div class="a6-paper">
+          <h3 class="a6-case-title"><span data-lang="es">Los hermanos</span><span data-lang="en">The brothers</span><span data-lang="zh">兄弟</span></h3>
+          <p class="a6-human"><span data-lang="es">Arturo, probable hermano mayor, murió en 1942 en Fresnillo. De Federico, nacido hacia 1891, se sabe poco.</span><span data-lang="en">Arturo, probably the elder brother, died in 1942 in Fresnillo. Of Federico, born around 1891, little is known.</span><span data-lang="zh">Arturo 很可能是兄长,1942年在弗雷斯尼略去世。Federico 约生于1891年,所知甚少。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
     </div>
 
     <blockquote class="a6-credo" data-a6-credo>
-      <p><span data-lang="es">Lo que no se puede probar, se guarda con cuidado.</span><span data-lang="en">What cannot be proven is kept with care.</span><span data-lang="zh">无法证明的，我们小心收藏。</span></p>
+      <p><span data-lang="es">Lo que no se puede probar, se guarda con cuidado.</span><span data-lang="en">What cannot be proven is kept with care.</span><span data-lang="zh">无法证明的,我们小心收藏。</span></p>
     </blockquote>
   </div>
 </section>
@@ -3850,7 +3965,7 @@ window.Santuario.register(6, function (ctx) {
     gsap.fromTo(f, { opacity: confirmed ? 0.95 : 0.35, scale: 0.2 },
       { opacity: 0, scale: confirmed ? 1.5 : 1, duration: 0.7, ease: 'power2.out', onComplete: function () { f.remove(); } });
     if (!confirmed) return;
-    var cx = paper.clientWidth - 16 - 40, cy = 16 + 40;
+    var cx = paper.clientWidth - 12 - 34, cy = 12 + 34;
     for (var k = 0; k < 10; k++) {
       var s = document.createElement('i'); s.className = 'a6-spark'; s.setAttribute('aria-hidden', 'true');
       s.style.left = cx + 'px'; s.style.top = cy + 'px'; paper.appendChild(s);
@@ -3862,7 +3977,10 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-viaje', 0], ['a6-c-viaje', 'a6-c-anio', 0]
+    ['a6-c-aldea', 'a6-c-distrito', 0], ['a6-c-distrito', 'a6-c-altar', 0], ['a6-c-aldea', 'a6-c-altar', 1],
+    ['a6-c-barco', 'a6-c-anio', 0], ['a6-c-llegada', 'a6-c-barco', 1],
+    ['a6-c-parentesco', 'a6-c-poema', 0], ['a6-c-poema', 'a6-c-manuel', 0], ['a6-c-parentesco', 'a6-c-manuel', 1],
+    ['a6-c-otronombre', 'a6-c-barco', 1], ['a6-c-lapaz', 'a6-c-llegada', 0]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');
