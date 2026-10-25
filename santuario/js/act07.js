@@ -103,11 +103,12 @@ window.Santuario.register(7, function (ctx) {
   var cFlame = sec.querySelector('.a7-candle-b .a7-flame');
   var cHalo = sec.querySelector('.a7-candle-b .a7-flame-halo');
 
+  var bridge = P[2].querySelector('.a7-bridge');
   var kick = P[2].querySelector('.a7-kicker'), pname = P[2].querySelector('.a7-name'), years = P[2].querySelector('.a7-years');
   var tab1 = P[3].querySelector('.a7-tab1'), tab2 = P[3].querySelector('.a7-tab2');
   var aura = sec.querySelector('.a7-tablet-aura');
   gsap.set(P, { opacity: 0, y: 14 });
-  gsap.set([kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
+  gsap.set([bridge, kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
   gsap.set(altar, { opacity: 0 });
   gsap.set([cFlame, cHalo], { opacity: 0 });
   var credY = function () { return -(0.38 * stage.offsetHeight + credits.offsetHeight); };
@@ -123,20 +124,21 @@ window.Santuario.register(7, function (ctx) {
     .to(P[1], { opacity: 1, y: 0, duration: 6 }, 20)
     .to(P[1], { opacity: 0, y: -10, duration: 4 }, 31)
     .to(P[2], { opacity: 1, y: 0, duration: 2 }, 36)
-    .to(kick, { opacity: 1, y: 0, duration: 4 }, 36)
-    .to(cFlame, { opacity: 1, duration: 5 }, 40)
-    .to(cHalo, { opacity: 1, duration: 5 }, 40)
-    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 40)
-    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 41)
-    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 52)
-    .to(P[3], { opacity: 1, y: 0, duration: 2 }, 56)
-    .to(aura, { opacity: 1, duration: 8 }, 56)
-    .to(tab1, { opacity: 1, y: 0, duration: 6 }, 56)
-    .to(tab2, { opacity: 1, y: 0, duration: 6 }, 62)
-    .to(P[3], { opacity: 0, y: -10, duration: 3 }, 70)
+    .to(bridge, { opacity: 1, y: 0, duration: 5 }, 36)
+    .to(kick, { opacity: 1, y: 0, duration: 4 }, 43)
+    .to(cFlame, { opacity: 1, duration: 5 }, 46)
+    .to(cHalo, { opacity: 1, duration: 5 }, 46)
+    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 46)
+    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 47)
+    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 56)
+    .to(P[3], { opacity: 1, y: 0, duration: 2 }, 60)
+    .to(aura, { opacity: 1, duration: 8 }, 60)
+    .to(tab1, { opacity: 1, y: 0, duration: 6 }, 60)
+    .to(tab2, { opacity: 1, y: 0, duration: 6 }, 66)
+    .to(P[3], { opacity: 0, y: -10, duration: 3 }, 73)
     .to(sec.querySelectorAll('.a7-lantern'), { y: -120, opacity: 0, duration: 10 }, 72)
-    .to(altar, { opacity: 0, duration: 8 }, 74)
-    .to(fade, { opacity: 1, duration: 8 }, 74)
+    .to(altar, { opacity: 0, duration: 8 }, 77)
+    .to(fade, { opacity: 1, duration: 8 }, 77)
     .to(thread, { strokeDashoffset: 0, duration: 10 }, 76)
     .to(last, { opacity: 1, scale: 1.12, duration: 6 }, 85)
     .to({ v: 0 }, { v: 1, duration: 7, onUpdate: function () { burst = this.progress() > 0.02 && this.progress() < 0.98 ? 1 : 0; } }, 85)

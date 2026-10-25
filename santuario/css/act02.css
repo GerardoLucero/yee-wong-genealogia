@@ -54,6 +54,7 @@
 .a2-cand-pct { font-size: 1.1rem; color: var(--cinnabar); font-weight: 600; }
 .a2-cand-note { font-size: .78rem; font-style: italic; opacity: .8; max-width: 14ch; }
 
+.a2-close { margin: 1rem 0 0; font-family: var(--font-serif); font-size: var(--fs-md); color: var(--cinnabar-deep); text-shadow: 0 0 14px var(--gold-bright); }
 .a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
 
 @media (min-width: 720px) {

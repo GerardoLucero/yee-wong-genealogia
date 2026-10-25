@@ -152,6 +152,7 @@
   display: inline-block; margin: 0; font-style: normal; font-size: .72rem; letter-spacing: .14em;
   text-transform: uppercase; padding: .2rem .55rem; border: 1px solid currentColor; border-radius: 2px;
 }
+.a3-seal-ok { color: var(--jade-soft); }
 .a3-seal-tbc, .a3-tl-tbc .a3-tag { color: var(--gold-bright); border-style: dashed; }
 .a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
 .a3-seal-ill { color: var(--paper-dim); border-style: dotted; }

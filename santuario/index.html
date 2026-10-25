@@ -844,6 +844,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a2-cand-pct { font-size: 1.1rem; color: var(--cinnabar); font-weight: 600; }
 .a2-cand-note { font-size: .78rem; font-style: italic; opacity: .8; max-width: 14ch; }
 
+.a2-close { margin: 1rem 0 0; font-family: var(--font-serif); font-size: var(--fs-md); color: var(--cinnabar-deep); text-shadow: 0 0 14px var(--gold-bright); }
 .a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
 
 @media (min-width: 720px) {
@@ -1019,6 +1020,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   display: inline-block; margin: 0; font-style: normal; font-size: .72rem; letter-spacing: .14em;
   text-transform: uppercase; padding: .2rem .55rem; border: 1px solid currentColor; border-radius: 2px;
 }
+.a3-seal-ok { color: var(--jade-soft); }
 .a3-seal-tbc, .a3-tl-tbc .a3-tag { color: var(--gold-bright); border-style: dashed; }
 .a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
 .a3-seal-ill { color: var(--paper-dim); border-style: dotted; }
@@ -1164,6 +1166,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a4.a4-js .a4-card { width: 100%; max-width: 30rem; margin: 0 auto; }
 
 .a4 .a4-doc-name { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 4vw, 2.4rem); text-align: center; margin: 1rem 0; color: var(--gold-bright, #f7c948); }
+.a4-home { color: var(--gold-bright); font-family: var(--font-serif); border-left: 3px solid var(--cinnabar); padding-left: var(--sp-4); }
 </style>
 <style data-src="css/act05.css">
 /* Acto 5: El arbol. Prefijo .a5- */
@@ -1448,6 +1451,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7.a7-live .a7-candle-b .a7-flame, .a7.a7-live .a7-candle-b .a7-flame-halo { opacity: 0; }
 .a7 .a7-tab1 { font-family: var(--font-serif); font-size: clamp(1.4rem, 4.6vw, 2.1rem); line-height: 1.35; margin: 0 0 1.2rem; color: var(--gold-bright); text-shadow: var(--glow-gold); letter-spacing: .02em; }
 .a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3.6vw, 1.5rem); line-height: 1.5; margin: 0; color: var(--paper); }
+.a7 .a7-bridge { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.05rem, 3.4vw, 1.35rem); line-height: 1.4; color: var(--paper); margin: 0 0 1.4rem; opacity: .9; }
 @media (max-width: 480px) {
   .a7 .a7-text { font-size: 1rem; line-height: 1.6; }
   .a7.a7-live .a7-panels { top: 10vh; }
@@ -1645,14 +1649,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <span data-lang="zh">一百多年前，有个人离开了中国南方的一座村子。</span>
       </p>
       <p class="a1-ln">
-        <span data-lang="es">Cruzó el mar.</span>
-        <span data-lang="en">He crossed the sea.</span>
-        <span data-lang="zh">他渡过了大海。</span>
+        <span data-lang="es">Cruzó el mar. Dejó una raíz de un lado y una familia del otro.</span>
+        <span data-lang="en">He crossed the sea. He left a root on one side and a family on the other.</span>
+        <span data-lang="zh">他渡过了大海。一边留下了根,另一边有了家人。</span>
       </p>
       <p class="a1-ln a1-ln--last">
-        <span data-lang="es">Se llamaba Miguel. Esta es la historia de cómo lo estamos encontrando.</span>
-        <span data-lang="en">His name was Miguel. This is the story of how we are finding him.</span>
-        <span data-lang="zh">他叫米格尔。这是我们如何找到他的故事。</span>
+        <span data-lang="es">Se llamaba Miguel. Esta es la historia de nuestras raíces, y de cómo las estamos encontrando.</span>
+        <span data-lang="en">His name was Miguel. This is the story of our roots, and of how we are finding them.</span>
+        <span data-lang="zh">他叫米格尔。这是我们根的故事,以及我们如何一步步找到它。</span>
       </p>
     </div>
 
@@ -1696,6 +1700,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
     <div class="a2-copy">
       <p class="a2-line"><span class="a2-line-in">
+        <span data-lang="es">Allí está la raíz.</span>
+        <span data-lang="en">There lies the root.</span>
+        <span data-lang="zh">根,就在那里。</span></span></p>
+      <p class="a2-line"><span class="a2-line-in">
         <span data-lang="es">Al sur de Guangdong está Taishan. De allí salió la familia 余.</span>
         <span data-lang="en">In southern Guangdong lies Taishan. From there the 余 family came.</span>
         <span data-lang="zh">广东南部有台山。余氏一家，从那里出发。</span></span></p>
@@ -1737,6 +1745,11 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             </span>
           </li>
         </ul>
+        <p class="a2-close">
+          <span data-lang="es">Buscamos la tierra de la que venimos.</span>
+          <span data-lang="en">We search for the land we come from.</span>
+          <span data-lang="zh">我们寻找自己所来自的土地。</span>
+        </p>
         <p class="a2-seal" role="note">
           <span data-lang="es">Hipótesis</span>
           <span data-lang="en">Hypothesis</span>
@@ -1896,11 +1909,11 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           </p>
         </article>
         <article class="a3-card" data-i="2">
-          <p class="a3-card-year">?</p>
+          <p class="a3-card-year">La Paz</p>
           <p class="a3-card-text">
-            <span data-lang="es">Más tarde llegó a La Paz, donde vivió. El año de su llegada no se conoce.</span>
-            <span data-lang="en">Later he came to La Paz, where he lived. The year he arrived is not known.</span>
-            <span data-lang="zh">后来他来到拉巴斯，并在那里生活。到达的年份尚不清楚。</span>
+            <span data-lang="es">Más tarde llegó a La Paz, donde vivió. Ahí echó raíces, lejos de la aldea de sus padres.</span>
+            <span data-lang="en">Later he came to La Paz, where he lived. There he put down roots, far from his parents' village.</span>
+            <span data-lang="zh">后来他来到拉巴斯，并在那里生活。他在那里扎下了根，远离父母的村庄。</span>
           </p>
           <p class="a3-seal a3-seal-ok">
             <span data-lang="es">Confirmado</span>
@@ -1971,6 +1984,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <span class="a4-chop" aria-hidden="true">余</span>
         <h2 class="a4-title"><span data-lang="es">Mulegé</span><span data-lang="en">Mulegé</span><span data-lang="zh">穆莱赫</span></h2>
         <p class="a4-lead"><span data-lang="es">Del otro lado del mar hay una península de desierto, palmeras y agua quieta.</span><span data-lang="en">Across the sea lies a peninsula of desert, palms and still water.</span><span data-lang="zh">海的另一边，是一片半岛：沙漠、棕榈与静水。</span></p>
+        <p class="a4-lead a4-home"><span data-lang="es">México fue su casa.</span><span data-lang="en">Mexico was his home.</span><span data-lang="zh">墨西哥是他的家。</span></p>
       </div>
 
       <div class="a4-panel a4-p-wed">
@@ -2001,7 +2015,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <div class="a4-panel a4-p-end">
         <div class="a4-card">
           <p class="a4-year">1977</p>
-          <p class="a4-card-t a4-big"><span data-lang="es">Miguel murió el 4 de mayo de 1977, en San Juan de los Planes. Su línea llega hasta hoy.</span><span data-lang="en">Miguel died on 4 May 1977, in San Juan de los Planes. His line reaches today.</span><span data-lang="zh">米格尔于1977年5月4日在圣胡安德洛斯普拉内斯去世。他的血脉延续至今。</span></p>
+          <p class="a4-card-t a4-big"><span data-lang="es">Miguel murió el 4 de mayo de 1977, en San Juan de los Planes. En México quedó su familia, y su línea llega hasta hoy.</span><span data-lang="en">Miguel died on 4 May 1977, in San Juan de los Planes. In Mexico his family remained, and his line reaches today.</span><span data-lang="zh">米格尔于1977年5月4日在圣胡安德洛斯普拉内斯去世。他的家人留在了墨西哥，他的血脉延续至今。</span></p>
         </div>
         <p class="a4-note a4-note-small a4-birth"><span data-lang="es">Nació hacia 1886; el año exacto no se sabe.</span><span data-lang="en">He was born around 1886; the exact year is not known.</span><span data-lang="zh">他约生于1886年；确切年份不得而知。</span></p>
       </div>
@@ -2015,7 +2029,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <p class="a5-kicker"><span data-lang="es">Acto V</span><span data-lang="en">Act V</span><span data-lang="zh">第五幕</span></p>
     <h2 class="a5-title"><span data-lang="es">El árbol</span><span data-lang="en">The tree</span><span data-lang="zh">家谱树</span></h2>
     <p class="a5-lede">
-      <span data-lang="es">Todo árbol empieza en una raíz.</span><span data-lang="en">Every tree begins in a root.</span><span data-lang="zh">每棵树，都始于一条根。</span>
+      <span data-lang="es">Todo árbol empieza en una raíz. Las raíces de Miguel están al otro lado del mar.</span><span data-lang="en">Every tree begins in a root. Miguel's roots lie across the sea.</span><span data-lang="zh">每棵树，都始于一条根。米格尔的根，在海的另一边。</span>
     </p>
   </header>
 
@@ -2174,7 +2188,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <header class="a6-head">
       <p class="a6-eyebrow"><span data-lang="es">Acto VI</span><span data-lang="en">Act VI</span><span data-lang="zh">第六幕</span></p>
       <h2 class="a6-title"><span data-lang="es">La investigación</span><span data-lang="en">The investigation</span><span data-lang="zh">追寻</span></h2>
-      <p class="a6-lede"><span data-lang="es">Una mesa de trabajo. Cada papel se lee, se cruza y recibe un sello.</span><span data-lang="en">A worktable. Each paper is read, cross-checked and given a seal.</span><span data-lang="zh">一张工作台。每份文件都要阅读、比对,再盖上印章。</span></p>
+      <p class="a6-lede"><span data-lang="es">Cada papel es un paso más cerca de los que ya se fueron.</span><span data-lang="en">Each paper is one step closer to those who are gone.</span><span data-lang="zh">每一张纸，都让我们离已逝的亲人更近一步。</span></p>
     </header>
 
     <div class="a6-legend">
@@ -2450,13 +2464,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
         <article class="a7-panel a7-p2">
           <p class="a7-dedic">
-            <span data-lang="es">Miguel,<br>seguimos buscándote.</span>
-            <span data-lang="en">Miguel,<br>we keep looking for you.</span>
-            <span data-lang="zh">米格尔，<br>我们仍在寻找你。</span>
+            <span data-lang="es">Seguimos buscando nuestras raíces, para estar más cerca de los que ya se fueron.</span>
+            <span data-lang="en">We keep searching for our roots, to be closer to those who are gone.</span>
+            <span data-lang="zh">我们仍在寻找自己的根，为了离已逝的亲人更近一些。</span>
           </p>
         </article>
 
         <article class="a7-panel a7-p3">
+          <p class="a7-bridge"><span data-lang="es">Para Miguel, que cruzó el mar y echó raíces en México.</span><span data-lang="en">For Miguel, who crossed the sea and took root in Mexico.</span><span data-lang="zh">献给米格尔，他漂洋过海，在墨西哥扎下了根。</span></p>
           <p class="a7-bridge"><span data-lang="es">Para Miguel, que cruzó el mar.</span><span data-lang="en">For Miguel, who crossed the sea.</span><span data-lang="zh">献给渡海而来的米格尔。</span></p>
           <p class="a7-kicker"><span data-lang="es">En memoria de tu hija</span><span data-lang="en">In memory of your daughter</span><span data-lang="zh">谨以此纪念你的女儿</span></p>
           <p class="a7-name">María de Lourdes<br>Yee Molina</p>
@@ -2488,7 +2503,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             <dt><span data-lang="es">Fuentes</span><span data-lang="en">Sources</span><span data-lang="zh">资料来源</span></dt>
             <dd><span data-lang="es">Censo de México 1930, Museo de emigrantes de Taishan, salón del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
           </dl>
-          <p class="a7-c-end"><span data-lang="es">Miguel, seguimos buscándote.</span><span data-lang="en">Miguel, we keep looking for you.</span><span data-lang="zh">米格尔，我们仍在寻找你。</span></p>
+          <p class="a7-c-end"><span data-lang="es">Buscamos nuestras raíces, para estar más cerca de los que ya se fueron.</span><span data-lang="en">We search for our roots, to be closer to those who are gone.</span><span data-lang="zh">我们寻找自己的根，为了离已逝的亲人更近一些。</span></p>
         </div>
       </div>
       <p class="a7-foot"><span data-lang="es">Lo no confirmado se marca como hipótesis. Por respeto, no se nombra a personas vivas.</span><span data-lang="en">Whatever is unconfirmed is marked as a hypothesis. Out of respect, no living person is named.</span><span data-lang="zh">未确认之处均标注为假设。出于尊重，不提及在世者姓名。</span></p>
@@ -3285,7 +3300,7 @@ window.Santuario.register(2, function (ctx) {
   if (ctx.reduced) return;
 
   var lines = qa('.a2-line-in'), names = qa('.a2-name'), cap = q('.a2-name-cap'),
-      lead = q('.a2-village-lead'), cands = qa('.a2-cand'), seal = q('.a2-seal'),
+      lead = q('.a2-village-lead'), cands = qa('.a2-cand'), seal = q('.a2-seal'), close = q('.a2-close'),
       evoc = q('.a2-evoc');
 
   /* Polvo de luz dorada (decorativo) */
@@ -3321,42 +3336,44 @@ window.Santuario.register(2, function (ctx) {
   words.forEach(function (w) { gsap.set(w, { yPercent: 120, opacity: 0, rotation: 4 }); });
   gsap.set(names, { opacity: 0, filter: 'blur(14px)', scale: 1.15 });
   gsap.set([cap, lead, evoc], { opacity: 0, y: 12 });
+  gsap.set(close, { opacity: 0, y: 12 });
   gsap.set(cands, { opacity: 0, y: 18 });
   gsap.set(seal, { opacity: 0, scale: 1.9, rotation: -22 });
   gsap.set(qa('.a2-fog'), { xPercent: 0 });
 
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=340%', scrub: 1, pin: q('.a2-stage'), anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=430%', scrub: 1, pin: q('.a2-stage'), anticipatePin: 1 }
   });
 
   /* Camara de dron: las capas cercanas suben y crecen mas que las lejanas */
-  tl.fromTo(q('.a2-l1'), { yPercent: 8, scale: 1 }, { yPercent: 0, scale: 1.04, duration: 10 }, 0)
-    .fromTo(q('.a2-l2'), { yPercent: 14, scale: 1 }, { yPercent: 0, scale: 1.08, duration: 10 }, 0)
-    .fromTo(q('.a2-l3'), { yPercent: 24, scale: 1 }, { yPercent: 0, scale: 1.14, duration: 10 }, 0)
-    .fromTo(q('.a2-l4'), { yPercent: 40, scale: 1 }, { yPercent: 0, scale: 1.22, duration: 10 }, 0)
-    .to(q('.a2-fog1'), { xPercent: -22, duration: 10 }, 0)
-    .to(q('.a2-fog2'), { xPercent: 18, duration: 10 }, 0)
-    .to(q('.a2-fog3'), { xPercent: -30, duration: 10 }, 0)
+  tl.fromTo(q('.a2-l1'), { yPercent: 8, scale: 1 }, { yPercent: 0, scale: 1.04, duration: 14 }, 0)
+    .fromTo(q('.a2-l2'), { yPercent: 14, scale: 1 }, { yPercent: 0, scale: 1.08, duration: 14 }, 0)
+    .fromTo(q('.a2-l3'), { yPercent: 24, scale: 1 }, { yPercent: 0, scale: 1.14, duration: 14 }, 0)
+    .fromTo(q('.a2-l4'), { yPercent: 40, scale: 1 }, { yPercent: 0, scale: 1.22, duration: 14 }, 0)
+    .to(q('.a2-fog1'), { xPercent: -22, duration: 14 }, 0)
+    .to(q('.a2-fog2'), { xPercent: 18, duration: 14 }, 0)
+    .to(q('.a2-fog3'), { xPercent: -30, duration: 14 }, 0)
     .to(evoc, { opacity: .6, y: 0, duration: 1 }, 0.5);
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {
-    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.8);
+    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.5);
   });
-  tl.to(sun, { yPercent: -10, scale: 1.1, duration: 10 }, 0)
+  tl.to(sun, { yPercent: -10, scale: 1.1, duration: 14 }, 0)
     .to(sun, { filter: 'brightness(1.25)', duration: 4 }, 6);
 
   /* Momento memorable: los nombres se condensan de la niebla como tinta */
-  tl.to(names, { opacity: 1, filter: 'blur(0px)', scale: 1, duration: 1.8, stagger: 1.2, ease: 'power2.out' }, 5)
-    .to(cap, { opacity: .75, y: 0, duration: 1 }, 7.2)
-    .to(lines, { opacity: .35, duration: 1 }, 7.4)
-    .to(brush, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut' }, 6.4)
+  tl.to(names, { opacity: 1, filter: 'blur(0px)', scale: 1, duration: 1.8, stagger: 1.2, ease: 'power2.out' }, 6)
+    .to(cap, { opacity: .75, y: 0, duration: 1 }, 8.3)
+    .to(lines, { opacity: .35, duration: 1 }, 8.6)
+    .to(brush, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut' }, 7.6)
     /* La aldea queda por confirmar */
-    .to(lead, { opacity: 1, y: 0, duration: 1 }, 8.2)
-    .to(cands, { opacity: 1, y: 0, duration: 1, stagger: .5, ease: 'power2.out' }, 8.8)
-    .to(seal, { opacity: 1, scale: 1, rotation: -8, duration: .6, ease: 'back.out(2)' }, 10)
-    .to({}, { duration: 1.2 });
+    .to(lead, { opacity: 1, y: 0, duration: 1 }, 9.4)
+    .to(cands, { opacity: 1, y: 0, duration: 1, stagger: .5, ease: 'power2.out' }, 10)
+    .to(seal, { opacity: 1, scale: 1, rotation: -8, duration: .6, ease: 'back.out(2)' }, 11.2)
+    .to(close, { opacity: 1, y: 0, duration: 1.2 }, 12)
+    .to({}, { duration: 1.4 });
 });
 </script>
 <script data-src="js/act03.js">
@@ -4131,11 +4148,12 @@ window.Santuario.register(7, function (ctx) {
   var cFlame = sec.querySelector('.a7-candle-b .a7-flame');
   var cHalo = sec.querySelector('.a7-candle-b .a7-flame-halo');
 
+  var bridge = P[2].querySelector('.a7-bridge');
   var kick = P[2].querySelector('.a7-kicker'), pname = P[2].querySelector('.a7-name'), years = P[2].querySelector('.a7-years');
   var tab1 = P[3].querySelector('.a7-tab1'), tab2 = P[3].querySelector('.a7-tab2');
   var aura = sec.querySelector('.a7-tablet-aura');
   gsap.set(P, { opacity: 0, y: 14 });
-  gsap.set([kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
+  gsap.set([bridge, kick, pname, years, tab1, tab2], { opacity: 0, y: 10 });
   gsap.set(altar, { opacity: 0 });
   gsap.set([cFlame, cHalo], { opacity: 0 });
   var credY = function () { return -(0.38 * stage.offsetHeight + credits.offsetHeight); };
@@ -4151,20 +4169,21 @@ window.Santuario.register(7, function (ctx) {
     .to(P[1], { opacity: 1, y: 0, duration: 6 }, 20)
     .to(P[1], { opacity: 0, y: -10, duration: 4 }, 31)
     .to(P[2], { opacity: 1, y: 0, duration: 2 }, 36)
-    .to(kick, { opacity: 1, y: 0, duration: 4 }, 36)
-    .to(cFlame, { opacity: 1, duration: 5 }, 40)
-    .to(cHalo, { opacity: 1, duration: 5 }, 40)
-    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 40)
-    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 41)
-    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 52)
-    .to(P[3], { opacity: 1, y: 0, duration: 2 }, 56)
-    .to(aura, { opacity: 1, duration: 8 }, 56)
-    .to(tab1, { opacity: 1, y: 0, duration: 6 }, 56)
-    .to(tab2, { opacity: 1, y: 0, duration: 6 }, 62)
-    .to(P[3], { opacity: 0, y: -10, duration: 3 }, 70)
+    .to(bridge, { opacity: 1, y: 0, duration: 5 }, 36)
+    .to(kick, { opacity: 1, y: 0, duration: 4 }, 43)
+    .to(cFlame, { opacity: 1, duration: 5 }, 46)
+    .to(cHalo, { opacity: 1, duration: 5 }, 46)
+    .to([pname, years], { opacity: 1, y: 0, duration: 5, stagger: 2 }, 46)
+    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 47)
+    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 56)
+    .to(P[3], { opacity: 1, y: 0, duration: 2 }, 60)
+    .to(aura, { opacity: 1, duration: 8 }, 60)
+    .to(tab1, { opacity: 1, y: 0, duration: 6 }, 60)
+    .to(tab2, { opacity: 1, y: 0, duration: 6 }, 66)
+    .to(P[3], { opacity: 0, y: -10, duration: 3 }, 73)
     .to(sec.querySelectorAll('.a7-lantern'), { y: -120, opacity: 0, duration: 10 }, 72)
-    .to(altar, { opacity: 0, duration: 8 }, 74)
-    .to(fade, { opacity: 1, duration: 8 }, 74)
+    .to(altar, { opacity: 0, duration: 8 }, 77)
+    .to(fade, { opacity: 1, duration: 8 }, 77)
     .to(thread, { strokeDashoffset: 0, duration: 10 }, 76)
     .to(last, { opacity: 1, scale: 1.12, duration: 6 }, 85)
     .to({ v: 0 }, { v: 1, duration: 7, onUpdate: function () { burst = this.progress() > 0.02 && this.progress() < 0.98 ? 1 : 0; } }, 85)

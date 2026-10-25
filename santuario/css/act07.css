@@ -93,6 +93,7 @@
 .a7.a7-live .a7-candle-b .a7-flame, .a7.a7-live .a7-candle-b .a7-flame-halo { opacity: 0; }
 .a7 .a7-tab1 { font-family: var(--font-serif); font-size: clamp(1.4rem, 4.6vw, 2.1rem); line-height: 1.35; margin: 0 0 1.2rem; color: var(--gold-bright); text-shadow: var(--glow-gold); letter-spacing: .02em; }
 .a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3.6vw, 1.5rem); line-height: 1.5; margin: 0; color: var(--paper); }
+.a7 .a7-bridge { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.05rem, 3.4vw, 1.35rem); line-height: 1.4; color: var(--paper); margin: 0 0 1.4rem; opacity: .9; }
 @media (max-width: 480px) {
   .a7 .a7-text { font-size: 1rem; line-height: 1.6; }
   .a7.a7-live .a7-panels { top: 10vh; }
