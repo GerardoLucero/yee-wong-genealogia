@@ -23,6 +23,7 @@
   var gsap = null;
   var ST = null;
   var state = { lang: 'es', audioOn: false };
+  var audioBtn = null;
 
   function log(msg, err) {
     if (window.console) { (err ? console.error : console.warn)('[Santuario] ' + msg, err || ''); }
@@ -75,6 +76,70 @@
     });
     document.dispatchEvent(new CustomEvent('santuario:lang', { detail: { lang: lang } }));
     refreshSoon();
+  }
+
+  /* ---------- audio ---------- */
+  function toggleAudio() {
+    var on = state.audioOn;
+    try {
+      if (window.SantuarioAudio && typeof window.SantuarioAudio.toggle === 'function') {
+        var r = window.SantuarioAudio.toggle();
+        on = (typeof r === 'boolean') ? r : !state.audioOn;
+      } else {
+        on = false; // sin modulo de audio: se queda apagado
+      }
+    } catch (err) { log('audio fallo', err); on = false; }
+    state.audioOn = on;
+    if (audioBtn) {
+      audioBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      audioBtn.classList.toggle('is-on', on);
+    }
+    return on;
+  }
+
+  // Aviso discreto "Mejor con sonido": nunca autoplay, solo un clic del usuario lo enciende.
+  function buildSoundHint(parts) {
+    var texts = {
+      first: { es: 'Mejor con sonido', en: 'Best with sound', zh: '开启声音效果更佳' },
+      last: { es: 'Con sonido, el final se siente distinto', en: 'With sound, the ending feels different', zh: '开启声音，结局更动人' }
+    };
+    var btn = el('button', { type: 'button', 'class': 'sn-soundhint' });
+    btn.hidden = true;
+    document.body.appendChild(btn);
+    var hideTimer = null;
+
+    function hide() {
+      clearTimeout(hideTimer);
+      btn.classList.remove('is-shown');
+      setTimeout(function () { btn.hidden = true; }, reduced ? 0 : 500);
+    }
+    function show(kind) {
+      if (state.audioOn || !window.SantuarioAudio) { return; }
+      btn.innerHTML = trilingual(texts[kind]);
+      btn.hidden = false;
+      void btn.offsetWidth; // reflow para que la transicion corra
+      btn.classList.add('is-shown');
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(hide, reduced ? 6000 : 7000);
+    }
+    btn.addEventListener('click', function () {
+      if (!state.audioOn) { toggleAudio(); }
+      hide();
+    });
+
+    setTimeout(function () { show('first'); }, 3500);
+
+    var last = parts.acts[parts.acts.length - 1];
+    if (ST && last && last.getAttribute('data-act') === '7') {
+      var armed = true;
+      ST.create({
+        trigger: last,
+        start: 'top 70%',
+        end: 'bottom top',
+        onEnter: function () { if (armed) { armed = false; show('last'); } },
+        onLeaveBack: function () { armed = true; hide(); }
+      });
+    }
   }
 
   /* ---------- chrome ---------- */
@@ -133,20 +198,8 @@
       var b = e.target.closest ? e.target.closest('[data-set-lang]') : null;
       if (b) { setLang(b.getAttribute('data-set-lang')); }
     });
-    audio.addEventListener('click', function () {
-      var on = state.audioOn;
-      try {
-        if (window.SantuarioAudio && typeof window.SantuarioAudio.toggle === 'function') {
-          var r = window.SantuarioAudio.toggle();
-          on = (typeof r === 'boolean') ? r : !state.audioOn;
-        } else {
-          on = false; // sin modulo de audio: se queda apagado
-        }
-      } catch (err) { log('audio fallo', err); on = false; }
-      state.audioOn = on;
-      audio.setAttribute('aria-pressed', on ? 'true' : 'false');
-      audio.classList.toggle('is-on', on);
-    });
+    audioBtn = audio;
+    audio.addEventListener('click', toggleAudio);
 
     return { bar: bar, acts: acts, nav: nav };
   }
@@ -400,6 +453,7 @@
     Object.keys(registry).map(Number).sort(function (a, b) { return a - b; }).forEach(initAct);
 
     wireProgress(parts);
+    buildSoundHint(parts);
     buildFx(parts);
     buildSeal();
     wireHint(parts.acts[0]);

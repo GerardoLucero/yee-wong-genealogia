@@ -8,6 +8,8 @@ window.Santuario.register(1, function (ctx) {
       lamp = qa('.a1-lamp'), cord = qa('.a1-cord'), lans = qa('.a1-lan'), red = q('.a1-red'), rays = q('.a1-rays'), wash = q('.a1-wash'),
       char = q('.a1-char'), canvas = q('.a1-motes'), stage = q('.a1-stage');
 
+  var lnAll = qa('.a1-ln');
+  if (!ctx.reduced) sec.classList.add('a1-js');
   if (ctx.reduced) { if (canvas) canvas.style.display = 'none'; return; }
 
   /* Titulo por palabras */
@@ -61,6 +63,7 @@ window.Santuario.register(1, function (ctx) {
   gsap.set(wLang, { opacity: 0, y: 40, rotationX: -70, filter: 'blur(8px)' });
   gsap.set([red, rays], { opacity: 0 });
   gsap.set(hint, { opacity: 0 });
+  gsap.set(lnAll, { opacity: 0 });
 
   /* Intro automatico: el farol se enciende (sin scroll) */
   gsap.timeline({ delay: .4 })
@@ -74,7 +77,7 @@ window.Santuario.register(1, function (ctx) {
   /* Momento memorable: el caracter se dibuja al ritmo del scroll, con pin */
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=260%', scrub: .8, pin: stage, anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=520%', scrub: .8, pin: stage, anticipatePin: 1 }
   });
   tl.set(char, { opacity: 1 }, 0)
     .to(glow, { '--a1-r': '120%', duration: 1 }, 0)
@@ -84,11 +87,22 @@ window.Santuario.register(1, function (ctx) {
     .to(rays, { opacity: .3, duration: 2 }, 1)
     .to(canvas, { scale: 1.25, duration: 8 }, 0)
     .to(wLang, { opacity: 1, y: 0, rotationX: 0, filter: 'blur(0px)', duration: 1, stagger: .35, ease: 'power3.out' }, '>-1')
-    .to({}, { duration: 1.2 })
+    .to({}, { duration: 1 })
+    /* Carta a Miguel: una linea a la vez, con silencio entre ellas */
+    .to([title, hint], { opacity: 0, y: -20, duration: 1 })
+    .to(char, { opacity: .18, scale: 1.4, duration: 1.2 }, '<')
+    .to({}, { duration: .8 });
+  lnAll.forEach(function (ln, i) {
+    var last = i === lnAll.length - 1;
+    tl.fromTo(ln, { opacity: 0, y: 16, filter: 'blur(10px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.4, ease: 'power2.out' });
+    tl.to({}, { duration: last ? 1.8 : 1.4 });
+    if (!last) tl.to(ln, { opacity: 0, filter: 'blur(8px)', duration: 1 }).to({}, { duration: 1.1 });
+  });
+  tl.to({}, { duration: .6 })
     /* Tinta que se extiende hacia la aldea */
     .set(wash, { opacity: 1 })
     .to(wash, { scale: 3.4, duration: 3, ease: 'power2.in' })
-    .to([char, title, lans, '.a1-motes', red, rays], { opacity: 0, duration: 1.5 }, '<1');
+    .to([char, lnAll[lnAll.length - 1], title, lans, '.a1-motes', red, rays], { opacity: 0, duration: 1.5 }, '<1');
 
   window.addEventListener('pagehide', function () { cancelAnimationFrame(raf); });
 });

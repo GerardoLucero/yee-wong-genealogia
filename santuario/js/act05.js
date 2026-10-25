@@ -33,7 +33,7 @@ window.Santuario.register(5, function (ctx) {
 
   var tl = gsap.timeline({ paused: true, defaults: { ease: 'none' } });
   var d = function (i) { return draws[i]; };
-  // Orden de draws en el HTML: 0 t1, 1 t2, 2 arturo, 3 miguel, 4 catalina, 5 federico, 6 mask manuel, 7-13 copa
+  // Orden de draws en el HTML: 0 t1, 1 t2, 2 arturo, 3 miguel, 4 catalina, 5 federico, 6 mask manuel, 7 lourdes, 8-14 copa
   var draw = function (el, at, dur) { tl.to(el, { strokeDashoffset: 0, duration: dur }, at); };
   draw(d(0), 0, 0.5);
   draw(d(2), 0.19, 0.07);
@@ -41,8 +41,9 @@ window.Santuario.register(5, function (ctx) {
   draw(d(4), 0.35, 0.05);
   draw(d(5), 0.38, 0.07);
   draw(d(6), 0.465, 0.07);
-  draw(d(1), 0.52, 0.12);
-  for (var i = 7; i < draws.length; i++) { draw(d(i), 0.64 + (i - 7) * 0.03, 0.12); }
+  draw(d(1), 0.52, 0.1);
+  draw(d(7), 0.58, 0.16);
+  for (var i = 8; i < draws.length; i++) { draw(d(i), 0.74 + (i - 8) * 0.025, 0.12); }
 
   var open = function (id, at) {
     var n = node(id);
@@ -60,15 +61,16 @@ window.Santuario.register(5, function (ctx) {
   open('catalina', 0.40);
   open('federico', 0.45);
   open('manuel', 0.535);
+  open('lourdes', 0.68);
   var rootLabel = sec.querySelector('.a5-label--root');
   if (rootLabel) { tl.to(rootLabel, { opacity: 1, duration: 0.04 }, 0.05); }
-  tl.to(leaves, { scale: 1, opacity: 0.9, duration: 0.06, stagger: 0.012, ease: 'back.out(2)' }, 0.8);
+  tl.to(leaves, { scale: 1, opacity: 0.9, duration: 0.06, stagger: 0.012, ease: 'back.out(2)' }, 0.84);
   tl.to({}, { duration: 0.01 }, 0.99);
 
   var steps = [
     { id: 'padres', at: 0.04 }, { id: 'arturo', at: 0.28 }, { id: 'miguel', at: 0.36 },
     { id: 'catalina', at: 0.42 }, { id: 'federico', at: 0.47 }, { id: 'manuel', at: 0.55 },
-    { id: 'futuro', at: 0.88 }
+    { id: 'lourdes', at: 0.70 }, { id: 'futuro', at: 0.9 }
   ];
   var current = null;
 

@@ -88,3 +88,8 @@
   .a5-card { transition: none; }
   .a5-zb-cell--ok.a5-lit .a5-zb-char { animation: none; }
 }
+
+.a5-main { stroke-width: 4; }
+.a5-node--star .a5-petal { fill: var(--gold-bright); stroke: var(--a5-plum); }
+.a5-node--star .a5-pistil { fill: var(--red-china); }
+.a5-voz { font-style: italic; color: var(--gold-bright); margin: 0 0 .5rem; font-size: 1.05rem; }

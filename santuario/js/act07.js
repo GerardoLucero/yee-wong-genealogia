@@ -93,37 +93,47 @@ window.Santuario.register(7, function (ctx) {
   // modo vivo
   sec.classList.add('a7-live');
   resize();
-  var P1 = sec.querySelector('.a7-p1'), P2 = sec.querySelector('.a7-p2'), P3 = sec.querySelector('.a7-p3');
+  var P = [1, 2, 3, 4].map(function (n) { return sec.querySelector('.a7-p' + n); });
   var credits = sec.querySelector('.a7-credits');
   var thread = sec.querySelector('.a7-thread-path');
   var fade = sec.querySelector('.a7-fade');
   var last = sec.querySelector('.a7-last');
   var altar = sec.querySelector('.a7-altar');
-  var glow = sec.querySelector('.a7-glow');
+  var foot = sec.querySelector('.a7-foot');
+  var cFlame = sec.querySelector('.a7-candle-b .a7-flame');
+  var cHalo = sec.querySelector('.a7-candle-b .a7-flame-halo');
 
-  gsap.set([P1, P2, P3], { opacity: 0, y: 14 });
+  gsap.set(P, { opacity: 0, y: 14 });
   gsap.set(altar, { opacity: 0 });
-  var credH = function () { return credits.offsetHeight + stage.offsetHeight; };
+  gsap.set([cFlame, cHalo], { opacity: 0 });
+  var credY = function () { return -(0.38 * stage.offsetHeight + credits.offsetHeight); };
 
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
     scrollTrigger: { trigger: sec.querySelector('.a7-track'), start: 'top top', end: 'bottom bottom', scrub: 0.8, invalidateOnRefresh: true }
   });
-  // duraciones relativas (total 100)
+  // duraciones relativas (total ~130)
   tl.to(altar, { opacity: 1, duration: 8 }, 0)
-    .to(P1, { opacity: 1, y: 0, duration: 6 }, 4)
-    .to(P1, { opacity: 0, y: -10, duration: 5 }, 17)
-    .to(P2, { opacity: 1, y: 0, duration: 6 }, 22)
-    .to(P2, { opacity: 0, y: -10, duration: 5 }, 33)
-    .to(P3, { opacity: 1, y: 0, duration: 6 }, 38)
-    .to(P3, { opacity: 0, y: -10, duration: 5 }, 50)
-    .fromTo(credits, { y: 0 }, { y: function () { return -credH(); }, duration: 28 }, 52)
-    .to(altar, { opacity: 0.0, duration: 8 }, 80)
-    .to(fade, { opacity: 1, duration: 8 }, 80)
-    .to(thread, { strokeDashoffset: 0, duration: 10 }, 84)
-    .to(last, { opacity: 1, scale: 1.12, duration: 6 }, 93)
-    .to({ v: 0 }, { v: 1, duration: 7, onUpdate: function () { burst = this.progress() > 0.02 && this.progress() < 0.98 ? 1 : 0; } }, 93)
-    .to(sec.querySelectorAll('.a7-lantern'), { y: -120, opacity: 0, duration: 10 }, 82)
+    .to(P[0], { opacity: 1, y: 0, duration: 6 }, 4)
+    .to(P[0], { opacity: 0, y: -10, duration: 4 }, 15)
+    .to(P[1], { opacity: 1, y: 0, duration: 6 }, 20)
+    .to(P[1], { opacity: 0, y: -10, duration: 4 }, 31)
+    .to(P[2], { opacity: 1, y: 0, duration: 6 }, 36)
+    .to(P[2], { opacity: 0, y: -10, duration: 4 }, 47)
+    .to(cFlame, { opacity: 1, duration: 5 }, 52)
+    .to(cHalo, { opacity: 1, duration: 5 }, 52)
+    .to(P[3], { opacity: 1, y: 0, duration: 6 }, 53)
+    .to({ v: 0 }, { v: 1, duration: 8, onUpdate: function () { burst = this.progress() > 0.05 && this.progress() < 0.6 ? 1 : 0; } }, 55)
+    .to(P[3], { opacity: 0, y: -10, duration: 4 }, 68)
+    .to(sec.querySelectorAll('.a7-lantern'), { y: -120, opacity: 0, duration: 10 }, 72)
+    .to(altar, { opacity: 0, duration: 8 }, 74)
+    .to(fade, { opacity: 1, duration: 8 }, 74)
+    .to(thread, { strokeDashoffset: 0, duration: 10 }, 76)
+    .to(last, { opacity: 1, scale: 1.12, duration: 6 }, 85)
+    .to({ v: 0 }, { v: 1, duration: 7, onUpdate: function () { burst = this.progress() > 0.02 && this.progress() < 0.98 ? 1 : 0; } }, 85)
+    .to([last, thread], { opacity: 0, duration: 5 }, 94)
+    .fromTo(credits, { y: 0 }, { y: credY, duration: 32 }, 98)
+    .to(foot, { opacity: 0.55, duration: 4 }, 126)
     .to({ v: 1 }, { v: 2.5, duration: 20, onUpdate: function () { smokeRate = 1 + 1.5 * this.progress(); } }, 70);
 
   ST.addEventListener('refreshInit', resize);

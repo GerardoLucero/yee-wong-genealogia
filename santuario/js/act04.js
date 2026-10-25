@@ -33,7 +33,7 @@ window.Santuario.register(4, function (ctx) {
   var words = {};
   ['intro', 'tl', 'census', 'border'].forEach(function (k) {
     words[k] = [];
-    panels[k].querySelectorAll('.a4-title,.a4-lead,.a4-note,.a4-card-t,.a4-card-h,.a4-sub').forEach(function (el) {
+    panels[k].querySelectorAll('.a4-title,.a4-lead,.a4-fact,.a4-note,.a4-card-t,.a4-card-h,.a4-sub').forEach(function (el) {
       words[k] = words[k].concat(splitWords(el));
     });
   });
@@ -69,7 +69,7 @@ window.Santuario.register(4, function (ctx) {
 
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=600%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=760%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
   });
 
   // Fondo: la tinta fria cede al atardecer (0 a 1.2)
@@ -79,15 +79,15 @@ window.Santuario.register(4, function (ctx) {
     .to(q('.a4-sun'), { y: 70, duration: 3 }, 5);
 
   // Parallax de capas durante todo el recorrido (duracion total 8)
-  tl.fromTo(q('.a4-l-far'), { x: 0 }, { x: -60, duration: 8 }, 0)
-    .fromTo(q('.a4-l-mid'), { x: 0 }, { x: -140, duration: 8 }, 0)
-    .fromTo(q('.a4-l-palm'), { x: 0, y: 0 }, { x: -240, y: 10, duration: 8 }, 0);
+  tl.fromTo(q('.a4-l-far'), { x: 0 }, { x: -60, duration: 12.8 }, 0)
+    .fromTo(q('.a4-l-mid'), { x: 0 }, { x: -140, duration: 12.8 }, 0)
+    .fromTo(q('.a4-l-palm'), { x: 0, y: 0 }, { x: -240, y: 10, duration: 12.8 }, 0);
 
   // Mas capas: nubes, aves, rayos, particulas con parallax
-  tl.fromTo(q('.a4-l-cloud'), { x: 0 }, { x: 200, duration: 8 }, 0)
-    .fromTo(q('.a4-l-bird'), { x: -120, y: 40 }, { x: 700, y: -60, duration: 8 }, 0)
+  tl.fromTo(q('.a4-l-cloud'), { x: 0 }, { x: 200, duration: 12.8 }, 0)
+    .fromTo(q('.a4-l-bird'), { x: -120, y: 40 }, { x: 700, y: -60, duration: 12.8 }, 0)
     .fromTo(q('.a4-rays'), { rotation: -6, opacity: 0.5, transformOrigin: '860px 330px' }, { rotation: 8, opacity: 1, duration: 8 }, 0)
-    .fromTo(layer, { y: 0 }, { y: -160, duration: 8 }, 0);
+    .fromTo(layer, { y: 0 }, { y: -160, duration: 12.8 }, 0);
   gsap.to(qa('.a4-cactus'), { rotation: 1.5, transformOrigin: '50% 100%', duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true });
   gsap.to(qa('.a4-palm'), { rotation: 2, transformOrigin: '50% 100%', duration: 2.6, ease: 'sine.inOut', repeat: -1, yoyo: true, stagger: 0.7 });
   gsap.to(q('.a4-sun'), { scale: 1.06, transformOrigin: '860px 330px', duration: 3, ease: 'sine.inOut', repeat: -1, yoyo: true });
@@ -123,15 +123,27 @@ window.Santuario.register(4, function (ctx) {
   tl.to(lines, { clipPath: 'inset(0 0% 0 0)', opacity: 1, stagger: 0.18, duration: 0.45, ease: 'power1.inOut' }, 5.7);
   hide(panels.census, 0.4, 7.0);
 
-  // Panel 4: Nogales, cuatro figuras que cruzan
-  show(panels.border, 0.4, 7.4);
-  wordsIn('border', 7.4, 0.015);
-  tl.from(qa('.a4-kid'), { x: -60, opacity: 0, stagger: 0.12, duration: 0.4 }, 7.5);
-  tl.to(qa('.a4-kid'), { x: 40, stagger: 0.08, duration: 0.5 }, 7.8);
-  tl.fromTo(q('.a4-p-border .a4-stamp-inline'), { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3 }, 7.9);
-
-  // Mantener la linea de tiempo en el ultimo estado hasta el fin
-  tl.to({}, { duration: 0.3 }, 8);
+  // Panel 4: Nogales, escena propia con silencio
+  show(panels.border, 0.5, 7.4);
+  var kids = qa('.a4-kid'), hush = qa('.a4-hush-line');
+  wordsIn('border', 7.5, 0.015);
+  gsap.set(hush, { opacity: 0, y: 14 });
+  tl.from(kids, { x: -60, opacity: 0, stagger: 0.12, duration: 0.4 }, 7.6);
+  // El mundo baja: menos movimiento, mas oscuro, sin particulas
+  tl.to(layer, { opacity: 0, duration: 0.8 }, 8.0)
+    .to([q('.a4-rays'), q('.a4-l-bird')], { opacity: 0, duration: 0.8 }, 8.0)
+    .to(q('.a4-vignette'), { opacity: 1, duration: 1 }, 8.0)
+    .to(q('.a4-dusk'), { opacity: 0.35, duration: 1.2 }, 8.0);
+  // Las figuras se van quedando una a una
+  kids.forEach(function (k, i) {
+    tl.to(k, { opacity: 0.08, y: 6, duration: 0.6 }, 8.4 + i * 0.7);
+  });
+  hush.forEach(function (h, i) {
+    tl.to(h, { opacity: 1, y: 0, duration: 0.6, ease: 'power1.out' }, 8.6 + i * 0.9);
+  });
+  tl.fromTo(q('.a4-p-border .a4-note'), { opacity: 0 }, { opacity: 1, duration: 0.6 }, 11.4);
+  tl.fromTo(q('.a4-p-border .a4-stamp-inline'), { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3 }, 11.7);
+  tl.to({}, { duration: 0.6 }, 12.2);
 
   ScrollTrigger.addEventListener('refreshInit', function () { gsap.set(track, { x: 0 }); });
 });

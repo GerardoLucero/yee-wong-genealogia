@@ -16,7 +16,7 @@
       </p>
 
       <svg class="a5-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="a5-svg-t">
-        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina Gonzalez, y ramas hacia el futuro sin nombres.</title>
+        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina Gonzalez, y ramas hacia el futuro sin nombres, y la rama de María de Lourdes Yee Molina, hija de Miguel y Catalina, que llega hasta hoy.</title>
         <defs>
           <g id="a5-flor">
             <circle class="a5-petal" cx="0" cy="-8" r="6.5"/>
@@ -38,11 +38,14 @@
         <!-- ramas confirmadas -->
         <path class="a5-branch" data-a5-draw d="M200 650 C170 640 130 625 105 585"/>
         <path class="a5-branch" data-a5-draw d="M200 600 C235 590 275 575 295 535"/>
-        <path class="a5-branch a5-twig" data-a5-draw d="M295 535 C310 515 335 505 350 480"/>
+        <path class="a5-branch a5-twig" data-a5-draw d="M295 535 C310 555 325 568 345 575"/>
         <path class="a5-branch" data-a5-draw d="M200 540 C170 530 140 510 118 470"/>
 
         <!-- rama por confirmar -->
         <path class="a5-branch a5-dotted" mask="url(#a5-mask-manuel)" d="M200 490 C235 480 270 450 300 410"/>
+
+        <!-- rama de Maria de Lourdes: hija de Miguel, vuelve al tronco y de ahi parte la copa -->
+        <path class="a5-branch a5-main" data-a5-draw d="M295 535 C335 520 372 485 372 430 C372 380 335 345 285 342 C245 340 215 338 200 330"/>
 
         <!-- copa: ramas hacia el futuro, sin nombres -->
         <g class="a5-crown">
@@ -82,13 +85,17 @@
           <g class="a5-bloom"><use href="#a5-flor"/></g>
           <text class="a5-label" x="14" y="22" text-anchor="start">Miguel</text>
         </g>
-        <g class="a5-node" data-node="catalina" transform="translate(350 480)">
+        <g class="a5-node" data-node="catalina" transform="translate(345 575)">
           <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="0" y="-16" text-anchor="end">Catalina</text>
+          <text class="a5-label" x="0" y="24" text-anchor="end">Catalina</text>
         </g>
         <g class="a5-node" data-node="federico" transform="translate(118 470)">
           <g class="a5-bloom"><use href="#a5-flor"/></g>
           <text class="a5-label" x="-14" y="4" text-anchor="end">Federico</text>
+        </g>
+        <g class="a5-node a5-node--star" data-node="lourdes" transform="translate(372 430)">
+          <g class="a5-bloom"><use href="#a5-flor"/></g>
+          <text class="a5-label" x="0" y="24" text-anchor="end">María de Lourdes</text>
         </g>
         <g class="a5-node a5-node--maybe" data-node="manuel" transform="translate(300 410)">
           <g class="a5-bloom"><use href="#a5-flor"/></g>
@@ -115,36 +122,49 @@
       <li data-node="padres">
         <p class="a5-role"><span data-lang="es">Los padres, en China</span><span data-lang="en">The parents, in China</span><span data-lang="zh">在中国的父母</span></p>
         <p class="a5-name"><span data-lang="es">Sin resolver</span><span data-lang="en">Unresolved</span><span data-lang="zh">未解</span></p>
+        <p class="a5-voz"><span data-lang="es">No sé cómo se llamaban tus padres.</span><span data-lang="en">I do not know what your parents were called.</span><span data-lang="zh">我不知道你的父母叫什么名字。</span></p>
         <p class="a5-meta"><span data-lang="es">Sus nombres siguen sin aparecer en ningún documento que tengamos. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">Their names appear in no document we hold. The root exists, though it has no face yet.</span><span data-lang="zh">目前没有任何文件记载他们的名字。根是存在的，只是尚无面容。</span></p>
       </li>
       <li data-node="arturo">
         <p class="a5-role"><span data-lang="es">Hermano mayor probable de Miguel</span><span data-lang="en">Probable elder brother of Miguel</span><span data-lang="zh">米格尔的兄长（可能）</span></p>
         <p class="a5-name">Arturo Yee</p>
+        <p class="a5-voz"><span data-lang="es">Quizá fue tu hermano mayor.</span><span data-lang="en">Perhaps he was your elder brother.</span><span data-lang="zh">他也许是你的兄长。</span></p>
         <p class="a5-meta"><span data-lang="es">Nacido entre 1881 y 1889. Murió en 1942 en Fresnillo, Zacatecas.</span><span data-lang="en">Born between 1881 and 1889. Died in 1942 in Fresnillo, Zacatecas.</span><span data-lang="zh">生于1881至1889年间，1942年卒于萨卡特卡斯州弗雷斯尼略。</span></p>
       </li>
       <li data-node="miguel">
         <p class="a5-role"><span data-lang="es">Quien se quedó en la península</span><span data-lang="en">The one who stayed on the peninsula</span><span data-lang="zh">留在半岛的人</span></p>
         <p class="a5-name">Miguel Yee <span class="a5-alt">(Yee Wong)</span></p>
+        <p class="a5-voz"><span data-lang="es">Quedaste en la península.</span><span data-lang="en">You stayed on the peninsula.</span><span data-lang="zh">你留在了半岛上。</span></p>
         <p class="a5-meta"><span data-lang="es">Nacido hacia 1886 (el año exacto no está confirmado). Murió el 4 de mayo de 1977 en San Juan de los Planes, Baja California Sur.</span><span data-lang="en">Born around 1886 (the exact year is unconfirmed). Died on 4 May 1977 in San Juan de los Planes, Baja California Sur.</span><span data-lang="zh">约生于1886年（确切年份未证实）。1977年5月4日卒于南下加利福尼亚州圣胡安德洛斯普拉内斯。</span></p>
       </li>
       <li data-node="catalina">
         <p class="a5-role"><span data-lang="es">Esposa de Miguel</span><span data-lang="en">Wife of Miguel</span><span data-lang="zh">米格尔之妻</span></p>
         <p class="a5-name">Catalina Molina Gonzalez</p>
+        <p class="a5-voz"><span data-lang="es">En los libros no estaba. Aquí sí.</span><span data-lang="en">She was not in the books. Here she is.</span><span data-lang="zh">她不在族谱里。在这里，她在。</span></p>
         <p class="a5-meta"><span data-lang="es">Se casó con Miguel el 30 de noviembre de 1921 en Mulegé. De ella nace la línea que llega hasta hoy. Los zupu suelen no registrar a las mujeres: es parte de su diseño, no un olvido.</span><span data-lang="en">Married Miguel on 30 November 1921 in Mulegé. From her comes the line that reaches today. Zupu usually do not record women: it is part of their design, not neglect.</span><span data-lang="zh">1921年11月30日在穆莱赫与米格尔成婚。传到今天的这一支由她而来。族谱多以父系编排，女性往往不记其名，这是体例使然，而非遗忘。</span></p>
       </li>
       <li data-node="federico">
         <p class="a5-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄弟（待证实）</span></p>
         <p class="a5-name">Federico Yee</p>
+        <p class="a5-voz"><span data-lang="es">De él sabemos poco todavía.</span><span data-lang="en">We still know little of him.</span><span data-lang="zh">关于他，我们所知仍少。</span></p>
         <p class="a5-meta"><span data-lang="es">Nacido hacia 1891. Su vida posterior sigue por documentar.</span><span data-lang="en">Born around 1891. The rest of his life remains to be documented.</span><span data-lang="zh">约生于1891年。此后的生平仍待查证。</span></p>
       </li>
       <li data-node="manuel" class="a5-maybe">
         <p class="a5-role"><span data-lang="es">Misma familia; parentesco exacto por confirmar</span><span data-lang="en">Same family; exact kinship to be confirmed</span><span data-lang="zh">同族；确切亲缘待证实</span></p>
         <p class="a5-name">Manuel P. Yee Pang <span class="a5-alt">余邦</span></p>
+        <p class="a5-voz"><span data-lang="es">Tal vez fuiste su tío. Aún no lo sé.</span><span data-lang="en">Perhaps you were his uncle. I do not know yet.</span><span data-lang="zh">也许你是他的叔父。我还不知道。</span></p>
         <p class="a5-meta"><span data-lang="es">Nacido el 19 de noviembre de 1893 en Taishan; comerciante, naturalizado mexicano en 1936. Hipótesis abierta: que Miguel fuera su tío (la relación exacta sigue sin resolver). Su padre fue 余展宝.</span><span data-lang="en">Born 19 November 1893 in Taishan; a merchant, naturalized Mexican in 1936. Open hypothesis: that Miguel was his uncle (the exact relationship is still unresolved). His father was 余展宝.</span><span data-lang="zh">1893年11月19日生于台山；商人，1936年入籍墨西哥。开放假说：米格尔或为其叔辈（确切亲缘尚未解决）。其父为余展宝。</span></p>
+      </li>
+      <li data-node="lourdes">
+        <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina; abuela de quien escribe</span><span data-lang="en">Daughter of Miguel and Catalina; grandmother of the one who writes</span><span data-lang="zh">米格尔与卡塔琳娜之女；执笔者的祖母</span></p>
+        <p class="a5-name">María de Lourdes Yee Molina <span class="a5-alt">1929 &#183; 2025</span></p>
+        <p class="a5-voz"><span data-lang="es">Tu hija. Mi abuela.</span><span data-lang="en">Your daughter. My grandmother.</span><span data-lang="zh">你的女儿。我的祖母。</span></p>
+        <p class="a5-meta"><span data-lang="es">Nació en 1929 y murió en 2025. Su rama es la que llega hasta hoy, y de ella parten las hojas sin nombre.</span><span data-lang="en">Born in 1929, died in 2025. Hers is the branch that reaches today, and from it the nameless leaves grow.</span><span data-lang="zh">生于1929年，卒于2025年。通向今天的是她这一支，无名的叶子由此生出。</span></p>
       </li>
       <li data-node="futuro">
         <p class="a5-role"><span data-lang="es">Las ramas que siguen</span><span data-lang="en">The branches that go on</span><span data-lang="zh">继续生长的枝</span></p>
         <p class="a5-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p>
+        <p class="a5-voz"><span data-lang="es">Todo esto viene de la misma raíz.</span><span data-lang="en">All of this comes from one root.</span><span data-lang="zh">这一切都出自同一条根。</span></p>
         <p class="a5-meta"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p>
       </li>
     </ol>

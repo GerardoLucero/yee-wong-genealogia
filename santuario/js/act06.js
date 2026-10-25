@@ -95,10 +95,10 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-distrito', 'a6-c-aldea', 0], ['a6-c-aldea', 'a6-c-generacion', 1],
-    ['a6-c-nacimiento', 'a6-c-manifiesto', 0], ['a6-c-manifiesto', 'a6-c-parentesco', 0],
-    ['a6-c-generacion', 'a6-c-parentesco', 1], ['a6-c-edad', 'a6-c-nacimiento', 0],
-    ['a6-c-nogales', 'a6-c-ninos', 0], ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-nogales', 'a6-c-lumshee', 1],
+    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-nacimiento', 'a6-c-manifiesto', 0],
+    ['a6-c-manifiesto', 'a6-c-parentesco', 0], ['a6-c-generacion', 'a6-c-parentesco', 1],
+    ['a6-c-aldea', 'a6-c-nacimiento', 0], ['a6-c-nogales', 'a6-c-ninos', 0],
+    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-nogales', 'a6-c-lumshee', 1],
     ['a6-c-parentesco', 'a6-c-nogales', 1]
   ];
   var svg = document.createElementNS(NS, 'svg');
@@ -134,15 +134,7 @@ window.Santuario.register(6, function (ctx) {
   var tmr;
   window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(function () { buildThreads(); ST.refresh(); }, 250); });
 
-  /* Metodo: pasos con numero que golpea, linea que se traza */
-  var steps = q('[data-a6-step]');
-  steps.forEach(function (s, i) {
-    var n = s.querySelector('.a6-step-n');
-    gsap.fromTo(s, { opacity: 0, x: -30 }, { opacity: 1, x: 0, ease: 'power2.out',
-      scrollTrigger: { trigger: s, start: 'top 90%', end: 'top 65%', scrub: 0.5 } });
-    gsap.fromTo(n, { scale: 3, opacity: 0 }, { scale: 1, opacity: 1, ease: 'power4.in',
-      scrollTrigger: { trigger: s, start: 'top 78%', end: 'top 62%', scrub: 0.4 } });
-  });
+  /* Metodo: una linea que se traza */
   var line = sec.querySelector('[data-a6-line]');
   if (line) {
     gsap.set(line, { strokeDasharray: 100, strokeDashoffset: 100 });
@@ -150,7 +142,4 @@ window.Santuario.register(6, function (ctx) {
       scrollTrigger: { trigger: '[data-a6-method]', start: 'top 80%', end: 'top 25%', scrub: 0.5 } });
   }
 
-  /* Nota ADN */
-  gsap.fromTo(sec.querySelector('.a6-next'), { opacity: 0, y: 16, letterSpacing: '0.3em' }, { opacity: 1, y: 0, letterSpacing: '0.04em', duration: 1.4, ease: 'power2.out',
-    scrollTrigger: { trigger: sec.querySelector('.a6-next'), start: 'top 92%', once: true } });
 });

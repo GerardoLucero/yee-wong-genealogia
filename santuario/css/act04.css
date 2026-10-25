@@ -132,3 +132,13 @@
 @media (prefers-reduced-motion: reduce) {
   .a4-grain { animation: none; }
 }
+
+/* Maria de Lourdes */
+.a4-card-maria { border-top-color: var(--gold-bright); border-color: var(--cinnabar); }
+.a4-maria-full { margin: var(--sp-3) 0 0; font-family: var(--font-serif); font-size: var(--fs-sm); letter-spacing: 0.06em; color: var(--gold-bright); border-top: 1px solid var(--cinnabar); padding-top: var(--sp-3); }
+
+/* Escena del silencio: Nogales */
+.a4-fact { font-size: var(--fs-sm); line-height: var(--lh-base); color: var(--paper-dim); margin: 0 0 var(--sp-5); }
+.a4-hush { margin: 0 0 var(--sp-5); }
+.a4-hush-line { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); margin: 0 0 var(--sp-3); color: var(--paper); }
+.a4-hush-line:last-child { color: var(--gold-bright); }
