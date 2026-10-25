@@ -882,10 +882,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 }
 @keyframes a3-shimmer { to { background-position: -200% 0; } }
 .a3-lede { font-size: 1.15rem; line-height: 1.7; margin: 0 0 1.5rem; }
-.a3-context {
-  font-size: .95rem; line-height: 1.7; margin: 0 auto; padding: 1rem 0 0;
-  border-top: 1px solid var(--line); color: var(--paper-dim);
-}
+.a3-lede2 { font-size: 1rem; line-height: 1.7; margin: 0 auto; padding: 1rem 0 0; border-top: 1px solid var(--line); color: var(--paper-dim); }
 .a3-w { display: inline-block; will-change: transform, opacity; }
 
 /* Escenario */
@@ -946,6 +943,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a3-pt-ring { fill: none; stroke: var(--gold-bright); stroke-width: 2; opacity: .8; transform-box: fill-box; transform-origin: center; }
 .a3-lbl { font-family: var(--font-serif); font-size: 22px; fill: var(--paper); paint-order: stroke; stroke: var(--lacquer); stroke-width: 5px; }
 .a3-lbl-sm { font-size: 18px; fill: var(--gold-bright); }
+.a3-lbl-sm2 { font-size: 20px; }
 
 .a3-ship-hull { fill: var(--red-china); stroke: var(--gold-bright); stroke-width: 1.5; }
 .a3-ship-sail { fill: var(--gold-bright); stroke: var(--red-china-deep); stroke-width: 1; }
@@ -983,8 +981,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 .a3-stamp-ill {
   position: absolute; z-index: 5; left: 16px; top: 12px; margin: 0; max-width: 70%;
-  font-size: .72rem; letter-spacing: .08em; line-height: 1.4; color: var(--paper);
-  padding: .3rem .6rem; border: 1px dashed var(--gold); background: var(--lacquer-2);
+  font-size: .68rem; letter-spacing: .12em; line-height: 1.4; color: var(--paper-dim);
+  padding: .15rem .5rem; border: 1px dotted var(--gold-dim); background: transparent; opacity: .8; text-transform: lowercase;
 }
 
 /* Tarjetas */
@@ -1006,9 +1004,11 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a3-card-text { margin: 0 0 .75rem; font-size: .98rem; line-height: 1.55; }
 
 /* Sin JS: estatico, tarjetas viven en la linea de tiempo */
-.a3:not(.a3-js) .a3-cards { display: none; }
-.a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; aspect-ratio: 5 / 3; }
-.a3:not(.a3-js) .a3-map { height: 100%; }
+.a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; overflow: visible; padding-bottom: 2rem; }
+.a3:not(.a3-js) .a3-map { position: relative; height: auto; aspect-ratio: 5 / 3; }
+.a3:not(.a3-js) .a3-far, .a3:not(.a3-js) .a3-clouds, .a3:not(.a3-js) .a3-lanterns, .a3:not(.a3-js) .a3-waves, .a3:not(.a3-js) .a3-sparks { display: none; }
+.a3:not(.a3-js) .a3-cards { position: static; width: auto; max-width: 28rem; margin: 1rem auto 0; }
+.a3:not(.a3-js) .a3-card { margin: 0 auto 1rem; }
 .a3:not(.a3-js) .a3-ship { transform: translate(892px, 432px); }
 
 .a3-js .a3-cards { height: 14rem; }
@@ -1025,31 +1025,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
 .a3-seal-ill { color: var(--paper-dim); border-style: dotted; }
 
-/* Linea de tiempo */
-.a3-timeline { max-width: 44rem; margin: 0 auto; padding: 4rem 16px 6rem; position: relative; }
-.a3-tl-title { font-size: 1.5rem; margin: 0 0 2rem; text-align: center; color: var(--gold-bright); }
-.a3-tl { list-style: none; margin: 0; padding: 0 0 0 1.25rem; border-left: 2px solid var(--gold-dim); position: relative; }
-.a3-tl::after {
-  content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%;
-  background: var(--grad-red-gold); transform-origin: top; transform: scaleY(var(--a3-fill, 1));
-}
-.a3-tl-item { position: relative; display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0 0 2rem; }
-.a3-tl-item::before {
-  content: ""; position: absolute; left: calc(-1.25rem - 6px); top: .6rem; width: 10px; height: 10px;
-  border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 10px var(--gold); z-index: 1;
-}
-.a3-tl-ok::before { background: var(--jade-soft); box-shadow: 0 0 10px var(--jade); }
-.a3-tl-unc::before { background: var(--hypothesis); box-shadow: 0 0 10px var(--porcelain-bright); }
-.a3-tl-tbc::before { background: var(--lacquer); border: 1px solid var(--gold-bright); }
-.a3-tl-note::before { background: var(--lacquer); border: 1px dashed var(--paper); box-shadow: none; }
-.a3-tl-year { font-size: 1.5rem; font-family: var(--font-brush); color: var(--gold-bright); }
-.a3-tl-body { display: block; line-height: 1.65; }
-.a3-tl-body .a3-tag { margin-top: .6rem; display: table; }
-
 .a3 :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .a3-js .a3-cards { display: none; }
   .a3-title, .a3-lantern { animation: none; }
   .a3-sky-day { opacity: 1; }
 }
@@ -1326,18 +1304,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   box-shadow: 0 1px 0 var(--fog-strong), 0 14px 30px rgba(0,0,0,0.45);
   overflow: hidden;
 }
-.a6-file { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.7; }
 .a6-case-title { font-family: var(--font-serif); font-size: var(--fs-md); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-3); font-weight: 600; padding-right: 5.5rem; }
-.a6-case-body { font-size: var(--fs-sm); line-height: var(--lh-base); }
-.a6-basis, .a6-conf { margin-top: var(--sp-3); font-size: var(--fs-sm); line-height: var(--lh-base); }
-.a6-k { display: inline-block; font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.65; margin-right: var(--sp-2); }
-.a6-conf { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); }
-.a6-conf .a6-k { margin-right: 0; }
-.a6-meter { display: inline-flex; gap: 3px; }
-.a6-meter i { width: 1.1rem; height: 0.45rem; border: 1px solid var(--ink-2); background: transparent; display: block; }
-.a6-meter--high i { background: var(--ink-2); }
-.a6-meter--mid i:nth-child(-n+2) { background: var(--ink-2); }
-.a6-meter--low i:nth-child(1) { background: var(--ink-2); }
 
 /* Sellos */
 .a6-stamp {
@@ -1358,7 +1325,6 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-method-line { display: block; height: 2px; margin: var(--sp-4) auto 0; max-width: 24rem; }
 .a6-method-line svg { width: 100%; height: 2px; display: block; overflow: visible; }
 .a6-method-line line { stroke: var(--gold); stroke-width: 2; }
-.a6-human { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid var(--gold-dim); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
 
 .a6-credo { margin: var(--sp-8) auto var(--sp-5); max-width: var(--measure); text-align: center; }
 .a6-credo p { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); font-style: italic; color: var(--gold-bright); }
@@ -1396,6 +1362,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .a6-case--confirmed .a6-paper::after { animation: none; display: none; }
   .a6-flash, .a6-spark { display: none; }
 }
+
+.a6-human { margin-top: var(--sp-3); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
+.a6-case--pending .a6-human { color: var(--ink-2); }
+.a6-case-title { padding-right: 5.8rem; }
 </style>
 <style data-src="css/act07.css">
 /* Acto 7: El altar. Prefijo .a7- */
@@ -1728,34 +1698,30 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
     <div class="a2-copy">
       <p class="a2-line"><span class="a2-line-in">
-        <span data-lang="es">Al sur de Guangdong, en el distrito de Taishan,</span>
-        <span data-lang="en">In southern Guangdong, in the district of Taishan,</span>
-        <span data-lang="zh">广东南部,台山,</span></span></p>
+        <span data-lang="es">Al sur de Guangdong, en Taishan, de donde saliste.</span>
+        <span data-lang="en">In southern Guangdong, in Taishan, where you came from.</span>
+        <span data-lang="zh">广东南部,台山,你出发的地方。</span></span></p>
       <p class="a2-line"><span class="a2-line-in">
-        <span data-lang="es">salió nuestra familia 余.</span>
-        <span data-lang="en">the surname we carry today began: 余.</span>
-        <span data-lang="zh">我们的余姓家族，从这里走出。</span></span></p>
-      <p class="a2-line"><span class="a2-line-in">
-        <span data-lang="es">Se hablaba toisanés; muchos vivían del arroz y algunos partían lejos.</span>
-        <span data-lang="en">They spoke Toisanese. They grew rice. They left for far places.</span>
-        <span data-lang="zh">说台山话，许多人以种稻为生，也有人远行。</span></span></p>
+        <span data-lang="es">Aquí se hablaba toisanés. Quizá fue la última lengua que oíste antes de partir.</span>
+        <span data-lang="en">Here they spoke Toisanese. Perhaps it was the last language you heard before leaving.</span>
+        <span data-lang="zh">这里说台山话。也许,那是你启程前听到的最后一种语言。</span></span></p>
 
       <div class="a2-names">
         <span class="a2-name a2-n1" lang="zh">台山</span>
         <span class="a2-name a2-n2" lang="zh">龙洋</span>
         <svg class="a2-brush" viewBox="0 0 400 20" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="a2-g"><stop offset="0" class="a2-b1"/><stop offset=".5" class="a2-b2"/><stop offset="1" class="a2-b1"/></linearGradient></defs><path pathLength="1" d="M4 12 C80 2 160 18 240 8 S360 14 396 6" fill="none" stroke="url(#a2-g)" stroke-width="5" stroke-linecap="round"/></svg>
         <p class="a2-name-cap">
-          <span data-lang="es">Taishan, y dentro de él Longyang, la zona de la que salió la familia.</span>
-          <span data-lang="en">Taishan, and within it Longyang, the area the family came from.</span>
-          <span data-lang="zh">台山,其中的龙洋,是家族出发的地方。</span>
+          <span data-lang="es">Taishan, y dentro de él Longyang: la zona de la que salió la familia.</span>
+          <span data-lang="en">Taishan, and within it Longyang: the area the family came from.</span>
+          <span data-lang="zh">台山,以及其中的龙洋:家族出发的地方。</span>
         </p>
       </div>
 
       <div class="a2-village">
         <p class="a2-village-lead">
-          <span data-lang="es">¿Y la aldea exacta? Todavía no lo sabemos con certeza.</span>
-          <span data-lang="en">And the exact village? We do not know for certain yet.</span>
-          <span data-lang="zh">确切的村子?我们尚不能确定。</span>
+          <span data-lang="es">¿Y tu aldea exacta? Todavía no lo sabemos. Te buscamos bajo dos nombres.</span>
+          <span data-lang="en">And your exact village? We do not know yet. We look for you under two names.</span>
+          <span data-lang="zh">你确切的村子呢?我们还不知道。我们用两个名字寻找你。</span>
         </p>
         <ul class="a2-cands">
           <li class="a2-cand">
@@ -1783,29 +1749,29 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   </div>
 </section>
 
-<section class="act a3" id="acto3" data-act="3" data-title-es="La travesia" data-title-en="The crossing" data-title-zh="跨越太平洋">
+<section class="act a3" id="acto3" data-act="3" data-title-es="La travesía" data-title-en="The crossing" data-title-zh="跨越太平洋">
 
   <header class="a3-intro">
     <p class="a3-kicker">
       <span data-lang="es">Acto III</span><span data-lang="en">Act III</span><span data-lang="zh">第三幕</span>
     </p>
     <h2 class="a3-title">
-      <span data-lang="es">La travesia</span><span data-lang="en">The crossing</span><span data-lang="zh">跨越太平洋</span>
+      <span data-lang="es">La travesía</span><span data-lang="en">The crossing</span><span data-lang="zh">跨越太平洋</span>
     </h2>
     <p class="a3-lede">
-      <span data-lang="es">Desde Taishan, al otro lado del mar, estaba Mexico. Todavia no hemos encontrado un registro escrito del viaje de Miguel. Lo que sigue es el mapa de lo que si sabemos y de lo que todavia buscamos.</span>
-      <span data-lang="en">From Taishan, across the sea, lay Mexico. No one left a written account of Miguel's journey. What follows is a map of what we know and of what we are still looking for.</span>
-      <span data-lang="zh">从台山出发，大海的另一边是墨西哥。尚未找到米格尔这趟旅程的文字记录。下面是一张地图：已知的，和仍在寻找的。</span>
+      <span data-lang="es">No dejaste papeles de tu viaje. Por eso lo imaginamos con tinta.</span>
+      <span data-lang="en">You left no papers about your journey. So we imagine it in ink.</span>
+      <span data-lang="zh">你没有留下关于这趟旅程的任何文件。所以我们用墨来想象它。</span>
     </p>
-    <p class="a3-context">
-      <span data-lang="es">Contexto historico general: a fines del siglo XIX y principios del XX, miles de campesinos de Guangdong, muchos de ellos de Taishan, cruzaron el Pacifico. Hong Kong y San Francisco fueron puertos de paso frecuentes, y algunos siguieron hacia Mexico y la peninsula de Baja California.</span>
-      <span data-lang="en">General historical context: in the late 19th and early 20th centuries, thousands of farmers from Guangdong, many of them from Taishan, crossed the Pacific. Hong Kong and San Francisco were frequent ports of passage, and some continued on to Mexico and the Baja California peninsula.</span>
-      <span data-lang="zh">一般历史背景：十九世纪末至二十世纪初，数以千计的广东农民，其中许多来自台山，横渡太平洋。香港和旧金山是常见的中转港口，也有人继续前往墨西哥和下加利福尼亚半岛。</span>
+    <p class="a3-lede2">
+      <span data-lang="es">Esto es un mapa de lo que sabemos y de lo que todavía buscamos.</span>
+      <span data-lang="en">This is a map of what we know and what we are still looking for.</span>
+      <span data-lang="zh">这是一张地图：标出我们知道的，和我们仍在寻找的。</span>
     </p>
   </header>
 
   <div class="a3-pin">
-    <div class="a3-stage" aria-label="Mapa estilizado del Pacifico: de Guangdong a la peninsula de Baja California">
+    <div class="a3-stage" aria-label="Mapa estilizado del Pacífico: de Guangdong a la península de Baja California">
       <div class="a3-sky a3-sky-day" aria-hidden="true"></div>
       <div class="a3-sky a3-sky-night" aria-hidden="true"></div>
       <div class="a3-sky a3-sky-dusk" aria-hidden="true"></div>
@@ -1828,7 +1794,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <div class="a3-sparks" aria-hidden="true"></div>
 
       <svg class="a3-map" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="a3-map-t">
-        <title id="a3-map-t">Mapa estilizado en tinta: costa de Guangdong y Hong Kong, el Oceano Pacifico, San Francisco y la peninsula de Baja California con Mulege y La Paz. Ilustracion, no a escala.</title>
+        <title id="a3-map-t">Mapa estilizado en tinta: Guangdong y Hong Kong, el Pacífico, San Francisco y la península de Baja California. Ilustración, no a escala.</title>
 
         <defs><linearGradient id="a3-rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--gold-bright)"/><stop offset=".5" style="stop-color:var(--cinnabar)"/><stop offset="1" style="stop-color:var(--red-china)"/></linearGradient></defs>
         <g class="a3-stars" aria-hidden="true">
@@ -1876,7 +1842,11 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         </g>
         <g class="a3-pt a3-pt-bcs">
           <circle class="a3-pt-ring" cx="892" cy="432" r="14"/><circle class="a3-pt-dot" cx="892" cy="432" r="5"/>
-          <text class="a3-lbl" x="708" y="436">Mulege, BCS</text>
+          <text class="a3-lbl" x="708" y="436">Mulegé, BCS</text>
+        </g>
+        <g class="a3-pt a3-pt-lp">
+          <circle class="a3-pt-ring" cx="872" cy="528" r="12"/><circle class="a3-pt-dot" cx="872" cy="528" r="4"/>
+          <text class="a3-lbl a3-lbl-sm2" x="780" y="560">La Paz</text>
         </g>
 
         <g class="a3-pt a3-pt-lp">
@@ -1901,177 +1871,83 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       </div>
 
       <p class="a3-stamp-ill">
-        <span data-lang="es">Ilustracion: ruta y embarcacion son una evocacion, no un registro</span>
-        <span data-lang="en">Illustration: route and vessel are an evocation, not a record</span>
-        <span data-lang="zh">示意图：路线与船只仅为想象，并非史实记录</span>
+        <span data-lang="es">ilustración</span><span data-lang="en">illustration</span><span data-lang="zh">示意</span>
       </p>
 
       <!-- Tarjetas de hitos (se activan con el scroll cuando hay JS) -->
       <div class="a3-cards">
         <article class="a3-card" data-i="0">
-          <p class="a3-card-year">
-            <span data-lang="es">Contexto</span><span data-lang="en">Context</span><span data-lang="zh">背景</span>
-          </p>
-          <p class="a3-card-text">
-            <span data-lang="es">El mar era la unica puerta. Muchos salieron de Guangdong con una promesa de trabajo y una direccion que alguien les habia dado.</span>
-            <span data-lang="en">The sea was the only door. Many left Guangdong with a promise of work and an address someone had given them.</span>
-            <span data-lang="zh">大海是唯一的门。许多人离开广东，带着一份工作的许诺和别人给的一个地址。</span>
-          </p>
-          <p class="a3-seal a3-seal-ill">
-            <span data-lang="es">Ilustracion</span><span data-lang="en">Illustration</span><span data-lang="zh">示意</span>
-          </p>
-        </article>
-
-        <article class="a3-card" data-i="1">
           <p class="a3-card-year">1904</p>
           <p class="a3-card-text">
-            <span data-lang="es">Segun la familia, Miguel llego a Baja California Sur en 1904.</span>
-            <span data-lang="en">According to the family, Miguel arrived in Baja California Sur in 1904.</span>
-            <span data-lang="zh">据家族所述，米格尔于1904年抵达南下加利福尼亚州。</span>
+            <span data-lang="es">Dicen en la familia que llegaste en 1904. No hay papel que lo diga todavía.</span>
+            <span data-lang="en">The family says you arrived in 1904. No paper says so yet.</span>
+            <span data-lang="zh">家里人说你是1904年到的。目前还没有文件可以证明。</span>
           </p>
           <p class="a3-seal a3-seal-tbc">
-            <span data-lang="es">A confirmar</span><span data-lang="en">To be confirmed</span><span data-lang="zh">待确认</span>
+            <span data-lang="es">A confirmar</span>
+            <span data-lang="en">To be confirmed</span>
+            <span data-lang="zh">待确认</span>
           </p>
         </article>
-
-        <article class="a3-card" data-i="2">
+        <article class="a3-card" data-i="1">
           <p class="a3-card-year">1909</p>
           <p class="a3-card-text">
-            <span data-lang="es">Un manifiesto del S.S. Asia, salido de Hong Kong el 17 de agosto de 1909 rumbo a San Francisco, incluye a un "Man Yee Wong", de 27 anos. Fue un hallazgo de la familia.</span>
-            <span data-lang="en">A manifest of the S.S. Asia, sailing from Hong Kong on 17 August 1909 for San Francisco, lists a "Man Yee Wong", aged 27. It was a find by the family.</span>
-            <span data-lang="zh">“亚洲号”（S.S. Asia）1909年8月17日自香港开往旧金山的乘客名单上，有一位27岁的“Man Yee Wong”。这是家人的发现。</span>
+            <span data-lang="es">Un manifiesto de 1909 trae a un "Man Yee Wong" de 27 años. ¿Eras tú? No lo sabemos.</span>
+            <span data-lang="en">A 1909 manifest lists a "Man Yee Wong", aged 27. Was it you? We do not know.</span>
+            <span data-lang="zh">1909年的一份乘客名单上，有一位27岁的“Man Yee Wong”。是你吗？我们不知道。</span>
           </p>
           <p class="a3-seal a3-seal-unc">
-            <span data-lang="es">Sin confirmar que sea Miguel</span><span data-lang="en">Not confirmed to be Miguel</span><span data-lang="zh">尚未确认是否为米格尔</span>
+            <span data-lang="es">Sin confirmar</span>
+            <span data-lang="en">Unconfirmed</span>
+            <span data-lang="zh">尚未确认</span>
           </p>
         </article>
-
+        <article class="a3-card" data-i="2">
+          <p class="a3-card-year">?</p>
+          <p class="a3-card-text">
+            <span data-lang="es">Después, la familia dice que llegaste a La Paz. No sabemos en qué año.</span>
+            <span data-lang="en">Later, the family says you came to La Paz. We do not know in what year.</span>
+            <span data-lang="zh">后来，家里人说你去了拉巴斯。具体哪一年，我们不知道。</span>
+          </p>
+          <p class="a3-seal a3-seal-tbc">
+            <span data-lang="es">Por confirmar</span>
+            <span data-lang="en">To be confirmed</span>
+            <span data-lang="zh">待确认</span>
+          </p>
+        </article>
         <article class="a3-card" data-i="3">
           <p class="a3-card-year">1921</p>
           <p class="a3-card-text">
-            <span data-lang="es">En Mulege, el 30 de noviembre, Miguel se casa con Catalina Molina Gonzalez. La peninsula ya es su casa.</span>
-            <span data-lang="en">In Mulege, on 30 November, Miguel marries Catalina Molina Gonzalez. The peninsula is now home.</span>
-            <span data-lang="zh">11月30日，米格尔在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯结婚。半岛已成为他的家。</span>
+            <span data-lang="es">El 30 de noviembre de 1921 te casaste con Catalina Molina González, en Mulegé.</span>
+            <span data-lang="en">On 30 November 1921 you married Catalina Molina González, in Mulegé.</span>
+            <span data-lang="zh">1921年11月30日，你在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯结婚。</span>
           </p>
           <p class="a3-seal a3-seal-ok">
-            <span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已确认</span>
+            <span data-lang="es">Confirmado</span>
+            <span data-lang="en">Confirmed</span>
+            <span data-lang="zh">已确认</span>
           </p>
         </article>
-
         <article class="a3-card" data-i="4">
           <p class="a3-card-year">1930</p>
           <p class="a3-card-text">
-            <span data-lang="es">El censo de Mexico lo registra en Mulege, calle Zaragoza.</span>
-            <span data-lang="en">The Mexican census records him in Mulege, on Zaragoza street.</span>
-            <span data-lang="zh">墨西哥人口普查把他记录在穆莱赫，萨拉戈萨街。</span>
+            <span data-lang="es">En 1930 el censo te encontró en Mulegé, en la calle Zaragoza. Ya eras de allí.</span>
+            <span data-lang="en">In 1930 the census found you in Mulegé, on Zaragoza street. You already belonged there.</span>
+            <span data-lang="zh">1930年，人口普查在穆莱赫的萨拉戈萨街找到了你。你已经属于那里了。</span>
           </p>
           <p class="a3-seal a3-seal-ok">
-            <span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已确认</span>
-          </p>
-        </article>
-
-        <article class="a3-card" data-i="5">
-          <p class="a3-card-year"><span data-lang="es">Despues</span><span data-lang="en">Later</span><span data-lang="zh">后来</span></p>
-          <p class="a3-card-text">
-            <span data-lang="es">Con el tiempo, Miguel llega a La Paz. Segun la familia, fue despues de Mulege; el ano exacto esta por confirmar.</span>
-            <span data-lang="en">In time, Miguel reaches La Paz. According to the family, it was after Mulege; the exact year is still to be confirmed.</span>
-            <span data-lang="zh">后来，米格尔来到拉巴斯。据家人所述，这是在穆莱赫之后；具体年份待确认。</span>
-          </p>
-          <p class="a3-seal a3-seal-unc">
-            <span data-lang="es">Ano por confirmar</span><span data-lang="en">Year to be confirmed</span><span data-lang="zh">年份待确认</span>
+            <span data-lang="es">Confirmado</span>
+            <span data-lang="en">Confirmed</span>
+            <span data-lang="zh">已确认</span>
           </p>
         </article>
       </div>
     </div>
   </div>
 
-  <div class="a3-timeline">
-    <h3 class="a3-tl-title">
-      <span data-lang="es">Lo que sabemos, y lo que no</span>
-      <span data-lang="en">What we know, and what we do not</span>
-      <span data-lang="zh">已知与未知</span>
-    </h3>
-    <ol class="a3-tl">
-      <li class="a3-tl-item a3-tl-tbc">
-        <span class="a3-tl-year">1904</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Llegada a Baja California Sur. Dato que ofrece la familia, aun sin documento que lo respalde.</span>
-          <span data-lang="en">Arrival in Baja California Sur. A date given by the family, still without a supporting document.</span>
-          <span data-lang="zh">抵达南下加利福尼亚州。此为家族提供的年份，尚无文件佐证。</span>
-          <em class="a3-tag">
-            <span data-lang="es">A confirmar</span><span data-lang="en">To be confirmed</span><span data-lang="zh">待确认</span>
-          </em>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-unc">
-        <span class="a3-tl-year">1909</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Manifiesto del S.S. Asia (Hong Kong a San Francisco, 17 de agosto). La primera fila, "Man Yee Wong", 27 anos, podria ser Miguel: no lo sabemos. Otro candidato, Yee Foo Wong, fue descartado.</span>
-          <span data-lang="en">S.S. Asia manifest (Hong Kong to San Francisco, 17 August). The first row, "Man Yee Wong", 27 years old, could be Miguel: we do not know. Another candidate, Yee Foo Wong, was ruled out.</span>
-          <span data-lang="zh">“亚洲号”乘客名单（8月17日，香港至旧金山）。第一行“Man Yee Wong”，27岁，可能是米格尔，但我们还不知道。另一位候选人Yee Foo Wong已被排除。</span>
-          <em class="a3-tag">
-            <span data-lang="es">Sin confirmar</span><span data-lang="en">Unconfirmed</span><span data-lang="zh">尚未确认</span>
-          </em>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-note">
-        <span class="a3-tl-year">?</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">No sabemos si ambas fechas corresponden a un mismo viaje, y el ano de nacimiento de Miguel (hacia 1886) tampoco es seguro. Por eso la travesia sigue siendo una pregunta abierta.</span>
-          <span data-lang="en">We do not know whether both dates belong to the same voyage, and Miguel's birth year (around 1886) is not certain either. That is why the crossing remains an open question.</span>
-          <span data-lang="zh">我们不知道这两个年份是否属于同一次航行，米格尔的出生年份（约1886年）也不确定。因此这次渡海仍是一个悬而未决的问题。</span>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-ok">
-        <span class="a3-tl-year">1921</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Matrimonio con Catalina Molina Gonzalez en Mulege, 30 de noviembre.</span>
-          <span data-lang="en">Marriage to Catalina Molina Gonzalez in Mulege, 30 November.</span>
-          <span data-lang="zh">11月30日，在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯结婚。</span>
-          <em class="a3-tag">
-            <span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已确认</span>
-          </em>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-ok">
-        <span class="a3-tl-year">1930</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Censo de Mexico: Mulege, calle Zaragoza.</span>
-          <span data-lang="en">Mexican census: Mulege, Zaragoza street.</span>
-          <span data-lang="zh">墨西哥人口普查：穆莱赫，萨拉戈萨街。</span>
-          <em class="a3-tag">
-            <span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已确认</span>
-          </em>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-unc">
-        <span class="a3-tl-year"><span data-lang="es">Despues</span><span data-lang="en">Later</span><span data-lang="zh">后来</span></span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Miguel llega a La Paz, despues de Mulege. El ano exacto esta por confirmar.</span>
-          <span data-lang="en">Miguel reaches La Paz, after Mulege. The exact year is still to be confirmed.</span>
-          <span data-lang="zh">米格尔在穆莱赫之后来到拉巴斯。具体年份待确认。</span>
-          <em class="a3-tag">
-            <span data-lang="es">Por confirmar</span><span data-lang="en">To be confirmed</span><span data-lang="zh">待确认</span>
-          </em>
-        </span>
-      </li>
-      <li class="a3-tl-item a3-tl-ok">
-        <span class="a3-tl-year">1977</span>
-        <span class="a3-tl-body">
-          <span data-lang="es">Miguel muere el 4 de mayo en San Juan de los Planes, Baja California Sur.</span>
-          <span data-lang="en">Miguel dies on 4 May in San Juan de los Planes, Baja California Sur.</span>
-          <span data-lang="zh">5月4日，米格尔在南下加利福尼亚州的圣胡安德洛斯普拉内斯去世。</span>
-          <em class="a3-tag">
-            <span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已确认</span>
-          </em>
-        </span>
-      </li>
-    </ol>
-  </div>
-
 </section>
 
-<section class="act a4" id="acto4" data-act="4" data-title-es="Mexico" data-title-en="Mexico" data-title-zh="墨西哥">
+<section class="act a4" id="acto4" data-act="4" data-title-es="México" data-title-en="Mexico" data-title-zh="墨西哥">
   <div class="a4-stage">
 
     <div class="a4-sky" aria-hidden="true"></div>
@@ -2130,17 +2006,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         </p>
         <span class="a4-chop" aria-hidden="true">余</span>
         <h2 class="a4-title">
-          <span data-lang="es">Mulege</span><span data-lang="en">Mulege</span><span data-lang="zh">穆莱赫</span>
+          <span data-lang="es">Mulegé</span><span data-lang="en">Mulege</span><span data-lang="zh">穆莱赫</span>
         </h2>
         <p class="a4-lead">
-          <span data-lang="es">Del otro lado del mar hay una peninsula de desierto, palmeras y agua quieta. Aqui la tinta se vuelve luz de atardecer.</span>
+          <span data-lang="es">Del otro lado del mar hay una península de desierto, palmeras y agua quieta. Aquí la tinta se vuelve luz de atardecer.</span>
           <span data-lang="en">Across the sea lies a peninsula of desert, palms and still water. Here the ink turns into evening light.</span>
           <span data-lang="zh">海的另一边，是沙漠、棕榈与静水的半岛。墨色在此化为暮光。</span>
         </p>
         <p class="a4-note">
-          <span data-lang="es">Baja California Sur. Miguel Yee se establecio en la peninsula; el ano de su llegada (1904 se menciona) esta <em class="a4-stamp-inline">por confirmar</em>.</span>
-          <span data-lang="en">Baja California Sur. Miguel Yee settled on the peninsula; the year he arrived (1904 is mentioned) is <em class="a4-stamp-inline">to be confirmed</em>.</span>
-          <span data-lang="zh">南下加利福尼亚州。米格尔定居于半岛；抵达年份（有说1904年）<em class="a4-stamp-inline">待确认</em>。</span>
+          <span data-lang="es">Baja California Sur. Te estableciste en la península. El año de tu llegada (se menciona 1904) está <em class="a4-stamp-inline">por confirmar</em>.</span>
+          <span data-lang="en">Baja California Sur. You settled on the peninsula. The year you arrived (1904 is mentioned) is <em class="a4-stamp-inline">to be confirmed</em>.</span>
+          <span data-lang="zh">南下加利福尼亚州。你在半岛安顿下来。你抵达的年份（有说1904年）<em class="a4-stamp-inline">待确认</em>。</span>
         </p>
       </div>
 
@@ -2155,18 +2031,18 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
               <p class="a4-year">1921</p>
               <p class="a4-card-h"><span data-lang="es">Matrimonio</span><span data-lang="en">Marriage</span><span data-lang="zh">婚姻</span></p>
               <p class="a4-card-t">
-                <span data-lang="es">El 30 de noviembre, en Mulege, Miguel Yee se casa con Catalina Molina Gonzalez.</span>
-                <span data-lang="en">On 30 November, in Mulege, Miguel Yee marries Catalina Molina Gonzalez.</span>
-                <span data-lang="zh">11月30日，米格尔与卡塔利娜·莫利纳·冈萨雷斯在穆莱赫成婚。</span>
+                <span data-lang="es">En Mulegé te casaste con Catalina Molina González, el 30 de noviembre de 1921.</span>
+                <span data-lang="en">In Mulegé you married Catalina Molina González, on 30 November 1921.</span>
+                <span data-lang="zh">1921年11月30日，你在穆莱赫与卡塔利娜·莫利纳·冈萨雷斯成婚。</span>
               </p>
             </li>
             <li class="a4-card a4-card-maria">
               <p class="a4-year">1929</p>
               <p class="a4-card-h"><span data-lang="es">María de Lourdes</span><span data-lang="en">María de Lourdes</span><span data-lang="zh">María de Lourdes</span></p>
               <p class="a4-card-t">
-                <span data-lang="es">Miguel y Catalina tuvieron hijos. Una de ellos fue María de Lourdes, nacida en 1929.</span>
-                <span data-lang="en">Miguel and Catalina had children. One of them was María de Lourdes, born in 1929.</span>
-                <span data-lang="zh">米格尔与卡塔利娜育有子女。其中一位是María de Lourdes，生于1929年。</span>
+                <span data-lang="es">Tuvieron hijos. Una de ellas fue María de Lourdes, nacida en 1929. Ella es la que llega hasta mí.</span>
+                <span data-lang="en">You had children. One of them was María de Lourdes, born in 1929. She is the one who reaches me.</span>
+                <span data-lang="zh">你们育有子女。其中一位是María de Lourdes，生于1929年。是她，走到了我这里。</span>
               </p>
               <p class="a4-maria-full">María de Lourdes Yee Molina</p>
             </li>
@@ -2174,17 +2050,16 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
               <p class="a4-year">1930</p>
               <p class="a4-card-h"><span data-lang="es">Censo, calle Zaragoza</span><span data-lang="en">Census, Zaragoza street</span><span data-lang="zh">人口普查，萨拉戈萨街</span></p>
               <p class="a4-card-t">
-                <span data-lang="es">Miguel aparece en el censo de Mexico, en Mulege.</span>
-                <span data-lang="en">Miguel appears in the census of Mexico, in Mulege.</span>
-                <span data-lang="zh">米格尔出现在墨西哥人口普查中，地点穆莱赫。</span>
+                <span data-lang="es">Un censo de 1930 te encontró en la calle Zaragoza.</span>
+                <span data-lang="en">A census in 1930 found you on Zaragoza street.</span>
+                <span data-lang="zh">1930年的一次人口普查，在萨拉戈萨街找到了你。</span>
               </p>
-              <span class="a4-stamp"><span data-lang="es">oficio por confirmar</span><span data-lang="en">trade to be confirmed</span><span data-lang="zh">职业待确认</span></span>
             </li>
             <li class="a4-card">
               <p class="a4-year">1942</p>
               <p class="a4-card-h"><span data-lang="es">Arturo, en Fresnillo</span><span data-lang="en">Arturo, in Fresnillo</span><span data-lang="zh">阿图罗，在弗雷斯尼略</span></p>
               <p class="a4-card-t">
-                <span data-lang="es">Arturo Yee, probable hermano mayor, muere en Fresnillo, Zacatecas. El parentesco es probable, no probado.</span>
+                <span data-lang="es">Arturo Yee, probable hermano mayor, murió en Fresnillo, Zacatecas. El parentesco es probable, no probado.</span>
                 <span data-lang="en">Arturo Yee, probably the elder brother, dies in Fresnillo, Zacatecas. The kinship is probable, not proven.</span>
                 <span data-lang="zh">阿图罗·余，可能是兄长，卒于萨卡特卡斯州弗雷斯尼略。亲属关系为推测，未证实。</span>
               </p>
@@ -2194,17 +2069,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
               <p class="a4-year">1977</p>
               <p class="a4-card-h"><span data-lang="es">San Juan de los Planes</span><span data-lang="en">San Juan de los Planes</span><span data-lang="zh">圣胡安德洛斯普拉内斯</span></p>
               <p class="a4-card-t">
-                <span data-lang="es">El 4 de mayo muere Miguel Yee, en San Juan de los Planes, Baja California Sur. Su linea llega hasta hoy.</span>
-                <span data-lang="en">On 4 May Miguel Yee dies in San Juan de los Planes, Baja California Sur. His line reaches today.</span>
-                <span data-lang="zh">5月4日，米格尔在南下加州的圣胡安德洛斯普拉内斯去世。他的血脉延续至今。</span>
+                <span data-lang="es">Moriste el 4 de mayo de 1977, en San Juan de los Planes. Tu línea llega hasta hoy.</span>
+                <span data-lang="en">You died on 4 May 1977, in San Juan de los Planes. Your line reaches today.</span>
+                <span data-lang="zh">1977年5月4日，你在圣胡安德洛斯普拉内斯去世。你的血脉延续至今。</span>
               </p>
             </li>
           </ol>
         </div>
         <p class="a4-note a4-note-small">
-          <span data-lang="es">Nacio hacia 1886; otras fuentes dan entre 1882 y 1892. El ano exacto no esta confirmado.</span>
-          <span data-lang="en">Born around 1886; other sources say between 1882 and 1892. The exact year is not confirmed.</span>
-          <span data-lang="zh">约1886年出生；其他资料为1882至1892年之间。确切年份未确认。</span>
+          <span data-lang="es">Naciste hacia 1886; no sabemos el año exacto.</span>
+          <span data-lang="en">You were born around 1886; we do not know the exact year.</span>
+          <span data-lang="zh">你约生于1886年；确切年份我们不知道。</span>
         </p>
       </div>
 
@@ -2213,16 +2088,16 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <h3 class="a4-sub">
           <span data-lang="es">El censo de 1930</span><span data-lang="en">The 1930 census</span><span data-lang="zh">1930年人口普查</span>
         </h3>
-        <figure class="a4-doc" aria-label="Reconstruccion ilustrativa del registro del censo de 1930">
+        <figure class="a4-doc" aria-label="Reconstrucción ilustrativa del registro del censo de 1930">
           <div class="a4-doc-paper">
             <p class="a4-doc-head a4-line">
-              <span data-lang="es">CENSO GENERAL DE POBLACION, 1930</span>
+              <span data-lang="es">CENSO GENERAL DE POBLACIÓN, 1930</span>
               <span data-lang="en">GENERAL POPULATION CENSUS, 1930</span>
               <span data-lang="zh">1930年人口普查</span>
             </p>
             <div class="a4-doc-row a4-line">
               <span class="a4-k"><span data-lang="es">Localidad</span><span data-lang="en">Place</span><span data-lang="zh">地点</span></span>
-              <span class="a4-v">Mulege, Baja California Sur</span>
+              <span class="a4-v">Mulegé, Baja California Sur</span>
             </div>
             <div class="a4-doc-row a4-line">
               <span class="a4-k"><span data-lang="es">Calle</span><span data-lang="en">Street</span><span data-lang="zh">街道</span></span>
@@ -2232,12 +2107,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
               <span class="a4-k"><span data-lang="es">Nombre</span><span data-lang="en">Name</span><span data-lang="zh">姓名</span></span>
               <span class="a4-v">Miguel Yee</span>
             </div>
-            <div class="a4-doc-row a4-line">
-              <span class="a4-k"><span data-lang="es">Ocupacion</span><span data-lang="en">Occupation</span><span data-lang="zh">职业</span></span>
-              <span class="a4-v a4-v-pending"><span data-lang="es">comercio, por confirmar</span><span data-lang="en">trade, to be confirmed</span><span data-lang="zh">买卖，待确认</span></span>
-            </div>
             <p class="a4-doc-foot a4-line">
-              <span data-lang="es">Reconstruccion ilustrativa del registro. No es el documento original.</span>
+              <span data-lang="es">Reconstrucción ilustrativa del registro. No es el documento original.</span>
               <span data-lang="en">Illustrative reconstruction of the record. Not the original document.</span>
               <span data-lang="zh">此为记录的示意重构，并非原件。</span>
             </p>
@@ -2257,17 +2128,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           <svg viewBox="0 0 40 70" class="a4-kid"><circle cx="20" cy="12" r="8"/><path d="M20 22 V50 M20 30 L8 44 M20 30 L32 44 M20 50 L10 68 M20 50 L30 68"/></svg>
         </div>
         <p class="a4-fact">
-          <span data-lang="es">Cuatro ninos, hijos de Arturo, cruzaron juntos por Nogales, Arizona, camino a San Francisco. Las tarjetas originales dicen: Muleye, B. C., Mexico.</span>
+          <span data-lang="es">Cuatro niños, hijos de Arturo, cruzaron juntos por Nogales, Arizona, camino a San Francisco. Las tarjetas originales dicen: Muleye, B. C., Mexico.</span>
           <span data-lang="en">Four of Arturo's children crossed together through Nogales, Arizona, bound for San Francisco. The original cards read: Muleye, B. C., Mexico.</span>
           <span data-lang="zh">阿图罗的四个孩子一同经亚利桑那州诺加莱斯前往旧金山。原始卡片写着：Muleye, B. C., Mexico。</span>
         </p>
         <div class="a4-hush">
-          <p class="a4-hush-line"><span data-lang="es">Cuatro ninos.</span><span data-lang="en">Four children.</span><span data-lang="zh">四个孩子。</span></p>
+          <p class="a4-hush-line"><span data-lang="es">Cuatro niños.</span><span data-lang="en">Four children.</span><span data-lang="zh">四个孩子。</span></p>
           <p class="a4-hush-line"><span data-lang="es">Cuatro tarjetas.</span><span data-lang="en">Four cards.</span><span data-lang="zh">四张卡片。</span></p>
-          <p class="a4-hush-line"><span data-lang="es">Despues, ningun rastro.</span><span data-lang="en">After that, no trace.</span><span data-lang="zh">此后，杳无踪迹。</span></p>
+          <p class="a4-hush-line"><span data-lang="es">Después, ningún rastro.</span><span data-lang="en">After that, no trace.</span><span data-lang="zh">此后，杳无踪迹。</span></p>
         </div>
         <p class="a4-note">
-          <span data-lang="es">Una hipotesis, <em class="a4-stamp-inline">por confirmar</em>: regresaron a China durante las deportaciones de 1930 a 1933. La historia sigue abierta.</span>
+          <span data-lang="es">Una hipótesis, <em class="a4-stamp-inline">por confirmar</em>: regresaron a China durante las deportaciones de 1930 a 1933. La historia sigue abierta.</span>
           <span data-lang="en">One hypothesis, <em class="a4-stamp-inline">to be confirmed</em>: they returned to China during the deportations of 1930 to 1933. The story stays open.</span>
           <span data-lang="zh">一种假设<em class="a4-stamp-inline">待确认</em>：他们在1930至1933年的遣返潮中回到了中国。故事仍然敞开。</span>
         </p>
@@ -2295,7 +2166,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       </p>
 
       <svg class="a5-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="a5-svg-t">
-        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina Gonzalez, y ramas hacia el futuro sin nombres, y la rama de María de Lourdes Yee Molina, hija de Miguel y Catalina, que llega hasta hoy.</title>
+        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina González, y ramas hacia el futuro sin nombres, y la rama de María de Lourdes Yee Molina, hija de Miguel y Catalina, que llega hasta hoy.</title>
         <defs>
           <g id="a5-flor">
             <circle class="a5-petal" cx="0" cy="-8" r="6.5"/>
@@ -2418,7 +2289,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       </li>
       <li data-node="catalina">
         <p class="a5-role"><span data-lang="es">Esposa de Miguel</span><span data-lang="en">Wife of Miguel</span><span data-lang="zh">米格尔之妻</span></p>
-        <p class="a5-name">Catalina Molina Gonzalez</p>
+        <p class="a5-name">Catalina Molina González</p>
         <p class="a5-voz"><span data-lang="es">En los libros no estaba. Aquí sí.</span><span data-lang="en">She was not in the books. Here she is.</span><span data-lang="zh">她不在族谱里。在这里，她在。</span></p>
         <p class="a5-meta"><span data-lang="es">Se casó con Miguel el 30 de noviembre de 1921 en Mulegé. De ella nace la línea que llega hasta hoy. Los zupu suelen no registrar a las mujeres: es parte de su diseño, no un olvido.</span><span data-lang="en">Married Miguel on 30 November 1921 in Mulegé. From her comes the line that reaches today. Zupu usually do not record women: it is part of their design, not neglect.</span><span data-lang="zh">1921年11月30日在穆莱赫与米格尔成婚。传到今天的这一支由她而来。族谱多以父系编排，女性往往不记其名，这是体例使然，而非遗忘。</span></p>
       </li>
@@ -2473,15 +2344,15 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   </div>
 </section>
 
-<section class="act" id="acto6" data-act="6" data-title-es="La investigacion" data-title-en="The investigation" data-title-zh="追寻">
+<section class="act" id="acto6" data-act="6" data-title-es="La investigación" data-title-en="The investigation" data-title-zh="追寻">
   <div class="a6-desk">
     <header class="a6-head">
       <p class="a6-eyebrow"><span data-lang="es">Acto VI</span><span data-lang="en">Act VI</span><span data-lang="zh">第六幕</span></p>
-      <h2 class="a6-title"><span data-lang="es">La investigacion</span><span data-lang="en">The investigation</span><span data-lang="zh">追寻</span></h2>
+      <h2 class="a6-title"><span data-lang="es">La investigación</span><span data-lang="en">The investigation</span><span data-lang="zh">追寻</span></h2>
       <p class="a6-lede"><span data-lang="es">Una mesa de trabajo. Cada papel se lee, se cruza y recibe un sello. Algunos se confirman. Otros esperan.</span><span data-lang="en">A worktable. Each paper is read, cross-checked and given a seal. Some are confirmed. Others wait.</span><span data-lang="zh">一张工作台。每份文件都要阅读、比对,再盖上印章。有的已确认,有的仍在等待。</span></p>
     </header>
 
-    <div class="a6-legend" aria-label="Leyenda">
+    <div class="a6-legend">
       <span class="a6-legend-item"><i class="a6-dot a6-dot--confirmed"></i><span data-lang="es">Sello rojo: confirmado</span><span data-lang="en">Red seal: confirmed</span><span data-lang="zh">红印:已确认</span></span>
       <span class="a6-legend-item"><i class="a6-dot a6-dot--pending"></i><span data-lang="es">Tinta gris: por confirmar</span><span data-lang="en">Grey ink: to confirm</span><span data-lang="zh">灰墨:待确认</span></span>
     </div>
@@ -2489,103 +2360,63 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     <div class="a6-table" data-a6-table>
       <article class="a6-case a6-case--confirmed" id="a6-c-generacion" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 01</p>
-          <h3 class="a6-case-title"><span data-lang="es">Generacion 34: el caracter 礼</span><span data-lang="en">Generation 34: the character 礼</span><span data-lang="zh">第三十四代:礼字</span></h3>
-          <p class="a6-case-body"><span data-lang="es">En el poema generacional de la rama 余 consultada, 礼 corresponde a la generacion 34.</span><span data-lang="en">In the generation poem of the 余 branch consulted, 礼 corresponds to generation 34.</span><span data-lang="zh">鉴湖余氏字辈诗中，第三十四代为“礼”。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Salon del clan y poema de generaciones</span><span data-lang="en">Clan hall and generation poem</span><span data-lang="zh">宗祠与字辈诗</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--high" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Alta</span><span data-lang="en">High</span><span data-lang="zh">高</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Un caracter que se hereda, de generacion en generacion.</span><span data-lang="en">A character handed down, generation after generation.</span><span data-lang="zh">一个代代相传的字。</span></p>
-          <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
-        </div>
-      </article>
-      <article class="a6-case a6-case--confirmed" id="a6-c-nogales" data-a6-case>
-        <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 02</p>
-          <h3 class="a6-case-title"><span data-lang="es">Cruce por Nogales, 1930</span><span data-lang="en">Nogales crossing, 1930</span><span data-lang="zh">1930年经诺加莱斯入境</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Cuatro ninos cruzaron juntos el 26 de mayo de 1930 rumbo a San Francisco. Las tarjetas originales dan al padre.</span><span data-lang="en">Four children crossed together on 26 May 1930 bound for San Francisco. The original cards name the father.</span><span data-lang="zh">四名孩童于1930年5月26日同行前往旧金山。原始卡片注明其父。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Tarjetas originales de cruce</span><span data-lang="en">Original crossing cards</span><span data-lang="zh">原始入境卡片</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--high" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Alta</span><span data-lang="en">High</span><span data-lang="zh">高</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Cuatro tarjetas. Despues, ningun rastro.</span><span data-lang="en">Four cards. After that, no trace.</span><span data-lang="zh">四张卡片。此后,杳无踪迹。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Generación 34: 礼</span><span data-lang="en">Generation 34: 礼</span><span data-lang="zh">第三十四代:礼</span></h3>
+          <p class="a6-human"><span data-lang="es">Un carácter que se hereda, de generación en generación.</span><span data-lang="en">A character handed down, generation after generation.</span><span data-lang="zh">一个代代相传的字。</span></p>
           <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"><span><span data-lang="es">CONFIRMADO</span><span data-lang="en">CONFIRMED</span><span data-lang="zh">已确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-aldea" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 03</p>
-          <h3 class="a6-case-title"><span data-lang="es">Aldea de origen</span><span data-lang="en">Village of origin</span><span data-lang="zh">故乡村落</span></h3>
-          <p class="a6-case-body"><span data-lang="es">礼边村 (Libian) al 50%. La placa de donantes del altar dice 朝陽村 (Zhaoyang). Las dos siguen abiertas.</span><span data-lang="en">礼边村 (Libian) at 50%. The altar donor plaque reads 朝陽村 (Zhaoyang). Both remain open.</span><span data-lang="zh">礼边村(Libian)约五成把握。祭坛捐款牌写作朝陽村。两者仍待确认。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Lectura fonetica contrastada con la placa</span><span data-lang="en">Phonetic reading compared with the plaque</span><span data-lang="zh">读音推测与捐款牌对照</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--mid" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Media, 50%</span><span data-lang="en">Medium, 50%</span><span data-lang="zh">中等,约50%</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Te buscamos bajo dos nombres.</span><span data-lang="en">We looked for you under two names.</span><span data-lang="zh">我们用两个名字寻你。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Tu aldea</span><span data-lang="en">Your village</span><span data-lang="zh">你的村子</span></h3>
+          <p class="a6-human"><span data-lang="es">礼边村 al 50%, o 朝陽村, como dice la placa del altar. Te buscamos bajo dos nombres.</span><span data-lang="en">礼边村 at 50%, or 朝陽村, as the altar plaque reads. We looked for you under two names.</span><span data-lang="zh">礼边村,约五成把握;或是祭坛石牌上的朝陽村。我们用两个名字寻你。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-nacimiento" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 04</p>
-          <h3 class="a6-case-title"><span data-lang="es">Ano de nacimiento de Miguel</span><span data-lang="en">Miguel's birth year</span><span data-lang="zh">米格尔的出生年份</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Hacia 1886. Las fuentes dan de 1882 a 1892. El ano exacto no esta probado.</span><span data-lang="en">Around 1886. Sources range from 1882 to 1892. The exact year is not proven.</span><span data-lang="zh">约1886年。各来源在1882至1892年之间。确切年份未证实。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Fuentes que no coinciden</span><span data-lang="en">Sources that disagree</span><span data-lang="zh">来源互相不符</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--low" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Baja</span><span data-lang="en">Low</span><span data-lang="zh">低</span></strong></p>
-          <p class="a6-human"><span data-lang="es">No sabemos con certeza cuando naciste.</span><span data-lang="en">We do not know for certain when you were born.</span><span data-lang="zh">我们不确知你生于何时。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Tu año</span><span data-lang="en">Your year</span><span data-lang="zh">你的出生年</span></h3>
+          <p class="a6-human"><span data-lang="es">Entre 1882 y 1892. No sabemos con certeza cuándo naciste.</span><span data-lang="en">Between 1882 and 1892. We do not know for certain when you were born.</span><span data-lang="zh">在1882至1892年之间。我们不确知你生于何时。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-manifiesto" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 05</p>
-          <h3 class="a6-case-title"><span data-lang="es">Manifiesto del S.S. Asia, 1909</span><span data-lang="en">S.S. Asia manifest, 1909</span><span data-lang="zh">1909年亚洲号旅客名单</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Hong Kong, 17 de agosto de 1909, rumbo a San Francisco. La fila 1 (Man Yee Wong, 27 anos) fue ubicada, pero no se confirma que sea Miguel.</span><span data-lang="en">Hong Kong, 17 August 1909, to San Francisco. Row 1 (Man Yee Wong, age 27) has been located, but it is not confirmed to be Miguel.</span><span data-lang="zh">香港,1909年8月17日,开往旧金山。第一行(Man Yee Wong,27岁)已找到,但不能确认就是米格尔。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Ubicado, no confirmado</span><span data-lang="en">Located, not confirmed</span><span data-lang="zh">已找到,未确认</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--mid" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Media</span><span data-lang="en">Medium</span><span data-lang="zh">中等</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Quiza fuiste tu quien subio a ese barco.</span><span data-lang="en">Perhaps it was you who boarded that ship.</span><span data-lang="zh">或许,登上那艘船的就是你。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Tu viaje</span><span data-lang="en">Your voyage</span><span data-lang="zh">你的旅程</span></h3>
+          <p class="a6-human"><span data-lang="es">Un manifiesto del S.S. Asia, en 1909, nombra a un hombre de 27 años. Quizá fuiste tú. No podemos probarlo.</span><span data-lang="en">A manifest of the S.S. Asia, in 1909, names a man of 27. Perhaps it was you. We cannot prove it.</span><span data-lang="zh">1909年亚洲号的名单上有一位二十七岁的男子。或许是你。我们无法证明。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-parentesco" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 06</p>
-          <h3 class="a6-case-title"><span data-lang="es">Miguel: tio o hermano</span><span data-lang="en">Miguel: uncle or brother</span><span data-lang="zh">米格尔:叔父还是兄弟</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Depende de leer "Wong" como 和 (generacion 33) o como 黄 (apellido materno). Sin resolver.</span><span data-lang="en">It depends on reading "Wong" as 和 (generation 33) or as 黄 (maternal surname). Unresolved.</span><span data-lang="zh">取决于把 Wong 读作和(第三十三代)还是黄(母姓)。尚无定论。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Dos lecturas en competencia</span><span data-lang="en">Two competing readings</span><span data-lang="zh">两种读法并存</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--low" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Baja</span><span data-lang="en">Low</span><span data-lang="zh">低</span></strong></p>
-          <p class="a6-human"><span data-lang="es">No sabemos todavia que eras para el.</span><span data-lang="en">We still do not know what you were to him.</span><span data-lang="zh">我们仍不知道你之于他是何关系。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Lo que fuiste para él</span><span data-lang="en">What you were to him</span><span data-lang="zh">你之于他</span></h3>
+          <p class="a6-human"><span data-lang="es">¿Tío o hermano de Manuel Yee Pang? Todavía no sabemos qué fuiste para él.</span><span data-lang="en">Uncle or brother of Manuel Yee Pang? We still do not know what you were to him.</span><span data-lang="zh">是曼努埃尔·余邦的叔父,还是兄弟?我们仍不知道你之于他是何关系。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-ninos" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 07</p>
-          <h3 class="a6-case-title"><span data-lang="es">Destino de los cuatro ninos</span><span data-lang="en">What became of the four children</span><span data-lang="zh">四名孩童的去向</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Se desconoce. Una hipotesis: regresaron a China durante la campana antichina y las deportaciones de 1930 a 1933.</span><span data-lang="en">Unknown. One hypothesis: they returned to China during the anti-Chinese campaign and the 1930 to 1933 deportations.</span><span data-lang="zh">去向不明。一种假设:他们在反华运动与1930至1933年遣返期间回到中国。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Hipotesis sin documento</span><span data-lang="en">Hypothesis without a document</span><span data-lang="zh">无文件支持的假设</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--low" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Baja</span><span data-lang="en">Low</span><span data-lang="zh">低</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Los seguimos esperando.</span><span data-lang="en">We are still waiting for them.</span><span data-lang="zh">我们仍在等他们。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Los cuatro niños</span><span data-lang="en">The four children</span><span data-lang="zh">四个孩子</span></h3>
+          <p class="a6-human"><span data-lang="es">Cruzaron por Nogales en 1930. Después, ningún rastro. Los seguimos esperando.</span><span data-lang="en">They crossed at Nogales in 1930. After that, no trace. We are still waiting for them.</span><span data-lang="zh">1930年他们从诺加利斯入境。此后,杳无踪迹。我们仍在等他们。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
       <article class="a6-case a6-case--pending" id="a6-c-lumshee" data-a6-case>
         <div class="a6-paper">
-          <p class="a6-file"><span data-lang="es">Expediente</span><span data-lang="en">File</span><span data-lang="zh">档案</span> 08</p>
-          <h3 class="a6-case-title"><span data-lang="es">Quien es Lum Shee</span><span data-lang="en">Who is Lum Shee</span><span data-lang="zh">谁是 Lum Shee</span></h3>
-          <p class="a6-case-body"><span data-lang="es">Es a quien los ninos iban a unirse en San Francisco. No sabemos quien es.</span><span data-lang="en">The person the children were going to join in San Francisco. We do not know who they are.</span><span data-lang="zh">孩童们在旧金山要投奔的人。我们不知道是谁。</span></p>
-          <p class="a6-basis"><span class="a6-k"><span data-lang="es">Base</span><span data-lang="en">Basis</span><span data-lang="zh">依据</span></span> <span data-lang="es">Sin resolver</span><span data-lang="en">Unresolved</span><span data-lang="zh">未解</span></p>
-          <p class="a6-conf"><span class="a6-k"><span data-lang="es">Confianza</span><span data-lang="en">Confidence</span><span data-lang="zh">可信度</span></span> <span class="a6-meter a6-meter--low" aria-hidden="true"><i></i><i></i><i></i></span> <strong><span data-lang="es">Sin nivel</span><span data-lang="en">None yet</span><span data-lang="zh">暂无</span></strong></p>
-          <p class="a6-human"><span data-lang="es">Alguien los esperaba. Queremos saber quien.</span><span data-lang="en">Someone was waiting for them. We want to know who.</span><span data-lang="zh">有人在等他们。我们想知道是谁。</span></p>
+          <h3 class="a6-case-title"><span data-lang="es">Quien los esperaba</span><span data-lang="en">Who was waiting</span><span data-lang="zh">等候他们的人</span></h3>
+          <p class="a6-human"><span data-lang="es">Lum Shee. Alguien los esperaba en San Francisco. Todavía no sabemos quién.</span><span data-lang="en">Lum Shee. Someone was waiting for them in San Francisco. We still do not know who.</span><span data-lang="zh">Lum Shee。旧金山有人在等他们。我们仍不知道是谁。</span></p>
           <div class="a6-stamp a6-stamp--pending" data-a6-stamp role="img" aria-label="POR CONFIRMAR"><span><span data-lang="es">POR CONFIRMAR</span><span data-lang="en">TO CONFIRM</span><span data-lang="zh">待确认</span></span></div>
         </div>
       </article>
     </div>
 
     <div class="a6-method" data-a6-method>
-      <p class="a6-method-text"><span data-lang="es">Un papel, su traduccion, otra fuente que lo cruce. Y la confianza que merece.</span><span data-lang="en">A paper, its translation, another source to cross it. And the trust it deserves.</span><span data-lang="zh">一份文件,它的译文,另一来源的印证,以及它应得的可信度。</span></p>
+      <p class="a6-method-text"><span data-lang="es">Un papel, su traducción, otra fuente que lo cruce. Y la confianza que merece.</span><span data-lang="en">A paper, its translation, another source to cross it. And the trust it deserves.</span><span data-lang="zh">一份文件,它的译文,另一来源的印证,以及它应得的可信度。</span></p>
       <span class="a6-method-line" aria-hidden="true"><svg viewBox="0 0 100 2" preserveAspectRatio="none"><line x1="0" y1="1" x2="100" y2="1" pathLength="100" data-a6-line/></svg></span>
     </div>
 
     <blockquote class="a6-credo" data-a6-credo>
       <p><span data-lang="es">Lo que no se puede probar, se guarda con cuidado.</span><span data-lang="en">What cannot be proven is kept with care.</span><span data-lang="zh">无法证明的,我们小心收藏。</span></p>
     </blockquote>
-
   </div>
 </section>
 
@@ -2706,9 +2537,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <article class="a7-panel a7-p1">
           <p class="a7-kicker"><span data-lang="es">Marzo de 2026</span><span data-lang="en">March 2026</span><span data-lang="zh">2026年3月</span></p>
           <p class="a7-text">
-            <span data-lang="es">Llegué a la aldea de la que saliste. En la pared del altar, una placa de donantes lleva escrito 朝陽村. El nombre exacto de la aldea sigue por confirmar, pero el altar estaba ahí.</span>
-            <span data-lang="en">I reached the village you left. On the wall of the altar, a plaque of donors reads 朝陽村. The exact name of the village is still to be confirmed, but the altar was there.</span>
-            <span data-lang="zh">我来到了你离开的那个村子。神龛墙上的捐款者牌匾写着朝陽村。村名仍待确认，但神龛就在那里。</span>
+            <span data-lang="es">Llegué a la tierra de la que saliste. En la pared del altar, una placa de donantes lleva escrito 朝陽村. El nombre exacto de la aldea sigue por confirmar, pero el altar estaba ahí.</span>
+            <span data-lang="en">I reached the land you left. On the wall of the altar, a plaque of donors reads 朝陽村. The exact name of the village is still to be confirmed, but the altar was there.</span>
+            <span data-lang="zh">我来到了你离开的那片土地。神龛墙上的捐款者牌匾写着朝陽村。村名仍待确认，但神龛就在那里。</span>
           </p>
         </article>
 
@@ -2742,9 +2573,9 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           <h3 class="a7-c-title"><span data-lang="es">Familia Yee</span><span data-lang="en">Yee Family</span><span data-lang="zh">余氏家族</span></h3>
           <dl>
             <dt><span data-lang="es">Una historia de</span><span data-lang="en">A story of</span><span data-lang="zh">献给</span></dt>
-            <dd><span data-lang="es">Taishan, Mulege y los caminos entre ambos</span><span data-lang="en">Taishan, Mulege and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
+            <dd><span data-lang="es">Taishan, Mulegé y los caminos entre ambos</span><span data-lang="en">Taishan, Mulege and the roads between them</span><span data-lang="zh">台山、穆莱赫，以及两地之间的路</span></dd>
             <dt><span data-lang="es">Fuentes</span><span data-lang="en">Sources</span><span data-lang="zh">资料来源</span></dt>
-            <dd><span data-lang="es">Censo de Mexico 1930, registros de cruce de Nogales 1930, Museo de emigrantes de Taishan, salon del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Nogales crossing records 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、1930年诺加莱斯过境记录、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
+            <dd><span data-lang="es">Censo de México 1930, registros de cruce de Nogales 1930, Museo de emigrantes de Taishan, salón del clan en Dihai, el altar de la aldea</span><span data-lang="en">Mexico census 1930, Nogales crossing records 1930, Taishan emigrant museum, the clan hall in Dihai, the village altar</span><span data-lang="zh">1930年墨西哥人口普查、1930年诺加莱斯过境记录、台山华侨博物馆、斗海宗祠、村中神龛</span></dd>
           </dl>
           <p class="a7-c-end"><span data-lang="es">Miguel, seguimos buscándote.</span><span data-lang="en">Miguel, we keep looking for you.</span><span data-lang="zh">米格尔，我们仍在寻找你。</span></p>
         </div>
@@ -3600,7 +3431,7 @@ window.Santuario.register(2, function (ctx) {
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {
-    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.3);
+    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.8);
   });
   tl.to(sun, { yPercent: -10, scale: 1.1, duration: 10 }, 0)
     .to(sun, { filter: 'brightness(1.25)', duration: 4 }, 6);
@@ -3710,7 +3541,7 @@ window.Santuario.register(2, function (ctx) {
         t.parentNode.replaceChild(frag, t);
       });
     }
-    qa('.a3-lede, .a3-card-text').forEach(splitWords);
+    qa('.a3-lede, .a3-lede2, .a3-card-text').forEach(splitWords);
 
     var dusk = q('.a3-sky-dusk');
     var ridges = [q('.a3-ridge-1'), q('.a3-ridge-2')];
@@ -3768,6 +3599,7 @@ window.Santuario.register(2, function (ctx) {
       cards.forEach(function (c, k) {
         gsap.to(c, { opacity: k === i ? 1 : 0, y: k === i ? 0 : 24, duration: 0.45, overwrite: 'auto' });
         if (k === i) {
+          if (i === 2 && points.lp) pulse(points.lp);
           gsap.fromTo(c.querySelectorAll('.a3-w'), { opacity: 0, y: 10 },
             { opacity: 1, y: 0, duration: 0.4, stagger: 0.035, ease: 'power2.out', overwrite: 'auto' });
           gsap.fromTo(c, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.7, ease: 'power3.out', clearProps: 'clipPath' });
@@ -3859,20 +3691,10 @@ window.Santuario.register(2, function (ctx) {
       clearProps: 'filter,clipPath', scrollTrigger: { trigger: q('.a3-intro'), start: 'top 75%' } });
     gsap.from(qa('.a3-lede .a3-w'), { opacity: 0, y: 14, stagger: 0.04, duration: 0.6, ease: 'power2.out',
       scrollTrigger: { trigger: q('.a3-lede'), start: 'top 85%' } });
-    gsap.from(q('.a3-context'), { opacity: 0, y: 24, duration: 1, ease: 'power2.out',
-      scrollTrigger: { trigger: q('.a3-context'), start: 'top 90%' } });
+    gsap.from(qa('.a3-lede2 .a3-w'), { opacity: 0, y: 12, stagger: 0.04, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: q('.a3-lede2'), start: 'top 90%' } });
 
-    // el hilo rojo-oro de la linea de tiempo se dibuja con el scroll
-    gsap.fromTo(q('.a3-tl'), { '--a3-fill': 0 }, { '--a3-fill': 1, ease: 'none',
-      scrollTrigger: { trigger: q('.a3-tl'), start: 'top 70%', end: 'bottom 70%', scrub: 0.6 } });
 
-    // linea de tiempo: los items aparecen al entrar
-    qa('.a3-tl-item').forEach(function (el) {
-      gsap.from(el, {
-        opacity: 0, x: -30, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' }
-      });
-    });
   });
 })();
 </script>
@@ -4289,11 +4111,10 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-nacimiento', 'a6-c-manifiesto', 0],
-    ['a6-c-manifiesto', 'a6-c-parentesco', 0], ['a6-c-generacion', 'a6-c-parentesco', 1],
-    ['a6-c-aldea', 'a6-c-nacimiento', 0], ['a6-c-nogales', 'a6-c-ninos', 0],
-    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-nogales', 'a6-c-lumshee', 1],
-    ['a6-c-parentesco', 'a6-c-nogales', 1]
+    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-aldea', 'a6-c-nacimiento', 0],
+    ['a6-c-nacimiento', 'a6-c-manifiesto', 0], ['a6-c-manifiesto', 'a6-c-parentesco', 0],
+    ['a6-c-generacion', 'a6-c-parentesco', 1], ['a6-c-parentesco', 'a6-c-ninos', 0],
+    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-manifiesto', 'a6-c-lumshee', 1]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');

@@ -14,10 +14,7 @@
 }
 @keyframes a3-shimmer { to { background-position: -200% 0; } }
 .a3-lede { font-size: 1.15rem; line-height: 1.7; margin: 0 0 1.5rem; }
-.a3-context {
-  font-size: .95rem; line-height: 1.7; margin: 0 auto; padding: 1rem 0 0;
-  border-top: 1px solid var(--line); color: var(--paper-dim);
-}
+.a3-lede2 { font-size: 1rem; line-height: 1.7; margin: 0 auto; padding: 1rem 0 0; border-top: 1px solid var(--line); color: var(--paper-dim); }
 .a3-w { display: inline-block; will-change: transform, opacity; }
 
 /* Escenario */
@@ -78,6 +75,7 @@
 .a3-pt-ring { fill: none; stroke: var(--gold-bright); stroke-width: 2; opacity: .8; transform-box: fill-box; transform-origin: center; }
 .a3-lbl { font-family: var(--font-serif); font-size: 22px; fill: var(--paper); paint-order: stroke; stroke: var(--lacquer); stroke-width: 5px; }
 .a3-lbl-sm { font-size: 18px; fill: var(--gold-bright); }
+.a3-lbl-sm2 { font-size: 20px; }
 
 .a3-ship-hull { fill: var(--red-china); stroke: var(--gold-bright); stroke-width: 1.5; }
 .a3-ship-sail { fill: var(--gold-bright); stroke: var(--red-china-deep); stroke-width: 1; }
@@ -115,8 +113,8 @@
 
 .a3-stamp-ill {
   position: absolute; z-index: 5; left: 16px; top: 12px; margin: 0; max-width: 70%;
-  font-size: .72rem; letter-spacing: .08em; line-height: 1.4; color: var(--paper);
-  padding: .3rem .6rem; border: 1px dashed var(--gold); background: var(--lacquer-2);
+  font-size: .68rem; letter-spacing: .12em; line-height: 1.4; color: var(--paper-dim);
+  padding: .15rem .5rem; border: 1px dotted var(--gold-dim); background: transparent; opacity: .8; text-transform: lowercase;
 }
 
 /* Tarjetas */
@@ -138,9 +136,11 @@
 .a3-card-text { margin: 0 0 .75rem; font-size: .98rem; line-height: 1.55; }
 
 /* Sin JS: estatico, tarjetas viven en la linea de tiempo */
-.a3:not(.a3-js) .a3-cards { display: none; }
-.a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; aspect-ratio: 5 / 3; }
-.a3:not(.a3-js) .a3-map { height: 100%; }
+.a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; overflow: visible; padding-bottom: 2rem; }
+.a3:not(.a3-js) .a3-map { position: relative; height: auto; aspect-ratio: 5 / 3; }
+.a3:not(.a3-js) .a3-far, .a3:not(.a3-js) .a3-clouds, .a3:not(.a3-js) .a3-lanterns, .a3:not(.a3-js) .a3-waves, .a3:not(.a3-js) .a3-sparks { display: none; }
+.a3:not(.a3-js) .a3-cards { position: static; width: auto; max-width: 28rem; margin: 1rem auto 0; }
+.a3:not(.a3-js) .a3-card { margin: 0 auto 1rem; }
 .a3:not(.a3-js) .a3-ship { transform: translate(892px, 432px); }
 
 .a3-js .a3-cards { height: 14rem; }
@@ -157,31 +157,9 @@
 .a3-seal-unc, .a3-tl-unc .a3-tag { color: var(--hypothesis); border-style: dashed; transform: rotate(-1.5deg); }
 .a3-seal-ill { color: var(--paper-dim); border-style: dotted; }
 
-/* Linea de tiempo */
-.a3-timeline { max-width: 44rem; margin: 0 auto; padding: 4rem 16px 6rem; position: relative; }
-.a3-tl-title { font-size: 1.5rem; margin: 0 0 2rem; text-align: center; color: var(--gold-bright); }
-.a3-tl { list-style: none; margin: 0; padding: 0 0 0 1.25rem; border-left: 2px solid var(--gold-dim); position: relative; }
-.a3-tl::after {
-  content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%;
-  background: var(--grad-red-gold); transform-origin: top; transform: scaleY(var(--a3-fill, 1));
-}
-.a3-tl-item { position: relative; display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0 0 2rem; }
-.a3-tl-item::before {
-  content: ""; position: absolute; left: calc(-1.25rem - 6px); top: .6rem; width: 10px; height: 10px;
-  border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 10px var(--gold); z-index: 1;
-}
-.a3-tl-ok::before { background: var(--jade-soft); box-shadow: 0 0 10px var(--jade); }
-.a3-tl-unc::before { background: var(--hypothesis); box-shadow: 0 0 10px var(--porcelain-bright); }
-.a3-tl-tbc::before { background: var(--lacquer); border: 1px solid var(--gold-bright); }
-.a3-tl-note::before { background: var(--lacquer); border: 1px dashed var(--paper); box-shadow: none; }
-.a3-tl-year { font-size: 1.5rem; font-family: var(--font-brush); color: var(--gold-bright); }
-.a3-tl-body { display: block; line-height: 1.65; }
-.a3-tl-body .a3-tag { margin-top: .6rem; display: table; }
-
 .a3 :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .a3-js .a3-cards { display: none; }
   .a3-title, .a3-lantern { animation: none; }
   .a3-sky-day { opacity: 1; }
 }

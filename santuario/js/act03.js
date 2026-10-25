@@ -90,7 +90,7 @@
         t.parentNode.replaceChild(frag, t);
       });
     }
-    qa('.a3-lede, .a3-card-text').forEach(splitWords);
+    qa('.a3-lede, .a3-lede2, .a3-card-text').forEach(splitWords);
 
     var dusk = q('.a3-sky-dusk');
     var ridges = [q('.a3-ridge-1'), q('.a3-ridge-2')];
@@ -148,6 +148,7 @@
       cards.forEach(function (c, k) {
         gsap.to(c, { opacity: k === i ? 1 : 0, y: k === i ? 0 : 24, duration: 0.45, overwrite: 'auto' });
         if (k === i) {
+          if (i === 2 && points.lp) pulse(points.lp);
           gsap.fromTo(c.querySelectorAll('.a3-w'), { opacity: 0, y: 10 },
             { opacity: 1, y: 0, duration: 0.4, stagger: 0.035, ease: 'power2.out', overwrite: 'auto' });
           gsap.fromTo(c, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.7, ease: 'power3.out', clearProps: 'clipPath' });
@@ -239,19 +240,9 @@
       clearProps: 'filter,clipPath', scrollTrigger: { trigger: q('.a3-intro'), start: 'top 75%' } });
     gsap.from(qa('.a3-lede .a3-w'), { opacity: 0, y: 14, stagger: 0.04, duration: 0.6, ease: 'power2.out',
       scrollTrigger: { trigger: q('.a3-lede'), start: 'top 85%' } });
-    gsap.from(q('.a3-context'), { opacity: 0, y: 24, duration: 1, ease: 'power2.out',
-      scrollTrigger: { trigger: q('.a3-context'), start: 'top 90%' } });
+    gsap.from(qa('.a3-lede2 .a3-w'), { opacity: 0, y: 12, stagger: 0.04, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: q('.a3-lede2'), start: 'top 90%' } });
 
-    // el hilo rojo-oro de la linea de tiempo se dibuja con el scroll
-    gsap.fromTo(q('.a3-tl'), { '--a3-fill': 0 }, { '--a3-fill': 1, ease: 'none',
-      scrollTrigger: { trigger: q('.a3-tl'), start: 'top 70%', end: 'bottom 70%', scrub: 0.6 } });
 
-    // linea de tiempo: los items aparecen al entrar
-    qa('.a3-tl-item').forEach(function (el) {
-      gsap.from(el, {
-        opacity: 0, x: -30, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 88%' }
-      });
-    });
   });
 })();

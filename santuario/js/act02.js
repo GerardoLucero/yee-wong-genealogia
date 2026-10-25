@@ -63,7 +63,7 @@ window.Santuario.register(2, function (ctx) {
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {
-    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.3);
+    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.8);
   });
   tl.to(sun, { yPercent: -10, scale: 1.1, duration: 10 }, 0)
     .to(sun, { filter: 'brightness(1.25)', duration: 4 }, 6);

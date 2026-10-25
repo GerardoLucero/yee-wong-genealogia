@@ -95,11 +95,10 @@ window.Santuario.register(6, function (ctx) {
 
   /* Hilos rojos entre pistas, dibujados con el scroll */
   var links = [
-    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-nacimiento', 'a6-c-manifiesto', 0],
-    ['a6-c-manifiesto', 'a6-c-parentesco', 0], ['a6-c-generacion', 'a6-c-parentesco', 1],
-    ['a6-c-aldea', 'a6-c-nacimiento', 0], ['a6-c-nogales', 'a6-c-ninos', 0],
-    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-nogales', 'a6-c-lumshee', 1],
-    ['a6-c-parentesco', 'a6-c-nogales', 1]
+    ['a6-c-aldea', 'a6-c-generacion', 1], ['a6-c-aldea', 'a6-c-nacimiento', 0],
+    ['a6-c-nacimiento', 'a6-c-manifiesto', 0], ['a6-c-manifiesto', 'a6-c-parentesco', 0],
+    ['a6-c-generacion', 'a6-c-parentesco', 1], ['a6-c-parentesco', 'a6-c-ninos', 0],
+    ['a6-c-ninos', 'a6-c-lumshee', 0], ['a6-c-manifiesto', 'a6-c-lumshee', 1]
   ];
   var svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');

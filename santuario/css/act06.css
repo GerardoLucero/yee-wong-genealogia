@@ -26,18 +26,7 @@
   box-shadow: 0 1px 0 var(--fog-strong), 0 14px 30px rgba(0,0,0,0.45);
   overflow: hidden;
 }
-.a6-file { font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.7; }
 .a6-case-title { font-family: var(--font-serif); font-size: var(--fs-md); line-height: var(--lh-tight); margin: var(--sp-2) 0 var(--sp-3); font-weight: 600; padding-right: 5.5rem; }
-.a6-case-body { font-size: var(--fs-sm); line-height: var(--lh-base); }
-.a6-basis, .a6-conf { margin-top: var(--sp-3); font-size: var(--fs-sm); line-height: var(--lh-base); }
-.a6-k { display: inline-block; font-size: var(--fs-xs); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--ink-2); opacity: 0.65; margin-right: var(--sp-2); }
-.a6-conf { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); }
-.a6-conf .a6-k { margin-right: 0; }
-.a6-meter { display: inline-flex; gap: 3px; }
-.a6-meter i { width: 1.1rem; height: 0.45rem; border: 1px solid var(--ink-2); background: transparent; display: block; }
-.a6-meter--high i { background: var(--ink-2); }
-.a6-meter--mid i:nth-child(-n+2) { background: var(--ink-2); }
-.a6-meter--low i:nth-child(1) { background: var(--ink-2); }
 
 /* Sellos */
 .a6-stamp {
@@ -58,7 +47,6 @@
 .a6-method-line { display: block; height: 2px; margin: var(--sp-4) auto 0; max-width: 24rem; }
 .a6-method-line svg { width: 100%; height: 2px; display: block; overflow: visible; }
 .a6-method-line line { stroke: var(--gold); stroke-width: 2; }
-.a6-human { margin-top: var(--sp-4); padding-top: var(--sp-3); border-top: 1px solid var(--gold-dim); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
 
 .a6-credo { margin: var(--sp-8) auto var(--sp-5); max-width: var(--measure); text-align: center; }
 .a6-credo p { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); font-style: italic; color: var(--gold-bright); }
@@ -96,3 +84,7 @@
   .a6-case--confirmed .a6-paper::after { animation: none; display: none; }
   .a6-flash, .a6-spark { display: none; }
 }
+
+.a6-human { margin-top: var(--sp-3); font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--cinnabar-deep); }
+.a6-case--pending .a6-human { color: var(--ink-2); }
+.a6-case-title { padding-right: 5.8rem; }
