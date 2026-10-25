@@ -1,0 +1,7 @@
+santuario/content/*.md
+santuario/content/img-manifest.json
+santuario/img/*.webp
+santuario/_brief/
+santuario/dbg*.html
+santuario/debug.html
+images/
