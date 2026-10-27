@@ -1256,6 +1256,84 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a5-voz { font-style: italic; color: var(--gold-bright); margin: 0 0 .5rem; font-size: 1.05rem; }
 
 .a5-muerte { font-size: 1.3rem; color: var(--paper); margin: .6rem 0; letter-spacing: .04em; }
+
+/* ---- Escena "Donde se cruzan": generaciones en filas, dos carriles ---- */
+.a5g-scroller { position: relative; }
+.a5g-stage { position: relative; max-width: 44rem; margin: 0 auto; padding: 2rem 16px 1.5rem; }
+.a5g-title { font-weight: 400; text-align: center; font-size: clamp(1.7rem, 5vw, 2.6rem); margin: 0 0 1rem; background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.a5g-han { font-family: var(--font-cjk); }
+.a5g-heads, .a5g-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.25rem; }
+.a5g-head { margin: 0 0 .6rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: .25rem; font-size: 1.125rem; line-height: 1.25; }
+.a5g-head-t { color: var(--paper); }
+.a5g-tag { font-size: 1.125rem; letter-spacing: .06em; color: var(--gold-bright); border: 1px solid var(--gold-bright); padding: 0 .6rem; }
+.a5g-tag--hyp { color: var(--hypothesis); border: 1px dashed var(--hypothesis); transform: rotate(-3deg); }
+.a5g-grid { row-gap: 0; }
+.a5g-rail { position: absolute; top: 0; bottom: 0; width: 3px; border-radius: 2px; }
+.a5g-rail--ok { left: calc(25% - .3rem); background: linear-gradient(var(--gold-bright), var(--red-china)); box-shadow: 0 0 10px var(--a5-glow); }
+.a5g-rail--hyp { left: calc(75% + .3rem); background: repeating-linear-gradient(var(--hypothesis) 0 6px, transparent 6px 13px); }
+.a5g-row { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.25rem; padding: .35rem 0 .7rem; }
+.a5g-gen { grid-column: 1 / -1; margin: 0 0 .35rem; text-align: center; font-size: 1.125rem; color: var(--gold); letter-spacing: .08em; }
+.a5g-gen .a5g-han { font-size: 1.4rem; color: var(--gold-bright); }
+.a5g-cell { list-style: none; margin: 0; padding: 0 0 0 .9rem; display: flex; flex-wrap: wrap; gap: .4rem; align-content: flex-start; font-size: 1.125rem; line-height: 1.25; }
+.a5g-cell--hyp { padding: 0 .9rem 0 0; justify-content: flex-end; }
+.a5g-chip { padding: .15rem .5rem; border: 1px solid var(--gold-bright); background: var(--lacquer-3); color: var(--paper); display: flex; flex-direction: column; }
+.a5g-chip .a5g-han { font-size: 1.25rem; }
+.a5g-note { font-size: 1.125rem; color: var(--paper-dim); line-height: 1.2; }
+.a5g-cell--hyp .a5g-chip { border: 1px dashed var(--hypothesis); background: transparent; }
+.a5g-chip--txt { text-align: right; }
+.a5g-cross { grid-column: 1 / -1; position: relative; margin: .55rem 0 0; display: flex; align-items: center; justify-content: center; gap: .6rem; font-size: 1.125rem; line-height: 1.25; text-align: center; color: var(--gold-bright); }
+.a5g-cross::before { content: ""; position: absolute; left: 12%; right: 12%; top: 50%; border-top: 1px dotted var(--gold); z-index: 0; }
+.a5g-cross-t { position: relative; z-index: 1; padding: .1rem .6rem; background: var(--lacquer-2); }
+.a5g-ring { position: relative; z-index: 1; flex: none; width: 1.1rem; height: 1.1rem; border-radius: 50%; border: 2px solid var(--gold-bright); background: var(--lacquer-2); box-shadow: 0 0 10px var(--gold-bright); }
+.a5g-ring.a5g-pulse { animation: a5g-ping 1.8s ease-out infinite; }
+@keyframes a5g-ping { 0% { box-shadow: 0 0 0 0 var(--gold-bright); } 100% { box-shadow: 0 0 0 16px transparent; } }
+.a5g-say { grid-column: 1 / -1; margin: .5rem 0 0; text-align: center; font-style: italic; color: var(--gold-bright); font-size: 1.125rem; }
+.a5g-caption { display: none; }
+.a5g-legend { margin: 1rem 0 0; text-align: center; font-size: 1.125rem; color: var(--paper-dim); }
+
+/* Con JS y movimiento */
+.a5g-js .a5g-say { display: none; }
+.a5g-js .a5g-caption { display: block; margin: .8rem 0 0; min-height: 2.6rem; text-align: center; font-style: italic; font-size: 1.3rem; color: var(--gold-bright); background: var(--lacquer-2); }
+.a5g-pin .a5g-scroller { height: 290vh; }
+.a5g-pin .a5g-stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 1rem; padding-bottom: 1rem; }
+.a5g-flow .a5g-caption { position: sticky; bottom: 0; padding: .5rem 0; z-index: 2; }
+@media (max-width: 480px) {
+  .a5g-heads, .a5g-grid, .a5g-row { column-gap: .75rem; }
+  .a5g-cell { padding-left: .6rem; } .a5g-cell--hyp { padding-right: .6rem; }
+}
+@media (prefers-reduced-motion: reduce) { .a5g-ring.a5g-pulse { animation: none; } }
+
+/* ---- "Donde se cruzan" en escritorio: mas ancho, tipos mayores, caracter de generacion al centro ---- */
+@media (min-width: 900px) {
+  .a5g-stage { max-width: min(1200px, 92vw); padding-top: max(5vh, 2.5rem); }
+  .a5g-title { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1.1rem; line-height: 1.2; }
+  .a5g-heads, .a5g-row, .a5g-grid { grid-template-columns: 1fr 9rem 1fr; column-gap: 1.25rem; }
+  .a5g-heads .a5g-head--ok { grid-column: 1; }
+  .a5g-heads .a5g-head--hyp { grid-column: 3; }
+  .a5g-head { font-size: 1.35rem; margin-bottom: .5rem; }
+  .a5g-tag { font-size: 1.25rem; }
+  .a5g-rail--ok { left: calc(50% - 5.125rem - 1.5px); }
+  .a5g-rail--hyp { left: calc(50% + 5.125rem - 1.5px); }
+  .a5g-row { padding: .2rem 0 .45rem; align-items: center; }
+  .a5g-gen { grid-column: 2; grid-row: 1; margin: 0; display: flex; flex-direction: column; align-items: center; line-height: 1.05; font-size: 1.4rem; }
+  .a5g-gen-t { font-size: 1.375rem; }
+  .a5g-gen .a5g-han { font-size: 2.3rem; }
+  .a5g-cell { grid-row: 1; font-size: 1.375rem; gap: .5rem; }
+  .a5g-cell--ok { grid-column: 1; justify-content: flex-end; padding: 0 1.1rem 0 0; }
+  .a5g-cell--hyp { grid-column: 3; justify-content: flex-start; padding: 0 0 0 1.1rem; }
+  .a5g-chip { padding: .2rem .7rem; }
+  .a5g-chip .a5g-han { font-size: clamp(1.5rem, 2.1vw, 1.75rem); }
+  .a5g-chip--txt { text-align: left; }
+  .a5g-note { font-size: 1.125rem; }
+  .a5g-cross { grid-row: 2; font-size: 1.4rem; min-height: 2.9rem; margin-top: .35rem; gap: .9rem; }
+  .a5g-cross-t .a5g-han { font-size: 1.55rem; }
+  .a5g-ring { width: 2.75rem; height: 2.75rem; border-width: 3px; box-shadow: 0 0 18px 2px var(--gold-bright), inset 0 0 10px var(--gold); }
+  .a5g-say { grid-row: 3; font-size: 1.25rem; }
+  .a5g-legend { font-size: 1.25rem; margin-top: .5rem; }
+  .a5g-js .a5g-caption { font-size: 1.35rem; min-height: 2.2rem; margin-top: .4rem; }
+  .a5g-pin .a5g-stage { padding-top: 5vh; padding-bottom: .75rem; }
+  @keyframes a5g-ping { 0% { box-shadow: 0 0 18px 2px var(--gold-bright), 0 0 0 0 var(--gold-bright); } 100% { box-shadow: 0 0 18px 2px var(--gold-bright), 0 0 0 26px transparent; } }
+}
 </style>
 <style data-src="css/act06.css">
 /* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
@@ -2210,6 +2288,43 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       </svg>
 
       <div class="a5-card" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="a5g-scroller">
+    <div class="a5g-stage">
+      <h3 class="a5g-title"><span data-lang="es">Dónde se cruzan</span><span data-lang="en">Where they meet</span><span data-lang="zh">他们在哪里相遇</span></h3>
+      <div class="a5g-heads">
+        <p class="a5g-head a5g-head--ok"><span class="a5g-head-t"><span data-lang="es">El libro de Manuel Yee Pang</span><span data-lang="en">Manuel Yee Pang's book</span><span data-lang="zh">余邦所在的族谱</span></span><span class="a5g-tag"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></p>
+        <p class="a5g-head a5g-head--hyp"><span class="a5g-head-t"><span data-lang="es">La familia de Miguel</span><span data-lang="en">Miguel's family</span><span data-lang="zh">米格尔的家族</span></span><span class="a5g-tag a5g-tag--hyp"><span data-lang="es">por confirmar</span><span data-lang="en">to confirm</span><span data-lang="zh">待证实</span></span></p>
+      </div>
+      <div class="a5g-grid">
+        <span class="a5g-rail a5g-rail--ok" aria-hidden="true"></span>
+        <span class="a5g-rail a5g-rail--hyp" aria-hidden="true"></span>
+      <div class="a5g-row" data-gen="32">
+        <p class="a5g-gen"><span class="a5g-gen-t"><span data-lang="es">Generación 32</span><span data-lang="en">Generation 32</span><span data-lang="zh">第32代</span></span> <span class="a5g-han" lang="zh">賛</span></p>
+        <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">賛才</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">賛光</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">賛道</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">賛保</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">賛翰</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">賛喜</span></li></ul>
+        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt"><span data-lang="es">El padre de Miguel y Arturo (¿un <span class="a5g-han" lang="zh">賛</span>?)</span><span data-lang="en">The father of Miguel and Arturo (a <span class="a5g-han" lang="zh">賛</span>?)</span><span data-lang="zh">米格尔与阿图罗之父（是某个<span class="a5g-han" lang="zh">賛</span>吗？）</span></li></ul>
+        <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">¿Cuál <span class="a5g-han" lang="zh">賛</span> es su padre?</span><span data-lang="en">Which <span class="a5g-han" lang="zh">賛</span> is his father?</span><span data-lang="zh">哪一个<span class="a5g-han" lang="zh">賛</span>是他的父亲？</span></span></p>
+        <p class="a5g-say"><span data-lang="es">Un libro guarda a los de la aldea.</span><span data-lang="en">A book keeps the people of the village.</span><span data-lang="zh">一本书，记着村里的人。</span></p>
+      </div>
+      <div class="a5g-row" data-gen="33">
+        <p class="a5g-gen"><span class="a5g-gen-t"><span data-lang="es">Generación 33</span><span data-lang="en">Generation 33</span><span data-lang="zh">第33代</span></span> <span class="a5g-han" lang="zh">和</span></p>
+        <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">和泳</span><small class="a5g-note"><span data-lang="es">padre de Manuel</span><span data-lang="en">father of Manuel</span><span data-lang="zh">邦之父</span></small></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和庆</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和謙</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和讓</span></li></ul>
+        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt">Miguel</li><li class="a5g-chip a5g-chip--txt">Arturo</li><li class="a5g-chip a5g-chip--txt">Federico</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="en">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="zh">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span></li></ul>
+        <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">¿Hijo o hermano de <span class="a5g-han" lang="zh">和泳</span>?</span><span data-lang="en">Son or brother of <span class="a5g-han" lang="zh">和泳</span>?</span><span data-lang="zh">是<span class="a5g-han" lang="zh">和泳</span>之子，还是兄弟？</span></span></p>
+        <p class="a5g-say"><span data-lang="es">Aquí podría estar la familia de Miguel.</span><span data-lang="en">Here the family of Miguel might be.</span><span data-lang="zh">米格尔的家人，或许就在这里。</span></p>
+      </div>
+      <div class="a5g-row" data-gen="34">
+        <p class="a5g-gen"><span class="a5g-gen-t"><span data-lang="es">Generación 34</span><span data-lang="en">Generation 34</span><span data-lang="zh">第34代</span></span> <span class="a5g-han" lang="zh">振</span></p>
+        <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">振邦</span><small class="a5g-note"><span data-lang="es">Manuel Yee Pang, nacido en 1893</span><span data-lang="en">Manuel Yee Pang, born in 1893</span><span data-lang="zh">Manuel Yee Pang，生于1893年</span></small></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振興</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振福</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">榮高</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">榮貴</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">禮紡</span></li></ul>
+        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt"><span data-lang="es">La generación siguiente</span><span data-lang="en">The next generation</span><span data-lang="zh">下一代</span></li><li class="a5g-chip a5g-chip--txt">María de Lourdes (1929)</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">y otros</span><span data-lang="en">and others</span><span data-lang="zh">以及其他人</span></li></ul>
+        <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">Primos de otra rama: <span class="a5g-han" lang="zh">榮</span>, <span class="a5g-han" lang="zh">禮</span> o <span class="a5g-han" lang="zh">振</span></span><span data-lang="en">Cousins from another branch: <span class="a5g-han" lang="zh">榮</span>, <span class="a5g-han" lang="zh">禮</span> or <span class="a5g-han" lang="zh">振</span></span><span data-lang="zh">另一支的堂亲：<span class="a5g-han" lang="zh">榮</span>、<span class="a5g-han" lang="zh">禮</span>或<span class="a5g-han" lang="zh">振</span></span></span></p>
+        <p class="a5g-say"><span data-lang="es">Un solo nombre en chino lo decidiría.</span><span data-lang="en">A single name in Chinese would settle it.</span><span data-lang="zh">只需一个汉字的名字，便能定论。</span></p>
+      </div>
+      </div>
+      <p class="a5g-caption" aria-hidden="true"></p>
+      <p class="a5g-legend"><span data-lang="es">Sólido: confirmado en el libro. Punteado: hipótesis.</span><span data-lang="en">Solid: confirmed in the book. Dotted: hypothesis.</span><span data-lang="zh">实线：族谱所证。虚线：假说。</span></p>
     </div>
   </div>
 
@@ -4062,6 +4177,64 @@ window.Santuario.register(5, function (ctx) {
     }
   });
 
+
+  // Escena "Donde se cruzan": los carriles se dibujan generacion por generacion
+  (function () {
+    var sc = sec.querySelector('.a5g-scroller');
+    if (!sc) { return; }
+    var stage = sc.querySelector('.a5g-stage');
+    var grid = sc.querySelector('.a5g-grid');
+    var rows = sc.querySelectorAll('.a5g-row');
+    var cap = sc.querySelector('.a5g-caption');
+    var pin = window.innerHeight >= 760 && window.innerWidth >= 600;
+    sc.classList.add('a5g-js', pin ? 'a5g-pin' : 'a5g-flow');
+    // Si el contenido no cabe en una pantalla, se pasa a flujo normal para no recortar nada
+    if (pin && stage.scrollHeight > stage.clientHeight + 2) {
+      pin = false;
+      sc.classList.remove('a5g-pin');
+      sc.classList.add('a5g-flow');
+    }
+
+    gsap.set(sc.querySelectorAll('.a5g-rail'), { scaleY: 0, transformOrigin: '50% 0%' });
+    gsap.set(sc.querySelectorAll('.a5g-title, .a5g-head, .a5g-legend'), { opacity: 0, y: 14 });
+    var t = gsap.timeline({ paused: true, defaults: { ease: 'none' } });
+    t.to(sc.querySelectorAll('.a5g-title, .a5g-head'), { opacity: 1, y: 0, duration: 0.06, stagger: 0.015, ease: 'power2.out' }, 0);
+    t.to(sc.querySelectorAll('.a5g-rail'), { scaleY: 1, duration: 0.85 }, 0.06);
+    var at = [0.08, 0.38, 0.66];
+    rows.forEach(function (r, i) {
+      var items = r.querySelectorAll('.a5g-gen, .a5g-chip');
+      var ring = r.querySelector('.a5g-ring');
+      var cross = r.querySelector('.a5g-cross-t');
+      gsap.set(items, { opacity: 0, y: 18, scale: 0.9 });
+      gsap.set(cross, { opacity: 0 });
+      gsap.set(ring, { scale: 0 });
+      t.to(items, { opacity: 1, y: 0, scale: 1, duration: 0.07, stagger: 0.012, ease: 'back.out(2)' }, at[i]);
+      t.to(ring, { scale: 1, duration: 0.05, ease: 'back.out(3)' }, at[i] + 0.13);
+      t.to(cross, { opacity: 1, duration: 0.05 }, at[i] + 0.14);
+    });
+    t.to(sc.querySelector('.a5g-legend'), { opacity: 1, y: 0, duration: 0.05, ease: 'power2.out' }, 0.9);
+    t.to({}, { duration: 0.01 }, 0.99);
+
+    var says = [], cur = -1;
+    rows.forEach(function (r) { says.push(r.querySelector('.a5g-say').innerHTML); });
+    var marks = [0.1, 0.4, 0.68];
+    function setStage(p) {
+      var k = -1;
+      marks.forEach(function (m, i) { if (p >= m) { k = i; } });
+      rows.forEach(function (r, i) {
+        var ring = r.querySelector('.a5g-ring');
+        ring.classList.toggle('a5g-pulse', i <= k && p >= marks[i] + 0.15);
+      });
+      if (k === cur) { return; }
+      cur = k;
+      if (k < 0) { cap.innerHTML = ''; return; }
+      cap.innerHTML = says[k];
+      gsap.fromTo(cap, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.8)', overwrite: true });
+    }
+    ST.create(pin
+      ? { trigger: sc, start: 'top top', end: 'bottom bottom', scrub: 0.6, animation: t, onUpdate: function (self) { setStage(self.progress); } }
+      : { trigger: grid, start: 'top 75%', end: 'bottom 55%', scrub: 0.6, animation: t, onUpdate: function (self) { setStage(self.progress); } });
+  })();
 });
 </script>
 <script data-src="js/act06.js">
