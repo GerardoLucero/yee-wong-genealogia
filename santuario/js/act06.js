@@ -42,6 +42,20 @@ window.Santuario.register(6, function (ctx) {
       scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
   });
 
+  /* Mapa: nodos aparecen y las lineas se dibujan con el scroll */
+  var map = sec.querySelector('[data-a6-map]');
+  if (map) {
+    var nodes = q('[data-a6-node]', map), solid = q('[data-a6-route]', map), rev = q('[data-a6-reveal]', map);
+    gsap.set(nodes, { opacity: 0, transformOrigin: '50% 50%' });
+    gsap.set(solid.concat(rev), { strokeDasharray: 100, strokeDashoffset: 100 });
+    var tl = gsap.timeline({ scrollTrigger: { trigger: map, start: 'top 75%', end: 'bottom 50%', scrub: 0.8 } });
+    tl.to(nodes.slice(0, 4), { opacity: 1, stagger: 0.1, duration: 0.3 })
+      .to(solid, { strokeDashoffset: 0, stagger: 0.25, duration: 0.5, ease: 'none' }, '>-0.1')
+      .to(nodes.slice(4, 8), { opacity: 1, stagger: 0.1, duration: 0.3 }, '<0.4')
+      .to(rev, { strokeDashoffset: 0, stagger: 0.2, duration: 0.5, ease: 'none' })
+      .to(nodes.slice(8), { opacity: 1, stagger: 0.15, duration: 0.3 }, '<0.3');
+  }
+
   /* Papeles: salen de una pila sobre la mesa y vuelan a su lugar */
   var cards = q('[data-a6-case]');
   var pile = function (card) {
@@ -104,6 +118,8 @@ window.Santuario.register(6, function (ctx) {
     ['a6-c-aldea', 'a6-c-distrito', 0], ['a6-c-distrito', 'a6-c-altar', 0], ['a6-c-aldea', 'a6-c-altar', 1],
     ['a6-c-barco', 'a6-c-anio', 0], ['a6-c-llegada', 'a6-c-barco', 1],
     ['a6-c-parentesco', 'a6-c-poema', 0], ['a6-c-poema', 'a6-c-manuel', 0], ['a6-c-parentesco', 'a6-c-manuel', 1],
+    ['a6-c-centro', 'a6-c-tarjeta', 1], ['a6-c-tarjeta', 'a6-c-barco', 0], ['a6-c-aldeaarturo', 'a6-c-nombres', 0],
+    ['a6-c-aldeaarturo', 'a6-c-aldea', 1], ['a6-c-centro', 'a6-c-quienes', 1],
     ['a6-c-yujing', 'a6-c-salon', 0], ['a6-c-yujing', 'a6-c-rama', 1], ['a6-c-rama', 'a6-c-parentesco', 0], ['a6-c-cuatro', 'a6-c-region', 0],
     ['a6-c-otronombre', 'a6-c-barco', 1], ['a6-c-lapaz', 'a6-c-llegada', 0]
   ];

@@ -111,3 +111,20 @@
 .a6-stamp--pending { background: transparent; border-style: dashed; }
 .a6-flash { width: 8rem; height: 8rem; top: calc(var(--sp-3) + 0.85rem - 4rem); right: calc(var(--sp-3) + 0.85rem - 4rem); }
 .a6-case-title { padding-right: 2.6rem; }
+
+/* Mapa: adonde se fueron */
+.a6-map { grid-column: 1 / -1; margin: 0; padding: var(--sp-4); border: 1px solid var(--line); background: var(--fog); border-radius: var(--radius); }
+.a6-map-title { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: var(--fs-md); color: var(--gold-bright); margin-bottom: var(--sp-3); }
+.a6-mapsvg { width: 100%; height: auto; display: block; overflow: visible; }
+.a6-land { fill: var(--fog); stroke: var(--line); stroke-width: 2; }
+.a6-route { fill: none; stroke: var(--cinnabar); stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--cinnabar)); }
+.a6-route--dash { stroke: var(--gold); stroke-width: 3; stroke-dasharray: 3 9; filter: none; }
+.a6-node circle { fill: var(--gold-bright); stroke: var(--lacquer); stroke-width: 2; }
+.a6-node--q circle { fill: var(--lacquer); stroke: var(--gold); stroke-dasharray: 3 3; }
+.a6-lbl { font-family: var(--font-serif); font-size: 28px; fill: var(--paper); }
+.a6-lbl--main { font-weight: 700; fill: var(--gold-bright); }
+.a6-lbl--q { font-style: italic; font-size: 26px; fill: var(--paper-dim); }
+.a6-map-cap { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--paper-dim); }
+.a6-line { display: inline-block; width: 1.8rem; height: 0; border-top: 3px solid var(--cinnabar); vertical-align: middle; margin-right: var(--sp-2); }
+.a6-line--dash { border-top: 3px dotted var(--gold); }
+.a6-map-note { flex-basis: 100%; font-size: var(--fs-xs); opacity: 0.8; }

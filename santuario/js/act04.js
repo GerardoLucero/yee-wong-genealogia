@@ -5,7 +5,7 @@ window.Santuario.register(4, function (ctx) {
 
   var q = function (s) { return sec.querySelector(s); };
   var qa = function (s) { return sec.querySelectorAll(s); };
-  var keys = ['intro', 'wed', 'census', 'hijos', 'end'];
+  var keys = ['intro', 'wed', 'census', 'bros', 'hijos', 'end'];
   var panels = {};
   for (var k = 0; k < keys.length; k++) {
     panels[keys[k]] = q('.a4-p-' + keys[k]);
@@ -56,10 +56,10 @@ window.Santuario.register(4, function (ctx) {
     });
   }
 
-  var T = 9; // duracion total de la linea de tiempo
+  var T = 11; // duracion total de la linea de tiempo
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=480%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=580%', scrub: 1, pin: q('.a4-stage'), anticipatePin: 1, invalidateOnRefresh: true }
   });
 
   var show = function (el, at) {
@@ -117,16 +117,21 @@ window.Santuario.register(4, function (ctx) {
   tl.to(lines, { clipPath: 'inset(0 0% 0 0)', opacity: 1, stagger: 0.25, duration: 0.5, ease: 'power1.inOut' }, 4.6);
   hide(panels.census, 6.0);
 
-  // 4. hijos y Maria de Lourdes
-  show(panels.hijos, 6.4);
-  wordsIn('hijos', 6.6, 0.03);
-  tl.from(q('.a4-p-hijos .a4-card'), { rotateY: -50, x: -60, duration: 0.5, transformPerspective: 800 }, 6.5);
-  hide(panels.hijos, 7.9);
+  // 4. los hermanos se dispersan
+  show(panels.bros, 6.4);
+  wordsIn('bros', 6.6, 0.025);
+  hide(panels.bros, 8.0);
 
-  // 5. muerte y nacimiento (linea tenue)
-  show(panels.end, 8.2);
-  wordsIn('end', 8.4, 0.03);
-  tl.to({}, { duration: 0.8 }, T);
+  // 5. hijos y Maria de Lourdes
+  show(panels.hijos, 8.4);
+  wordsIn('hijos', 8.6, 0.03);
+  tl.from(q('.a4-p-hijos .a4-card'), { rotateY: -50, x: -60, duration: 0.5, transformPerspective: 800 }, 8.5);
+  hide(panels.hijos, 9.9);
+
+  // 6. muerte y nacimiento (linea tenue)
+  show(panels.end, 10.3);
+  wordsIn('end', 10.5, 0.03);
+  tl.to({}, { duration: 0.6 }, T);
 
   ScrollTrigger.addEventListener('refreshInit', function () { gsap.set(lines, { clearProps: 'clipPath' }); });
 });
