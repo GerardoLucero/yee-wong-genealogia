@@ -1334,6 +1334,25 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .a5g-pin .a5g-stage { padding-top: 5vh; padding-bottom: .75rem; }
   @keyframes a5g-ping { 0% { box-shadow: 0 0 18px 2px var(--gold-bright), 0 0 0 0 var(--gold-bright); } 100% { box-shadow: 0 0 18px 2px var(--gold-bright), 0 0 0 26px transparent; } }
 }
+
+/* ---- Hijos de Arturo (hipotesis) y su enlace con 榮 ---- */
+.a5g-row { position: relative; }
+.a5g-grp { list-style: none; flex: 1 0 100%; position: relative; display: flex; flex-direction: column; gap: .3rem; padding: .45rem .6rem; border: 1px dashed var(--gold); background: color-mix(in srgb, var(--gold) 8%, transparent); }
+.a5g-grp-t { margin: 0; font-size: 1.125rem; line-height: 1.2; color: var(--paper); text-align: left; }
+.a5g-link-t { position: absolute; top: -1.05rem; right: .6rem; padding: 0 .45rem; font-size: 1.125rem; line-height: 1.5; color: var(--gold-bright); background: var(--lacquer-2); border: 1px dotted var(--gold-bright); }
+.a5g-yons { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.a5g-yon { color: var(--gold-bright); font-weight: 700; text-shadow: 0 0 8px var(--a5-glow); }
+.a5g-grp-n { margin: 0; font-size: 1.0625rem; line-height: 1.25; color: var(--paper-dim); text-align: left; }
+.a5g-chip--yon { box-shadow: 0 0 10px color-mix(in srgb, var(--gold) 60%, transparent); }
+.a5g-link { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.a5g-link path { fill: none; stroke: var(--gold-bright); stroke-width: 2.5; stroke-dasharray: 2 6; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--gold)); }
+@media (min-width: 900px) {
+  .a5g-gen { position: relative; z-index: 1; background: var(--lacquer-2); padding: .15rem 0; }
+  .a5g-grp-t { font-size: 1.25rem; }
+  .a5g-link-t { font-size: 1.25rem; top: -1.2rem; }
+  .a5g-grp-n { font-size: 1.125rem; }
+  .a5g-grp { padding: .5rem .7rem; }
+}
 </style>
 <style data-src="css/act06.css">
 /* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
@@ -2311,15 +2330,15 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <div class="a5g-row" data-gen="33">
         <p class="a5g-gen"><span class="a5g-gen-t"><span data-lang="es">Generación 33</span><span data-lang="en">Generation 33</span><span data-lang="zh">第33代</span></span> <span class="a5g-han" lang="zh">和</span></p>
         <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">和泳</span><small class="a5g-note"><span data-lang="es">padre de Manuel</span><span data-lang="en">father of Manuel</span><span data-lang="zh">邦之父</span></small></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和庆</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和謙</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">和讓</span></li></ul>
-        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt">Miguel</li><li class="a5g-chip a5g-chip--txt">Arturo</li><li class="a5g-chip a5g-chip--txt">Federico</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="en">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="zh">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span></li></ul>
+        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt">Miguel</li><li class="a5g-chip a5g-chip--txt">Arturo (Cho Lo)</li><li class="a5g-chip a5g-chip--txt">Federico</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="en">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span><span data-lang="zh">Yee Wong = <span class="a5g-han" lang="zh">余和</span></span></li></ul>
         <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">¿Hijo o hermano de <span class="a5g-han" lang="zh">和泳</span>?</span><span data-lang="en">Son or brother of <span class="a5g-han" lang="zh">和泳</span>?</span><span data-lang="zh">是<span class="a5g-han" lang="zh">和泳</span>之子，还是兄弟？</span></span></p>
         <p class="a5g-say"><span data-lang="es">Aquí podría estar la familia de Miguel.</span><span data-lang="en">Here the family of Miguel might be.</span><span data-lang="zh">米格尔的家人，或许就在这里。</span></p>
       </div>
       <div class="a5g-row" data-gen="34">
         <p class="a5g-gen"><span class="a5g-gen-t"><span data-lang="es">Generación 34</span><span data-lang="en">Generation 34</span><span data-lang="zh">第34代</span></span> <span class="a5g-han" lang="zh">振</span></p>
-        <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">振邦</span><small class="a5g-note"><span data-lang="es">Manuel Yee Pang, nacido en 1893</span><span data-lang="en">Manuel Yee Pang, born in 1893</span><span data-lang="zh">Manuel Yee Pang，生于1893年</span></small></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振興</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振福</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">榮高</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">榮貴</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">禮紡</span></li></ul>
-        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-chip a5g-chip--txt"><span data-lang="es">La generación siguiente</span><span data-lang="en">The next generation</span><span data-lang="zh">下一代</span></li><li class="a5g-chip a5g-chip--txt">María de Lourdes (1929)</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">y otros</span><span data-lang="en">and others</span><span data-lang="zh">以及其他人</span></li></ul>
-        <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">Primos de otra rama: <span class="a5g-han" lang="zh">榮</span>, <span class="a5g-han" lang="zh">禮</span> o <span class="a5g-han" lang="zh">振</span></span><span data-lang="en">Cousins from another branch: <span class="a5g-han" lang="zh">榮</span>, <span class="a5g-han" lang="zh">禮</span> or <span class="a5g-han" lang="zh">振</span></span><span data-lang="zh">另一支的堂亲：<span class="a5g-han" lang="zh">榮</span>、<span class="a5g-han" lang="zh">禮</span>或<span class="a5g-han" lang="zh">振</span></span></span></p>
+        <ul class="a5g-cell a5g-cell--ok"><li class="a5g-chip"><span class="a5g-han" lang="zh">振邦</span><small class="a5g-note"><span data-lang="es">Manuel Yee Pang, nacido en 1893</span><span data-lang="en">Manuel Yee Pang, born in 1893</span><span data-lang="zh">Manuel Yee Pang，生于1893年</span></small></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振興</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">振福</span></li><li class="a5g-chip a5g-chip--yon"><span class="a5g-han" lang="zh">榮高</span></li><li class="a5g-chip a5g-chip--yon"><span class="a5g-han" lang="zh">榮貴</span></li><li class="a5g-chip"><span class="a5g-han" lang="zh">禮紡</span></li></ul>
+        <ul class="a5g-cell a5g-cell--hyp"><li class="a5g-grp"><p class="a5g-grp-t"><span data-lang="es">Los hijos de Arturo (nacidos 1924-1928)</span><span data-lang="en">Arturo's children (born 1924-1928)</span><span data-lang="zh">阿图罗的孩子们（生于1924至1928年）</span></p><span class="a5g-link-t" aria-hidden="true"><span data-lang="es">¿Yon = <span class="a5g-han" lang="zh">榮</span>?</span><span data-lang="en">Yon = <span class="a5g-han" lang="zh">榮</span>?</span><span data-lang="zh">Yon = <span class="a5g-han" lang="zh">榮</span>？</span></span><ul class="a5g-yons"><li class="a5g-chip a5g-chip--txt"><span class="a5g-yon">Yon</span> Hing</li><li class="a5g-chip a5g-chip--txt"><span class="a5g-yon">Yon</span> Chan</li><li class="a5g-chip a5g-chip--txt"><span class="a5g-yon">Yon</span> Chin</li><li class="a5g-chip a5g-chip--txt"><span class="a5g-yon">Yon</span> Bon</li></ul><p class="a5g-grp-n"><span data-lang="es">&quot;Yon&quot; &#8776; <span class="a5g-han" lang="zh">榮</span> (posible) &#183; &quot;Bon&quot; &#8776; <span class="a5g-han" lang="zh">邦</span>, como <span class="a5g-han" lang="zh">振邦</span>; por confirmar</span><span data-lang="en">&quot;Yon&quot; &#8776; <span class="a5g-han" lang="zh">榮</span> (possible) &#183; &quot;Bon&quot; &#8776; <span class="a5g-han" lang="zh">邦</span>, as in <span class="a5g-han" lang="zh">振邦</span>; to confirm</span><span data-lang="zh">&quot;Yon&quot; &#8776; <span class="a5g-han" lang="zh">榮</span>（可能）&#183; &quot;Bon&quot; &#8776; <span class="a5g-han" lang="zh">邦</span>，如<span class="a5g-han" lang="zh">振邦</span>；待证实</span></p></li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">La generación siguiente</span><span data-lang="en">The next generation</span><span data-lang="zh">下一代</span></li><li class="a5g-chip a5g-chip--txt">María de Lourdes (1929)</li><li class="a5g-chip a5g-chip--txt"><span data-lang="es">y otros</span><span data-lang="en">and others</span><span data-lang="zh">以及其他人</span></li></ul>
+        <p class="a5g-cross"><span class="a5g-ring" aria-hidden="true"></span><span class="a5g-cross-t"><span data-lang="es">Primos de otra rama: <span class="a5g-han" lang="zh">榮</span> (¿los Yon?), <span class="a5g-han" lang="zh">禮</span> o <span class="a5g-han" lang="zh">振</span></span><span data-lang="en">Cousins from another branch: <span class="a5g-han" lang="zh">榮</span> (the Yon?), <span class="a5g-han" lang="zh">禮</span> or <span class="a5g-han" lang="zh">振</span></span><span data-lang="zh">另一支的堂亲：<span class="a5g-han" lang="zh">榮</span>（Yon？）、<span class="a5g-han" lang="zh">禮</span>或<span class="a5g-han" lang="zh">振</span></span></span></p>
         <p class="a5g-say"><span data-lang="es">Un solo nombre en chino lo decidiría.</span><span data-lang="en">A single name in Chinese would settle it.</span><span data-lang="zh">只需一个汉字的名字，便能定论。</span></p>
       </div>
       </div>
@@ -4037,6 +4056,43 @@ window.Santuario.register(4, function (ctx) {
 <script data-src="js/act05.js">
 window.Santuario.register(5, function (ctx) {
   var gsap = ctx.gsap, ST = ctx.ScrollTrigger, sec = ctx.section;
+  // Linea punteada dorada entre 榮高/榮貴 y el grupo "Yon" (se mide con offsets, no con transforms)
+  (function () {
+    var row = sec.querySelector('.a5g-row[data-gen="34"]');
+    if (!row) { return; }
+    var NS2 = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(NS2, 'svg');
+    svg.setAttribute('class', 'a5g-link');
+    svg.setAttribute('aria-hidden', 'true');
+    var paths = [document.createElementNS(NS2, 'path'), document.createElementNS(NS2, 'path')];
+    paths.forEach(function (pt) { svg.appendChild(pt); });
+    row.insertBefore(svg, row.firstChild);
+    var off = function (el) {
+      var x = 0, y = 0, n = el;
+      while (n && n !== row) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+      return { x: x, y: y, w: el.offsetWidth, h: el.offsetHeight };
+    };
+    function draw() {
+      var chips = row.querySelectorAll('.a5g-chip--yon');
+      var grp = row.querySelector('.a5g-grp');
+      if (!grp || chips.length < 2) { return; }
+      var g = off(grp);
+      var stacked = window.getComputedStyle(row).gridTemplateColumns.split(' ').length < 3;
+      for (var k = 0; k < 2; k++) {
+        var c = off(chips[k]);
+        var x1 = c.x + c.w, y1 = c.y + c.h / 2, x2 = g.x, y2 = g.y + Math.min(g.h / 2, 28 + k * 22);
+        if (c.x > g.x) { x1 = c.x; x2 = g.x + g.w; }
+        var mx = (x1 + x2) / 2;
+        paths[k].setAttribute('d', 'M' + x1 + ' ' + y1 + ' C' + mx + ' ' + y1 + ' ' + mx + ' ' + y2 + ' ' + x2 + ' ' + y2);
+      }
+    }
+    draw();
+    window.addEventListener('resize', draw);
+    window.addEventListener('load', draw);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(draw); }
+    row._a5draw = draw;
+  })();
+
   if (ctx.reduced || !gsap || !ST) { return; }
   gsap.registerPlugin(ST);
 
@@ -4212,6 +4268,10 @@ window.Santuario.register(5, function (ctx) {
       t.to(ring, { scale: 1, duration: 0.05, ease: 'back.out(3)' }, at[i] + 0.13);
       t.to(cross, { opacity: 1, duration: 0.05 }, at[i] + 0.14);
     });
+    var lk = sc.querySelector('.a5g-link');
+    var lt = sc.querySelector('.a5g-link-t');
+    gsap.set([lk, lt], { opacity: 0 });
+    t.to([lk, lt], { opacity: 1, duration: 0.06 }, 0.86);
     t.to(sc.querySelector('.a5g-legend'), { opacity: 1, y: 0, duration: 0.05, ease: 'power2.out' }, 0.9);
     t.to({}, { duration: 0.01 }, 0.99);
 
@@ -4231,6 +4291,7 @@ window.Santuario.register(5, function (ctx) {
       cap.innerHTML = says[k];
       gsap.fromTo(cap, { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.8)', overwrite: true });
     }
+    ST.addEventListener('refresh', function () { var r = rows[2]; if (r && r._a5draw) { r._a5draw(); } });
     ST.create(pin
       ? { trigger: sc, start: 'top top', end: 'bottom bottom', scrub: 0.6, animation: t, onUpdate: function (self) { setStage(self.progress); } }
       : { trigger: grid, start: 'top 75%', end: 'bottom 55%', scrub: 0.6, animation: t, onUpdate: function (self) { setStage(self.progress); } });
