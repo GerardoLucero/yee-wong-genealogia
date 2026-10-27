@@ -104,6 +104,7 @@ window.Santuario.register(6, function (ctx) {
     ['a6-c-aldea', 'a6-c-distrito', 0], ['a6-c-distrito', 'a6-c-altar', 0], ['a6-c-aldea', 'a6-c-altar', 1],
     ['a6-c-barco', 'a6-c-anio', 0], ['a6-c-llegada', 'a6-c-barco', 1],
     ['a6-c-parentesco', 'a6-c-poema', 0], ['a6-c-poema', 'a6-c-manuel', 0], ['a6-c-parentesco', 'a6-c-manuel', 1],
+    ['a6-c-yujing', 'a6-c-salon', 0], ['a6-c-yujing', 'a6-c-rama', 1], ['a6-c-rama', 'a6-c-parentesco', 0], ['a6-c-cuatro', 'a6-c-region', 0],
     ['a6-c-otronombre', 'a6-c-barco', 1], ['a6-c-lapaz', 'a6-c-llegada', 0]
   ];
   var svg = document.createElementNS(NS, 'svg');

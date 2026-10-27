@@ -49,35 +49,36 @@ window.Santuario.register(2, function (ctx) {
 
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=430%', scrub: 1, pin: q('.a2-stage'), anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=560%', scrub: 1, pin: q('.a2-stage'), anticipatePin: 1 }
   });
 
   /* Camara de dron: las capas cercanas suben y crecen mas que las lejanas */
-  tl.fromTo(q('.a2-l1'), { yPercent: 8, scale: 1 }, { yPercent: 0, scale: 1.04, duration: 14 }, 0)
-    .fromTo(q('.a2-l2'), { yPercent: 14, scale: 1 }, { yPercent: 0, scale: 1.08, duration: 14 }, 0)
-    .fromTo(q('.a2-l3'), { yPercent: 24, scale: 1 }, { yPercent: 0, scale: 1.14, duration: 14 }, 0)
-    .fromTo(q('.a2-l4'), { yPercent: 40, scale: 1 }, { yPercent: 0, scale: 1.22, duration: 14 }, 0)
-    .to(q('.a2-fog1'), { xPercent: -22, duration: 14 }, 0)
-    .to(q('.a2-fog2'), { xPercent: 18, duration: 14 }, 0)
-    .to(q('.a2-fog3'), { xPercent: -30, duration: 14 }, 0)
+  tl.fromTo(q('.a2-l1'), { yPercent: 8, scale: 1 }, { yPercent: 0, scale: 1.04, duration: 18 }, 0)
+    .fromTo(q('.a2-l2'), { yPercent: 14, scale: 1 }, { yPercent: 0, scale: 1.08, duration: 18 }, 0)
+    .fromTo(q('.a2-l3'), { yPercent: 24, scale: 1 }, { yPercent: 0, scale: 1.14, duration: 18 }, 0)
+    .fromTo(q('.a2-l4'), { yPercent: 40, scale: 1 }, { yPercent: 0, scale: 1.22, duration: 18 }, 0)
+    .to(q('.a2-fog1'), { xPercent: -22, duration: 18 }, 0)
+    .to(q('.a2-fog2'), { xPercent: 18, duration: 18 }, 0)
+    .to(q('.a2-fog3'), { xPercent: -30, duration: 18 }, 0)
     .to(evoc, { opacity: .6, y: 0, duration: 1 }, 0.5);
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {
-    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.5);
+    tl.to(w, { yPercent: 0, opacity: 1, rotation: 0, duration: .8, stagger: .12, ease: 'power3.out' }, 0.8 + i * 1.6);
   });
-  tl.to(sun, { yPercent: -10, scale: 1.1, duration: 14 }, 0)
-    .to(sun, { filter: 'brightness(1.25)', duration: 4 }, 6);
+  tl.to(sun, { yPercent: -10, scale: 1.1, duration: 18 }, 0)
+    .to(sun, { filter: 'brightness(1.25)', duration: 4 }, 9.5);
 
   /* Momento memorable: los nombres se condensan de la niebla como tinta */
-  tl.to(names, { opacity: 1, filter: 'blur(0px)', scale: 1, duration: 1.8, stagger: 1.2, ease: 'power2.out' }, 6)
-    .to(cap, { opacity: .75, y: 0, duration: 1 }, 8.3)
-    .to(lines, { opacity: .35, duration: 1 }, 8.6)
-    .to(brush, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut' }, 7.6)
+  /* Las lineas de leyenda ceden el espacio a los nombres */
+  tl.to(qa('.a2-line'), { opacity: 0, height: 0, duration: 1.2, ease: 'power1.in' }, 8.8);
+  tl.to(names, { opacity: 1, filter: 'blur(0px)', scale: 1, duration: 1.8, stagger: 1.2, ease: 'power2.out' }, 9.5)
+    .to(cap, { opacity: .75, y: 0, duration: 1 }, 11.8)
+    .to(brush, { strokeDashoffset: 0, duration: 1.4, ease: 'power2.inOut' }, 11.1)
     /* La aldea queda por confirmar */
-    .to(lead, { opacity: 1, y: 0, duration: 1 }, 9.4)
-    .to(cands, { opacity: 1, y: 0, duration: 1, stagger: .5, ease: 'power2.out' }, 10)
-    .to(seal, { opacity: 1, scale: 1, rotation: -8, duration: .6, ease: 'back.out(2)' }, 11.2)
-    .to(close, { opacity: 1, y: 0, duration: 1.2 }, 12)
+    .to(lead, { opacity: 1, y: 0, duration: 1 }, 12.9)
+    .to(cands, { opacity: 1, y: 0, duration: 1, stagger: .5, ease: 'power2.out' }, 13.5)
+    .to(seal, { opacity: 1, scale: 1, rotation: -8, duration: .6, ease: 'back.out(2)' }, 14.7)
+    .to(close, { opacity: 1, y: 0, duration: 1.2 }, 15.5)
     .to({}, { duration: 1.4 });
 });
