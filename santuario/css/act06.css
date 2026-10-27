@@ -112,19 +112,34 @@
 .a6-flash { width: 8rem; height: 8rem; top: calc(var(--sp-3) + 0.85rem - 4rem); right: calc(var(--sp-3) + 0.85rem - 4rem); }
 .a6-case-title { padding-right: 2.6rem; }
 
-/* Mapa: adonde se fueron */
-.a6-map { grid-column: 1 / -1; margin: 0; padding: var(--sp-4); border: 1px solid var(--line); background: var(--fog); border-radius: var(--radius); }
-.a6-map-title { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: var(--fs-md); color: var(--gold-bright); margin-bottom: var(--sp-3); }
-.a6-mapsvg { width: 100%; height: auto; display: block; overflow: visible; }
-.a6-land { fill: var(--fog); stroke: var(--line); stroke-width: 2; }
-.a6-route { fill: none; stroke: var(--cinnabar); stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--cinnabar)); }
-.a6-route--dash { stroke: var(--gold); stroke-width: 3; stroke-dasharray: 3 9; filter: none; }
-.a6-node circle { fill: var(--gold-bright); stroke: var(--lacquer); stroke-width: 2; }
-.a6-node--q circle { fill: var(--lacquer); stroke: var(--gold); stroke-dasharray: 3 3; }
-.a6-lbl { font-family: var(--font-serif); font-size: 28px; fill: var(--paper); }
+/* Escena del mapa: pantalla completa */
+.a6-desk--rest { padding-top: var(--sp-7); }
+.a6-mapscene { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; padding: var(--sp-5) var(--gutter) var(--sp-4); background: radial-gradient(ellipse at 50% 40%, var(--lacquer-3) 0%, var(--lacquer) 75%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+.a6-map-title { font-family: var(--font-serif); font-style: italic; font-weight: 500; font-size: var(--fs-xl); line-height: var(--lh-tight); color: var(--gold-bright); text-align: center; text-shadow: var(--glow-gold); flex: none; }
+.a6-mapwrap { position: relative; flex: 1 1 auto; min-height: 16rem; margin: var(--sp-3) 0; }
+.a6-mapsvg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.a6-mapsvg--p { display: block; }
+.a6-mapsvg--l { display: none; }
+@media (min-width: 720px) { .a6-mapsvg--p { display: none; } .a6-mapsvg--l { display: block; } }
+.a6-land { fill: var(--lacquer-3); stroke: var(--gold-dim); stroke-width: 2.5; stroke-linejoin: round; }
+.a6-region { font-family: var(--font-serif); font-size: 54px; fill: var(--paper); opacity: 0.12; letter-spacing: 0.08em; }
+.a6-region--sea { font-style: italic; font-size: 42px; }
+.a6-route { fill: none; stroke: var(--cinnabar); stroke-width: 5.5; stroke-linecap: round; filter: drop-shadow(0 0 6px var(--cinnabar)); }
+.a6-route--dash { stroke: var(--gold-bright); stroke-width: 5; stroke-dasharray: 2 11; filter: drop-shadow(0 0 4px var(--gold)); }
+.a6-halo { fill: var(--gold); opacity: 0.28; }
+.a6-dot-n { fill: var(--gold-bright); stroke: var(--lacquer); stroke-width: 3; }
+.a6-node--q .a6-dot-n { fill: var(--lacquer); stroke: var(--gold-bright); stroke-dasharray: 4 4; }
+.a6-lbl { font-family: var(--font-serif); font-size: 28px; fill: var(--paper); paint-order: stroke; stroke: var(--lacquer); stroke-width: 6px; stroke-linejoin: round; }
+.a6-mapsvg--p .a6-lbl { font-size: 31px; }
 .a6-lbl--main { font-weight: 700; fill: var(--gold-bright); }
-.a6-lbl--q { font-style: italic; font-size: 26px; fill: var(--paper-dim); }
-.a6-map-cap { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-5); margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--paper-dim); }
-.a6-line { display: inline-block; width: 1.8rem; height: 0; border-top: 3px solid var(--cinnabar); vertical-align: middle; margin-right: var(--sp-2); }
-.a6-line--dash { border-top: 3px dotted var(--gold); }
-.a6-map-note { flex-basis: 100%; font-size: var(--fs-xs); opacity: 0.8; }
+.a6-lbl--q { font-style: italic; fill: var(--paper); }
+.a6-mapline { position: relative; flex: none; min-height: 3.2em; text-align: center; font-family: var(--font-serif); font-style: italic; font-size: var(--fs-md); line-height: var(--lh-base); color: var(--paper); }
+.a6-beat { margin: 0; }
+.a6-live .a6-mapline { height: 3.2em; }
+.a6-live .a6-beat { position: absolute; left: 0; right: 0; top: 0; opacity: 0; }
+.a6-map-cap { flex: none; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2) var(--sp-5); margin-top: var(--sp-3); font-size: var(--fs-base); color: var(--paper); }
+.a6-line { display: inline-block; width: 2.4rem; height: 0; border-top: 5px solid var(--cinnabar); vertical-align: middle; margin-right: var(--sp-2); }
+.a6-line--dash { border-top: 5px dotted var(--gold-bright); }
+.a6-map-note { flex-basis: 100%; text-align: center; font-size: var(--fs-xs); color: var(--paper-dim); }
+@media (max-width: 719px) { .a6-map-title { font-size: var(--fs-lg); } .a6-mapline { font-size: var(--fs-base); } .a6-map-note { display: none; } }
+@media (prefers-reduced-motion: reduce) { .a6-halo { opacity: 0.28; } }

@@ -42,18 +42,30 @@ window.Santuario.register(6, function (ctx) {
       scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
   });
 
-  /* Mapa: nodos aparecen y las lineas se dibujan con el scroll */
-  var map = sec.querySelector('[data-a6-map]');
-  if (map) {
-    var nodes = q('[data-a6-node]', map), solid = q('[data-a6-route]', map), rev = q('[data-a6-reveal]', map);
-    gsap.set(nodes, { opacity: 0, transformOrigin: '50% 50%' });
-    gsap.set(solid.concat(rev), { strokeDasharray: 100, strokeDashoffset: 100 });
-    var tl = gsap.timeline({ scrollTrigger: { trigger: map, start: 'top 75%', end: 'bottom 50%', scrub: 0.8 } });
-    tl.to(nodes.slice(0, 4), { opacity: 1, stagger: 0.1, duration: 0.3 })
-      .to(solid, { strokeDashoffset: 0, stagger: 0.25, duration: 0.5, ease: 'none' }, '>-0.1')
-      .to(nodes.slice(4, 8), { opacity: 1, stagger: 0.1, duration: 0.3 }, '<0.4')
-      .to(rev, { strokeDashoffset: 0, stagger: 0.2, duration: 0.5, ease: 'none' })
-      .to(nodes.slice(8), { opacity: 1, stagger: 0.15, duration: 0.3 }, '<0.3');
+  /* Mapa: escena fija a pantalla completa, secuencia por etapas */
+  var scene = sec.querySelector('[data-a6-map]');
+  if (scene) {
+    scene.classList.add('a6-live');
+    var byS = function (sel, s) { return q(sel + '[data-a6-s="' + s + '"]', scene); };
+    var allNodes = q('[data-a6-node]', scene), allDraw = q('[data-a6-route], [data-a6-reveal]', scene);
+    gsap.set(allNodes, { opacity: 0, transformOrigin: '50% 50%' });
+    gsap.set(allDraw, { strokeDasharray: 100, strokeDashoffset: 100 });
+    var beats = q('[data-a6-beat]', scene);
+    gsap.set(beats, { opacity: 0, y: 10 });
+    gsap.to(q('.a6-halo--pulse', scene), { attr: { r: 40 }, opacity: 0.05, duration: 1.4, repeat: -1, ease: 'sine.out' });
+    gsap.to(q('.a6-halo--blink', scene), { opacity: 0.08, duration: 1.2, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    gsap.to(q('.a6-node--q .a6-dot-n', scene), { opacity: 0.35, duration: 1.2, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+    var tl = gsap.timeline({ defaults: { ease: 'none' },
+      scrollTrigger: { trigger: scene, start: 'top top', end: '+=280%', pin: true, scrub: 0.8, anticipatePin: 1 } });
+    for (var s = 1; s <= 7; s++) {
+      var t = (s - 1) * 1.2;
+      if (s > 1) tl.to(beats[s - 2], { opacity: 0, y: -10, duration: 0.25 }, t - 0.05);
+      tl.to(byS('[data-a6-node]', s), { opacity: 1, scale: 1, duration: 0.35, stagger: 0.1 }, t);
+      var dr = byS('[data-a6-route]', s).concat(byS('[data-a6-reveal]', s));
+      if (dr.length) tl.to(dr, { strokeDashoffset: 0, duration: 0.7, stagger: 0.15 }, t + 0.3);
+      tl.to(beats[s - 1], { opacity: 1, y: 0, duration: 0.3 }, t + 0.1);
+    }
+    tl.to({}, { duration: 0.6 });
   }
 
   /* Papeles: salen de una pila sobre la mesa y vuelan a su lugar */
