@@ -864,6 +864,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 @keyframes a2-flow { to { background-position: 50% 0; } }
 .a2-fog { background-size: 50% 100%; background-repeat: repeat-x; }
 .a2-w { display: inline-block; will-change: transform, opacity; }
+
+/* Con cinco parrafos, overflow:hidden permitia que flex los encogiera a una fila y cortaba el texto */
+.a2-line { flex: 0 0 auto; min-height: min-content; }
+.a2-copy { flex-shrink: 0; }
+
+/* Texto mas compacto para que las cinco lineas queden sobre el cielo y no sobre las montanas */
+.a2-line { font-size: clamp(1rem, 2.5vw, 1.4rem); line-height: 1.3; max-width: 44ch; }
+.a2-copy { padding-top: 8vh; gap: .45rem; }
 </style>
 <style data-src="css/act03.css">
 /* Acto III: La travesia. Prefijo .a3- . Acento: porcelana + oro imperial */
