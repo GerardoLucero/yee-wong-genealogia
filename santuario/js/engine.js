@@ -194,6 +194,16 @@
       e.preventDefault();
       goToAct(a.getAttribute('data-go'));
     });
+    document.addEventListener('click', function (e) {
+      var l = e.target.closest ? e.target.closest('a[data-go], a[data-go-id]') : null;
+      if (!l || nav.contains(l)) { return; }
+      e.preventDefault();
+      var id = l.getAttribute('data-go-id');
+      if (id) {
+        var t = document.getElementById(id);
+        if (t) { window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset, behavior: reduced ? 'auto' : 'smooth' }); }
+      } else { goToAct(l.getAttribute('data-go')); }
+    });
     lang.addEventListener('click', function (e) {
       var b = e.target.closest ? e.target.closest('[data-set-lang]') : null;
       if (b) { setLang(b.getAttribute('data-set-lang')); }

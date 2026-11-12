@@ -24,6 +24,13 @@ DEFAULT_FONTS = (
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",
         "param", "source", "track", "wbr"}
 
+SITE = "https://gerardolucero.github.io/yee-wong-genealogia/"
+DESC = ("Miguel Yee salió de Taishan, en el sur de China, cruzó el mar y echó raíces en Baja California Sur. "
+        "La historia de cómo su familia lo está encontrando.")
+FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
+           "%3Crect width='64' height='64' fill='%23a82a1f'/%3E%3Ctext x='32' y='47' font-size='44' "
+           "text-anchor='middle' fill='%23F7C948' font-family='serif'%3E%E4%BD%99%3C/text%3E%3C/svg%3E")
+
 omitted = []
 
 
@@ -122,8 +129,19 @@ def build():
         "<head>",
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
-        "<title>Santuario Yee Wong</title>",
-        '<meta name="description" content="Santuario Yee Wong: la historia de una familia entre Taishan y Baja California Sur.">',
+        "<title>Familia Yee Wong: de Taishan a Baja California Sur</title>",
+        '<meta name="description" content="%s">' % DESC,
+        '<link rel="icon" href="%s">' % FAVICON,
+        '<meta property="og:type" content="website">',
+        '<meta property="og:title" content="Familia Yee Wong">',
+        '<meta property="og:description" content="%s">' % DESC,
+        '<meta property="og:url" content="%s">' % SITE,
+        '<meta property="og:image" content="%simg/pub/og.jpg">' % (SITE + "santuario/"),
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta property="og:locale" content="es_MX">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        '<meta name="theme-color" content="#120a0a">',
         '<link rel="preconnect" href="https://fonts.googleapis.com">',
         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
         '<link rel="stylesheet" href="%s">' % fonts,
@@ -141,6 +159,8 @@ def build():
         "",
     ])
     OUT.write_text(html, encoding="utf-8")
+    # copia para la raiz del repo (GitHub Pages): las imagenes se sirven desde santuario/
+    (ROOT.parent / "index.html").write_text(html.replace('src="img/pub/', 'src="santuario/img/pub/'), encoding="utf-8")
     return html, acts
 
 
