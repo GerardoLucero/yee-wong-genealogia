@@ -164,33 +164,7 @@
   .a3-sky-day { opacity: 1; }
 }
 
-
-/* ---- Rehecho en estilo tinta (papel de arroz, trazo negro, sello rojo). Sustituye la caricatura anterior. ---- */
-.a3-stage { background: radial-gradient(ellipse at 50% 45%, #fbf7ea 0, var(--paper) 55%, #e8dfc6 100%); color: var(--ink); }
-.a3-sky-day, .a3-sky-night, .a3-sky-dusk, .a3-far, .a3-clouds, .a3-lanterns, .a3-sparks, .a3-waves, .a3-stars, .a3-moon { display: none; }
-.a3-land { fill: rgba(18, 10, 10, .09); stroke: var(--ink); stroke-width: 2.6; filter: url(#a3-rough); }
-.a3-gulf { stroke: var(--ink); opacity: .45; }
-.a3-seamarks path { stroke: var(--ink); stroke-width: 1.6; opacity: .3; }
-.a3-sun { fill: var(--red-china); filter: none; }
-.a3-route-ghost { stroke: var(--ink); opacity: .45; stroke-width: 2.2; }
-.a3-route { stroke: var(--red-china-deep); stroke-width: 4.5; filter: none; }
-.a3-pt-dot { fill: var(--red-china); stroke: var(--ink); stroke-width: 2; }
-.a3-pt-ring { stroke: var(--ink); stroke-width: 2; opacity: .8; }
-.a3-lbl { font-size: 26px; fill: var(--ink); stroke: var(--paper); stroke-width: 6px; font-weight: 600; }
-.a3-lbl-end { text-anchor: end; }
-.a3-lbl-sm { font-size: 24px; fill: var(--ink); }
-.a3-ship { filter: none; }
-.a3-ship-hull { fill: var(--ink); stroke: var(--ink); }
-.a3-ship-sail { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
-.a3-ship-sail-2 { fill: #e8dfc6; }
-.a3-ship-mast { stroke: var(--ink); }
-.a3-stamp-ill { color: #4a3f33; border-color: #4a3f33; font-size: 1rem; letter-spacing: .08em; text-transform: none; opacity: 1; }
-.a3-card { background: var(--lacquer); box-shadow: 0 6px 24px rgba(18, 10, 10, .35); }
-.a3-card-text { font-size: 1.1rem; }
-.a3-cards { bottom: 6%; }
-@media (min-width: 900px) {
-  .a3-cards { left: 50%; right: auto; transform: translateX(-50%); width: 30rem; bottom: 7%; }
-  .a3-card { margin-left: auto; margin-right: auto; }
-}
-@media (max-width: 700px) { .a3-lbl { font-size: 40px; stroke-width: 9px; } .a3-lbl-sm { font-size: 36px; } }
-.a3-w { white-space: pre; }
+.a3-w, .a6-w { white-space: pre; }
+/* Las tarjetas ya no tapan Taishan ni Hong Kong: van al centro, sobre el mar */
+@media (min-width: 900px) { .a3-cards { left: 50%; right: auto; transform: translateX(-50%); width: 30rem; bottom: 6%; } .a3-card { margin-left: auto; margin-right: auto; } }
+.a3-lbl-sm { font-size: 20px; }

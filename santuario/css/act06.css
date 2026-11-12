@@ -144,16 +144,4 @@
 @media (max-width: 719px) { .a6-map-title { font-size: var(--fs-lg); } .a6-mapline { font-size: var(--fs-base); } .a6-map-note { display: none; } }
 @media (prefers-reduced-motion: reduce) { .a6-halo { opacity: 0.28; } }
 
-/* Tablero ordenado: rejilla sin rotaciones, tarjetas del mismo alto, sin hilos ni alfileres */
-.a6-case:nth-child(odd) .a6-paper, .a6-case:nth-child(even) .a6-paper { transform: none; }
-.a6-threads, .a6-pin, .a6-flash, .a6-spark { display: none; }
-.a6-case--confirmed .a6-paper::after { display: none; }
-.a6-table { align-items: stretch; }
-.a6-case { display: flex; }
-.a6-case .a6-paper { flex: 1 1 auto; }
-.a6-case-title { min-height: 0; }
-.a6-human { font-size: var(--fs-base); }
-.a6-stamp { width: 2.2rem; height: 2.2rem; }
-.a6-block-title { font-size: var(--fs-xl); }
-.a6-case--pending .a6-paper { border-top-style: dashed; border-top-color: var(--ink-2); }
 .a6-w { white-space: pre; }
