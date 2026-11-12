@@ -160,7 +160,7 @@ def build():
     ])
     OUT.write_text(html, encoding="utf-8")
     # copia para la raiz del repo (GitHub Pages): las imagenes se sirven desde santuario/
-    (ROOT.parent / "index.html").write_text(html.replace('src="img/pub/', 'src="santuario/img/pub/'), encoding="utf-8")
+    (ROOT.parent / "index.html").write_text(html.replace('src="img/pub/', 'src="santuario/img/pub/').replace('href="img/pub/', 'href="santuario/img/pub/'), encoding="utf-8")
     return html, acts
 
 

@@ -194,6 +194,30 @@
       e.preventDefault();
       goToAct(a.getAttribute('data-go'));
     });
+    // ampliacion de documentos y fotos: un solo <dialog> reutilizado (teclado: Enter abre, Esc cierra)
+    var box = null, lastZoom = null;
+    function openZoom(a) {
+      if (!box) {
+        if (!window.HTMLDialogElement) { return false; }
+        box = el('dialog', { 'class': 'sn-lightbox', 'aria-label': 'Documento ampliado' });
+        box.innerHTML = '<button type="button" class="sn-lightbox__close" aria-label="Cerrar / Close / 关闭">&times;</button>' +
+          '<figure class="sn-lightbox__fig"><img class="sn-lightbox__img" alt=""><figcaption class="sn-lightbox__cap"></figcaption></figure>';
+        document.body.appendChild(box);
+        box.addEventListener('click', function (ev) { if (ev.target === box || ev.target.closest('.sn-lightbox__close')) { box.close(); } });
+        box.addEventListener('close', function () { if (lastZoom) { lastZoom.focus(); } });
+      }
+      var img = a.querySelector('img'), cap = a.parentNode.querySelector('figcaption');
+      var big = box.querySelector('.sn-lightbox__img');
+      big.src = a.href; big.alt = img ? img.alt : '';
+      box.querySelector('.sn-lightbox__cap').innerHTML = cap ? cap.innerHTML : '';
+      lastZoom = a;
+      box.showModal();
+      return true;
+    }
+    document.addEventListener('click', function (e) {
+      var z = e.target.closest ? e.target.closest('a[data-zoom]') : null;
+      if (z && openZoom(z)) { e.preventDefault(); }
+    });
     document.addEventListener('click', function (e) {
       var l = e.target.closest ? e.target.closest('a[data-go], a[data-go-id]') : null;
       if (!l || nav.contains(l)) { return; }

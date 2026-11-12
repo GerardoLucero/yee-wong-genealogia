@@ -786,6 +786,60 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .cover-cta { min-height: 44px; font-size: 1rem; }
 }
 </style>
+<style data-src="css/act00b.css">
+/* Componente documento (.doc), planos a pantalla completa (.plate), capitulo (.chapter), ampliacion (.sn-lightbox) */
+.plates { background: var(--ink); }
+.plate { position: relative; margin: 0; height: 100vh; height: 100svh; min-height: 420px; overflow: hidden; background: var(--ink); }
+.plate-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.plate::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to top, rgba(11, 11, 13, .92) 0, rgba(11, 11, 13, .55) 28%, transparent 55%); }
+.plate-cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 56px 40px 84px; max-width: 60rem; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: var(--paper); }
+.plate-txt { font-family: var(--font-serif); font-size: clamp(1.1rem, 1rem + .8vw, 1.5rem); line-height: 1.4; text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
+
+.doc-seal { display: inline-block; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; background: rgba(11, 11, 13, .6); }
+.doc-seal--ok { color: var(--jade-soft); }
+.doc-seal--tbc, .doc-seal--fam { color: var(--gold-bright); border-style: dashed; }
+.doc-seal--hyp { color: var(--hypothesis); border-style: dashed; }
+
+.doc { margin: 0; display: flex; flex-direction: column; gap: 10px; background: var(--lacquer-2); border: 1px solid var(--line); padding: 10px; }
+.doc-zoom { display: block; position: relative; cursor: zoom-in; background: var(--ink); }
+.doc-zoom::after { content: "+"; position: absolute; right: 8px; bottom: 8px; width: 32px; height: 32px; display: grid; place-items: center; background: var(--lacquer); color: var(--gold-bright); border: 1px solid var(--gold); font-size: 20px; line-height: 1; }
+.doc-zoom img { display: block; width: 100%; height: auto; }
+.doc-zoom:focus-visible { outline: 3px solid var(--gold-bright); outline-offset: 2px; }
+.doc-cap { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.doc-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--gold-bright); font-weight: 600; }
+.doc-text { font-size: 1rem; line-height: 1.45; color: var(--paper); }
+
+.chapter { background: var(--lacquer); color: var(--paper); padding: var(--sp-8) var(--gutter); border-top: 1px solid var(--line); }
+.chapter-in { max-width: 1040px; margin: 0 auto; display: grid; gap: var(--sp-7); }
+.chapter-head { text-align: center; }
+.chapter-kicker { font-size: .95rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper-dim); margin-bottom: 8px; }
+.chapter-title { font-family: var(--font-serif); font-weight: 500; font-size: var(--fs-2xl); color: var(--gold-bright); line-height: 1.05; }
+.chapter-block { display: grid; gap: var(--sp-5); align-items: center; }
+.chapter-block--young .doc, .chapter-block--family .doc { max-width: 420px; justify-self: center; width: 100%; }
+.chapter-lead p { font-family: var(--font-serif); font-size: var(--fs-md); line-height: 1.45; margin: 0 0 var(--sp-4); }
+.chapter-lead .chapter-note, .chapter-note { font-size: 1rem; color: var(--paper-dim); font-family: var(--font-ui); }
+.doc-grid { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
+.chapter-close { text-align: center; max-width: 46rem; margin: 0 auto; }
+.chapter-q { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.3; margin: 0 0 var(--sp-5); }
+.chapter-q--ok { color: var(--gold-bright); }
+.chapter-q .doc-seal { vertical-align: middle; font-size: .8rem; }
+@media (min-width: 820px) {
+  .chapter-block--young, .chapter-block--family { grid-template-columns: minmax(280px, 420px) 1fr; gap: var(--sp-7); }
+  .chapter-block--family .doc { order: 2; }
+  .doc-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) { .plate-cap { padding-bottom: 28px; padding-right: 52px; } .chapter { padding: var(--sp-7) var(--gutter); } .chapter-title { font-size: 2.6rem; } }
+
+/* Ampliacion */
+.sn-lightbox { border: 1px solid var(--gold); background: var(--ink); color: var(--paper); padding: 0; max-width: 96vw; max-height: 96vh; width: 96vw; overflow: auto; }
+.sn-lightbox::backdrop { background: rgba(0, 0, 0, .88); }
+.sn-lightbox__fig { margin: 0; display: flex; flex-direction: column; }
+.sn-lightbox__img { display: block; width: 100%; height: auto; max-height: 78vh; object-fit: contain; background: var(--ink); }
+.sn-lightbox__cap { padding: 14px 64px 16px 16px; display: flex; flex-direction: column; gap: 6px; }
+.sn-lightbox__close { position: sticky; top: 0; float: right; margin: 8px; z-index: 2; min-width: 44px; min-height: 44px; font-size: 26px; line-height: 1; background: var(--lacquer); color: var(--gold-bright); border: 1px solid var(--gold); cursor: pointer; }
+.sn-lightbox__close:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
+.sn-lightbox__cap { align-items: flex-start; }
+</style>
 <style data-src="css/act01.css">
 /* Acto 1: El umbral. Prefijo .a1- */
 .a1 { position: relative; background: var(--lacquer); color: var(--paper); }
@@ -1850,7 +1904,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <h1 class="cover-title" id="cover-title">
         <span data-lang="es">Familia Yee Wong</span>
         <span data-lang="en">The Yee Wong Family</span>
-        <span data-lang="zh">余黄家族</span>
+        <span data-lang="zh">余家</span>
       </h1>
       <p class="cover-lead">
         <span data-lang="es">Miguel salió de Taishan, en el sur de China, cruzó el mar y echó raíces en Baja California Sur. Esta es la historia de cómo su familia lo está encontrando.</span>
@@ -2124,6 +2178,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   </div>
 </section>
 
+<section class="plates plates--a2" id="aldea-fotos" aria-label="Fotos de la aldea / Village photos / 村庄照片">
+  <figure class="plate">
+    <img class="plate-img" src="santuario/img/pub/aldea-callejon-puerta-azul.webp" width="1280" height="720" loading="lazy" alt="Callejón estrecho entre casas de ladrillo gris en una aldea de Taishan. / Narrow alley between grey brick houses in a Taishan village. / 台山一座村子里，灰砖房之间的窄巷。" style="object-position:center">
+    <figcaption class="plate-cap"><span class="plate-txt"><span data-lang="es">Un callejón entre casas de ladrillo gris, en la zona de Taishan de la que salió la familia. Foto de la familia, marzo de 2026.</span><span data-lang="en">An alley between grey brick houses, in the Taishan area the family came from. Family photo, March 2026.</span><span data-lang="zh">台山一带灰砖房之间的小巷，这里是家族的来处。家人摄于2026年3月。</span></span></figcaption>
+  </figure>
+  <figure class="plate">
+    <img class="plate-img" src="santuario/img/pub/aldea-salon-mural-alero.webp" width="1280" height="960" loading="lazy" alt="Mural pintado bajo el alero de un salón ancestral, con banderines de colores. / Mural painted under the eaves of an ancestral hall, with coloured bunting. / 祠堂屋檐下的彩绘壁画，挂着彩色小旗。" style="object-position:center 40%">
+    <figcaption class="plate-cap"><span class="plate-txt"><span data-lang="es">Mural bajo el alero de un salón ancestral. Foto de la familia, marzo de 2026.</span><span data-lang="en">Mural under the eaves of an ancestral hall. Family photo, March 2026.</span><span data-lang="zh">祠堂屋檐下的壁画。家人摄于2026年3月。</span></span></figcaption>
+  </figure>
+</section>
+
 <section class="act a3" id="acto3" data-act="3" data-title-es="La travesía" data-title-en="The crossing" data-title-zh="跨越太平洋">
 
   <header class="a3-intro">
@@ -2370,7 +2435,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
       <div class="a4-panel a4-p-bros">
         <p class="a4-lead"><span data-lang="es">En Mulegé no estuvo solo. Otros del mismo apellido llegaron con él, y con los años cada uno tomó su camino.</span><span data-lang="en">In Mulegé he was not alone. Others with the same surname came with him, and over the years each took his own road.</span><span data-lang="zh">在穆莱赫，他并不孤单。同姓的人与他同来，多年之后，各自走上了自己的路。</span></p>
-        <p class="a4-lead a4-home"><span data-lang="es">Unos se fueron a otros pueblos de México. De otros no se sabe: quizá regresaron a China, quizá fueron sus hijos quienes regresaron.</span><span data-lang="en">Some went to other towns in Mexico. Of others nothing is known: perhaps they returned to China, perhaps it was their children who returned.</span><span data-lang="zh">有人去了墨西哥别的小镇。另一些人下落不明：也许回了中国，也许是他们的后代回去了。</span></p>
+        <p class="a4-lead a4-home"><span data-lang="es">Unos se fueron a otros pueblos de México. De otros no se sabe: tal vez regresaron a China.</span><span data-lang="en">Some went to other towns in Mexico. Of others nothing is known: perhaps they returned to China.</span><span data-lang="zh">有人去了墨西哥别的小镇。另一些人下落不明：也许回了中国。</span></p>
       </div>
 
       <div class="a4-panel a4-p-hijos">
@@ -2389,6 +2454,77 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <p class="a4-note a4-note-small a4-birth"><span data-lang="es">Nació entre 1882 y 1892; el año exacto no se sabe.</span><span data-lang="en">He was born between 1882 and 1892; the exact year is not known.</span><span data-lang="zh">他生于1882至1892年之间；确切年份不得而知。</span></p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="los-que-se-fueron" aria-labelledby="ch-title">
+  <div class="chapter-in">
+    <header class="chapter-head">
+      <p class="chapter-kicker"><span data-lang="es">Capítulo</span><span data-lang="en">Chapter</span><span data-lang="zh">章节</span></p>
+      <h2 class="chapter-title" id="ch-title"><span data-lang="es">Los que se fueron</span><span data-lang="en">Those who left</span><span data-lang="zh">离开的人</span></h2>
+    </header>
+
+    <div class="chapter-block chapter-block--young">
+      <figure class="doc doc--tbc">
+        <a class="doc-zoom" href="santuario/img/pub/miguel-joven.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/miguel-joven.webp" width="1164" height="1320" loading="lazy" alt="Retrato en sepia de Miguel Yee Wong joven, de perfil, con moño, dentro de un marco ovalado. / Sepia portrait of a young Miguel Yee Wong in profile, wearing a bow tie, in an oval frame. / 年轻的米格尔·余黄的棕褐色侧面肖像，系着领结，镶在椭圆相框里。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title"><span data-lang="es">Miguel, joven</span><span data-lang="en">Miguel, young</span><span data-lang="zh">年轻时的米格尔</span></b><span class="doc-text"><span data-lang="es">Retrato en marco ovalado, de fecha desconocida. Una nota familiar lo vincula con la Unión Fraternal China de Mulegé (7.º vocal, de 1911 a 1934); su origen aún no se confirma.</span><span data-lang="en">Portrait in an oval frame, date unknown. A family note links him to the Chinese Fraternal Union of Mulegé (7th board member, 1911 to 1934); its source is not yet confirmed.</span><span data-lang="zh">椭圆相框中的肖像，年代不详。一份家里的笔记把他与穆莱赫的中华联谊会联系起来（第七任理事，1911至1934年），出处尚未证实。</span></span><span class="doc-seal doc-seal--tbc"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></figcaption>
+      </figure>
+      <div class="chapter-lead">
+        <p><span data-lang="es">Miguel no se fue solo de la aldea. Otros de su familia también cruzaron el mar, y no todos se quedaron en México.</span><span data-lang="en">Miguel did not leave the village alone. Others in his family also crossed the sea, and not all of them stayed in Mexico.</span><span data-lang="zh">米格尔并不是独自离开村子的。他家里的其他人也渡过了大海，而且并非都留在了墨西哥。</span></p>
+      </div>
+    </div>
+
+    <div class="chapter-block chapter-block--family">
+      <div class="chapter-lead">
+        <p><span data-lang="es">Arturo Yee, probable hermano de Miguel, también vivió en Mulegé. Murió en Fresnillo en 1942. Esta foto de estudio lo muestra con su familia.</span><span data-lang="en">Arturo Yee, probably Miguel’s brother, also lived in Mulegé. He died in Fresnillo in 1942. This studio photo shows him with his family.</span><span data-lang="zh">阿图罗·余，可能是米格尔的兄长，也曾住在穆莱赫，1942年在弗雷斯尼略去世。这张影楼照片拍的是他和家人。</span></p>
+      </div>
+      <figure class="doc doc--tbc">
+        <a class="doc-zoom" href="santuario/img/pub/arturo-familia.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/arturo-familia.webp" width="872" height="1280" loading="lazy" alt="Foto de estudio en sepia: un hombre de pie, un hombre y una mujer sentados, y cuatro niños pequeños. / Sepia studio photo: a man standing, a seated man and woman, and four small children. / 棕褐色影楼合影：一名男子站立，一男一女坐着，还有四个小孩。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title"><span data-lang="es">La familia de Arturo</span><span data-lang="en">Arturo’s family</span><span data-lang="zh">阿图罗一家</span></b><span class="doc-text"><span data-lang="es">Foto de estudio, fecha por confirmar. No se ha identificado quién es quién.</span><span data-lang="en">Studio photo, date to be confirmed. Who is who has not been identified.</span><span data-lang="zh">影楼照片，年代待确认。尚未辨认出各人是谁。</span></span><span class="doc-seal doc-seal--tbc"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></figcaption>
+      </figure>
+    </div>
+
+    <div class="chapter-block chapter-block--cards">
+      <div class="chapter-lead chapter-lead--wide">
+        <p><span data-lang="es">El 26 de mayo de 1930, en Nogales, Arizona, se llenaron cuatro tarjetas de cruce. Dicen que cuatro niños nacidos en Mulegé, con padre Arturo Yee, iban con la abuela "Lim Shee" a Cantón, China, vía San Francisco.</span><span data-lang="en">On 26 May 1930, in Nogales, Arizona, four border-crossing cards were filled in. They say four children born in Mulegé, whose father was Arturo Yee, were travelling with their grandmother "Lim Shee" to Canton, China, via San Francisco.</span><span data-lang="zh">1930年5月26日，在亚利桑那州诺加莱斯，填写了四张过境卡。卡上写着，四个在穆莱赫出生的孩子，父亲是阿图罗·余，随祖母“Lim Shee”经旧金山前往中国广州。</span></p>
+        <p class="chapter-note"><span data-lang="es">Lo que dicen las tarjetas está confirmado. "Yon" es una lectura: así sale en una interpretación de los manifiestos, y la letra es difícil. Toca una tarjeta para ampliarla.</span><span data-lang="en">What the cards say is confirmed. "Yon" is a reading: that is how it appears in one interpretation of the manifests, and the handwriting is hard. Tap a card to enlarge it.</span><span data-lang="zh">卡片上所写的内容是确认的。“Yon”是一种读法：它出自对乘客名单的一种解读，而且字迹难辨。点按卡片可放大。</span></p>
+      </div>
+      <div class="doc-grid">
+      <figure class="doc doc--ok">
+        <a class="doc-zoom" href="santuario/img/pub/tarjeta-hing.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/tarjeta-hing.webp" width="1600" height="1045" loading="lazy" alt="Tarjeta de cruce de Nogales, 26 de mayo de 1930, a nombre de Yon Hing. / Nogales border-crossing card, 26 May 1930, in the name of Yon Hing. / 1930年5月26日诺加莱斯过境卡，姓名为Yon Hing。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title">Yon Hing</b><span class="doc-text"><span data-lang="es">6 años, nacido en Mulegé. Padre: Arturo Yee. Madre: "Yee Mon Lang".</span><span data-lang="en">6 years old, born in Mulegé. Father: Arturo Yee. Mother: "Yee Mon Lang".</span><span data-lang="zh">6岁，生于穆莱赫。父亲：阿图罗·余。母亲：“Yee Mon Lang”。</span></span><span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></figcaption>
+      </figure>
+      <figure class="doc doc--ok">
+        <a class="doc-zoom" href="santuario/img/pub/tarjeta-chan.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/tarjeta-chan.webp" width="1600" height="1033" loading="lazy" alt="Tarjeta de cruce de Nogales, 26 de mayo de 1930, a nombre de Yon Chan. / Nogales border-crossing card, 26 May 1930, in the name of Yon Chan. / 1930年5月26日诺加莱斯过境卡，姓名为Yon Chan。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title">Yon Chan</b><span class="doc-text"><span data-lang="es">5 años, nacido en Mulegé. Padre: Arturo Yee. Madre: "Yee Mon Lang".</span><span data-lang="en">5 years old, born in Mulegé. Father: Arturo Yee. Mother: "Yee Mon Lang".</span><span data-lang="zh">5岁，生于穆莱赫。父亲：阿图罗·余。母亲：“Yee Mon Lang”。</span></span><span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></figcaption>
+      </figure>
+      <figure class="doc doc--ok">
+        <a class="doc-zoom" href="santuario/img/pub/tarjeta-chin.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/tarjeta-chin.webp" width="1600" height="1084" loading="lazy" alt="Tarjeta de cruce de Nogales, 26 de mayo de 1930, a nombre de Yon Chin. / Nogales border-crossing card, 26 May 1930, in the name of Yon Chin. / 1930年5月26日诺加莱斯过境卡，姓名为Yon Chin。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title">Yon Chin</b><span class="doc-text"><span data-lang="es">4 años, nacido en Mulegé. Padre: Arturo Yee. Madre: "Yee Mon Lang".</span><span data-lang="en">4 years old, born in Mulegé. Father: Arturo Yee. Mother: "Yee Mon Lang".</span><span data-lang="zh">4岁，生于穆莱赫。父亲：阿图罗·余。母亲：“Yee Mon Lang”。</span></span><span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></figcaption>
+      </figure>
+      <figure class="doc doc--ok">
+        <a class="doc-zoom" href="santuario/img/pub/tarjeta-don.webp" data-zoom aria-label="Ampliar / Enlarge / 放大">
+          <img src="santuario/img/pub/tarjeta-don.webp" width="1600" height="1059" loading="lazy" alt="Tarjeta de cruce de Nogales, 26 de mayo de 1930, a nombre de Yon Bon. / Nogales border-crossing card, 26 May 1930, in the name of Yon Bon. / 1930年5月26日诺加莱斯过境卡，姓名为Yon Bon。">
+        </a>
+        <figcaption class="doc-cap"><b class="doc-title">Yon Bon</b><span class="doc-text"><span data-lang="es">2 años, nacido en Mulegé. Padre: Arturo Yee. Madre: "Yee Mon Lang".</span><span data-lang="en">2 years old, born in Mulegé. Father: Arturo Yee. Mother: "Yee Mon Lang".</span><span data-lang="zh">2岁，生于穆莱赫。父亲：阿图罗·余。母亲：“Yee Mon Lang”。</span></span><span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></figcaption>
+      </figure>
+      </div>
+    </div>
+
+    <div class="chapter-block chapter-close">
+      <p class="chapter-q"><span data-lang="es">¿Qué fue de ellos? Aún no se sabe. Tal vez regresaron a China con la madre de Miguel.</span><span data-lang="en">What became of them? It is not yet known. Perhaps they went back to China with Miguel’s mother.</span><span data-lang="zh">他们后来怎么样了？至今不知道。也许他们和米格尔的母亲一起回了中国。</span> <span class="doc-seal doc-seal--hyp"><span data-lang="es">hipótesis</span><span data-lang="en">hypothesis</span><span data-lang="zh">假设</span></span></p>
+      <p class="chapter-q chapter-q--ok"><span data-lang="es">En marzo de 2026, la familia fue a Taishan a buscarlos y no encontró rastro de ellos.</span><span data-lang="en">In March 2026, the family went to Taishan to look for them and found no trace of them.</span><span data-lang="zh">2026年3月，家人前往台山寻找他们，没有找到任何踪迹。</span> <span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></p>
     </div>
   </div>
 </section>
@@ -2818,6 +2954,17 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   </div>
 </section>
 
+<section class="plates plates--a7" id="salon-museo" aria-label="El salón del clan y el museo / The clan hall and the museum / 宗祠与博物馆">
+  <figure class="plate">
+    <img class="plate-img" src="santuario/img/pub/salon-fachada.webp" width="1280" height="720" loading="lazy" alt="Fachada del salón ancestral del clan 余 en Dihai, con balcones de estilo de emigrantes. / Facade of the 余 clan ancestral hall in Dihai, with emigrant-style balconies. / 迪海余氏宗祠正面，带有侨乡风格的阳台。" style="object-position:center">
+    <figcaption class="plate-cap"><span class="plate-txt"><span data-lang="es">El salón del clan 余 en Dihai, 风采堂. Honra a 余靖, de la dinastía Song, y es el origen del clan que señala el museo.</span><span data-lang="en">The 余 clan hall in Dihai, 风采堂. It honours 余靖, of the Song dynasty, and is the clan origin the museum points to.</span><span data-lang="zh">迪海的余氏宗祠风采堂，纪念宋代的余靖，博物馆将他视为余氏的源头。</span></span><span class="doc-seal doc-seal--ok"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></figcaption>
+  </figure>
+  <figure class="plate">
+    <img class="plate-img" src="santuario/img/pub/museo-diorama-embarque.webp" width="1280" height="960" loading="lazy" alt="Diorama del Museo de emigrantes de Taishan: una despedida en un muelle junto a barcos de vela. / Diorama at the Taishan emigrant museum: a farewell on a pier beside sailing ships. / 台山华侨博物馆的场景复原：帆船旁码头上的送别。" style="object-position:center 60%">
+    <figcaption class="plate-cap"><span class="plate-txt"><span data-lang="es">Museo de emigrantes de Taishan: una despedida en el muelle. Escena de museo, no una foto de la familia.</span><span data-lang="en">Taishan emigrant museum: a farewell on the pier. A museum scene, not a family photo.</span><span data-lang="zh">台山华侨博物馆：码头上的送别。这是博物馆的场景，不是家人的照片。</span></span></figcaption>
+  </figure>
+</section>
+
 <section class="act a7" id="acto7" data-act="7" data-title-es="El altar" data-title-en="The altar" data-title-zh="祖先的神龛">
   <div class="a7-track">
     <div class="a7-stage">
@@ -3204,6 +3351,30 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       if (!a) { return; }
       e.preventDefault();
       goToAct(a.getAttribute('data-go'));
+    });
+    // ampliacion de documentos y fotos: un solo <dialog> reutilizado (teclado: Enter abre, Esc cierra)
+    var box = null, lastZoom = null;
+    function openZoom(a) {
+      if (!box) {
+        if (!window.HTMLDialogElement) { return false; }
+        box = el('dialog', { 'class': 'sn-lightbox', 'aria-label': 'Documento ampliado' });
+        box.innerHTML = '<button type="button" class="sn-lightbox__close" aria-label="Cerrar / Close / 关闭">&times;</button>' +
+          '<figure class="sn-lightbox__fig"><img class="sn-lightbox__img" alt=""><figcaption class="sn-lightbox__cap"></figcaption></figure>';
+        document.body.appendChild(box);
+        box.addEventListener('click', function (ev) { if (ev.target === box || ev.target.closest('.sn-lightbox__close')) { box.close(); } });
+        box.addEventListener('close', function () { if (lastZoom) { lastZoom.focus(); } });
+      }
+      var img = a.querySelector('img'), cap = a.parentNode.querySelector('figcaption');
+      var big = box.querySelector('.sn-lightbox__img');
+      big.src = a.href; big.alt = img ? img.alt : '';
+      box.querySelector('.sn-lightbox__cap').innerHTML = cap ? cap.innerHTML : '';
+      lastZoom = a;
+      box.showModal();
+      return true;
+    }
+    document.addEventListener('click', function (e) {
+      var z = e.target.closest ? e.target.closest('a[data-zoom]') : null;
+      if (z && openZoom(z)) { e.preventDefault(); }
     });
     document.addEventListener('click', function (e) {
       var l = e.target.closest ? e.target.closest('a[data-go], a[data-go-id]') : null;
