@@ -35,7 +35,7 @@
 .a2-fog2 { bottom: 26%; opacity: .7; }
 .a2-fog3 { bottom: 14%; opacity: .6; }
 
-.a2-evoc { position: absolute; left: 16px; right: 16px; bottom: 2.2vh; z-index: 4; margin: 0; text-align: center; font-size: .72rem; letter-spacing: .06em; font-style: italic; opacity: .6; }
+.a2-evoc { position: absolute; left: 16px; right: 16px; bottom: 2.2vh; z-index: 4; margin: 0; text-align: center; font-size: 1rem; letter-spacing: .06em; font-style: italic; opacity: .6; }
 
 .a2-copy { position: absolute; inset: 0; z-index: 3; padding: 11vh 16px 7vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; gap: .7rem; }
 .a2-line { margin: 0; overflow: hidden; font-family: var(--font-serif); font-size: clamp(1.15rem, 3.4vw, 1.9rem); line-height: 1.4; max-width: 34ch; }
@@ -43,19 +43,19 @@
 
 .a2-names { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .4rem 2.2rem; margin-top: 1rem; }
 .a2-name { font-family: var(--font-cjk); font-size: clamp(3rem, 14vw, 7rem); line-height: 1; color: var(--cinnabar); text-shadow: 0 0 22px var(--gold-bright), 0 2px 0 var(--cinnabar-deep); will-change: transform, opacity, filter; }
-.a2-name-cap { flex-basis: 100%; margin: .2rem 0 0; font-size: .9rem; opacity: .75; max-width: 40ch; margin-inline: auto; }
+.a2-name-cap { flex-basis: 100%; margin: .2rem 0 0; font-size: 1rem; opacity: .75; max-width: 40ch; margin-inline: auto; }
 
 .a2-village { position: relative; margin-top: 1.2rem; max-width: 36rem; }
 .a2-village-lead { margin: 0 0 .8rem; font-size: 1rem; }
 .a2-cands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
 .a2-cand { display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .7rem 1.1rem; min-width: 9.5rem; border: 2px solid var(--cinnabar); background: linear-gradient(160deg, var(--paper), var(--gold-bright)); box-shadow: 0 0 18px var(--gold); }
 .a2-cand-zh { font-family: var(--font-cjk); font-size: 1.7rem; }
-.a2-cand-py { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+.a2-cand-py { font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
 .a2-cand-pct { font-size: 1.1rem; color: var(--cinnabar); font-weight: 600; }
-.a2-cand-note { font-size: .78rem; font-style: italic; opacity: .8; max-width: 14ch; }
+.a2-cand-note { font-size: 1rem; font-style: italic; opacity: .8; max-width: 14ch; }
 
 .a2-close { margin: 1rem 0 0; font-family: var(--font-serif); font-size: var(--fs-md); color: var(--cinnabar-deep); text-shadow: 0 0 14px var(--gold-bright); }
-.a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
+.a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: 1rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
 
 @media (min-width: 720px) {
   .a2-copy { padding-top: 13vh; }
@@ -82,3 +82,9 @@
 /* Texto mas compacto para que las cinco lineas queden sobre el cielo y no sobre las montanas */
 .a2-line { font-size: clamp(1rem, 2.5vw, 1.4rem); line-height: 1.3; max-width: 44ch; }
 .a2-copy { padding-top: 8vh; gap: .45rem; }
+
+/* Entrada continua: el papel de la tinta del acto 1 se funde con el amanecer, sin corte duro */
+.a2-stage::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 45%; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, var(--paper) 0, rgba(248, 244, 230, 0) 100%); }
+/* Contraste AA: velo de papel detras del texto, para que no dependa de lo que haya debajo (montanas, sol) */
+.a2-copy::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 62%; z-index: -1; pointer-events: none; background: linear-gradient(to bottom, rgba(248, 244, 230, .94) 0, rgba(248, 244, 230, .9) 70%, rgba(248, 244, 230, 0) 100%); }
+.a2-evoc { opacity: 1; color: var(--paper); text-shadow: 0 1px 6px var(--ink); }

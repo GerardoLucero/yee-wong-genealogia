@@ -52,7 +52,7 @@ p { max-width: var(--measure); line-height: var(--lh-loose); }
   isolation: isolate;
   min-height: 100vh;
   min-height: 100svh;
-  padding: var(--sp-8) var(--gutter);
+  padding: 0;
   background: var(--bg);
   color: var(--fg);
   overflow: hidden;

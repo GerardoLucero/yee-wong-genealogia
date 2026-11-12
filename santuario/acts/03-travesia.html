@@ -40,7 +40,7 @@
       <svg class="a3-map" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="a3-map-t">
         <title id="a3-map-t">Mapa estilizado en tinta: Guangdong y Hong Kong, el Pacífico, San Francisco y la península de Baja California. Ilustración, no a escala.</title>
 
-        <defs><linearGradient id="a3-rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--gold-bright)"/><stop offset=".5" style="stop-color:var(--cinnabar)"/><stop offset="1" style="stop-color:var(--red-china)"/></linearGradient></defs>
+        <defs><filter id="a3-rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><linearGradient id="a3-rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--gold-bright)"/><stop offset=".5" style="stop-color:var(--cinnabar)"/><stop offset="1" style="stop-color:var(--red-china)"/></linearGradient></defs>
         <g class="a3-stars" aria-hidden="true">
           <circle cx="260" cy="60" r="1.6"/><circle cx="340" cy="110" r="1.2"/><circle cx="430" cy="48" r="1.8"/>
           <circle cx="520" cy="96" r="1.2"/><circle cx="610" cy="40" r="1.6"/><circle cx="700" cy="84" r="1.2"/>
@@ -77,25 +77,21 @@
         <!-- Hitos del mapa -->
         <g class="a3-pt a3-pt-hk">
           <circle class="a3-pt-ring" cx="152" cy="322" r="14"/><circle class="a3-pt-dot" cx="152" cy="322" r="5"/>
-          <text class="a3-lbl" x="170" y="352">Hong Kong</text>
-          <text class="a3-lbl a3-lbl-sm" x="22" y="300">Taishan</text>
+          <text class="a3-lbl" x="172" y="350">Hong Kong</text>
+          <text class="a3-lbl a3-lbl-sm" x="22" y="282">Taishan 台山</text>
         </g>
         <g class="a3-pt a3-pt-sf">
           <circle class="a3-pt-ring" cx="870" cy="204" r="14"/><circle class="a3-pt-dot" cx="870" cy="204" r="5"/>
-          <text class="a3-lbl" x="742" y="190">San Francisco</text>
+          <text class="a3-lbl a3-lbl-end" x="880" y="168">San Francisco</text>
         </g>
         <g class="a3-pt a3-pt-bcs">
           <circle class="a3-pt-ring" cx="892" cy="432" r="14"/><circle class="a3-pt-dot" cx="892" cy="432" r="5"/>
-          <text class="a3-lbl" x="708" y="436">Mulegé, BCS</text>
-        </g>
-        <g class="a3-pt a3-pt-lp">
-          <circle class="a3-pt-ring" cx="872" cy="528" r="12"/><circle class="a3-pt-dot" cx="872" cy="528" r="4"/>
-          <text class="a3-lbl a3-lbl-sm2" x="780" y="560">La Paz</text>
+          <text class="a3-lbl a3-lbl-end" x="868" y="424">Mulegé</text>
         </g>
 
         <g class="a3-pt a3-pt-lp">
           <circle class="a3-pt-ring" cx="883" cy="508" r="14"/><circle class="a3-pt-dot" cx="883" cy="508" r="5"/>
-          <text class="a3-lbl" x="742" y="512">La Paz, BCS</text>
+          <text class="a3-lbl a3-lbl-end" x="860" y="528">La Paz</text>
         </g>
 
         <!-- Embarcacion: ilustracion generica, no representa un barco real -->

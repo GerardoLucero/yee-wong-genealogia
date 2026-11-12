@@ -7,111 +7,37 @@
     </p>
   </header>
 
-  <div class="a5-scroller">
-    <div class="a5-stage">
-      <p class="a5-futuro" aria-hidden="true">
-        <span data-lang="es">y quienes vienen después</span><span data-lang="en">and those who come after</span><span data-lang="zh">以及后来的人</span>
-      </p>
-
-      <svg class="a5-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="a5-svg-t">
-        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina González, y ramas hacia el futuro sin nombres, y la rama de María de Lourdes Catalina Yee Molina, hija de Miguel y Catalina, que llega hasta hoy.</title>
-        <defs>
-          <g id="a5-flor">
-            <circle class="a5-petal" cx="0" cy="-8" r="6.5"/>
-            <circle class="a5-petal" cx="7.6" cy="-2.5" r="6.5"/>
-            <circle class="a5-petal" cx="4.7" cy="6.5" r="6.5"/>
-            <circle class="a5-petal" cx="-4.7" cy="6.5" r="6.5"/>
-            <circle class="a5-petal" cx="-7.6" cy="-2.5" r="6.5"/>
-            <circle class="a5-pistil" cx="0" cy="0" r="2.6"/>
-          </g>
-          <mask id="a5-mask-manuel" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="800">
-            <path class="a5-maskpath" data-a5-draw d="M200 490 C235 480 270 450 300 410" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
-          </mask>
-        </defs>
-
-        <!-- tronco -->
-        <path class="a5-branch a5-trunk" data-a5-draw d="M200 760 C200 700 204 640 200 560 C197 520 202 495 200 470"/>
-        <path class="a5-branch a5-trunk" data-a5-draw d="M200 470 C198 420 203 380 200 330"/>
-
-        <!-- ramas confirmadas -->
-        <path class="a5-branch" data-a5-draw d="M200 650 C170 640 130 625 105 585"/>
-        <path class="a5-branch" data-a5-draw d="M200 600 C235 590 275 575 295 535"/>
-        <path class="a5-branch a5-twig" data-a5-draw d="M295 535 C310 555 325 568 345 575"/>
-        <path class="a5-branch" data-a5-draw d="M200 540 C170 530 140 510 118 470"/>
-
-        <!-- rama por confirmar -->
-        <path class="a5-branch a5-dotted" mask="url(#a5-mask-manuel)" d="M200 490 C235 480 270 450 300 410"/>
-
-        <!-- rama de Maria de Lourdes: hija de Miguel, vuelve al tronco y de ahi parte la copa -->
-        <path class="a5-branch a5-main" data-a5-draw d="M295 535 C335 520 372 485 372 430 C372 380 335 345 285 342 C245 340 215 338 200 330"/>
-
-        <!-- copa: ramas hacia el futuro, sin nombres -->
-        <g class="a5-crown">
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C180 290 140 270 110 215"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C220 285 265 265 295 205"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C196 270 190 200 170 140"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C205 260 215 190 240 125"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 300 C200 240 198 160 205 100"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M150 262 C120 240 70 230 50 175"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M255 258 C290 240 330 225 350 170"/>
-          <g class="a5-leaves">
-            <ellipse class="a5-leaf" cx="110" cy="215" rx="5" ry="3" transform="rotate(-40 110 215)"/>
-            <ellipse class="a5-leaf" cx="295" cy="205" rx="5" ry="3" transform="rotate(40 295 205)"/>
-            <ellipse class="a5-leaf" cx="170" cy="140" rx="5" ry="3" transform="rotate(-20 170 140)"/>
-            <ellipse class="a5-leaf" cx="240" cy="125" rx="5" ry="3" transform="rotate(20 240 125)"/>
-            <ellipse class="a5-leaf" cx="205" cy="100" rx="5" ry="3" transform="rotate(90 205 100)"/>
-            <ellipse class="a5-leaf" cx="50" cy="175" rx="5" ry="3" transform="rotate(-60 50 175)"/>
-            <ellipse class="a5-leaf" cx="350" cy="170" rx="5" ry="3" transform="rotate(60 350 170)"/>
-            <ellipse class="a5-leaf" cx="125" cy="245" rx="4" ry="2.4" transform="rotate(-30 125 245)"/>
-            <ellipse class="a5-leaf" cx="278" cy="238" rx="4" ry="2.4" transform="rotate(30 278 238)"/>
-            <ellipse class="a5-leaf" cx="185" cy="200" rx="4" ry="2.4" transform="rotate(-10 185 200)"/>
-            <ellipse class="a5-leaf" cx="225" cy="180" rx="4" ry="2.4" transform="rotate(10 225 180)"/>
-            <ellipse class="a5-leaf" cx="80" cy="205" rx="4" ry="2.4" transform="rotate(-50 80 205)"/>
-            <ellipse class="a5-leaf" cx="325" cy="195" rx="4" ry="2.4" transform="rotate(50 325 195)"/>
-          </g>
-        </g>
-
-        <!-- nodos -->
-        <g class="a5-node a5-node--open" data-node="padres" transform="translate(200 745)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-        </g>
-        <g class="a5-node" data-node="arturo" transform="translate(105 585)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="-14" y="4" text-anchor="end">Arturo</text>
-        </g>
-        <g class="a5-node" data-node="miguel" transform="translate(295 535)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="14" y="22" text-anchor="start">Miguel</text>
-        </g>
-        <g class="a5-node" data-node="catalina" transform="translate(345 575)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="0" y="24" text-anchor="end">Catalina</text>
-        </g>
-        <g class="a5-node" data-node="federico" transform="translate(118 470)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="-14" y="4" text-anchor="end">Federico</text>
-        </g>
-        <g class="a5-node a5-node--star" data-node="lourdes" transform="translate(372 430)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="0" y="24" text-anchor="end">María de Lourdes</text>
-        </g>
-        <g class="a5-node a5-node--maybe" data-node="manuel" transform="translate(300 410)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="14" y="4" text-anchor="start">Manuel</text>
-          <g class="a5-stamp" transform="translate(-4 -34) rotate(-8)">
-            <rect x="-36" y="-9" width="72" height="18" rx="2"/>
-            <text x="0" y="4" text-anchor="middle">
-              <tspan data-lang="es">por confirmar</tspan><tspan data-lang="en">to confirm</tspan><tspan data-lang="zh">待证实</tspan>
-            </text>
-          </g>
-        </g>
-        <text class="a5-label a5-label--root" x="226" y="749" text-anchor="start">
-          <tspan data-lang="es">sin resolver</tspan><tspan data-lang="en">unresolved</tspan><tspan data-lang="zh">未解</tspan>
-        </text>
-      </svg>
-
-      <div class="a5-card" aria-hidden="true"></div>
+  <div class="a5t" id="arbol-familia">
+    <h3 class="a5t-h"><span class="a5t-h-in"><span data-lang="es">Lo que sabemos, y lo que falta</span><span data-lang="en">What we know, and what is missing</span><span data-lang="zh">我们所知，以及所缺</span></span></h3>
+    <ul class="a5t-tree" aria-label="Árbol de la familia / Family tree / 家谱树">
+      <li>
+        <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">La raíz</span><span data-lang="en">The root</span><span data-lang="zh">根</span></p><p class="a5t-name"><span data-lang="es">Los padres de Miguel</span><span data-lang="en">Miguel's parents</span><span data-lang="zh">米格尔的父母</span></p><p class="a5t-meta"><span data-lang="es">No tienen nombre en ningún papel. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">They have no name in any paper. The root exists, though it has no face yet.</span><span data-lang="zh">在任何文书中都没有留下名字。根是存在的，只是尚无面容。</span></p><span class="a5t-seal"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></div>
+        <ul>
+          <li>
+            <div class="a5t-node a5t-node--prob"><p class="a5t-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄长</span></p><p class="a5t-name">Arturo Yee</p><p class="a5t-meta"><span data-lang="es">Murió en Fresnillo en 1942.</span><span data-lang="en">Died in Fresnillo in 1942.</span><span data-lang="zh">1942年在弗雷斯尼略去世。</span></p><span class="a5t-seal"><span data-lang="es">probable</span><span data-lang="en">probable</span><span data-lang="zh">可能</span></span></div>
+            <ul><li>
+              <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">Sus hijos</span><span data-lang="en">His children</span><span data-lang="zh">他的孩子们</span></p><p class="a5t-name">Yon Hing, Yon Chan, Yon Chin, Yon Bon</p><p class="a5t-meta"><span data-lang="es">Tarjetas de Nogales, 1930: nacidos en Mulegé. "Yon" es una lectura. Su destino se desconoce.</span><span data-lang="en">Nogales cards, 1930: born in Mulegé. "Yon" is a reading. Their fate is unknown.</span><span data-lang="zh">1930年诺加莱斯卡片：生于穆莱赫。“Yon”是一种读法。他们的去向不明。</span></p><span class="a5t-seal"><span data-lang="es">hipótesis</span><span data-lang="en">hypothesis</span><span data-lang="zh">假设</span></span></div>
+            </li></ul>
+          </li>
+          <li>
+            <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Se quedó en la península</span><span data-lang="en">He stayed on the peninsula</span><span data-lang="zh">他留在了半岛上</span></p><p class="a5t-name">Miguel Yee ⚭ Catalina Molina González</p><p class="a5t-meta"><span data-lang="es">Casados el 30 de noviembre de 1921, en Mulegé. Los zupu no registran a las mujeres: en los libros ella no estaba. Aquí sí.</span><span data-lang="en">Married on 30 November 1921, in Mulegé. Zupu do not record women: in the books she was not there. Here she is.</span><span data-lang="zh">1921年11月30日在穆莱赫成婚。族谱不记女性：书里没有她。这里有。</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
+            <ul><li>
+              <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Hija de Miguel y Catalina</span><span data-lang="en">Daughter of Miguel and Catalina</span><span data-lang="zh">米格尔与卡塔利娜之女</span></p><p class="a5t-name">María de Lourdes Catalina Yee Molina</p><p class="a5t-meta"><span data-lang="es">1929 a 2025</span><span data-lang="en">1929 to 2025</span><span data-lang="zh">1929至2025年</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
+              <ul><li>
+                <div class="a5t-node a5t-node--leaf"><p class="a5t-role"><span data-lang="es">De ella parten las hojas sin nombre</span><span data-lang="en">From her grow the nameless leaves</span><span data-lang="zh">无名的叶子由她而生</span></p><p class="a5t-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p><p class="a5t-meta"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p></div>
+              </li></ul>
+            </li></ul>
+          </li>
+          <li>
+            <div class="a5t-node a5t-node--prob"><p class="a5t-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄弟</span></p><p class="a5t-name">Federico Yee</p><p class="a5t-meta"><span data-lang="es">Nacido hacia 1891. De él se sabe poco todavía.</span><span data-lang="en">Born around 1891. Little is known of him yet.</span><span data-lang="zh">约生于1891年。关于他，至今所知甚少。</span></p><span class="a5t-seal"><span data-lang="es">probable</span><span data-lang="en">probable</span><span data-lang="zh">可能</span></span></div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="a5t-aside">
+      <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">Misma familia; parentesco por confirmar</span><span data-lang="en">Same family; kinship to be confirmed</span><span data-lang="zh">同族；亲缘待证实</span></p><p class="a5t-name">Manuel P. Yee Pang</p><p class="a5t-meta"><span data-lang="es">Nacido en 1893 en Taishan. Quizá Miguel fue su tío.</span><span data-lang="en">Born in 1893 in Taishan. Perhaps Miguel was his uncle.</span><span data-lang="zh">1893年生于台山。也许米格尔是他的叔辈。</span></p><span class="a5t-seal"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></div>
     </div>
+    <p class="a5t-legend"><span class="a5t-key a5t-key--ok"></span><span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已证实</span> <span class="a5t-key a5t-key--prob"></span><span data-lang="es">Probable</span><span data-lang="en">Probable</span><span data-lang="zh">可能</span> <span class="a5t-key a5t-key--hyp"></span><span data-lang="es">Hipótesis o por confirmar (línea punteada)</span><span data-lang="en">Hypothesis or to be confirmed (dotted line)</span><span data-lang="zh">假设或待确认（虚线）</span></p>
   </div>
 
   <div class="a5g-scroller">
@@ -151,45 +77,4 @@
     </div>
   </div>
 
-  <div class="a5-after">
-    <h3 class="a5-h3"><span data-lang="es">Los nombres, en orden</span><span data-lang="en">The names, in order</span><span data-lang="zh">按序排列的名字</span></h3>
-    <ol class="a5-list">
-      <li data-node="padres">
-        <p class="a5-voz"><span data-lang="es">Los padres de Miguel no tienen nombre en ningún papel. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">Miguel's parents have no name in any paper. The root exists, though it has no face yet.</span><span data-lang="zh">米格尔的父母，在任何文书中都没有留下名字。根是存在的，只是尚无面容。</span></p>
-      </li>
-      <li data-node="arturo">
-        <p class="a5-name">Arturo Yee</p>
-        <p class="a5-voz"><span data-lang="es">Quizá fue su hermano mayor. Murió en Fresnillo en 1942.</span><span data-lang="en">Perhaps he was his elder brother. He died in Fresnillo in 1942.</span><span data-lang="zh">或许他是米格尔的兄长。1942年，他在弗雷斯尼略去世。</span></p>
-      </li>
-      <li data-node="miguel">
-        <p class="a5-name">Miguel Yee</p>
-        <p class="a5-voz"><span data-lang="es">Se quedó en la península.</span><span data-lang="en">He stayed on the peninsula.</span><span data-lang="zh">他留在了半岛上。</span></p>
-      </li>
-      <li data-node="catalina">
-        <p class="a5-name">Catalina Molina González</p>
-        <p class="a5-voz"><span data-lang="es">Los zupu no registran a las mujeres. En los libros no estaba. Aquí sí.</span><span data-lang="en">Zupu do not record women. She was not in the books. Here she is.</span><span data-lang="zh">族谱不记女性。她不在族谱里。在这里，她在。</span></p>
-      </li>
-      <li data-node="federico">
-        <p class="a5-name">Federico Yee</p>
-        <p class="a5-voz"><span data-lang="es">De él se sabe poco todavía.</span><span data-lang="en">Little is known of him yet.</span><span data-lang="zh">关于他，至今所知甚少。</span></p>
-      </li>
-      <li data-node="manuel" class="a5-maybe">
-        <p class="a5-role"><span data-lang="es">Misma familia; parentesco por confirmar.</span><span data-lang="en">Same family; kinship to be confirmed.</span><span data-lang="zh">同族；亲缘待证实。</span></p>
-        <p class="a5-name">Manuel P. Yee Pang</p>
-        <p class="a5-voz"><span data-lang="es">Dicen que Miguel pudo ser su tío.</span><span data-lang="en">They say Miguel may have been his uncle.</span><span data-lang="zh">据说米格尔可能是他的叔辈。</span></p>
-      </li>
-      <li data-node="lourdes">
-        <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina.</span><span data-lang="en">Daughter of Miguel and Catalina.</span><span data-lang="zh">米格尔与卡塔利娜之女。</span></p>
-        <p class="a5-name">María de Lourdes Catalina Yee Molina</p>
-        <p class="a5-meta"><span data-lang="es">Nació en 1929.</span><span data-lang="en">Born in 1929.</span><span data-lang="zh">生于1929年。</span></p>
-        <p class="a5-muerte"><span data-lang="es">Murió en 2025.</span><span data-lang="en">Died in 2025.</span><span data-lang="zh">卒于2025年。</span></p>
-        <p class="a5-meta"><span data-lang="es">De ella parten las hojas sin nombre.</span><span data-lang="en">From her grow the nameless leaves.</span><span data-lang="zh">无名的叶子由她而生。</span></p>
-      </li>
-      <li data-node="futuro">
-        <p class="a5-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p>
-        <p class="a5-voz"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p>
-      </li>
-    </ol>
-
-  </div>
 </section>

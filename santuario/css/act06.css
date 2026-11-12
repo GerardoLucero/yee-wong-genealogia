@@ -32,7 +32,7 @@
 .a6-stamp {
   position: absolute; top: var(--sp-4); right: var(--sp-4);
   width: 5rem; height: 5rem; display: grid; place-items: center; text-align: center;
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.15;
+  font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.15;
   border: 3px solid currentColor; transform: rotate(-12deg); pointer-events: none;
   mix-blend-mode: multiply;
 }
@@ -99,7 +99,7 @@
 .a6-paper { padding: var(--sp-4) var(--sp-4) var(--sp-5); }
 .a6-case-title { font-size: var(--fs-base); padding-right: 4.8rem; min-height: 2.6em; }
 .a6-human { font-size: var(--fs-sm); margin-top: var(--sp-2); }
-.a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 0.52rem; letter-spacing: 0.04em; }
+.a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 1rem; letter-spacing: 0.04em; }
 .a6-flash { top: calc(var(--sp-3) + 2.1rem - 5rem); right: calc(var(--sp-3) + 2.1rem - 5rem); }
 .a6-desk { padding-bottom: var(--sp-8); }
 
@@ -143,3 +143,16 @@
 .a6-map-note { flex-basis: 100%; text-align: center; font-size: var(--fs-xs); color: var(--paper-dim); }
 @media (max-width: 719px) { .a6-map-title { font-size: var(--fs-lg); } .a6-mapline { font-size: var(--fs-base); } .a6-map-note { display: none; } }
 @media (prefers-reduced-motion: reduce) { .a6-halo { opacity: 0.28; } }
+
+/* Tablero ordenado: rejilla sin rotaciones, tarjetas del mismo alto, sin hilos ni alfileres */
+.a6-case:nth-child(odd) .a6-paper, .a6-case:nth-child(even) .a6-paper { transform: none; }
+.a6-threads, .a6-pin, .a6-flash, .a6-spark { display: none; }
+.a6-case--confirmed .a6-paper::after { display: none; }
+.a6-table { align-items: stretch; }
+.a6-case { display: flex; }
+.a6-case .a6-paper { flex: 1 1 auto; }
+.a6-case-title { min-height: 0; }
+.a6-human { font-size: var(--fs-base); }
+.a6-stamp { width: 2.2rem; height: 2.2rem; }
+.a6-block-title { font-size: var(--fs-xl); }
+.a6-case--pending .a6-paper { border-top-style: dashed; border-top-color: var(--ink-2); }

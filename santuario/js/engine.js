@@ -380,7 +380,7 @@
       timer = setTimeout(function () {
         var n = pending.getAttribute('data-act');
         if (n === shown) { return; }
-        play(pending, shown !== null);
+        play(pending, false); // sin cortina: el titulo no tapa lo que se esta leyendo
         shown = n;
       }, 260);
     }

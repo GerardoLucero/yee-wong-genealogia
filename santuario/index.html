@@ -80,8 +80,8 @@
   --font-ui: "Cormorant Garamond", Georgia, serif;
 
   /* Escala tipografica fluida (360px a 1440px) */
-  --fs-xs: clamp(0.78rem, 0.74rem + 0.18vw, 0.9rem);
-  --fs-sm: clamp(0.92rem, 0.88rem + 0.2vw, 1.05rem);
+  --fs-xs: 1rem;
+  --fs-sm: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
   --fs-base: clamp(1.08rem, 1rem + 0.35vw, 1.3rem);
   --fs-md: clamp(1.3rem, 1.1rem + 0.9vw, 1.8rem);
   --fs-lg: clamp(1.7rem, 1.3rem + 1.8vw, 2.8rem);
@@ -200,7 +200,7 @@ p { max-width: var(--measure); line-height: var(--lh-loose); }
   isolation: isolate;
   min-height: 100vh;
   min-height: 100svh;
-  padding: var(--sp-8) var(--gutter);
+  padding: 0;
   background: var(--bg);
   color: var(--fg);
   overflow: hidden;
@@ -537,7 +537,7 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
   align-items: center;
   gap: 8px;
   color: var(--paper, #f1e8d6);
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   pointer-events: none;
@@ -573,7 +573,7 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
   background: var(--lacquer, #14100d);
   color: var(--paper, #f1e8d6);
   border: 1px solid var(--gold, #c9a45c);
-  font-size: 14px;
+  font-size: 16px;
   z-index: 110;
 }
 .sn-notice__close {
@@ -591,11 +591,11 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
 /* Movil */
 @media (max-width: 480px) {
   .sn-tools { top: 14px; right: 12px; gap: 6px; }
-  .sn-lang button, .sn-audio { padding: 0 10px; font-size: 15px; min-height: 44px; }
+  .sn-lang button, .sn-audio { padding: 0 10px; font-size: 16px; min-height: 44px; }
   .sn-audio [data-lang] { display: none !important; } /* solo el icono en movil */
   .sn-acts { right: 0; }
   .sn-acts__dot { min-width: 36px; min-height: 36px; }
-  .sn-acts__num { width: 30px; height: 30px; font-size: 15px; }
+  .sn-acts__num { width: 30px; height: 30px; font-size: 16px; }
   .sn-acts__title { display: none; }
 }
 
@@ -613,16 +613,19 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
   linear-gradient(90deg, transparent 0, transparent 92%, var(--gold-bright, #e6c36a) 92%, var(--gold, #c9a24b) 100%); }
 .sn-cine {
   position: absolute;
-  inset: 0;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--sp-4, 1rem);
-  padding: 0 var(--gutter, 16px);
+  gap: var(--sp-2, .5rem);
+  padding: 12px 28px 14px;
   text-align: center;
   visibility: hidden;
-  background: radial-gradient(ellipse at center, rgba(18, 10, 10, 0.85), rgba(18, 10, 10, 0.55) 70%, transparent);
+  background: rgba(18, 10, 10, 0.88);
+  border: 1px solid var(--gold, #c9a24b);
+  max-width: calc(100vw - 32px);
 }
 .sn-cine__num {
   font-family: var(--font-serif, serif);
@@ -633,7 +636,7 @@ html[data-lang="zh"] [data-lang]:not([data-lang="zh"]) {
 }
 .sn-cine__title {
   font-family: var(--font-serif, serif);
-  font-size: var(--fs-2xl, 4rem);
+  font-size: var(--fs-lg, 2rem);
   line-height: var(--lh-tight, 1.1);
   color: var(--paper, #efe4cd);
   text-shadow: 0 0 40px rgba(201, 162, 75, 0.45);
@@ -688,7 +691,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 @media (max-width: 480px) {
   .sn-seal { width: 40px; height: 40px; }
   .sn-seal__han { font-size: 24px; }
-  .sn-cine__title { font-size: var(--fs-xl, 2.4rem); }
+  .sn-cine__title { font-size: 1.6rem; }
 }
 
 .sn-soundhint {
@@ -701,7 +704,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   background: rgba(18, 10, 10, 0.88);
   color: var(--gold-bright, #e6c36a);
   font: inherit;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.04em;
   text-align: right;
   cursor: pointer;
@@ -714,7 +717,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .sn-soundhint.is-shown { opacity: 1; transform: none; }
 .sn-soundhint:hover, .sn-soundhint:focus-visible { background: var(--cinnabar-deep, #7d1a15); color: var(--paper, #efe4cd); }
 .sn-soundhint:focus-visible { outline: 2px solid var(--gold, #c9a24b); outline-offset: 2px; }
-@media (max-width: 480px) { .sn-soundhint { right: 12px; top: 52px; max-width: 200px; font-size: 13px; } }
+@media (max-width: 480px) { .sn-soundhint { right: 12px; top: 52px; max-width: 200px; font-size: 16px; } }
 
 @media (prefers-reduced-motion: reduce) {
   .sn-soundhint { transition: none; transform: none; }
@@ -734,7 +737,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .cover-in { position: relative; z-index: 1; width: 100%; max-width: 1120px; margin: 0 auto; display: grid; gap: 20px; grid-template-columns: 1fr; align-items: center; }
 .cover-fig { margin: 0 auto; width: min(34vw, 150px); }
 .cover-img { display: block; width: 100%; height: auto; border: 1px solid var(--gold); padding: 5px; background: var(--lacquer-2); box-shadow: var(--glow-gold); }
-.cover-cap { margin-top: 6px; font-size: .85rem; line-height: 1.3; color: var(--paper-dim); text-align: center; }
+.cover-cap { margin-top: 6px; font-size: 1rem; line-height: 1.3; color: var(--paper-dim); text-align: center; }
 .cover-txt { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .cover-han { display: none; font-family: var(--font-cjk); color: var(--gold-bright); font-size: 3rem; line-height: 1; margin: 0; text-shadow: var(--glow-gold); }
 .cover-title { font-family: var(--font-serif); font-weight: 500; font-size: clamp(2.3rem, 9vw, 4.6rem); letter-spacing: .06em; line-height: 1.05; color: var(--paper); }
@@ -742,7 +745,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .cover-route { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 6px; }
 .cover-route li { display: flex; flex-direction: column; align-items: center; padding: 6px 14px; border: 1px solid var(--line); min-width: 6.5rem; }
 .cover-route b { font-family: var(--font-serif); font-weight: 600; font-size: 1.2rem; color: var(--gold-bright); }
-.cover-route span { font-size: .85rem; color: var(--paper-dim); }
+.cover-route span { font-size: 1rem; color: var(--paper-dim); }
 .cover-cta { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 1px solid var(--gold); color: var(--lacquer); background: var(--gold); text-decoration: none; font-family: var(--font-serif); font-weight: 600; font-size: 1.05rem; letter-spacing: .04em; }
 .cover-cta:hover, .cover-cta:focus-visible { background: var(--gold-bright); outline: 2px solid var(--paper); outline-offset: 3px; }
 
@@ -767,10 +770,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .minute-item:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .minute-when { font-family: var(--font-serif); font-weight: 600; font-size: 1.5rem; color: var(--gold-bright); line-height: 1; }
 .minute-what { font-size: var(--fs-base); line-height: 1.45; }
-.minute-seal { grid-column: 2; justify-self: start; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; }
+.minute-seal { grid-column: 2; justify-self: start; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; }
 .minute-seal--ok { color: var(--jade-soft); }
 .minute-seal--tbc { color: var(--gold-bright); border-style: dashed; }
-.minute-note { margin-top: var(--sp-5); text-align: center; font-size: .95rem; color: var(--paper-dim); }
+.minute-note { margin-top: var(--sp-5); text-align: center; font-size: 1rem; color: var(--paper-dim); }
 @media (max-width: 480px) { .minute-item { grid-template-columns: 1fr; } .minute-seal { grid-column: 1; } .minute { padding: var(--sp-7) var(--gutter); } }
 
 /* Movil: compacto para que el titulo, la frase y los tres lugares quepan sin scroll */
@@ -778,7 +781,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .cover { padding: 64px 52px 84px 16px; align-items: start; }
   .cover-in { gap: 10px; }
   .cover-fig { width: 104px; }
-  .cover-cap { font-size: .8rem; }
+  .cover-cap { font-size: 1rem; }
   .cover-title { font-size: clamp(2rem, 9.5vw, 3rem); }
   .cover-lead { font-size: 1rem; line-height: 1.4; }
   .cover-route li { min-width: 0; padding: 4px 10px; }
@@ -795,7 +798,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .plate-cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 56px 40px 84px; max-width: 60rem; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; color: var(--paper); }
 .plate-txt { font-family: var(--font-serif); font-size: clamp(1.1rem, 1rem + .8vw, 1.5rem); line-height: 1.4; text-shadow: 0 1px 8px rgba(0, 0, 0, .8); }
 
-.doc-seal { display: inline-block; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; background: rgba(11, 11, 13, .6); }
+.doc-seal { display: inline-block; font-size: 1rem; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border: 1px solid currentColor; background: rgba(11, 11, 13, .6); }
 .doc-seal--ok { color: var(--jade-soft); }
 .doc-seal--tbc, .doc-seal--fam { color: var(--gold-bright); border-style: dashed; }
 .doc-seal--hyp { color: var(--hypothesis); border-style: dashed; }
@@ -812,7 +815,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .chapter { background: var(--lacquer); color: var(--paper); padding: var(--sp-8) var(--gutter); border-top: 1px solid var(--line); }
 .chapter-in { max-width: 1040px; margin: 0 auto; display: grid; gap: var(--sp-7); }
 .chapter-head { text-align: center; }
-.chapter-kicker { font-size: .95rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper-dim); margin-bottom: 8px; }
+.chapter-kicker { font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper-dim); margin-bottom: 8px; }
 .chapter-title { font-family: var(--font-serif); font-weight: 500; font-size: var(--fs-2xl); color: var(--gold-bright); line-height: 1.05; }
 .chapter-block { display: grid; gap: var(--sp-5); align-items: center; }
 .chapter-block--young .doc, .chapter-block--family .doc { max-width: 420px; justify-self: center; width: 100%; }
@@ -822,7 +825,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .chapter-close { text-align: center; max-width: 46rem; margin: 0 auto; }
 .chapter-q { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: 1.3; margin: 0 0 var(--sp-5); }
 .chapter-q--ok { color: var(--gold-bright); }
-.chapter-q .doc-seal { vertical-align: middle; font-size: .8rem; }
+.chapter-q .doc-seal { vertical-align: middle; font-size: 1rem; }
 @media (min-width: 820px) {
   .chapter-block--young, .chapter-block--family { grid-template-columns: minmax(280px, 420px) 1fr; gap: var(--sp-7); }
   .chapter-block--family .doc { order: 2; }
@@ -891,7 +894,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a1-char { width: min(46vw, 230px); height: auto; filter: drop-shadow(0 0 14px var(--gold)) drop-shadow(0 0 34px var(--cinnabar)); overflow: visible; }
 .a1-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.9rem, 7vw, 3.6rem); letter-spacing: .14em; line-height: 1.15; margin: 0; color: var(--paper); }
 
-.a1-hint { position: absolute; left: 0; right: 0; bottom: 5vh; z-index: 4; margin: 0; text-align: center; font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper); opacity: .65; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+.a1-hint { position: absolute; left: 0; right: 0; bottom: 5vh; z-index: 4; margin: 0; text-align: center; font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper); opacity: .65; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
 .a1-hint-line { display: block; width: 1px; height: 38px; background: linear-gradient(var(--gold), transparent); transform-origin: top; animation: a1-pulse 2.4s ease-in-out infinite; }
 @keyframes a1-pulse { 0%, 100% { transform: scaleY(.3); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
 
@@ -957,7 +960,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a2-fog2 { bottom: 26%; opacity: .7; }
 .a2-fog3 { bottom: 14%; opacity: .6; }
 
-.a2-evoc { position: absolute; left: 16px; right: 16px; bottom: 2.2vh; z-index: 4; margin: 0; text-align: center; font-size: .72rem; letter-spacing: .06em; font-style: italic; opacity: .6; }
+.a2-evoc { position: absolute; left: 16px; right: 16px; bottom: 2.2vh; z-index: 4; margin: 0; text-align: center; font-size: 1rem; letter-spacing: .06em; font-style: italic; opacity: .6; }
 
 .a2-copy { position: absolute; inset: 0; z-index: 3; padding: 11vh 16px 7vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; gap: .7rem; }
 .a2-line { margin: 0; overflow: hidden; font-family: var(--font-serif); font-size: clamp(1.15rem, 3.4vw, 1.9rem); line-height: 1.4; max-width: 34ch; }
@@ -965,19 +968,19 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 .a2-names { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .4rem 2.2rem; margin-top: 1rem; }
 .a2-name { font-family: var(--font-cjk); font-size: clamp(3rem, 14vw, 7rem); line-height: 1; color: var(--cinnabar); text-shadow: 0 0 22px var(--gold-bright), 0 2px 0 var(--cinnabar-deep); will-change: transform, opacity, filter; }
-.a2-name-cap { flex-basis: 100%; margin: .2rem 0 0; font-size: .9rem; opacity: .75; max-width: 40ch; margin-inline: auto; }
+.a2-name-cap { flex-basis: 100%; margin: .2rem 0 0; font-size: 1rem; opacity: .75; max-width: 40ch; margin-inline: auto; }
 
 .a2-village { position: relative; margin-top: 1.2rem; max-width: 36rem; }
 .a2-village-lead { margin: 0 0 .8rem; font-size: 1rem; }
 .a2-cands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
 .a2-cand { display: flex; flex-direction: column; align-items: center; gap: .15rem; padding: .7rem 1.1rem; min-width: 9.5rem; border: 2px solid var(--cinnabar); background: linear-gradient(160deg, var(--paper), var(--gold-bright)); box-shadow: 0 0 18px var(--gold); }
 .a2-cand-zh { font-family: var(--font-cjk); font-size: 1.7rem; }
-.a2-cand-py { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+.a2-cand-py { font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
 .a2-cand-pct { font-size: 1.1rem; color: var(--cinnabar); font-weight: 600; }
-.a2-cand-note { font-size: .78rem; font-style: italic; opacity: .8; max-width: 14ch; }
+.a2-cand-note { font-size: 1rem; font-style: italic; opacity: .8; max-width: 14ch; }
 
 .a2-close { margin: 1rem 0 0; font-family: var(--font-serif); font-size: var(--fs-md); color: var(--cinnabar-deep); text-shadow: 0 0 14px var(--gold-bright); }
-.a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
+.a2-seal { position: absolute; right: -4px; top: -26px; margin: 0; padding: .35rem .6rem; border: 2px solid var(--cinnabar); color: var(--cinnabar); background: var(--paper); font-size: 1rem; letter-spacing: .18em; text-transform: uppercase; transform: rotate(-8deg); outline: 1px solid var(--cinnabar); outline-offset: 2px; }
 
 @media (min-width: 720px) {
   .a2-copy { padding-top: 13vh; }
@@ -1004,6 +1007,12 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 /* Texto mas compacto para que las cinco lineas queden sobre el cielo y no sobre las montanas */
 .a2-line { font-size: clamp(1rem, 2.5vw, 1.4rem); line-height: 1.3; max-width: 44ch; }
 .a2-copy { padding-top: 8vh; gap: .45rem; }
+
+/* Entrada continua: el papel de la tinta del acto 1 se funde con el amanecer, sin corte duro */
+.a2-stage::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 45%; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, var(--paper) 0, rgba(248, 244, 230, 0) 100%); }
+/* Contraste AA: velo de papel detras del texto, para que no dependa de lo que haya debajo (montanas, sol) */
+.a2-copy::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 62%; z-index: -1; pointer-events: none; background: linear-gradient(to bottom, rgba(248, 244, 230, .94) 0, rgba(248, 244, 230, .9) 70%, rgba(248, 244, 230, 0) 100%); }
+.a2-evoc { opacity: 1; color: var(--paper); text-shadow: 0 1px 6px var(--ink); }
 </style>
 <style data-src="css/act03.css">
 /* Acto III: La travesia. Prefijo .a3- . Acento: porcelana + oro imperial */
@@ -1013,7 +1022,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a3-intro {
   max-width: 44rem; margin: 0 auto; padding: 6rem 16px 3rem; text-align: center; position: relative;
 }
-.a3-kicker { letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; color: var(--porcelain-bright); margin: 0 0 1rem; }
+.a3-kicker { letter-spacing: .3em; text-transform: uppercase; font-size: 1rem; color: var(--porcelain-bright); margin: 0 0 1rem; }
 .a3-title {
   font-size: clamp(2.2rem, 7vw, 4rem); margin: 0 0 1.5rem; line-height: 1.1;
   background: var(--grad-gold-text); background-size: 200% 100%;
@@ -1121,7 +1130,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 .a3-stamp-ill {
   position: absolute; z-index: 5; left: 16px; top: 12px; margin: 0; max-width: 70%;
-  font-size: .68rem; letter-spacing: .12em; line-height: 1.4; color: var(--paper-dim);
+  font-size: 1rem; letter-spacing: .12em; line-height: 1.4; color: var(--paper-dim);
   padding: .15rem .5rem; border: 1px dotted var(--gold-dim); background: transparent; opacity: .8; text-transform: lowercase;
 }
 
@@ -1141,7 +1150,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   font-size: 2rem; line-height: 1; margin: 0 0 .5rem; font-family: var(--font-brush);
   background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.a3-card-text { margin: 0 0 .75rem; font-size: .98rem; line-height: 1.55; }
+.a3-card-text { margin: 0 0 .75rem; font-size: 1rem; line-height: 1.55; }
 
 /* Sin JS: estatico, tarjetas viven en la linea de tiempo */
 .a3:not(.a3-js) .a3-stage { height: auto; min-height: 0; overflow: visible; padding-bottom: 2rem; }
@@ -1157,7 +1166,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 /* Sellos */
 .a3-seal, .a3-tag {
-  display: inline-block; margin: 0; font-style: normal; font-size: .72rem; letter-spacing: .14em;
+  display: inline-block; margin: 0; font-style: normal; font-size: 1rem; letter-spacing: .14em;
   text-transform: uppercase; padding: .2rem .55rem; border: 1px solid currentColor; border-radius: 2px;
 }
 .a3-seal-ok { color: var(--jade-soft); }
@@ -1170,6 +1179,35 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 @media (prefers-reduced-motion: reduce) {
   .a3-title, .a3-lantern { animation: none; }
   .a3-sky-day { opacity: 1; }
+}
+
+
+/* ---- Rehecho en estilo tinta (papel de arroz, trazo negro, sello rojo). Sustituye la caricatura anterior. ---- */
+.a3-stage { background: radial-gradient(ellipse at 50% 45%, #fbf7ea 0, var(--paper) 55%, #e8dfc6 100%); color: var(--ink); }
+.a3-sky-day, .a3-sky-night, .a3-sky-dusk, .a3-far, .a3-clouds, .a3-lanterns, .a3-sparks, .a3-waves, .a3-stars, .a3-moon { display: none; }
+.a3-land { fill: rgba(18, 10, 10, .09); stroke: var(--ink); stroke-width: 2.6; filter: url(#a3-rough); }
+.a3-gulf { stroke: var(--ink); opacity: .45; }
+.a3-seamarks path { stroke: var(--ink); stroke-width: 1.6; opacity: .3; }
+.a3-sun { fill: var(--red-china); filter: none; }
+.a3-route-ghost { stroke: var(--ink); opacity: .45; stroke-width: 2.2; }
+.a3-route { stroke: var(--red-china-deep); stroke-width: 4.5; filter: none; }
+.a3-pt-dot { fill: var(--red-china); stroke: var(--ink); stroke-width: 2; }
+.a3-pt-ring { stroke: var(--ink); stroke-width: 2; opacity: .8; }
+.a3-lbl { font-size: 26px; fill: var(--ink); stroke: var(--paper); stroke-width: 6px; font-weight: 600; }
+.a3-lbl-end { text-anchor: end; }
+.a3-lbl-sm { font-size: 24px; fill: var(--ink); }
+.a3-ship { filter: none; }
+.a3-ship-hull { fill: var(--ink); stroke: var(--ink); }
+.a3-ship-sail { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+.a3-ship-sail-2 { fill: #e8dfc6; }
+.a3-ship-mast { stroke: var(--ink); }
+.a3-stamp-ill { color: #4a3f33; border-color: #4a3f33; font-size: 1rem; letter-spacing: .08em; text-transform: none; opacity: 1; }
+.a3-card { background: var(--lacquer); box-shadow: 0 6px 24px rgba(18, 10, 10, .35); }
+.a3-card-text { font-size: 1.1rem; }
+.a3-cards { bottom: 6%; }
+@media (min-width: 900px) {
+  .a3-cards { left: 50%; right: auto; transform: translateX(-50%); width: 30rem; bottom: 7%; }
+  .a3-card { margin-left: auto; margin-right: auto; }
 }
 </style>
 <style data-src="css/act04.css">
@@ -1255,15 +1293,14 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 /* Linea de tiempo */
 .a4-card {
-  background: color-mix(in srgb, var(--lacquer-3) 82%, transparent);
+  background: var(--lacquer-2);
   border: 1px solid var(--gold-bright); border-top: 4px solid var(--cinnabar); border-radius: var(--radius);
   outline: 1px solid var(--gold-dim); outline-offset: 4px;
   padding: var(--sp-5); box-shadow: var(--glow-lantern);
-  backdrop-filter: blur(2px);
 }
 .a4-year { font-family: var(--font-serif); font-size: var(--fs-xl); line-height: 1; margin: 0 0 var(--sp-3); color: var(--gold-bright); }
 .a4-card-h { font-size: var(--fs-md); margin: 0 0 var(--sp-3); color: var(--paper); }
-.a4-card-t { font-size: var(--fs-sm); line-height: var(--lh-base); margin: 0; color: var(--paper-dim); }
+.a4-card-t { font-size: var(--fs-sm); line-height: var(--lh-base); margin: 0; color: var(--paper); }
 
 /* Documento del censo */
 .a4-doc { margin: 0; }
@@ -1302,7 +1339,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 
 .a4-big { font-family: var(--font-serif); font-size: var(--fs-lg); line-height: var(--lh-base); color: var(--paper); }
-.a4-birth { opacity: 0.6; margin-top: var(--sp-5); text-align: center; }
+.a4-birth { margin-top: var(--sp-5); text-align: center; color: var(--paper); background: rgba(18, 10, 10, .75); padding: var(--sp-2) var(--sp-3); }
 .a4.a4-js .a4-card { width: 100%; max-width: 30rem; margin: 0 auto; }
 
 .a4 .a4-doc-name { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 4vw, 2.4rem); text-align: center; margin: 1rem 0; color: var(--gold-bright, #f7c948); }
@@ -1323,7 +1360,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a5-svg .a5-branch { filter: drop-shadow(0 0 3px var(--a5-glow)); }
 .a5-title { background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .a5-head { max-width: 40rem; margin: 0 auto; padding: 5rem 16px 2rem; text-align: center; }
-.a5-kicker { color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; margin: 0 0 .75rem; }
+.a5-kicker { color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: 1rem; margin: 0 0 .75rem; }
 .a5-title { font-size: clamp(2.2rem, 7vw, 3.8rem); margin: 0 0 1rem; font-weight: 400; color: var(--paper); }
 .a5-lede { line-height: 1.7; margin: 0; opacity: .88; }
 
@@ -1356,13 +1393,13 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a5-card { position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 1rem 1.1rem; background: var(--lacquer-3); border: 1px solid var(--gold-bright); border-radius: 2px; box-shadow: 0 0 22px color-mix(in srgb, var(--gold) 35%, transparent), inset 0 0 18px color-mix(in srgb, var(--red-china) 25%, transparent); opacity: 0; visibility: hidden; transition: opacity .35s; }
 .a5-card.a5-card--on { opacity: 1; visibility: visible; }
 .a5-card .a5-name { color: var(--gold-bright); }
-.a5-card .a5-meta { font-size: .9rem; }
+.a5-card .a5-meta { font-size: 1rem; }
 @media (min-width: 900px) {
   .a5-card { left: auto; right: 4vw; bottom: auto; top: 50%; transform: translateY(-50%); width: 22rem; }
   .a5-svg { margin-right: 18rem; }
 }
 
-.a5-role { color: var(--gold); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .3rem; }
+.a5-role { color: var(--gold); font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .3rem; }
 .a5-name { font-size: 1.25rem; margin: 0 0 .4rem; color: var(--paper); }
 .a5-alt { opacity: .7; font-size: .85em; }
 .a5-meta { margin: 0; line-height: 1.6; opacity: .9; }
@@ -1485,6 +1522,57 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .a5g-grp-n { font-size: 1.125rem; }
   .a5g-grp { padding: .5rem .7rem; }
 }
+
+/* ---- Arbol de la familia (HTML/CSS, texto grande). Sustituye al arbol de ciruelo en SVG y a la lista. ---- */
+.a5t { --a5t-gap: 30px; max-width: 1180px; margin: 0 auto; padding: 1rem var(--gutter) 4rem; }
+.a5t-h { text-align: center; margin: 0 0 2.5rem; font-weight: 400; }
+.a5t-h-in { font-size: var(--fs-lg); color: var(--gold-bright); font-family: var(--font-serif); }
+.a5t ul { list-style: none; margin: 0; padding: 0; }
+.a5t-tree, .a5t-tree ul { display: flex; justify-content: center; padding-top: var(--a5t-gap); position: relative; }
+.a5t-tree { padding-top: 0; }
+.a5t-tree li { position: relative; display: flex; flex-direction: column; align-items: center; padding: var(--a5t-gap) 10px 0; }
+.a5t-tree > li { padding-top: 0; }
+/* conectores: horizontal sobre los hermanos y vertical hacia cada hijo */
+.a5t-tree ul::before { content: ""; position: absolute; top: 0; left: 50%; height: var(--a5t-gap); border-left: 2px solid var(--gold); }
+.a5t-tree ul > li::before, .a5t-tree ul > li::after { content: ""; position: absolute; top: 0; width: 50%; height: var(--a5t-gap); border-top: 2px solid var(--gold); }
+.a5t-tree ul > li::before { right: 50%; }
+.a5t-tree ul > li::after { left: 50%; border-left: 2px solid var(--gold); }
+.a5t-tree ul > li:first-child::before, .a5t-tree ul > li:last-child::after { border-top: 0; }
+.a5t-tree ul > li:only-child::before, .a5t-tree ul > li:only-child::after { display: none; }
+.a5t-tree ul > li:only-child { padding-top: var(--a5t-gap); }
+.a5t-tree ul > li:last-child::before { border-right: 2px solid var(--gold); border-radius: 0 6px 0 0; }
+.a5t-tree ul > li:first-child::after { border-radius: 6px 0 0 0; }
+
+.a5t-node { width: 100%; max-width: 21rem; padding: 14px 16px; background: var(--lacquer-3); border: 1px solid var(--gold); border-top: 4px solid var(--jade-soft); text-align: center; font-family: var(--font-serif); }
+.a5t-node--prob { border-top-color: var(--gold-bright); }
+.a5t-node--hyp { border-style: dashed; border-top-color: var(--hypothesis); background: var(--lacquer-2); }
+.a5t-node--leaf { border-style: dotted; border-top-color: var(--jade-soft); background: transparent; }
+.a5t-role { margin: 0 0 4px; font-size: 1rem; color: var(--gold); letter-spacing: .04em; }
+.a5t-name { margin: 0 0 6px; font-size: 1.4rem; line-height: 1.2; color: var(--paper); font-weight: 600; }
+.a5t-meta { margin: 0 0 8px; font-size: 1.05rem; line-height: 1.4; color: var(--paper); }
+.a5t-seal { display: inline-block; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border: 1px solid currentColor; color: var(--jade-soft); }
+.a5t-node--prob .a5t-seal { color: var(--gold-bright); }
+.a5t-node--hyp .a5t-seal { color: var(--hypothesis); border-style: dashed; }
+.a5t-aside { display: flex; justify-content: center; margin-top: 3rem; }
+.a5t-aside .a5t-node { max-width: 26rem; }
+.a5t-legend { margin: 2rem 0 0; text-align: center; font-size: 1rem; color: var(--paper); display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; align-items: center; }
+.a5t-key { display: inline-block; width: 22px; height: 0; border-top: 3px solid; vertical-align: middle; margin-right: 6px; }
+.a5t-key--ok { border-color: var(--jade-soft); } .a5t-key--prob { border-color: var(--gold-bright); } .a5t-key--hyp { border-color: var(--hypothesis); border-top-style: dashed; }
+
+/* Movil y pantallas estrechas: arbol vertical con sangria */
+@media (max-width: 979px) {
+  .a5t-tree, .a5t-tree ul { display: block; padding-top: 0; }
+  .a5t-tree ul { margin: 0 0 0 14px; padding-left: 18px; border-left: 2px solid var(--gold); }
+  .a5t-tree ul::before { display: none; }
+  .a5t-tree li, .a5t-tree > li { display: block; padding: 18px 0 0 0; }
+  .a5t-tree ul > li::before { display: block; top: 52px; left: -18px; right: auto; width: 18px; height: 0; border-top: 2px solid var(--gold); border-right: 0; border-radius: 0; }
+  .a5t-tree ul > li::after { display: none; }
+  .a5t-tree ul > li:first-child::before, .a5t-tree ul > li:last-child::before { border-top: 2px solid var(--gold); border-right: 0; }
+  .a5t-tree ul > li:only-child::before { display: block; }
+  .a5t-node { max-width: none; text-align: left; }
+}
+.a5t-name, .a5t-meta { overflow-wrap: anywhere; }
+@media (max-width: 979px) { .a5t { padding-right: 52px; } }
 </style>
 <style data-src="css/act06.css">
 /* Acto 6: La investigacion. Mesa de expedientes. Prefijo .a6- */
@@ -1521,7 +1609,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-stamp {
   position: absolute; top: var(--sp-4); right: var(--sp-4);
   width: 5rem; height: 5rem; display: grid; place-items: center; text-align: center;
-  font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.15;
+  font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; line-height: 1.15;
   border: 3px solid currentColor; transform: rotate(-12deg); pointer-events: none;
   mix-blend-mode: multiply;
 }
@@ -1588,7 +1676,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-paper { padding: var(--sp-4) var(--sp-4) var(--sp-5); }
 .a6-case-title { font-size: var(--fs-base); padding-right: 4.8rem; min-height: 2.6em; }
 .a6-human { font-size: var(--fs-sm); margin-top: var(--sp-2); }
-.a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 0.52rem; letter-spacing: 0.04em; }
+.a6-stamp { width: 4.2rem; height: 4.2rem; top: var(--sp-3); right: var(--sp-3); font-size: 1rem; letter-spacing: 0.04em; }
 .a6-flash { top: calc(var(--sp-3) + 2.1rem - 5rem); right: calc(var(--sp-3) + 2.1rem - 5rem); }
 .a6-desk { padding-bottom: var(--sp-8); }
 
@@ -1632,6 +1720,19 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-map-note { flex-basis: 100%; text-align: center; font-size: var(--fs-xs); color: var(--paper-dim); }
 @media (max-width: 719px) { .a6-map-title { font-size: var(--fs-lg); } .a6-mapline { font-size: var(--fs-base); } .a6-map-note { display: none; } }
 @media (prefers-reduced-motion: reduce) { .a6-halo { opacity: 0.28; } }
+
+/* Tablero ordenado: rejilla sin rotaciones, tarjetas del mismo alto, sin hilos ni alfileres */
+.a6-case:nth-child(odd) .a6-paper, .a6-case:nth-child(even) .a6-paper { transform: none; }
+.a6-threads, .a6-pin, .a6-flash, .a6-spark { display: none; }
+.a6-case--confirmed .a6-paper::after { display: none; }
+.a6-table { align-items: stretch; }
+.a6-case { display: flex; }
+.a6-case .a6-paper { flex: 1 1 auto; }
+.a6-case-title { min-height: 0; }
+.a6-human { font-size: var(--fs-base); }
+.a6-stamp { width: 2.2rem; height: 2.2rem; }
+.a6-block-title { font-size: var(--fs-xl); }
+.a6-case--pending .a6-paper { border-top-style: dashed; border-top-color: var(--ink-2); }
 </style>
 <style data-src="css/act07.css">
 /* Acto 7: El altar. Prefijo .a7- */
@@ -1693,10 +1794,10 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 /* modo estatico: todo apilado y legible sin JS */
 .a7 .a7-panels { position: relative; z-index: 4; width: 100%; max-width: 38rem; order: -1; padding: 0 0 2rem; }
 .a7 .a7-panel { margin: 0 0 2.5rem; text-align: center; }
-.a7 .a7-kicker { font-family: var(--font-serif); letter-spacing: .28em; text-transform: uppercase; font-size: .8rem; color: var(--gold, #c9a24b); margin: 0 0 .8rem; }
+.a7 .a7-kicker { font-family: var(--font-serif); letter-spacing: .28em; text-transform: uppercase; font-size: 1rem; color: var(--gold, #c9a24b); margin: 0 0 .8rem; }
 .a7 .a7-text { font-size: 1.05rem; line-height: 1.7; margin: 0 0 1rem; }
 .a7 .a7-dedic { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.5rem, 5vw, 2.3rem); line-height: 1.4; color: var(--paper, #f4ecd8); margin: 0; }
-.a7 .a7-contact { margin: 0; font-size: .8rem; opacity: .7; }
+.a7 .a7-contact { margin: 0; font-size: 1rem; opacity: .7; }
 .a7 .a7-contact a { color: var(--gold, #c9a24b); text-decoration: underline; text-underline-offset: 3px; }
 .a7 .a7-contact a:focus-visible { outline: 2px solid var(--gold, #c9a24b); outline-offset: 3px; }
 
@@ -1706,8 +1807,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7 .a7-c-mark { font-family: var(--font-cjk); font-size: 3.5rem; color: var(--gold, #c9a24b); margin: 0; }
 .a7 .a7-c-title { font-family: var(--font-serif); font-weight: 500; letter-spacing: .2em; text-transform: uppercase; font-size: 1.4rem; margin: .2rem 0 2rem; }
 .a7 dl { margin: 0; }
-.a7 dt { font-family: var(--font-serif); letter-spacing: .22em; text-transform: uppercase; font-size: .75rem; color: var(--gold, #c9a24b); margin: 2rem 0 .5rem; }
-.a7 dd { margin: 0 0 .4rem; font-size: .95rem; line-height: 1.55; opacity: .9; }
+.a7 dt { font-family: var(--font-serif); letter-spacing: .22em; text-transform: uppercase; font-size: 1rem; color: var(--gold, #c9a24b); margin: 2rem 0 .5rem; }
+.a7 dd { margin: 0 0 .4rem; font-size: 1rem; line-height: 1.55; opacity: .9; }
 .a7 .a7-c-end { margin: 3rem 0 0; font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 5vw, 2.4rem); line-height: 1.3; text-shadow: 0 0 24px rgba(247, 201, 72, .45); }
 
 /* modo vivo: el JS fija el escenario y lo ligado al scroll */
@@ -1723,7 +1824,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   background: linear-gradient(100deg, var(--gold-dim) 20%, var(--gold-bright) 45%, var(--paper) 50%, var(--gold-bright) 55%, var(--gold-dim) 80%); background-size: 250% 100%;
   -webkit-background-clip: text; background-clip: text; color: transparent; animation: a7-shine 3.5s linear infinite; filter: drop-shadow(0 0 14px var(--gold-bright)); }
 .a7 .a7-years { font-family: var(--font-serif); letter-spacing: .3em; font-size: 1.2rem; color: var(--gold-bright); margin: 0; text-shadow: var(--glow-gold); }
-.a7 .a7-foot { position: relative; z-index: 4; order: 2; margin: 0; padding: 1rem 0 1.5rem; font-size: .7rem; opacity: .5; text-align: center; max-width: 32rem; }
+.a7 .a7-foot { position: relative; z-index: 4; order: 2; margin: 0; padding: 1rem 0 1.5rem; font-size: 1rem; opacity: .5; text-align: center; max-width: 32rem; }
 .a7.a7-live .a7-foot { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); width: calc(100% - 32px); padding: 0; z-index: 10; opacity: 0; }
 .a7.a7-live .a7-credits { z-index: 9; }
 .a7.a7-live .a7-candle-b .a7-flame, .a7.a7-live .a7-candle-b .a7-flame-halo { opacity: 0; }
@@ -1745,7 +1846,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .act.a7 { overflow: clip; }
 
 /* Dedicatoria final: mas grande y luminosa que el resto de los paneles */
-.a7 .a7-p3 .a7-kicker { font-size: clamp(.85rem, 2.4vw, 1.05rem); color: var(--gold-bright, #f7c948); text-shadow: 0 0 14px rgba(247, 201, 72, .55); }
+.a7 .a7-p3 .a7-kicker { font-size: clamp(1rem, 2.4vw, 1.05rem); color: var(--gold-bright, #f7c948); text-shadow: 0 0 14px rgba(247, 201, 72, .55); }
 .a7 .a7-p3 .a7-dedic { font-size: clamp(2rem, 7vw, 3.6rem); font-style: normal; color: var(--paper, #f4ecd8); text-shadow: 0 0 22px rgba(247, 201, 72, .6), 0 2px 12px rgba(0, 0, 0, .7); }
 .a7 .a7-p2 .a7-dedic { font-size: clamp(1.8rem, 6vw, 3rem); text-shadow: 0 0 18px rgba(247, 201, 72, .45), 0 2px 10px rgba(0, 0, 0, .7); }
 
@@ -1754,13 +1855,18 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a7 .a7-tab2 { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.2rem, 3.4vw, 1.9rem); line-height: 1.45; color: var(--paper, #f4ecd8); margin: 0 auto; max-width: 32ch; text-shadow: 0 0 18px rgba(0, 0, 0, .9), 0 2px 10px rgba(0, 0, 0, .8); }
 
 .a7 .a7-bridge { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.1rem, 3vw, 1.5rem); color: var(--paper, #f4ecd8); margin: 0 0 1rem; text-shadow: 0 0 16px rgba(0, 0, 0, .8); }
-.a7 .a7-footnote, .a7 .a7-aviso { font-size: .62rem; opacity: .45; }
+.a7 .a7-footnote, .a7 .a7-aviso { font-size: 1rem; opacity: .45; }
 
 /* Tablilla final: un poco mas compacta para no tocar la corona de la tablilla del altar */
 .a7 .a7-tab1 { font-size: clamp(1.5rem, 4.4vw, 2.6rem); margin-bottom: .8rem; }
 .a7 .a7-tab2 { font-size: clamp(1.05rem, 2.8vw, 1.55rem); max-width: 38ch; }
 .a7 .a7-p4 .a7-kicker { margin-bottom: 1rem; }
-.a7 .a7-p4 .a7-tabnote { margin: 1.4rem 0 0; letter-spacing: .06em; text-transform: none; font-size: .95rem; opacity: .9; }
+.a7 .a7-p4 .a7-tabnote { margin: 1.4rem 0 0; letter-spacing: .06em; text-transform: none; font-size: 1rem; opacity: .9; }
+
+/* Contraste AA: cada panel de texto lleva su propio fondo oscuro, no depende del degradado del escenario */
+.a7 .a7-panel { background: rgba(18, 10, 10, .82); padding: 1.2rem 1.4rem; border: 1px solid rgba(212, 175, 55, .4); }
+.a7 .a7-p4 .a7-tab1 { color: var(--gold-bright); }
+.a7 .a7-p4 .a7-tab2, .a7 .a7-p4 .a7-tabnote { color: var(--paper); opacity: 1; }
 </style>
 </head>
 <body>
@@ -2231,7 +2337,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       <svg class="a3-map" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="a3-map-t">
         <title id="a3-map-t">Mapa estilizado en tinta: Guangdong y Hong Kong, el Pacífico, San Francisco y la península de Baja California. Ilustración, no a escala.</title>
 
-        <defs><linearGradient id="a3-rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--gold-bright)"/><stop offset=".5" style="stop-color:var(--cinnabar)"/><stop offset="1" style="stop-color:var(--red-china)"/></linearGradient></defs>
+        <defs><filter id="a3-rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter><linearGradient id="a3-rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--gold-bright)"/><stop offset=".5" style="stop-color:var(--cinnabar)"/><stop offset="1" style="stop-color:var(--red-china)"/></linearGradient></defs>
         <g class="a3-stars" aria-hidden="true">
           <circle cx="260" cy="60" r="1.6"/><circle cx="340" cy="110" r="1.2"/><circle cx="430" cy="48" r="1.8"/>
           <circle cx="520" cy="96" r="1.2"/><circle cx="610" cy="40" r="1.6"/><circle cx="700" cy="84" r="1.2"/>
@@ -2268,25 +2374,21 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
         <!-- Hitos del mapa -->
         <g class="a3-pt a3-pt-hk">
           <circle class="a3-pt-ring" cx="152" cy="322" r="14"/><circle class="a3-pt-dot" cx="152" cy="322" r="5"/>
-          <text class="a3-lbl" x="170" y="352">Hong Kong</text>
-          <text class="a3-lbl a3-lbl-sm" x="22" y="300">Taishan</text>
+          <text class="a3-lbl" x="172" y="350">Hong Kong</text>
+          <text class="a3-lbl a3-lbl-sm" x="22" y="282">Taishan 台山</text>
         </g>
         <g class="a3-pt a3-pt-sf">
           <circle class="a3-pt-ring" cx="870" cy="204" r="14"/><circle class="a3-pt-dot" cx="870" cy="204" r="5"/>
-          <text class="a3-lbl" x="742" y="190">San Francisco</text>
+          <text class="a3-lbl a3-lbl-end" x="880" y="168">San Francisco</text>
         </g>
         <g class="a3-pt a3-pt-bcs">
           <circle class="a3-pt-ring" cx="892" cy="432" r="14"/><circle class="a3-pt-dot" cx="892" cy="432" r="5"/>
-          <text class="a3-lbl" x="708" y="436">Mulegé, BCS</text>
-        </g>
-        <g class="a3-pt a3-pt-lp">
-          <circle class="a3-pt-ring" cx="872" cy="528" r="12"/><circle class="a3-pt-dot" cx="872" cy="528" r="4"/>
-          <text class="a3-lbl a3-lbl-sm2" x="780" y="560">La Paz</text>
+          <text class="a3-lbl a3-lbl-end" x="868" y="424">Mulegé</text>
         </g>
 
         <g class="a3-pt a3-pt-lp">
           <circle class="a3-pt-ring" cx="883" cy="508" r="14"/><circle class="a3-pt-dot" cx="883" cy="508" r="5"/>
-          <text class="a3-lbl" x="742" y="512">La Paz, BCS</text>
+          <text class="a3-lbl a3-lbl-end" x="860" y="528">La Paz</text>
         </g>
 
         <!-- Embarcacion: ilustracion generica, no representa un barco real -->
@@ -2538,111 +2640,37 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     </p>
   </header>
 
-  <div class="a5-scroller">
-    <div class="a5-stage">
-      <p class="a5-futuro" aria-hidden="true">
-        <span data-lang="es">y quienes vienen después</span><span data-lang="en">and those who come after</span><span data-lang="zh">以及后来的人</span>
-      </p>
-
-      <svg class="a5-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMax meet" role="img" aria-labelledby="a5-svg-t">
-        <title id="a5-svg-t">Árbol de ciruelo: raíz en China, ramas de Arturo, Miguel, Federico y Manuel Yee Pang, Catalina Molina González, y ramas hacia el futuro sin nombres, y la rama de María de Lourdes Catalina Yee Molina, hija de Miguel y Catalina, que llega hasta hoy.</title>
-        <defs>
-          <g id="a5-flor">
-            <circle class="a5-petal" cx="0" cy="-8" r="6.5"/>
-            <circle class="a5-petal" cx="7.6" cy="-2.5" r="6.5"/>
-            <circle class="a5-petal" cx="4.7" cy="6.5" r="6.5"/>
-            <circle class="a5-petal" cx="-4.7" cy="6.5" r="6.5"/>
-            <circle class="a5-petal" cx="-7.6" cy="-2.5" r="6.5"/>
-            <circle class="a5-pistil" cx="0" cy="0" r="2.6"/>
-          </g>
-          <mask id="a5-mask-manuel" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="800">
-            <path class="a5-maskpath" data-a5-draw d="M200 490 C235 480 270 450 300 410" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
-          </mask>
-        </defs>
-
-        <!-- tronco -->
-        <path class="a5-branch a5-trunk" data-a5-draw d="M200 760 C200 700 204 640 200 560 C197 520 202 495 200 470"/>
-        <path class="a5-branch a5-trunk" data-a5-draw d="M200 470 C198 420 203 380 200 330"/>
-
-        <!-- ramas confirmadas -->
-        <path class="a5-branch" data-a5-draw d="M200 650 C170 640 130 625 105 585"/>
-        <path class="a5-branch" data-a5-draw d="M200 600 C235 590 275 575 295 535"/>
-        <path class="a5-branch a5-twig" data-a5-draw d="M295 535 C310 555 325 568 345 575"/>
-        <path class="a5-branch" data-a5-draw d="M200 540 C170 530 140 510 118 470"/>
-
-        <!-- rama por confirmar -->
-        <path class="a5-branch a5-dotted" mask="url(#a5-mask-manuel)" d="M200 490 C235 480 270 450 300 410"/>
-
-        <!-- rama de Maria de Lourdes: hija de Miguel, vuelve al tronco y de ahi parte la copa -->
-        <path class="a5-branch a5-main" data-a5-draw d="M295 535 C335 520 372 485 372 430 C372 380 335 345 285 342 C245 340 215 338 200 330"/>
-
-        <!-- copa: ramas hacia el futuro, sin nombres -->
-        <g class="a5-crown">
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C180 290 140 270 110 215"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C220 285 265 265 295 205"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C196 270 190 200 170 140"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 330 C205 260 215 190 240 125"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M200 300 C200 240 198 160 205 100"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M150 262 C120 240 70 230 50 175"/>
-          <path class="a5-branch a5-fine" data-a5-draw d="M255 258 C290 240 330 225 350 170"/>
-          <g class="a5-leaves">
-            <ellipse class="a5-leaf" cx="110" cy="215" rx="5" ry="3" transform="rotate(-40 110 215)"/>
-            <ellipse class="a5-leaf" cx="295" cy="205" rx="5" ry="3" transform="rotate(40 295 205)"/>
-            <ellipse class="a5-leaf" cx="170" cy="140" rx="5" ry="3" transform="rotate(-20 170 140)"/>
-            <ellipse class="a5-leaf" cx="240" cy="125" rx="5" ry="3" transform="rotate(20 240 125)"/>
-            <ellipse class="a5-leaf" cx="205" cy="100" rx="5" ry="3" transform="rotate(90 205 100)"/>
-            <ellipse class="a5-leaf" cx="50" cy="175" rx="5" ry="3" transform="rotate(-60 50 175)"/>
-            <ellipse class="a5-leaf" cx="350" cy="170" rx="5" ry="3" transform="rotate(60 350 170)"/>
-            <ellipse class="a5-leaf" cx="125" cy="245" rx="4" ry="2.4" transform="rotate(-30 125 245)"/>
-            <ellipse class="a5-leaf" cx="278" cy="238" rx="4" ry="2.4" transform="rotate(30 278 238)"/>
-            <ellipse class="a5-leaf" cx="185" cy="200" rx="4" ry="2.4" transform="rotate(-10 185 200)"/>
-            <ellipse class="a5-leaf" cx="225" cy="180" rx="4" ry="2.4" transform="rotate(10 225 180)"/>
-            <ellipse class="a5-leaf" cx="80" cy="205" rx="4" ry="2.4" transform="rotate(-50 80 205)"/>
-            <ellipse class="a5-leaf" cx="325" cy="195" rx="4" ry="2.4" transform="rotate(50 325 195)"/>
-          </g>
-        </g>
-
-        <!-- nodos -->
-        <g class="a5-node a5-node--open" data-node="padres" transform="translate(200 745)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-        </g>
-        <g class="a5-node" data-node="arturo" transform="translate(105 585)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="-14" y="4" text-anchor="end">Arturo</text>
-        </g>
-        <g class="a5-node" data-node="miguel" transform="translate(295 535)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="14" y="22" text-anchor="start">Miguel</text>
-        </g>
-        <g class="a5-node" data-node="catalina" transform="translate(345 575)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="0" y="24" text-anchor="end">Catalina</text>
-        </g>
-        <g class="a5-node" data-node="federico" transform="translate(118 470)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="-14" y="4" text-anchor="end">Federico</text>
-        </g>
-        <g class="a5-node a5-node--star" data-node="lourdes" transform="translate(372 430)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="0" y="24" text-anchor="end">María de Lourdes</text>
-        </g>
-        <g class="a5-node a5-node--maybe" data-node="manuel" transform="translate(300 410)">
-          <g class="a5-bloom"><use href="#a5-flor"/></g>
-          <text class="a5-label" x="14" y="4" text-anchor="start">Manuel</text>
-          <g class="a5-stamp" transform="translate(-4 -34) rotate(-8)">
-            <rect x="-36" y="-9" width="72" height="18" rx="2"/>
-            <text x="0" y="4" text-anchor="middle">
-              <tspan data-lang="es">por confirmar</tspan><tspan data-lang="en">to confirm</tspan><tspan data-lang="zh">待证实</tspan>
-            </text>
-          </g>
-        </g>
-        <text class="a5-label a5-label--root" x="226" y="749" text-anchor="start">
-          <tspan data-lang="es">sin resolver</tspan><tspan data-lang="en">unresolved</tspan><tspan data-lang="zh">未解</tspan>
-        </text>
-      </svg>
-
-      <div class="a5-card" aria-hidden="true"></div>
+  <div class="a5t" id="arbol-familia">
+    <h3 class="a5t-h"><span class="a5t-h-in"><span data-lang="es">Lo que sabemos, y lo que falta</span><span data-lang="en">What we know, and what is missing</span><span data-lang="zh">我们所知，以及所缺</span></span></h3>
+    <ul class="a5t-tree" aria-label="Árbol de la familia / Family tree / 家谱树">
+      <li>
+        <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">La raíz</span><span data-lang="en">The root</span><span data-lang="zh">根</span></p><p class="a5t-name"><span data-lang="es">Los padres de Miguel</span><span data-lang="en">Miguel's parents</span><span data-lang="zh">米格尔的父母</span></p><p class="a5t-meta"><span data-lang="es">No tienen nombre en ningún papel. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">They have no name in any paper. The root exists, though it has no face yet.</span><span data-lang="zh">在任何文书中都没有留下名字。根是存在的，只是尚无面容。</span></p><span class="a5t-seal"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></div>
+        <ul>
+          <li>
+            <div class="a5t-node a5t-node--prob"><p class="a5t-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄长</span></p><p class="a5t-name">Arturo Yee</p><p class="a5t-meta"><span data-lang="es">Murió en Fresnillo en 1942.</span><span data-lang="en">Died in Fresnillo in 1942.</span><span data-lang="zh">1942年在弗雷斯尼略去世。</span></p><span class="a5t-seal"><span data-lang="es">probable</span><span data-lang="en">probable</span><span data-lang="zh">可能</span></span></div>
+            <ul><li>
+              <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">Sus hijos</span><span data-lang="en">His children</span><span data-lang="zh">他的孩子们</span></p><p class="a5t-name">Yon Hing, Yon Chan, Yon Chin, Yon Bon</p><p class="a5t-meta"><span data-lang="es">Tarjetas de Nogales, 1930: nacidos en Mulegé. "Yon" es una lectura. Su destino se desconoce.</span><span data-lang="en">Nogales cards, 1930: born in Mulegé. "Yon" is a reading. Their fate is unknown.</span><span data-lang="zh">1930年诺加莱斯卡片：生于穆莱赫。“Yon”是一种读法。他们的去向不明。</span></p><span class="a5t-seal"><span data-lang="es">hipótesis</span><span data-lang="en">hypothesis</span><span data-lang="zh">假设</span></span></div>
+            </li></ul>
+          </li>
+          <li>
+            <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Se quedó en la península</span><span data-lang="en">He stayed on the peninsula</span><span data-lang="zh">他留在了半岛上</span></p><p class="a5t-name">Miguel Yee ⚭ Catalina Molina González</p><p class="a5t-meta"><span data-lang="es">Casados el 30 de noviembre de 1921, en Mulegé. Los zupu no registran a las mujeres: en los libros ella no estaba. Aquí sí.</span><span data-lang="en">Married on 30 November 1921, in Mulegé. Zupu do not record women: in the books she was not there. Here she is.</span><span data-lang="zh">1921年11月30日在穆莱赫成婚。族谱不记女性：书里没有她。这里有。</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
+            <ul><li>
+              <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Hija de Miguel y Catalina</span><span data-lang="en">Daughter of Miguel and Catalina</span><span data-lang="zh">米格尔与卡塔利娜之女</span></p><p class="a5t-name">María de Lourdes Catalina Yee Molina</p><p class="a5t-meta"><span data-lang="es">1929 a 2025</span><span data-lang="en">1929 to 2025</span><span data-lang="zh">1929至2025年</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
+              <ul><li>
+                <div class="a5t-node a5t-node--leaf"><p class="a5t-role"><span data-lang="es">De ella parten las hojas sin nombre</span><span data-lang="en">From her grow the nameless leaves</span><span data-lang="zh">无名的叶子由她而生</span></p><p class="a5t-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p><p class="a5t-meta"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p></div>
+              </li></ul>
+            </li></ul>
+          </li>
+          <li>
+            <div class="a5t-node a5t-node--prob"><p class="a5t-role"><span data-lang="es">Hermano probable</span><span data-lang="en">Probable brother</span><span data-lang="zh">可能的兄弟</span></p><p class="a5t-name">Federico Yee</p><p class="a5t-meta"><span data-lang="es">Nacido hacia 1891. De él se sabe poco todavía.</span><span data-lang="en">Born around 1891. Little is known of him yet.</span><span data-lang="zh">约生于1891年。关于他，至今所知甚少。</span></p><span class="a5t-seal"><span data-lang="es">probable</span><span data-lang="en">probable</span><span data-lang="zh">可能</span></span></div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="a5t-aside">
+      <div class="a5t-node a5t-node--hyp"><p class="a5t-role"><span data-lang="es">Misma familia; parentesco por confirmar</span><span data-lang="en">Same family; kinship to be confirmed</span><span data-lang="zh">同族；亲缘待证实</span></p><p class="a5t-name">Manuel P. Yee Pang</p><p class="a5t-meta"><span data-lang="es">Nacido en 1893 en Taishan. Quizá Miguel fue su tío.</span><span data-lang="en">Born in 1893 in Taishan. Perhaps Miguel was his uncle.</span><span data-lang="zh">1893年生于台山。也许米格尔是他的叔辈。</span></p><span class="a5t-seal"><span data-lang="es">por confirmar</span><span data-lang="en">to be confirmed</span><span data-lang="zh">待确认</span></span></div>
     </div>
+    <p class="a5t-legend"><span class="a5t-key a5t-key--ok"></span><span data-lang="es">Confirmado</span><span data-lang="en">Confirmed</span><span data-lang="zh">已证实</span> <span class="a5t-key a5t-key--prob"></span><span data-lang="es">Probable</span><span data-lang="en">Probable</span><span data-lang="zh">可能</span> <span class="a5t-key a5t-key--hyp"></span><span data-lang="es">Hipótesis o por confirmar (línea punteada)</span><span data-lang="en">Hypothesis or to be confirmed (dotted line)</span><span data-lang="zh">假设或待确认（虚线）</span></p>
   </div>
 
   <div class="a5g-scroller">
@@ -2682,47 +2710,6 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     </div>
   </div>
 
-  <div class="a5-after">
-    <h3 class="a5-h3"><span data-lang="es">Los nombres, en orden</span><span data-lang="en">The names, in order</span><span data-lang="zh">按序排列的名字</span></h3>
-    <ol class="a5-list">
-      <li data-node="padres">
-        <p class="a5-voz"><span data-lang="es">Los padres de Miguel no tienen nombre en ningún papel. La raíz existe, aunque todavía no tenga rostro.</span><span data-lang="en">Miguel's parents have no name in any paper. The root exists, though it has no face yet.</span><span data-lang="zh">米格尔的父母，在任何文书中都没有留下名字。根是存在的，只是尚无面容。</span></p>
-      </li>
-      <li data-node="arturo">
-        <p class="a5-name">Arturo Yee</p>
-        <p class="a5-voz"><span data-lang="es">Quizá fue su hermano mayor. Murió en Fresnillo en 1942.</span><span data-lang="en">Perhaps he was his elder brother. He died in Fresnillo in 1942.</span><span data-lang="zh">或许他是米格尔的兄长。1942年，他在弗雷斯尼略去世。</span></p>
-      </li>
-      <li data-node="miguel">
-        <p class="a5-name">Miguel Yee</p>
-        <p class="a5-voz"><span data-lang="es">Se quedó en la península.</span><span data-lang="en">He stayed on the peninsula.</span><span data-lang="zh">他留在了半岛上。</span></p>
-      </li>
-      <li data-node="catalina">
-        <p class="a5-name">Catalina Molina González</p>
-        <p class="a5-voz"><span data-lang="es">Los zupu no registran a las mujeres. En los libros no estaba. Aquí sí.</span><span data-lang="en">Zupu do not record women. She was not in the books. Here she is.</span><span data-lang="zh">族谱不记女性。她不在族谱里。在这里，她在。</span></p>
-      </li>
-      <li data-node="federico">
-        <p class="a5-name">Federico Yee</p>
-        <p class="a5-voz"><span data-lang="es">De él se sabe poco todavía.</span><span data-lang="en">Little is known of him yet.</span><span data-lang="zh">关于他，至今所知甚少。</span></p>
-      </li>
-      <li data-node="manuel" class="a5-maybe">
-        <p class="a5-role"><span data-lang="es">Misma familia; parentesco por confirmar.</span><span data-lang="en">Same family; kinship to be confirmed.</span><span data-lang="zh">同族；亲缘待证实。</span></p>
-        <p class="a5-name">Manuel P. Yee Pang</p>
-        <p class="a5-voz"><span data-lang="es">Dicen que Miguel pudo ser su tío.</span><span data-lang="en">They say Miguel may have been his uncle.</span><span data-lang="zh">据说米格尔可能是他的叔辈。</span></p>
-      </li>
-      <li data-node="lourdes">
-        <p class="a5-role"><span data-lang="es">Hija de Miguel y Catalina.</span><span data-lang="en">Daughter of Miguel and Catalina.</span><span data-lang="zh">米格尔与卡塔利娜之女。</span></p>
-        <p class="a5-name">María de Lourdes Catalina Yee Molina</p>
-        <p class="a5-meta"><span data-lang="es">Nació en 1929.</span><span data-lang="en">Born in 1929.</span><span data-lang="zh">生于1929年。</span></p>
-        <p class="a5-muerte"><span data-lang="es">Murió en 2025.</span><span data-lang="en">Died in 2025.</span><span data-lang="zh">卒于2025年。</span></p>
-        <p class="a5-meta"><span data-lang="es">De ella parten las hojas sin nombre.</span><span data-lang="en">From her grow the nameless leaves.</span><span data-lang="zh">无名的叶子由她而生。</span></p>
-      </li>
-      <li data-node="futuro">
-        <p class="a5-name"><span data-lang="es">Y quienes vienen después</span><span data-lang="en">And those who come after</span><span data-lang="zh">以及后来的人</span></p>
-        <p class="a5-voz"><span data-lang="es">Las hojas no llevan nombre. Cada quien sabrá cuál es la suya.</span><span data-lang="en">The leaves carry no names. Each will know which one is theirs.</span><span data-lang="zh">叶上没有名字。每个人自会认出属于自己的那一片。</span></p>
-      </li>
-    </ol>
-
-  </div>
 </section>
 
 <section class="act" id="acto6" data-act="6" data-title-es="La investigación" data-title-en="The investigation" data-title-zh="追寻">
@@ -2755,7 +2742,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     </div>
 
     <div class="a6-table" data-a6-table>
-      <h3 class="a6-block-title" data-a6-block><span data-lang="es">Estos papeles ya hablan.</span><span data-lang="en">These papers already speak.</span><span data-lang="zh">这些纸,已经开口。</span></h3>
+      <h3 class="a6-block-title" data-a6-block><span data-lang="es">Lo que sabemos</span><span data-lang="en">What we know</span><span data-lang="zh">我们所知</span></h3>
       <article class="a6-case a6-case--confirmed" id="a6-c-matrimonio" data-a6-case>
         <div class="a6-paper">
           <h3 class="a6-case-title"><span data-lang="es">El matrimonio</span><span data-lang="en">The marriage</span><span data-lang="zh">婚礼</span></h3>
@@ -2847,7 +2834,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
           <div class="a6-stamp a6-stamp--confirmed" data-a6-stamp role="img" aria-label="CONFIRMADO"></div>
         </div>
       </article>
-      <h3 class="a6-block-title a6-block-title--b" data-a6-block><span data-lang="es">Estos todavía guardan silencio.</span><span data-lang="en">These still keep silent.</span><span data-lang="zh">这些纸,仍然沉默。</span></h3>
+      <h3 class="a6-block-title a6-block-title--b" data-a6-block><span data-lang="es">Lo que falta</span><span data-lang="en">What is missing</span><span data-lang="zh">我们所缺</span></h3>
       <article class="a6-case a6-case--pending" id="a6-c-anio" data-a6-case>
         <div class="a6-paper">
           <h3 class="a6-case-title"><span data-lang="es">El año de nacimiento</span><span data-lang="en">The year of birth</span><span data-lang="zh">出生年份</span></h3>
@@ -3538,7 +3525,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
       timer = setTimeout(function () {
         var n = pending.getAttribute('data-act');
         if (n === shown) { return; }
-        play(pending, shown !== null);
+        play(pending, false); // sin cortina: el titulo no tapa lo que se esta leyendo
         shown = n;
       }, 260);
     }
@@ -4481,143 +4468,13 @@ window.Santuario.register(5, function (ctx) {
   if (ctx.reduced || !gsap || !ST) { return; }
   gsap.registerPlugin(ST);
 
-  var scroller = sec.querySelector('.a5-scroller');
-  var card = sec.querySelector('.a5-card');
-  var draws = Array.prototype.slice.call(sec.querySelectorAll('[data-a5-draw]'));
-  var node = function (id) { return sec.querySelector('.a5-node[data-node="' + id + '"]'); };
-  var li = function (id) { return sec.querySelector('.a5-list li[data-node="' + id + '"]'); };
-
+  // Arbol de la familia: los nodos aparecen al llegar a ellos (el contenido es visible sin JS)
+  var nodes = sec.querySelectorAll('.a5t-node');
+  gsap.set(nodes, { opacity: 0, y: 24 });
+  nodes.forEach(function (n) {
+    ST.create({ trigger: n, start: 'top 90%', once: true, onEnter: function () { gsap.to(n, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }); } });
+  });
   sec.classList.add('a5-js');
-
-  draws.forEach(function (p) {
-    var len = p.getTotalLength();
-    p.style.strokeDasharray = len;
-    p.style.strokeDashoffset = len;
-  });
-  // La rama punteada se revela con una mascara; su dasharray propio se conserva.
-  var blooms = sec.querySelectorAll('.a5-bloom');
-  var labels = sec.querySelectorAll('.a5-label, .a5-stamp');
-  var leaves = sec.querySelectorAll('.a5-leaf');
-  gsap.set(blooms, { scale: 0, opacity: 0, rotation: -50, transformOrigin: '0px 0px' });
-  gsap.set(sec.querySelectorAll('.a5-petal, .a5-pistil'), { scale: 0, transformOrigin: '50% 50%' });
-  var NS = 'http://www.w3.org/2000/svg';
-  sec.querySelectorAll('.a5-node').forEach(function (n) {
-    var r = document.createElementNS(NS, 'circle');
-    r.setAttribute('class', 'a5-ring'); r.setAttribute('r', '6');
-    n.insertBefore(r, n.firstChild);
-  });
-  gsap.set(labels, { opacity: 0 });
-  gsap.set(leaves, { scale: 0, opacity: 0, transformOrigin: '50% 50%' });
-
-  var tl = gsap.timeline({ paused: true, defaults: { ease: 'none' } });
-  var d = function (i) { return draws[i]; };
-  // Orden de draws en el HTML: 0 t1, 1 t2, 2 arturo, 3 miguel, 4 catalina, 5 federico, 6 mask manuel, 7 lourdes, 8-14 copa
-  var draw = function (el, at, dur) { tl.to(el, { strokeDashoffset: 0, duration: dur }, at); };
-  draw(d(0), 0, 0.5);
-  draw(d(2), 0.19, 0.07);
-  draw(d(3), 0.276, 0.07);
-  draw(d(4), 0.35, 0.05);
-  draw(d(5), 0.38, 0.07);
-  draw(d(6), 0.465, 0.07);
-  draw(d(1), 0.52, 0.1);
-  draw(d(7), 0.58, 0.16);
-  for (var i = 8; i < draws.length; i++) { draw(d(i), 0.74 + (i - 8) * 0.025, 0.12); }
-
-  var open = function (id, at) {
-    var n = node(id);
-    if (!n) { return; }
-    tl.to(n.querySelector('.a5-bloom'), { scale: 1, opacity: 1, rotation: 0, duration: 0.07, ease: 'back.out(2.2)' }, at);
-    tl.to(n.querySelectorAll('.a5-petal, .a5-pistil'), { scale: 1, duration: 0.05, stagger: 0.008, ease: 'back.out(2.5)' }, at);
-    var ring = n.querySelector('.a5-ring');
-    tl.fromTo(ring, { attr: { r: 6 }, opacity: 0.9 }, { attr: { r: 34 }, opacity: 0, duration: 0.08, ease: 'power2.out', immediateRender: false }, at + 0.02);
-    var l = n.querySelectorAll('.a5-label, .a5-stamp');
-    if (l.length) { tl.to(l, { opacity: 1, duration: 0.04 }, at + 0.02); }
-  };
-  open('padres', 0.02);
-  open('arturo', 0.26);
-  open('miguel', 0.346);
-  open('catalina', 0.40);
-  open('federico', 0.45);
-  open('manuel', 0.535);
-  open('lourdes', 0.68);
-  var rootLabel = sec.querySelector('.a5-label--root');
-  if (rootLabel) { tl.to(rootLabel, { opacity: 1, duration: 0.04 }, 0.05); }
-  tl.to(leaves, { scale: 1, opacity: 0.9, duration: 0.06, stagger: 0.012, ease: 'back.out(2)' }, 0.84);
-  tl.to({}, { duration: 0.01 }, 0.99);
-
-  var steps = [
-    { id: 'padres', at: 0.04 }, { id: 'arturo', at: 0.28 }, { id: 'miguel', at: 0.36 },
-    { id: 'catalina', at: 0.42 }, { id: 'federico', at: 0.47 }, { id: 'manuel', at: 0.55 },
-    { id: 'lourdes', at: 0.70 }, { id: 'futuro', at: 0.9 }
-  ];
-  var current = null;
-
-  function show(id) {
-    if (id === current) { return; }
-    current = id;
-    sec.querySelectorAll('.a5-node').forEach(function (n) {
-      n.classList.toggle('a5-on', n.getAttribute('data-node') === id);
-    });
-    var src = id && li(id);
-    if (!src) { card.classList.remove('a5-card--on'); return; }
-    card.innerHTML = src.innerHTML;
-    card.classList.add('a5-card--on');
-    gsap.fromTo(card, { y: 40, scale: 0.9, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.8, ease: 'elastic.out(1, 0.6)', overwrite: true, clearProps: 'transform' });
-  }
-
-  // Petalos de ciruelo que caen (max 36), pausados fuera de pantalla
-  var svg = sec.querySelector('.a5-svg');
-  var fall = document.createElementNS(NS, 'g');
-  fall.setAttribute('class', 'a5-fall');
-  svg.appendChild(fall);
-  gsap.set(fall, { opacity: 0 });
-  var rand = gsap.utils.random;
-  var fallTweens = [];
-  for (var q = 0; q < 36; q++) {
-    (function (q) {
-      var e = document.createElementNS(NS, 'ellipse');
-      e.setAttribute('class', 'a5-pet' + (q % 6 === 0 ? ' a5-pet--gold' : ''));
-      e.setAttribute('rx', rand(2.5, 4.5)); e.setAttribute('ry', rand(1.4, 2.4));
-      fall.appendChild(e);
-      var x0 = rand(30, 370);
-      gsap.set(e, { x: x0, y: rand(-20, 700), rotation: rand(0, 360) });
-      var run = function () {
-        var t = gsap.timeline({ onComplete: function () { gsap.set(e, { x: rand(30, 370), y: -20 }); run(); } });
-        var dur = rand(6, 12);
-        t.to(e, { y: '+=' + rand(500, 760), duration: dur, ease: 'none' }, 0)
-         .to(e, { x: '+=' + rand(-70, 70), duration: dur / 3, ease: 'sine.inOut', yoyo: true, repeat: 2 }, 0)
-         .to(e, { rotation: '+=' + rand(-300, 300), duration: dur, ease: 'none' }, 0);
-        fallTweens.push(t);
-      };
-      run();
-    })(q);
-  }
-  fallTweens.forEach(function (t) { t.pause(); });
-  ST.create({
-    trigger: sec, start: 'top bottom', end: 'bottom top',
-    onToggle: function (self) { fallTweens.forEach(function (t) { self.isActive ? t.resume() : t.pause(); }); }
-  });
-  var fallOn = false;
-
-  // Brisa suave en la copa y brillo vivo en las flores abiertas
-  gsap.to(sec.querySelector('.a5-crown'), { rotation: 1.6, svgOrigin: '200 330', duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1 });
-  gsap.to(sec.querySelectorAll('.a5-leaf'), { rotation: '+=14', duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1, stagger: { each: 0.15, from: 'random' } });
-
-  ST.create({
-    trigger: scroller,
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: 0.6,
-    animation: tl,
-    onUpdate: function (self) {
-      var p = self.progress, id = null;
-      for (var k = 0; k < steps.length; k++) { if (p >= steps[k].at) { id = steps[k].id; } }
-      show(id);
-      var want = p > 0.08 && p < 0.98;
-      if (want !== fallOn) { fallOn = want; gsap.to(fall, { opacity: want ? 1 : 0, duration: 0.8 }); }
-    }
-  });
-
 
   // Escena "Donde se cruzan": los carriles se dibujan generacion por generacion
   (function () {
@@ -4754,107 +4611,11 @@ window.Santuario.register(6, function (ctx) {
     tl.to({}, { duration: 0.6 });
   }
 
-  /* Papeles: salen de una pila sobre la mesa y vuelan a su lugar */
-  var cards = q('[data-a6-case]');
-  var pile = function (card) {
-    var tr = table.getBoundingClientRect(), r = card.getBoundingClientRect();
-    return { x: tr.left + tr.width / 2 - (r.left + r.width / 2), y: tr.top - 60 - r.top };
-  };
-  cards.forEach(function (card, i) {
-    var paper = card.querySelector('.a6-paper');
-    var pin = document.createElement('i'); pin.className = 'a6-pin'; pin.setAttribute('aria-hidden', 'true');
-    card.appendChild(pin);
-    var restRot = i % 2 ? 0.5 : -0.6;
-    gsap.fromTo(paper,
-      { x: function () { return pile(card).x; }, y: function () { return pile(card).y; },
-        rotation: gsap.utils.random(-30, 30), opacity: 0, scale: 0.7 },
-      { x: 0, y: 0, rotation: restRot, opacity: 1, scale: 1, ease: 'back.out(1.1)',
-        scrollTrigger: { trigger: card, start: 'top 98%', end: 'top 55%', scrub: 0.7, invalidateOnRefresh: true } });
-    gsap.fromTo(pin, { scale: 0 }, { scale: 1, ease: 'back.out(3)',
-      scrollTrigger: { trigger: card, start: 'top 60%', end: 'top 52%', scrub: true } });
-    gsap.to(pin, { scale: 1.18, duration: 1.4 + (i % 3) * 0.3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-
-    /* Sello: golpe, shake, destello dorado y chispas */
-    var stamp = card.querySelector('[data-a6-stamp]');
-    var confirmed = stamp.classList.contains('a6-stamp--confirmed');
-    gsap.set(stamp, { opacity: 0, scale: 3.2, rotation: confirmed ? -28 : 20 });
-    ST.create({
-      trigger: card, start: 'top 55%', once: true,
-      onEnter: function () {
-        var tl = gsap.timeline();
-        tl.to(stamp, { opacity: confirmed ? 1 : 0.6, scale: 1, rotation: confirmed ? -12 : 8, duration: 0.2, ease: 'power4.in' })
-          .add(function () { burst(paper, confirmed); })
-          .to(card, { x: 5, y: 3, rotation: 0.8, duration: 0.04 })
-          .to(card, { x: -5, y: -3, rotation: -0.8, duration: 0.04 })
-          .to(card, { x: 3, y: 2, duration: 0.04 })
-          .to(card, { x: -2, y: -1, duration: 0.04 })
-          .to(card, { x: 0, y: 0, rotation: 0, duration: 0.12, ease: 'power2.out' });
-        if (confirmed) gsap.to(stamp, { scale: 1.06, duration: 1.6, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.6 });
-        else gsap.to(stamp, { rotation: 5, duration: 2.4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.6 });
-      }
-    });
+  /* Papeles: aparecen en su lugar al llegar a ellos (sin pilas ni hilos: nada se encima) */
+  q('[data-a6-case]').forEach(function (card) {
+    gsap.set(card, { opacity: 0, y: 22 });
+    ST.create({ trigger: card, start: 'top 92%', once: true, onEnter: function () { gsap.to(card, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }); } });
   });
-
-  function burst(paper, confirmed) {
-    var f = document.createElement('div'); f.className = 'a6-flash'; f.setAttribute('aria-hidden', 'true');
-    paper.appendChild(f);
-    gsap.fromTo(f, { opacity: confirmed ? 0.95 : 0.35, scale: 0.2 },
-      { opacity: 0, scale: confirmed ? 1.5 : 1, duration: 0.7, ease: 'power2.out', onComplete: function () { f.remove(); } });
-    if (!confirmed) return;
-    var cx = paper.clientWidth - 12 - 14, cy = 12 + 14;
-    for (var k = 0; k < 10; k++) {
-      var s = document.createElement('i'); s.className = 'a6-spark'; s.setAttribute('aria-hidden', 'true');
-      s.style.left = cx + 'px'; s.style.top = cy + 'px'; paper.appendChild(s);
-      var a = (k / 10) * Math.PI * 2 + gsap.utils.random(-0.2, 0.2), d = gsap.utils.random(50, 100);
-      gsap.to(s, { x: Math.cos(a) * d, y: Math.sin(a) * d, opacity: 0, scale: 0.2, duration: 0.8, ease: 'power2.out',
-        onComplete: (function (n) { return function () { n.remove(); }; })(s) });
-    }
-  }
-
-  /* Hilos rojos entre pistas, dibujados con el scroll */
-  var links = [
-    ['a6-c-aldea', 'a6-c-distrito', 0], ['a6-c-distrito', 'a6-c-altar', 0], ['a6-c-aldea', 'a6-c-altar', 1],
-    ['a6-c-barco', 'a6-c-anio', 0], ['a6-c-llegada', 'a6-c-barco', 1],
-    ['a6-c-parentesco', 'a6-c-poema', 0], ['a6-c-poema', 'a6-c-manuel', 0], ['a6-c-parentesco', 'a6-c-manuel', 1],
-    ['a6-c-centro', 'a6-c-tarjeta', 1], ['a6-c-tarjeta', 'a6-c-barco', 0], ['a6-c-aldeaarturo', 'a6-c-nombres', 0],
-    ['a6-c-aldeaarturo', 'a6-c-aldea', 1], ['a6-c-centro', 'a6-c-quienes', 1],
-    ['a6-c-yujing', 'a6-c-salon', 0], ['a6-c-yujing', 'a6-c-rama', 1], ['a6-c-rama', 'a6-c-parentesco', 0], ['a6-c-cuatro', 'a6-c-region', 0],
-    ['a6-c-otronombre', 'a6-c-barco', 1], ['a6-c-lapaz', 'a6-c-llegada', 0]
-  ];
-  var svg = document.createElementNS(NS, 'svg');
-  svg.setAttribute('class', 'a6-threads'); svg.setAttribute('aria-hidden', 'true');
-  table.insertBefore(svg, table.firstChild);
-  var threadST = [];
-
-  function pinPos(id) {
-    var el = document.getElementById(id);
-    return { x: el.offsetLeft + el.offsetWidth / 2, y: el.offsetTop, el: el };
-  }
-  function buildThreads() {
-    threadST.forEach(function (t) { t.kill(); }); threadST = [];
-    while (svg.firstChild) svg.removeChild(svg.firstChild);
-    var narrow = table.clientWidth < 720;
-    links.forEach(function (l, i) {
-      var a = pinPos(l[0]), b = pinPos(l[1]);
-      var mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
-      var sag = 40 + Math.abs(b.y - a.y) * 0.08;
-      var bow = narrow ? (i % 2 ? 1 : -1) * Math.min(table.clientWidth / 2 - 4, 30 + Math.abs(b.y - a.y) * 0.12) : 0;
-      var p = document.createElementNS(NS, 'path');
-      p.setAttribute('d', 'M' + a.x + ',' + a.y + ' Q' + (mx + bow) + ',' + (my + sag) + ' ' + b.x + ',' + b.y);
-      p.setAttribute('class', 'a6-thread' + (l[2] ? ' a6-thread--gold' : ''));
-      svg.appendChild(p);
-      var len = p.getTotalLength();
-      gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
-      var later = a.y > b.y ? a.el : b.el;
-      threadST.push(gsap.to(p, { strokeDashoffset: 0, ease: 'none',
-        scrollTrigger: { trigger: later, start: 'top 62%', end: 'top 22%', scrub: 0.6 } }).scrollTrigger);
-    });
-  }
-  buildThreads();
-  var tmr;
-  window.addEventListener('resize', function () { clearTimeout(tmr); tmr = setTimeout(function () { buildThreads(); ST.refresh(); }, 250); });
-
-
 });
 </script>
 <script data-src="js/act07.js">

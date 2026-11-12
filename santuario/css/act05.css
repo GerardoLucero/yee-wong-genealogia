@@ -12,7 +12,7 @@
 .a5-svg .a5-branch { filter: drop-shadow(0 0 3px var(--a5-glow)); }
 .a5-title { background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .a5-head { max-width: 40rem; margin: 0 auto; padding: 5rem 16px 2rem; text-align: center; }
-.a5-kicker { color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; margin: 0 0 .75rem; }
+.a5-kicker { color: var(--gold); letter-spacing: .3em; text-transform: uppercase; font-size: 1rem; margin: 0 0 .75rem; }
 .a5-title { font-size: clamp(2.2rem, 7vw, 3.8rem); margin: 0 0 1rem; font-weight: 400; color: var(--paper); }
 .a5-lede { line-height: 1.7; margin: 0; opacity: .88; }
 
@@ -45,13 +45,13 @@
 .a5-card { position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 1rem 1.1rem; background: var(--lacquer-3); border: 1px solid var(--gold-bright); border-radius: 2px; box-shadow: 0 0 22px color-mix(in srgb, var(--gold) 35%, transparent), inset 0 0 18px color-mix(in srgb, var(--red-china) 25%, transparent); opacity: 0; visibility: hidden; transition: opacity .35s; }
 .a5-card.a5-card--on { opacity: 1; visibility: visible; }
 .a5-card .a5-name { color: var(--gold-bright); }
-.a5-card .a5-meta { font-size: .9rem; }
+.a5-card .a5-meta { font-size: 1rem; }
 @media (min-width: 900px) {
   .a5-card { left: auto; right: 4vw; bottom: auto; top: 50%; transform: translateY(-50%); width: 22rem; }
   .a5-svg { margin-right: 18rem; }
 }
 
-.a5-role { color: var(--gold); font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .3rem; }
+.a5-role { color: var(--gold); font-size: 1rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .3rem; }
 .a5-name { font-size: 1.25rem; margin: 0 0 .4rem; color: var(--paper); }
 .a5-alt { opacity: .7; font-size: .85em; }
 .a5-meta { margin: 0; line-height: 1.6; opacity: .9; }
@@ -174,3 +174,54 @@
   .a5g-grp-n { font-size: 1.125rem; }
   .a5g-grp { padding: .5rem .7rem; }
 }
+
+/* ---- Arbol de la familia (HTML/CSS, texto grande). Sustituye al arbol de ciruelo en SVG y a la lista. ---- */
+.a5t { --a5t-gap: 30px; max-width: 1180px; margin: 0 auto; padding: 1rem var(--gutter) 4rem; }
+.a5t-h { text-align: center; margin: 0 0 2.5rem; font-weight: 400; }
+.a5t-h-in { font-size: var(--fs-lg); color: var(--gold-bright); font-family: var(--font-serif); }
+.a5t ul { list-style: none; margin: 0; padding: 0; }
+.a5t-tree, .a5t-tree ul { display: flex; justify-content: center; padding-top: var(--a5t-gap); position: relative; }
+.a5t-tree { padding-top: 0; }
+.a5t-tree li { position: relative; display: flex; flex-direction: column; align-items: center; padding: var(--a5t-gap) 10px 0; }
+.a5t-tree > li { padding-top: 0; }
+/* conectores: horizontal sobre los hermanos y vertical hacia cada hijo */
+.a5t-tree ul::before { content: ""; position: absolute; top: 0; left: 50%; height: var(--a5t-gap); border-left: 2px solid var(--gold); }
+.a5t-tree ul > li::before, .a5t-tree ul > li::after { content: ""; position: absolute; top: 0; width: 50%; height: var(--a5t-gap); border-top: 2px solid var(--gold); }
+.a5t-tree ul > li::before { right: 50%; }
+.a5t-tree ul > li::after { left: 50%; border-left: 2px solid var(--gold); }
+.a5t-tree ul > li:first-child::before, .a5t-tree ul > li:last-child::after { border-top: 0; }
+.a5t-tree ul > li:only-child::before, .a5t-tree ul > li:only-child::after { display: none; }
+.a5t-tree ul > li:only-child { padding-top: var(--a5t-gap); }
+.a5t-tree ul > li:last-child::before { border-right: 2px solid var(--gold); border-radius: 0 6px 0 0; }
+.a5t-tree ul > li:first-child::after { border-radius: 6px 0 0 0; }
+
+.a5t-node { width: 100%; max-width: 21rem; padding: 14px 16px; background: var(--lacquer-3); border: 1px solid var(--gold); border-top: 4px solid var(--jade-soft); text-align: center; font-family: var(--font-serif); }
+.a5t-node--prob { border-top-color: var(--gold-bright); }
+.a5t-node--hyp { border-style: dashed; border-top-color: var(--hypothesis); background: var(--lacquer-2); }
+.a5t-node--leaf { border-style: dotted; border-top-color: var(--jade-soft); background: transparent; }
+.a5t-role { margin: 0 0 4px; font-size: 1rem; color: var(--gold); letter-spacing: .04em; }
+.a5t-name { margin: 0 0 6px; font-size: 1.4rem; line-height: 1.2; color: var(--paper); font-weight: 600; }
+.a5t-meta { margin: 0 0 8px; font-size: 1.05rem; line-height: 1.4; color: var(--paper); }
+.a5t-seal { display: inline-block; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; padding: 1px 8px; border: 1px solid currentColor; color: var(--jade-soft); }
+.a5t-node--prob .a5t-seal { color: var(--gold-bright); }
+.a5t-node--hyp .a5t-seal { color: var(--hypothesis); border-style: dashed; }
+.a5t-aside { display: flex; justify-content: center; margin-top: 3rem; }
+.a5t-aside .a5t-node { max-width: 26rem; }
+.a5t-legend { margin: 2rem 0 0; text-align: center; font-size: 1rem; color: var(--paper); display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; align-items: center; }
+.a5t-key { display: inline-block; width: 22px; height: 0; border-top: 3px solid; vertical-align: middle; margin-right: 6px; }
+.a5t-key--ok { border-color: var(--jade-soft); } .a5t-key--prob { border-color: var(--gold-bright); } .a5t-key--hyp { border-color: var(--hypothesis); border-top-style: dashed; }
+
+/* Movil y pantallas estrechas: arbol vertical con sangria */
+@media (max-width: 979px) {
+  .a5t-tree, .a5t-tree ul { display: block; padding-top: 0; }
+  .a5t-tree ul { margin: 0 0 0 14px; padding-left: 18px; border-left: 2px solid var(--gold); }
+  .a5t-tree ul::before { display: none; }
+  .a5t-tree li, .a5t-tree > li { display: block; padding: 18px 0 0 0; }
+  .a5t-tree ul > li::before { display: block; top: 52px; left: -18px; right: auto; width: 18px; height: 0; border-top: 2px solid var(--gold); border-right: 0; border-radius: 0; }
+  .a5t-tree ul > li::after { display: none; }
+  .a5t-tree ul > li:first-child::before, .a5t-tree ul > li:last-child::before { border-top: 2px solid var(--gold); border-right: 0; }
+  .a5t-tree ul > li:only-child::before { display: block; }
+  .a5t-node { max-width: none; text-align: left; }
+}
+.a5t-name, .a5t-meta { overflow-wrap: anywhere; }
+@media (max-width: 979px) { .a5t { padding-right: 52px; } }

@@ -48,7 +48,7 @@
 .a1-char { width: min(46vw, 230px); height: auto; filter: drop-shadow(0 0 14px var(--gold)) drop-shadow(0 0 34px var(--cinnabar)); overflow: visible; }
 .a1-title { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.9rem, 7vw, 3.6rem); letter-spacing: .14em; line-height: 1.15; margin: 0; color: var(--paper); }
 
-.a1-hint { position: absolute; left: 0; right: 0; bottom: 5vh; z-index: 4; margin: 0; text-align: center; font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper); opacity: .65; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+.a1-hint { position: absolute; left: 0; right: 0; bottom: 5vh; z-index: 4; margin: 0; text-align: center; font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper); opacity: .65; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
 .a1-hint-line { display: block; width: 1px; height: 38px; background: linear-gradient(var(--gold), transparent); transform-origin: top; animation: a1-pulse 2.4s ease-in-out infinite; }
 @keyframes a1-pulse { 0%, 100% { transform: scaleY(.3); opacity: .4; } 50% { transform: scaleY(1); opacity: 1; } }
 
