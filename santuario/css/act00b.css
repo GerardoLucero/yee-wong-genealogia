@@ -51,3 +51,26 @@
 .sn-lightbox__close:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
 .sn-lightbox__cap { align-items: flex-start; }
 @media (max-width: 819px) { .chapter, .minute { padding-right: 52px; } }
+
+/* Fuentes y metodo */
+.sources { background: var(--lacquer); color: var(--paper); padding: var(--sp-8) var(--gutter); border-top: 1px solid var(--line); }
+.sources-in { max-width: 960px; margin: 0 auto; }
+.sources-head { text-align: center; margin-bottom: var(--sp-6); }
+.sources-kicker { font-size: 1rem; letter-spacing: .3em; text-transform: uppercase; color: var(--paper-dim); margin-bottom: 8px; }
+.sources-title { font-family: var(--font-serif); font-weight: 500; font-size: var(--fs-xl); color: var(--gold-bright); line-height: 1.1; margin-bottom: var(--sp-4); }
+.sources-lead { font-family: var(--font-serif); font-size: var(--fs-md); line-height: 1.45; max-width: 40rem; margin: 0 auto; }
+.sources-method { background: var(--lacquer-2); border: 1px solid var(--line); padding: var(--sp-5); margin-bottom: var(--sp-6); }
+.sources-method h3 { font-family: var(--font-serif); font-size: var(--fs-md); color: var(--gold-bright); margin: 0 0 var(--sp-3); font-weight: 500; }
+.sources-method ul { list-style: none; margin: 0 0 var(--sp-4); padding: 0; display: grid; gap: 10px; }
+.sources-method li { font-size: var(--fs-base); line-height: 1.4; }
+.sources-method p { font-size: var(--fs-base); color: var(--paper); margin: 0; }
+.sources-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-4); }
+.src { background: var(--lacquer-2); border: 1px solid var(--line); border-left: 4px solid var(--gold); padding: var(--sp-4) var(--sp-5); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; break-inside: avoid; }
+.src-title { font-family: var(--font-serif); font-size: var(--fs-md); line-height: 1.2; color: var(--paper); font-weight: 600; margin: 0; }
+.src-row { margin: 0; font-size: var(--fs-base); line-height: 1.45; }
+.src-row b { display: block; font-weight: 600; color: var(--gold); letter-spacing: .06em; text-transform: uppercase; font-size: 1rem; }
+.sources-end { text-align: center; margin: var(--sp-6) 0 0; }
+.sources-top { color: var(--gold-bright); font-size: var(--fs-base); }
+.sources-top:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+.minute-more { display: block; margin-top: var(--sp-3); color: var(--gold-bright); font-size: var(--fs-base); }
+@media (max-width: 819px) { .sources { padding-right: 52px; } }

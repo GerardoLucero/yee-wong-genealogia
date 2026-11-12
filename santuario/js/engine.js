@@ -194,6 +194,20 @@
       e.preventDefault();
       goToAct(a.getAttribute('data-go'));
     });
+    // Impresion: se quitan pines y animaciones para que el sitio salga como documento; al terminar se recarga
+    var printed = false;
+    window.addEventListener('beforeprint', function () {
+      if (printed) { return; }
+      printed = true;
+      if (ST) { ST.getAll().forEach(function (t) { t.kill(true); }); }
+      if (gsap) { gsap.globalTimeline.clear(); }
+      document.querySelectorAll('section').forEach(function (sec) {
+        Array.prototype.slice.call(sec.classList).forEach(function (c) { if (/-(js|live|pin)$/.test(c) || c === 'a5g-flow') { sec.classList.remove(c); } });
+      });
+      document.documentElement.classList.add('is-printing');
+    });
+    window.addEventListener('afterprint', function () { if (printed) { window.location.reload(); } });
+
     // ampliacion de documentos y fotos: un solo <dialog> reutilizado (teclado: Enter abre, Esc cierra)
     var box = null, lastZoom = null;
     function openZoom(a) {

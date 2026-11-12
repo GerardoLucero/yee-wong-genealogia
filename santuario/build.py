@@ -31,6 +31,17 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "%3Crect width='64' height='64' fill='%23a82a1f'/%3E%3Ctext x='32' y='47' font-size='44' "
            "text-anchor='middle' fill='%23F7C948' font-family='serif'%3E%E4%BD%99%3C/text%3E%3C/svg%3E")
 
+NOSCRIPT_CSS = (
+    "<noscript><style>"
+    ".act{overflow:visible!important}"
+    ".a1-stage{height:auto!important;min-height:100svh;overflow:visible!important;padding:12vh 0 8vh;grid-auto-flow:row;gap:2rem;align-content:center}"
+    ".a1-hint{display:none}"
+    ".a2-stage{height:auto!important;min-height:100svh;overflow:visible!important}.a2-copy{position:relative!important}"
+    ".a2-line{overflow:visible!important}.a2-copy{background:rgba(248,244,230,.92)!important}.a2-name-cap,.a2-village-lead{opacity:1!important}"
+    ".sn-hint{display:none}"
+    "</style></noscript>"
+)
+
 omitted = []
 
 
@@ -71,6 +82,9 @@ def collect_css():
         omitted.append("css/act*.css")
     for p in acts:
         blocks.append(style_block("css/" + p.name, p.read_text(encoding="utf-8")))
+    pr = read("css/print.css")
+    if pr is not None:
+        blocks.append(style_block("css/print.css", pr))
     return "\n".join(blocks)
 
 
@@ -102,8 +116,8 @@ def script_tag(rel):
 
 def collect_scripts():
     out = [
-        '<script src="%s"></script>' % (CDN % "gsap.min.js"),
-        '<script src="%s"></script>' % (CDN % "ScrollTrigger.min.js"),
+        script_tag("vendor/gsap.min.js"),
+        script_tag("vendor/ScrollTrigger.min.js"),
         script_tag("js/engine.js"),
     ]
     audio = ROOT / "js" / "audio.js"
@@ -120,7 +134,6 @@ def collect_scripts():
 
 
 def build():
-    fonts = fonts_href()
     acts = collect_acts()
     sprite = collect_sprite()
     html = "\n".join([
@@ -142,10 +155,9 @@ def build():
         '<meta property="og:locale" content="es_MX">',
         '<meta name="twitter:card" content="summary_large_image">',
         '<meta name="theme-color" content="#120a0a">',
-        '<link rel="preconnect" href="https://fonts.googleapis.com">',
-        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-        '<link rel="stylesheet" href="%s">' % fonts,
+        style_block("fonts/fonts.css", read("fonts/fonts.css") or ""),
         collect_css(),
+        NOSCRIPT_CSS,
         "</head>",
         "<body>",
         sprite,
@@ -158,9 +170,9 @@ def build():
         "</html>",
         "",
     ])
-    OUT.write_text(html, encoding="utf-8")
+    OUT.write_text(html.replace("__FONTS__", "fonts"), encoding="utf-8")
     # copia para la raiz del repo (GitHub Pages): las imagenes se sirven desde santuario/
-    (ROOT.parent / "index.html").write_text(html.replace('src="img/pub/', 'src="santuario/img/pub/').replace('href="img/pub/', 'href="santuario/img/pub/'), encoding="utf-8")
+    (ROOT.parent / "index.html").write_text(html.replace("__FONTS__", "santuario/fonts").replace('src="img/pub/', 'src="santuario/img/pub/').replace('href="img/pub/', 'href="santuario/img/pub/'), encoding="utf-8")
     return html, acts
 
 
