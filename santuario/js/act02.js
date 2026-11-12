@@ -60,7 +60,7 @@ window.Santuario.register(2, function (ctx) {
     .to(q('.a2-fog1'), { xPercent: -22, duration: 18 }, 0)
     .to(q('.a2-fog2'), { xPercent: 18, duration: 18 }, 0)
     .to(q('.a2-fog3'), { xPercent: -30, duration: 18 }, 0)
-    .to(evoc, { opacity: .6, y: 0, duration: 1 }, 0.5);
+    .to(evoc, { opacity: 1, y: 0, duration: 1 }, 0.5);
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {

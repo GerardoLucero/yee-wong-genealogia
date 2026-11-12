@@ -77,7 +77,7 @@ window.Santuario.register(1, function (ctx) {
   /* Momento memorable: el caracter se dibuja al ritmo del scroll, con pin */
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=640%', scrub: .8, pin: stage, anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=740%', scrub: .8, pin: stage, anticipatePin: 1 }
   });
   tl.set(char, { opacity: 1 }, 0)
     .to(glow, { '--a1-r': '120%', duration: 1 }, 0)
@@ -103,6 +103,9 @@ window.Santuario.register(1, function (ctx) {
     .set(wash, { opacity: 1 })
     .to(wash, { scale: 3.4, duration: 3, ease: 'power2.in' })
     .to([char, lnAll[lnAll.length - 1], title, lans, '.a1-motes', red, rays], { opacity: 0, duration: 1.5 }, '<1');
+
+  /* Cola en blanco (papel): el acto 2 sube sobre ella, asi no queda pantalla vacia entre actos */
+  tl.to({}, { duration: tl.duration() * 0.17 });
 
   window.addEventListener('pagehide', function () { cancelAnimationFrame(raf); });
 });

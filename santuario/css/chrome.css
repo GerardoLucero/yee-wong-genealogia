@@ -361,3 +361,4 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .sn-acts__num, .sn-acts__title, .sn-hint { transition: none; }
 }
 @media (max-width: 819px) { .sn-hint { display: none; } }
+@media (max-width: 819px) { .sn-seal { display: none; } }

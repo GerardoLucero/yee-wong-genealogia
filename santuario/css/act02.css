@@ -88,3 +88,5 @@
 /* Contraste AA: velo de papel detras del texto, para que no dependa de lo que haya debajo (montanas, sol) */
 .a2-copy::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 62%; z-index: -1; pointer-events: none; background: linear-gradient(to bottom, rgba(248, 244, 230, .94) 0, rgba(248, 244, 230, .9) 70%, rgba(248, 244, 230, 0) 100%); }
 .a2-evoc { opacity: 1; color: var(--paper); text-shadow: 0 1px 6px var(--ink); }
+/* El acto 2 sube sobre el ultimo tramo del acto 1 (solo papel en blanco): sin pantalla vacia entre los dos */
+#acto2 { margin-top: -100vh; margin-top: -100svh; z-index: 1; }

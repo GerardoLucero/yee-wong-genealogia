@@ -726,6 +726,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .sn-acts__num, .sn-acts__title, .sn-hint { transition: none; }
 }
 @media (max-width: 819px) { .sn-hint { display: none; } }
+@media (max-width: 819px) { .sn-seal { display: none; } }
 </style>
 <style data-src="css/act00.css">
 /* Portada y "La historia en un minuto". Prefijos .cover- y .minute- */
@@ -842,6 +843,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .sn-lightbox__close { position: sticky; top: 0; float: right; margin: 8px; z-index: 2; min-width: 44px; min-height: 44px; font-size: 26px; line-height: 1; background: var(--lacquer); color: var(--gold-bright); border: 1px solid var(--gold); cursor: pointer; }
 .sn-lightbox__close:focus-visible { outline: 3px solid var(--paper); outline-offset: 2px; }
 .sn-lightbox__cap { align-items: flex-start; }
+@media (max-width: 819px) { .chapter, .minute { padding-right: 52px; } }
 </style>
 <style data-src="css/act01.css">
 /* Acto 1: El umbral. Prefijo .a1- */
@@ -1013,6 +1015,8 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 /* Contraste AA: velo de papel detras del texto, para que no dependa de lo que haya debajo (montanas, sol) */
 .a2-copy::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 62%; z-index: -1; pointer-events: none; background: linear-gradient(to bottom, rgba(248, 244, 230, .94) 0, rgba(248, 244, 230, .9) 70%, rgba(248, 244, 230, 0) 100%); }
 .a2-evoc { opacity: 1; color: var(--paper); text-shadow: 0 1px 6px var(--ink); }
+/* El acto 2 sube sobre el ultimo tramo del acto 1 (solo papel en blanco): sin pantalla vacia entre los dos */
+#acto2 { margin-top: -100vh; margin-top: -100svh; z-index: 1; }
 </style>
 <style data-src="css/act03.css">
 /* Acto III: La travesia. Prefijo .a3- . Acento: porcelana + oro imperial */
@@ -1209,6 +1213,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .a3-cards { left: 50%; right: auto; transform: translateX(-50%); width: 30rem; bottom: 7%; }
   .a3-card { margin-left: auto; margin-right: auto; }
 }
+@media (max-width: 700px) { .a3-lbl { font-size: 40px; stroke-width: 9px; } .a3-lbl-sm { font-size: 36px; } }
 </style>
 <style data-src="css/act04.css">
 /* Acto IV: Mexico. Prefijo .a4-. Paleta: de tinta fria a sepia/atardecer. */
@@ -3922,7 +3927,7 @@ window.Santuario.register(1, function (ctx) {
   /* Momento memorable: el caracter se dibuja al ritmo del scroll, con pin */
   var tl = gsap.timeline({
     defaults: { ease: 'none' },
-    scrollTrigger: { trigger: sec, start: 'top top', end: '+=640%', scrub: .8, pin: stage, anticipatePin: 1 }
+    scrollTrigger: { trigger: sec, start: 'top top', end: '+=740%', scrub: .8, pin: stage, anticipatePin: 1 }
   });
   tl.set(char, { opacity: 1 }, 0)
     .to(glow, { '--a1-r': '120%', duration: 1 }, 0)
@@ -3948,6 +3953,9 @@ window.Santuario.register(1, function (ctx) {
     .set(wash, { opacity: 1 })
     .to(wash, { scale: 3.4, duration: 3, ease: 'power2.in' })
     .to([char, lnAll[lnAll.length - 1], title, lans, '.a1-motes', red, rays], { opacity: 0, duration: 1.5 }, '<1');
+
+  /* Cola en blanco (papel): el acto 2 sube sobre ella, asi no queda pantalla vacia entre actos */
+  tl.to({}, { duration: tl.duration() * 0.17 });
 
   window.addEventListener('pagehide', function () { cancelAnimationFrame(raf); });
 });
@@ -4015,7 +4023,7 @@ window.Santuario.register(2, function (ctx) {
     .to(q('.a2-fog1'), { xPercent: -22, duration: 18 }, 0)
     .to(q('.a2-fog2'), { xPercent: 18, duration: 18 }, 0)
     .to(q('.a2-fog3'), { xPercent: -30, duration: 18 }, 0)
-    .to(evoc, { opacity: .6, y: 0, duration: 1 }, 0.5);
+    .to(evoc, { opacity: 1, y: 0, duration: 1 }, 0.5);
 
   /* Texto que emerge por lineas (split manual) */
   words.forEach(function (w, i) {
