@@ -193,3 +193,4 @@
   .a3-card { margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 700px) { .a3-lbl { font-size: 40px; stroke-width: 9px; } .a3-lbl-sm { font-size: 36px; } }
+.a3-w { white-space: pre; }

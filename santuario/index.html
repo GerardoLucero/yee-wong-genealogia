@@ -1326,6 +1326,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
   .a3-card { margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 700px) { .a3-lbl { font-size: 40px; stroke-width: 9px; } .a3-lbl-sm { font-size: 36px; } }
+.a3-w { white-space: pre; }
 </style>
 <style data-src="css/act04.css">
 /* Acto IV: Mexico. Prefijo .a4-. Paleta: de tinta fria a sepia/atardecer. */
@@ -1461,6 +1462,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
 .a4 .a4-doc-name { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.6rem, 4vw, 2.4rem); text-align: center; margin: 1rem 0; color: var(--gold-bright, #f7c948); }
 .a4-home { color: var(--gold-bright); font-family: var(--font-serif); border-left: 3px solid var(--cinnabar); padding-left: var(--sp-4); }
+.a4:not(.a4-js) { padding-bottom: 4rem; }
 </style>
 <style data-src="css/act05.css">
 /* Acto 5: El arbol. Prefijo .a5- */
@@ -1850,6 +1852,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 .a6-stamp { width: 2.2rem; height: 2.2rem; }
 .a6-block-title { font-size: var(--fs-xl); }
 .a6-case--pending .a6-paper { border-top-style: dashed; border-top-color: var(--ink-2); }
+.a6-w { white-space: pre; }
 </style>
 <style data-src="css/act07.css">
 /* Acto 7: El altar. Prefijo .a7- */
@@ -2822,7 +2825,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
             </li></ul>
           </li>
           <li>
-            <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Se quedó en la península</span><span data-lang="en">He stayed on the peninsula</span><span data-lang="zh">他留在了半岛上</span></p><p class="a5t-name">Miguel Yee ⚭ Catalina Molina González</p><p class="a5t-meta"><span data-lang="es">Casados el 30 de noviembre de 1921, en Mulegé. Los zupu no registran a las mujeres: en los libros ella no estaba. Aquí sí.</span><span data-lang="en">Married on 30 November 1921, in Mulegé. Zupu do not record women: in the books she was not there. Here she is.</span><span data-lang="zh">1921年11月30日在穆莱赫成婚。族谱不记女性：书里没有她。这里有。</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
+            <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Se quedó en la península</span><span data-lang="en">He stayed on the peninsula</span><span data-lang="zh">他留在了半岛上</span></p><p class="a5t-name">Miguel Yee · Catalina Molina González</p><p class="a5t-meta"><span data-lang="es">Casados el 30 de noviembre de 1921, en Mulegé. Los zupu no registran a las mujeres: en los libros ella no estaba. Aquí sí.</span><span data-lang="en">Married on 30 November 1921, in Mulegé. Zupu do not record women: in the books she was not there. Here she is.</span><span data-lang="zh">1921年11月30日在穆莱赫成婚。族谱不记女性：书里没有她。这里有。</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
             <ul><li>
               <div class="a5t-node a5t-node--ok"><p class="a5t-role"><span data-lang="es">Hija de Miguel y Catalina</span><span data-lang="en">Daughter of Miguel and Catalina</span><span data-lang="zh">米格尔与卡塔利娜之女</span></p><p class="a5t-name">María de Lourdes Catalina Yee Molina</p><p class="a5t-meta"><span data-lang="es">1929 a 2025</span><span data-lang="en">1929 to 2025</span><span data-lang="zh">1929至2025年</span></p><span class="a5t-seal"><span data-lang="es">confirmado</span><span data-lang="en">confirmed</span><span data-lang="zh">已证实</span></span></div>
               <ul><li>
@@ -3875,6 +3878,16 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
     }
   }
 
+  /* Los divisores de palabras de los actos a veces dejan dos palabras pegadas ("reachestoday"): se restituye el espacio. */
+  function fixWordSpaces() {
+    Array.prototype.forEach.call(document.querySelectorAll('span[class$="-w"]'), function (e) {
+      var n = e.nextSibling;
+      if (n && n.nodeType === 1 && n.className === e.className && !/[\u3000-\u9fff]/.test(e.textContent + n.textContent)) {
+        e.parentNode.insertBefore(document.createTextNode(' '), n);
+      }
+    });
+  }
+
   function register(n, fn) {
     n = Number(n);
     if (typeof fn !== 'function') { log('register(' + n + ') sin funcion'); return; }
@@ -3931,6 +3944,7 @@ html[data-lang="zh"] .sn-cine__title { font-family: var(--font-cjk, serif); }
 
     Object.keys(registry).map(Number).sort(function (a, b) { return a - b; }).forEach(initAct);
 
+    fixWordSpaces();
     wireProgress(parts);
     buildSoundHint(parts);
     buildFx(parts);

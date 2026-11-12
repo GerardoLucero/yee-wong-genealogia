@@ -444,6 +444,16 @@
     }
   }
 
+  /* Los divisores de palabras de los actos a veces dejan dos palabras pegadas ("reachestoday"): se restituye el espacio. */
+  function fixWordSpaces() {
+    Array.prototype.forEach.call(document.querySelectorAll('span[class$="-w"]'), function (e) {
+      var n = e.nextSibling;
+      if (n && n.nodeType === 1 && n.className === e.className && !/[\u3000-\u9fff]/.test(e.textContent + n.textContent)) {
+        e.parentNode.insertBefore(document.createTextNode(' '), n);
+      }
+    });
+  }
+
   function register(n, fn) {
     n = Number(n);
     if (typeof fn !== 'function') { log('register(' + n + ') sin funcion'); return; }
@@ -500,6 +510,7 @@
 
     Object.keys(registry).map(Number).sort(function (a, b) { return a - b; }).forEach(initAct);
 
+    fixWordSpaces();
     wireProgress(parts);
     buildSoundHint(parts);
     buildFx(parts);
